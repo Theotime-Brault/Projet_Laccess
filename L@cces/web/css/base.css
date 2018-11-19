@@ -1,0 +1,16 @@
+body
+{
+    background-color: #fafafa;
+}
+
+.brand-logo #logo_lacces
+{
+    margin-top: 4px;
+    height: 56px;
+}
+
+.sidenav-trigger .material-icons
+{
+    color: #000000;
+}
+
