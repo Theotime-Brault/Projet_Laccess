@@ -1,3 +1,0 @@
-search_homepage:
-    path:     /
-    defaults: { _controller: searchBundle:Default:index }
