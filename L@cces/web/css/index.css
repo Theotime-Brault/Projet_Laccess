@@ -1,0 +1,12 @@
+.flag{
+  border-radius: 150px;
+  width: 50%;
+  height: 50%;
+  border: solid black 2px;
+  padding: 6%;
+}
+
+.b-flag{
+  text-align: center;
+  margin-top: 20%;
+}
