@@ -3,14 +3,83 @@ body
     background-color: #fafafa;
 }
 
+
 .brand-logo #logo_lacces
 {
-    margin-top: 4px;
-    height: 56px;
+    height: 48px;
 }
 
 .sidenav-trigger .material-icons
 {
-    color: #000000;
+    color: #757575;
 }
 
+.no-padding .material-icons
+{
+    color: #757575;
+}
+
+.sidenav .divider
+{
+    margin: 0;
+    height: 8px;
+    border-bottom: 1px solid #757575;
+    background-color: #fafafa;
+}
+/*
+.collapsible-header a:active
+{
+    -webkit-animation: arrowRotate 2s infinite;
+    -o-animation: arrowRotate 2s infinite;
+    animation: arrowRotate 2s infiniten;
+}
+
+@keyframes arrowRotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(90deg);}
+}*/
+
+
+.nav-wrapper
+{
+    width: 100%;
+    line-height: 64px;
+    display: flex;
+
+    z-index: 5000;
+}
+
+
+
+@media (min-width: 768px){
+
+}
+.sidenav
+{
+    top: 64px;
+    z-index: 2000;
+}
+
+@media (max-width: 602px)
+{
+    .sidenav
+    {
+        top: 56px;
+    }
+}
+
+.sidenav .collapsible-header
+{
+    padding: 0 32px;
+}
+
+.sidenav .collapsible-body li a
+{
+    padding: 0 48px 0 48px;
+}
+
+.nav-wrapper #container_logo_lacces
+{
+    height: 100%;
+    width: 100%;
+}
