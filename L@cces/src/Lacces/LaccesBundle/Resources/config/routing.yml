@@ -1,3 +1,9 @@
 lacces_homepage:
     path:     /
-    defaults: { _controller: LaccesBundle:Default:index }
+    defaults:
+        _controller: LaccesBundle:Default:index
+
+lacces_word:
+    path:     /{word}
+    defaults:
+        _controller: LaccesBundle:Default:word

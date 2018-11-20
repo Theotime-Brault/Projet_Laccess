@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('@Lacces/Default/index.html.twig');
     }
+
+    public function wordAction($word)
+    {
+        return $this->render('@Lacces/Words/word.html.twig', array('word' => $word));
+    }
 }

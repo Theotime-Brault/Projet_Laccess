@@ -83,3 +83,8 @@ body
     height: 100%;
     width: 100%;
 }
+
+#material-icons_arrow_drop_down
+{
+    margin-right: 0;
+}
