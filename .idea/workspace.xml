@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6df9506f-fd24-407d-a9b8-05398b69fa3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +52,7 @@
           <entry key="css" value="375" />
           <entry key="js" value="33" />
           <entry key="php" value="482" />
-          <entry key="twig" value="974" />
+          <entry key="twig" value="986" />
           <entry key="yml" value="93" />
         </counts>
       </usages-collector>
@@ -61,7 +61,7 @@
           <entry key="CSS" value="375" />
           <entry key="JavaScript" value="33" />
           <entry key="PHP" value="482" />
-          <entry key="Twig" value="1074" />
+          <entry key="Twig" value="1086" />
           <entry key="YAML" value="93" />
         </counts>
       </usages-collector>
@@ -78,20 +78,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="646">
+              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+            <state relative-caret-position="629">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="e#50#88#0#PHP" expanded="true" />
               </folding>
@@ -143,8 +143,8 @@
         <option value="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/L@cces/web/css/base.css" />
         <option value="$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" />
         <option value="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" />
       </list>
     </option>
   </component>
@@ -289,6 +289,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Lacces" type="462c0819:PsiDirectoryNode" />
               <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projet_Laccess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet_Laccess" type="462c0819:PsiDirectoryNode" />
+              <item name="L@cces" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Lacces" type="462c0819:PsiDirectoryNode" />
+              <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -412,12 +421,12 @@
       <workItem from="1542623267698" duration="1632000" />
       <workItem from="1542633349284" duration="5553000" />
       <workItem from="1542718790054" duration="5014000" />
-      <workItem from="1542792431877" duration="1848000" />
+      <workItem from="1542792431877" duration="3718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14047000" />
+    <option name="totallyTimeSpent" value="15917000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -495,13 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Repository/wordFrRepository.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -510,11 +512,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+        <state relative-caret-position="629">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="e#50#88#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
         </state>
       </provider>
     </entry>
