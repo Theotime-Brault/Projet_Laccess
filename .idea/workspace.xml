@@ -52,7 +52,8 @@
           <entry key="css" value="375" />
           <entry key="js" value="33" />
           <entry key="php" value="482" />
-          <entry key="twig" value="986" />
+          <entry key="twig" value="992" />
+          <entry key="txt" value="4" />
           <entry key="yml" value="93" />
         </counts>
       </usages-collector>
@@ -61,7 +62,8 @@
           <entry key="CSS" value="375" />
           <entry key="JavaScript" value="33" />
           <entry key="PHP" value="482" />
-          <entry key="Twig" value="1086" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Twig" value="1092" />
           <entry key="YAML" value="93" />
         </counts>
       </usages-collector>
@@ -82,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="646">
-              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+              <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -200,10 +202,11 @@
       <path value="$PROJECT_DIR$/L@cces/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -421,18 +424,33 @@
       <workItem from="1542623267698" duration="1632000" />
       <workItem from="1542633349284" duration="5553000" />
       <workItem from="1542718790054" duration="5014000" />
-      <workItem from="1542792431877" duration="3718000" />
+      <workItem from="1542792431877" duration="4048000" />
     </task>
+    <task id="LOCAL-00001" summary="ah!">
+      <created>1542806618968</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542806618968</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ah!">
+      <created>1542806872103</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542806872103</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15917000" />
+    <option name="totallyTimeSpent" value="16247000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2571116" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12526652" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -458,6 +476,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ah!" />
+    <option name="LAST_COMMIT_MESSAGE" value="ah!" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/L@cces/web/js/menu.js">
@@ -523,7 +545,7 @@
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
         </state>
       </provider>
     </entry>
