@@ -10,7 +10,7 @@ namespace Lacces\LaccesBundle\Repository;
  */
 class wordFrRepository extends \Doctrine\ORM\EntityRepository
 {
-  public function getWorFrByWord($w){
+  public function getWordFrByWord($w){
     return $this->createQueryBuilder('c')
     ->where('c.word = :word')
     ->setParameter('word', $w)
