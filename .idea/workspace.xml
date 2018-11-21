@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6df9506f-fd24-407d-a9b8-05398b69fa3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L@cces/web/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/web/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L@cces/bin/symfony_requirements" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/bin/symfony_requirements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L@cces/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L@cces/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/var/SymfonyRequirements.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L@cces/web/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/web/config.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +24,9 @@
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -74,13 +75,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
+            <state relative-caret-position="1207">
               <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
@@ -89,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -110,7 +111,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/web/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="746">
+            <state relative-caret-position="1496">
               <caret line="88" column="19" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
             </state>
           </provider>
@@ -204,7 +205,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -358,6 +358,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,17 +398,18 @@
       <workItem from="1542623267698" duration="1632000" />
       <workItem from="1542633349284" duration="5553000" />
       <workItem from="1542718790054" duration="5014000" />
+      <workItem from="1542792431877" duration="602000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12199000" />
+    <option name="totallyTimeSpent" value="12801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25164112" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2571116" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -457,6 +459,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word" />
+    <entry file="file://$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -464,31 +474,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="14" lean-forward="true" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/web/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
+        <state relative-caret-position="1496">
           <caret line="88" column="19" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -496,6 +485,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
