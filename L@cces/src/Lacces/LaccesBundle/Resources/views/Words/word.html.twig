@@ -10,7 +10,6 @@
         <div class="container">
             <div class="row">
                 <div class="col s6 center wordTranslate">
-                    <p> {{ word.word }}</p>
                     <p>
                         <strong>{{ word.word }}</strong>
                     </p>
@@ -26,11 +25,19 @@
             </div>
 
             <div class="col s12 center-align">
-                {{ word.word }}
+                <!--
+                <object width="425" height="344" data="{{ word.videoLink }}"></object>
+
+                <embed src="{{ word.videoLink }}" allowfullscreen="true" width="425" height="344">
+
+                <iframe width="425" height="344" src="{{ word.videoLink }}" frameborder="0" allowfullscreen></iframe>
+                -->
+                <iframe width="100%" height="" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
             </div>
 
             <div class="col s12 center-align">
-                {{ word.word }}
+                <iframe width="560" height="315" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </main>
