@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <!--<link rel="stylesheet" href="">-->
+    <link rel="stylesheet" href="{{ asset('css/word.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -18,10 +18,20 @@
                     </p>
                 </div>
                 <div class="col s2">
-                    <a href="#">
-                        <i class="material-icons right">search</i>
+                    <a href="#" data-target="search-on">
+                        <i class="material-icons">search</i>
                     </a>
                 </div>
+
+                <form>
+                    <div id="search-on">
+                        <div class="input-field">
+                            <input class="search" id="search-barre" placeholder="Rechercher un mot" />
+                            <i class="material-icons">search</i>
+                        </div>
+                    </div>
+                </form>
+
             </div>
 
             <div class="col s12 center-align">
@@ -41,7 +51,10 @@
             </div>
         </div>
     </main>
-    <footer>
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
 
-    </footer>
+    </script>
 {% endblock %}
