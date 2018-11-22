@@ -11,7 +11,15 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('@Lacces/Default/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $wordsEn = [$em->getRepository('LaccesBundle:wordEn')->getWords()];
+        $wordsFr = [$em->getRepository('LaccesBundle:wordFr')->getWords()];
+
+        return $this->render('@Lacces/Default/index.html.twig', [
+          'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+          'wordEn' => $wordsEn,
+          'wordFr' => $wordsFr,
+        ]);
     }
 /*
     public function wordAction($word)
