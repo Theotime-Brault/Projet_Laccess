@@ -42,6 +42,13 @@ class wordEn
      */
     private $contextSentence;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="popularityWord", type="integer")
+     */
+    private $popularityWord;
+
 
     /**
      * Get id.
