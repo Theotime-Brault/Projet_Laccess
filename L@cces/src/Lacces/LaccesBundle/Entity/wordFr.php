@@ -38,10 +38,23 @@ class wordFr
     /**
      * @var string
      *
+     * @ORM\Column(name="videoDescription", type="text")
+     */
+    private $videoDescription;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="contextSentence", type="text")
      */
     private $contextSentence;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="popularity", type="integer")
+     */
+    private $popularity;
 
     /**
      * Get id.
@@ -102,6 +115,30 @@ class wordFr
     }
 
     /**
+     * Set videoDescription.
+     *
+     * @param string $videoDescription
+     *
+     * @return wordFr
+     */
+    public function setVideoDescription($videoDescription)
+    {
+        $this->videoDescription = $videoDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get videoDescription.
+     *
+     * @return string
+     */
+    public function getVideoDescription()
+    {
+        return $this->videoDescription;
+    }
+
+    /**
      * Set contextSentence.
      *
      * @param string $contextSentence
@@ -123,5 +160,30 @@ class wordFr
     public function getContextSentence()
     {
         return $this->contextSentence;
+    }
+
+    /**
+     * Set popularity.
+     *
+     * @param integer
+     *
+     * @return wordFr
+     */
+
+    public function setPopularity($popularity)
+    {
+        $this->popularity = $popularity;
+
+        return $this;
+    }
+
+    /**
+     * Get popularity.
+     *
+     * @return integer
+     */
+    public function getPopularity()
+    {
+        return $this->popularity;
     }
 }
