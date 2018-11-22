@@ -25,12 +25,15 @@ class DefaultController extends Controller
             ->getManager()
             ->getRepository('LaccesBundle:wordFr');
 
-        $response = $repository->findOneBy(array('word' => $word));
+        $response = $repository->findOneBy(array(
+            'word' => $word));
+
         if (null === $response)
         {
             throw new NotFoundHttpException("Le mot " . $word . " n'existe pas.");
         }
 
-        return $this->render('@Lacces/Words/word.html.twig', array('word' => $response));
+        return $this->render('@Lacces/Words/word.html.twig', array(
+            'word' => $response));
     }
 }
