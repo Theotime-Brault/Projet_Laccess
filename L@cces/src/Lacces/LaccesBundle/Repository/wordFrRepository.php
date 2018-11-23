@@ -18,13 +18,6 @@ class wordFrRepository extends \Doctrine\ORM\EntityRepository
     ->getOneOrNullResult();
   }
 
-  public function getWords(){
-    return $this->createQueryBuilder('c')
-    ->select('word')
-    ->getQuery()
-    ->getResult();
-  }
-
   public function findAll (){
     return $this->createQueryBuilder('c')
     ->getQuery()
