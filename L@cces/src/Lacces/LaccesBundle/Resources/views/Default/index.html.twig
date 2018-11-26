@@ -24,6 +24,9 @@
                 <div class="col s10 m8 x8 xl8">
                     {{ render(controller("LaccesBundle:Default:searchBarre")) }}
                 </div>
+                {% for w in wordFr %}
+                <p>{{ w.word }}</p>
+                {% endfor %}
                 <div class="col s1 m2 x2 xl2"></div>
             </div>
         </section>
