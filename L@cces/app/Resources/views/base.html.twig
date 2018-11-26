@@ -13,16 +13,18 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+    <div class="row valign-wrapper">
+        <div class="nav-wrapper">
 
-    <div class="nav-wrapper">
-        <nav class="nav-wrapper white">
-            <a href="#" class="sidenav-trigger show-on-large" data-target="slide-out">
-                <i class="material-icons waves-button-input waves">menu</i>
-            </a>
-            <div id="container_logo_lacces">
-                <a href="#" class="brand-logo center"> <img id="logo_lacces" src="{{ asset('pictures/logo/logo_lacces.png') }}"/></a>
-            </div>
-        </nav>
+            <nav class="nav-wrapper white">
+                <a href="#" class="sidenav-trigger show-on-large" data-target="slide-out">
+                    <i class="material-icons waves-button-input waves">menu</i>
+                </a>
+                <div class="valign-wrapper" id="container_logo_lacces">
+                    <a href="#" class="brand-logo center valign-wrapper"> <img id="logo_lacces" src="{{ asset('pictures/logo/logo_lacces.png') }}"/></a>
+                </div>
+            </nav>
+        </div>
     </div>
 
     <ul class="sidenav white" id="slide-out">

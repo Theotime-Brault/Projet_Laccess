@@ -78,13 +78,21 @@ body
     padding: 0 48px 0 48px;
 }
 
-.nav-wrapper #container_logo_lacces
+#container_logo_lacces
 {
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 #material-icons_arrow_drop_down
 {
     margin-right: 0;
+}
+
+nav .brand-logo
+{
+    display: flex;
+    align-items: center;
 }
