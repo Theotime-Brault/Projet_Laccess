@@ -6,14 +6,16 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/searchBarre.css') }}">
         {% block stylesheets %}
+
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
 
     <div class="nav-wrapper">
-        <nav class="nav-wrapper grey lighten-5">
+        <nav class="nav-wrapper white">
             <a href="#" class="sidenav-trigger show-on-large" data-target="slide-out">
                 <i class="material-icons waves-button-input waves">menu</i>
             </a>
@@ -23,7 +25,7 @@
         </nav>
     </div>
 
-    <ul class="sidenav grey lighten-5" id="slide-out">
+    <ul class="sidenav white" id="slide-out">
         <li>
             <a class="sidenav-close" href="#">
                 <i class="material-icons">arrow_back</i>
@@ -38,10 +40,10 @@
                     <a class="collapsible-header waves-effect">Signaires<i class="material-icons right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
                     <div class="collapsible-body">
                         <ul>
-                            <li class="grey lighten-5">
+                            <li class="white">
                                 <a class="waves-effect" href="#">Langue des signes Française</a>
                             </li>
-                            <li class="grey lighten-5">
+                            <li class="white">
                                 <a class="waves-effect" href="#">Langue des signes Américaine</a>
                             </li>
                             <li>
