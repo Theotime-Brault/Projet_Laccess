@@ -4,13 +4,8 @@ namespace Lacces\LaccesBundle\Controller;
 
 use Lacces\LaccesBundle\Entity\wordFr;
 use Lacces\LaccesBundle\Entity\wordEn;
-<<<<<<< HEAD
-use AppBundle\Repository\wordFrRepository;
-use AppBundle\Repository\wordEnRepository;
-=======
 use Lacces\LaccesBundle\Repository\wordFrRepository;
 use Lacces\LaccesBundle\Repository\wordEnRepository;
->>>>>>> ae83472a67732d4c8eda995c2651c8cd61c5027a
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -20,28 +15,16 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-<<<<<<< HEAD
         $i = 0;
         $em = $this->getDoctrine()->getManager();
         $wordsEnObj = $em->getRepository('LaccesBundle:wordEn')->findAll();
         $wordsFrObj = $em->getRepository('LaccesBundle:wordFr')->findAll();
-=======
-        /*$em = $this->getDoctrine()->getManager();
-        $wordsEn = [$em->getRepository('LaccesBundle:wordEn')->getWord()];
-        $wordsFr = [$em->getRepository('LaccesBundle:wordFr')->getWord()];*/
->>>>>>> ae83472a67732d4c8eda995c2651c8cd61c5027a
 
-        return $this->render('@Lacces/Default/index.html.twig'/*, [
+        return $this->render('@Lacces/Default/index.html.twig', [
           'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-<<<<<<< HEAD
           'wordEn' => $wordsEnObj,
           'wordFr' => $wordsFrObj,
         ]);
-=======
-          'wordEn' => $wordsEn,
-          'wordFr' => $wordsFr,
-        ]*/);
->>>>>>> ae83472a67732d4c8eda995c2651c8cd61c5027a
     }
 /*
     public function wordAction($word)
