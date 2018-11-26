@@ -3,23 +3,27 @@
 namespace Lacces\LaccesBundle\Controller;
 
 use Lacces\LaccesBundle\Entity\wordFr;
+use Lacces\LaccesBundle\Entity\wordEn;
+use Lacces\LaccesBundle\Repository\wordFrRepository;
+use Lacces\LaccesBundle\Repository\wordEnRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 
 class DefaultController extends Controller
 {
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $wordsEn = [$em->getRepository('LaccesBundle:wordEn')->getWords()];
-        $wordsFr = [$em->getRepository('LaccesBundle:wordFr')->getWords()];
+        /*$em = $this->getDoctrine()->getManager();
+        $wordsEn = [$em->getRepository('LaccesBundle:wordEn')->getWord()];
+        $wordsFr = [$em->getRepository('LaccesBundle:wordFr')->getWord()];*/
 
-        return $this->render('@Lacces/Default/index.html.twig', [
+        return $this->render('@Lacces/Default/index.html.twig'/*, [
           'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
           'wordEn' => $wordsEn,
           'wordFr' => $wordsFr,
-        ]);
+        ]*/);
     }
 /*
     public function wordAction($word)
@@ -43,5 +47,10 @@ class DefaultController extends Controller
 
         return $this->render('@Lacces/Words/word.html.twig', array(
             'word' => $response));
+    }
+
+    public function searchBarreAction()
+    {
+        return $this->render('@Lacces/SearchBarre/searchBarre.html.twig');
     }
 }

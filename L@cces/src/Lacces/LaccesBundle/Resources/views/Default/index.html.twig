@@ -7,38 +7,44 @@
 {% block body %}
 
 <main>
-  <div class="container page">
-    <div class="row b-flag">
-      <div class="col s6">
-        <img class="flag" src="{{ asset('pictures/logo_mains_fr_test.png') }}"/>
-      </div>
-      <div class="col s6">
-        <img class="flag" src="{{ asset('pictures/logo_mains_fr_test.png') }}"/>
-      </div>
+    <div class="container">
+        <section>
+            <div class="row b-flag">
+                <div class="col s6">
+                    <img class="flag" src="{{ asset('pictures/logo_mains_fr_test.png') }}"/>
+                </div>
+                <div class="col s6">
+                    <img class="flag" src="{{ asset('pictures/logo_mains_fr_test.png') }}"/>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="row">
+                <div class="col s1 m2 x2 xl2"></div>
+                <div class="col s10 m8 x8 xl8">
+                    {{ render(controller("LaccesBundle:Default:searchBarre")) }}
+                </div>
+                <div class="col s1 m2 x2 xl2"></div>
+            </div>
+        </section>
+        <section>
+            <div class="row">
+                <p class="center">
+                    Le français anglais signé en vidéo et en face à face
+                </p>
+            </div>
+        </section>
     </div>
-    <div class="row search">
-      <div class="col s3"></div>
-      <div class="col s4" id="form_search">
-        <input placeholder="Rechercher un mot"/>
-        <a><i class="medium material-icons">search</i></a>
-      </div>
-      <div class="col s2">
-        {{ wordFr }}
-      </div>
-      <div class="col s3"></div>
-    </div>
-  </div>
-</main>
 <footer>
   <div class="container footer">
     <div class="row">
-      <div class="col s12 m4">
+      <div class="col s4 m4">
         FAQ
       </div>
-      <div class="col s12 m4">
+      <div class="col s4 m4">
         Mentions légales
       </div>
-      <div class="col s12 m4">
+      <div class="col s4 m4">
         Contact
       </div>
     </div>
