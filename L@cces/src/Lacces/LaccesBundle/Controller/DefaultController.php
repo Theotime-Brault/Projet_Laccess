@@ -3,6 +3,9 @@
 namespace Lacces\LaccesBundle\Controller;
 
 use Lacces\LaccesBundle\Entity\wordFr;
+use Lacces\LaccesBundle\Entity\wordEn;
+use AppBundle\Repository\wordFrRepository;
+use AppBundle\Repository\wordEnRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -11,14 +14,15 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+        $i = 0;
         $em = $this->getDoctrine()->getManager();
-        $wordsEn = [$em->getRepository('LaccesBundle:wordEn')->getWords()];
-        $wordsFr = [$em->getRepository('LaccesBundle:wordFr')->getWords()];
+        $wordsEnObj = $em->getRepository('LaccesBundle:wordEn')->findAll();
+        $wordsFrObj = $em->getRepository('LaccesBundle:wordFr')->findAll();
 
         return $this->render('@Lacces/Default/index.html.twig', [
           'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-          'wordEn' => $wordsEn,
-          'wordFr' => $wordsFr,
+          'wordEn' => $wordsEnObj,
+          'wordFr' => $wordsFrObj,
         ]);
     }
 /*
