@@ -20,6 +20,8 @@ class wordFrRepository extends \Doctrine\ORM\EntityRepository
 
   public function findAll (){
     return $this->createQueryBuilder('c')
+    ->orderBy('c.popularity', 'DESC')
+    ->addOrderBy('c.word', 'ASC')
     ->getQuery()
     ->getResult();
   }
