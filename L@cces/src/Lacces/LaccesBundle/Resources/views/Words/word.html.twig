@@ -18,13 +18,19 @@
                             {{ word.word }}
                         </p>
                     </div>
-                    <div class="right-align">
-                        <a href="#" data-target="search-on">
+                    <div class="searchButton right">
+                        <a class="slide" href="#">
                             <i class="material-icons">search</i>
                         </a>
                     </div>
-                    <div class="col s10 m8 x8 xl8">
-                        {{ render(controller("LaccesBundle:Default:searchBarre")) }}
+                    <div id="searchBox" class="">
+                        <div class="col s1 m2 x2 xl2">
+                        </div>
+                        <div id="" class="col s10 m8 x8 xl8">
+                            {{ render(controller("LaccesBundle:Default:searchBarre")) }}
+                        </div>
+                        <div class="col s1 m2 x2 xl2">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -48,10 +54,11 @@
             </section>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
+        $('.slide').on('click', function(){
+           $('#searchBox').toggleClass('show')
         });
-
     </script>
 {% endblock %}
