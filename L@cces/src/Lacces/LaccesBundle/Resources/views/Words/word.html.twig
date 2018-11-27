@@ -9,27 +9,37 @@
     <main>
         <div class="container">
             <section class="word">
-                <div class="row word-header">
-                    <div class="center-align word-translate">
-                        <p>
-                            <strong>{{ word.word }}</strong>
-                        </p>
-                        <p>
-                            {{ word.word }}
-                        </p>
-                    </div>
-                    <div class="icon-search">
-                        <a class="slide" href="#">
-                            <i class="material-icons">search</i>
-                        </a>
-                    </div>
-                    <div id="search-box" class="">
-                        <div class="col s1 m2 x2 xl2">
+                <div class="row">
+                    <div class="word-box">
+                        <div class="col s4 m4 x4 xl4">
                         </div>
-                        <div id="" class="col s10 m8 x8 xl8">
-                            {{ render(controller("LaccesBundle:Default:searchBarre")) }}
+                        <div class="col s3 m3 x3 xl3">
+                            <div class="center-align word-translate">
+                                <p>
+                                    <strong>{{ word.word }}</strong>
+                                </p>
+                                <p>
+                                    {{ word.word }}
+                                </p>
+                            </div>
                         </div>
-                        <div class="col s1 m2 x2 xl2">
+                        <div class="col s3 m3 x3 xl3">
+                        </div>
+                        <div class="col s2 m2 x2 xl2">
+                            <div id="icon-search" class="right">
+                                <a class="slide" href="#">
+                                    <i class="material-icons">search</i>
+                                </a>
+                                <div id="search-box" class="">
+                                    <div class="col s1 m2 x2 xl2">
+                                    </div>
+                                    <div id="" class="col s10 m8 x8 xl8">
+                                        {{ render(controller("LaccesBundle:Default:searchBarre")) }}
+                                    </div>
+                                    <div class="col s1 m2 x2 xl2">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -44,6 +54,8 @@
 
                     <iframe width="425" height="344" src="{{ word.videoLink }}" frameborder="0" allowfullscreen></iframe>
                     -->
+                    <iframe width="560" height="315" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                     <iframe width="560" height="315" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                 </div>
@@ -63,4 +75,32 @@
             });
         });
     </script>
+{% endblock %}
+
+{% block javascript %}
+    $(function(){
+        var tabFr = [
+    {% for w in wordFr %}
+      "{{ w.word }}",
+    {% endfor %}
+    ];
+    var tabEn = [
+    {% for w in wordEn %}
+      "{{ w.word }}",
+    {% endfor %}
+    ];
+    $("#search-barre").keyup(function() {
+      if($("#test1").is(':checked')){
+        $("#search-barre").autocomplete({
+          source: tabFr
+        });
+      }
+
+      if($("#test2").is(':checked')){
+        $("#search-barre").autocomplete({
+          source: tabEn
+        });
+      }
+    });
+    });
 {% endblock %}
