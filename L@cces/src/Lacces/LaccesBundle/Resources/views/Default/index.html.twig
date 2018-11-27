@@ -2,6 +2,7 @@
 
 {% block stylesheets %}
   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/radio.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -11,24 +12,26 @@
         <section>
             <div class="row b-flag">
                 <div class="col s6">
-                    <img class="flag" src="{{ asset('pictures/logo_mains_fr_test.png') }}"/>
+                    <img class="flag" id="imgFr" src="{{ asset('pictures/logo_mains_fr_test.png') }}"/>
                 </div>
                 <div class="col s6">
-                    <img class="flag" src="{{ asset('pictures/logo_mains_fr_test.png') }}"/>
+                    <img class="flag" id="imgEn" src="{{ asset('pictures/logo_mains_fr_test.png') }}"/>
                 </div>
             </div>
 <!--////////////////////////////////////////////////////////////TEST/////////////////////////////////////////-->
-            <div>
-              <label>
-                <input type="radio" value="1" id="test1" name="langue" checked/>
-                <span>fr</span>
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="radio" value="2" name="langue" id="test2"/>
-                <span>en</span>
-              </label>
+            <div id="radiobtn">
+              <div>
+                <label>
+                  <input type="radio" value="1" id="btnFr" name="langue" checked/>
+                  <span>fr</span>
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="radio" class="flag" value="2" name="langue" id="btnEn"/>
+                  <span>en</span>
+                </label>
+              </div>
             </div>
 <!--////////////////////////////////////////////////////////////TEST/////////////////////////////////////////-->
         </section>
@@ -67,6 +70,7 @@
 {% endblock %}
 
 {% block javascripts %}
+<script>
 $(function(){
   var tabFr = [
   {% for w in wordFr %}
@@ -79,17 +83,19 @@ $(function(){
   {% endfor %}
   ];
   $("#search-barre").keyup(function() {
-    if($("#test1").is(':checked')){
+    if($("#btnFr").is(':checked')){
       $("#search-barre").autocomplete({
         source: tabFr
       });
     }
 
-    if($("#test2").is(':checked')){
+    if($("#btnEn").is(':checked')){
       $("#search-barre").autocomplete({
         source: tabEn
       });
     }
   });
 });
+</script>
+<script src="{{ asset('js/radio.js') }}"></script>
 {% endblock %}
