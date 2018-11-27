@@ -18,22 +18,20 @@
                     <img class="flag" id="imgEn" src="{{ asset('pictures/logo_mains_fr_test.png') }}"/>
                 </div>
             </div>
-<!--////////////////////////////////////////////////////////////TEST/////////////////////////////////////////-->
             <div id="radiobtn">
               <div>
                 <label>
-                  <input type="radio" value="1" id="btnFr" name="langue" checked/>
+                  <input type="radio" id="btnFr" name="langue" checked="true"/>
                   <span>fr</span>
                 </label>
               </div>
               <div>
                 <label>
-                  <input type="radio" class="flag" value="2" name="langue" id="btnEn"/>
+                  <input type="radio" name="langue" id="btnEn"/>
                   <span>en</span>
                 </label>
               </div>
             </div>
-<!--////////////////////////////////////////////////////////////TEST/////////////////////////////////////////-->
         </section>
         <section>
             <div class="row">
@@ -71,31 +69,31 @@
 
 {% block javascripts %}
 <script>
-$(function(){
-  var tabFr = [
-  {% for w in wordFr %}
-    "{{ w.word }}",
-  {% endfor %}
-  ];
-  var tabEn = [
-  {% for w in wordEn %}
-    "{{ w.word }}",
-  {% endfor %}
-  ];
-  $("#search-barre").keyup(function() {
-    if($("#btnFr").is(':checked')){
-      $("#search-barre").autocomplete({
-        source: tabFr
-      });
-    }
+  $(function(){
+    var tabFr = [
+    {% for w in wordFr %}
+      "{{ w.word }}",
+    {% endfor %}
+    ];
+    var tabEn = [
+    {% for w in wordEn %}
+      "{{ w.word }}",
+    {% endfor %}
+    ];
+    $("#search-barre").keyup(function() {
+      if($("#btnFr").is(':checked')){
+        $("#search-barre").autocomplete({
+          source: tabFr
+        });
+      }
 
-    if($("#btnEn").is(':checked')){
-      $("#search-barre").autocomplete({
-        source: tabEn
-      });
-    }
+      if($("#btnEn").is(':checked')){
+        $("#search-barre").autocomplete({
+          source: tabEn
+        });
+      }
+    });
   });
-});
 </script>
 <script src="{{ asset('js/radio.js') }}"></script>
 {% endblock %}
