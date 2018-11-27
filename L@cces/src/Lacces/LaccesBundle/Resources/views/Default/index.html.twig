@@ -17,6 +17,20 @@
                     <img class="flag" src="{{ asset('pictures/logo_mains_fr_test.png') }}"/>
                 </div>
             </div>
+<!--////////////////////////////////////////////////////////////TEST/////////////////////////////////////////-->
+            <div>
+              <label>
+                <input type="radio" value="1" id="test1" name="langue" checked/>
+                <span>fr</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="radio" value="2" name="langue" id="test2"/>
+                <span>en</span>
+              </label>
+            </div>
+<!--////////////////////////////////////////////////////////////TEST/////////////////////////////////////////-->
         </section>
         <section>
             <div class="row">
@@ -54,14 +68,28 @@
 
 {% block javascripts %}
 $(function(){
-  var tab = [
+  var tabFr = [
   {% for w in wordFr %}
     "{{ w.word }}",
   {% endfor %}
   ];
-  $("#search-barre").autocomplete({
-    source: tab
+  var tabEn = [
+  {% for w in wordEn %}
+    "{{ w.word }}",
+  {% endfor %}
+  ];
+  $("#search-barre").keyup(function() {
+    if($("#test1").is(':checked')){
+      $("#search-barre").autocomplete({
+        source: tabFr
+      });
+    }
+
+    if($("#test2").is(':checked')){
+      $("#search-barre").autocomplete({
+        source: tabEn
+      });
+    }
   });
 });
-
 {% endblock %}
