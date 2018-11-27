@@ -3,15 +3,16 @@
 
 }
 
-row
+#row-box
 {
+    display: flex;
+    align-items: center;
 }
 
 .word-box
 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: auto;
+
 }
 
 .word-translate
@@ -19,10 +20,26 @@ row
 
 }
 
+#tmp
+{
+
+}
+
 #icon-search
 {
-    display: flex;
-    align-items: center;
+    height: 56px;
+    width: 56px;
+    float: right;
+}
+
+a .material-icons
+{
+    color: orange;
+}
+
+#search-on
+{
+    visibility: hidden;
 }
 
 #search-box
@@ -31,7 +48,6 @@ row
     opacity: 0;
     right: 0;
     transition: all .75s;
-    position: absolute;
 }
 
 #search-box.show
@@ -40,9 +56,4 @@ row
     opacity: 1;
     z-index: 100;
     position: absolute;
-}
-
-#icon-search.show
-{
-    display: none;
 }

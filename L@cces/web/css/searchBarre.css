@@ -37,7 +37,7 @@
 }
 
 /* label underline focus color */
-.row .input-field input:focus
+#search-on .input-field input:focus
 {
     border-bottom: none;
     box-shadow: none;
