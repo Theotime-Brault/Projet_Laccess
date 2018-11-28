@@ -55,17 +55,17 @@ class DefaultController extends Controller
         return $this->render('@Lacces/SearchBarre/searchBarre.html.twig');
     }
 
-    public function signeurFrAction()
+    public function signaireFrAction()
     {
-        return $this->render('@Lacces/Signeurs/signeurFr.html.twig');
+        return $this->render('@Lacces/Signaires/signaireFr.html.twig');
     }
 
-    public function signeurEnAction()
+    public function signaireEnAction()
     {
         $em = $this->getDoctrine()->getManager();
         $wordsEnObj = $em->getRepository('LaccesBundle:wordEn')->findAll();
 
-        return $this->render('@Lacces/Signeurs/signeurEn.html.twig', [
+        return $this->render('@Lacces/Signaires/signaireEn.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'wordEn' => $wordsEnObj,
         ]);

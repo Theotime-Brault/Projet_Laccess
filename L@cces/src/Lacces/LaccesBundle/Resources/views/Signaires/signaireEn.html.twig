@@ -16,7 +16,8 @@
                     {% for w in wordEn %}
                         {% if w.word|first == letter %}
                             <li class="white">
-                                <a class="waves-effect" href="{{ asset('') }}">{{ w.word }}</a>
+                                <a class="waves-effect" href="../word/{{ w.word }}">{{ w.word }}</a>
+                                {#<a class="waves-effect" href="{{ asset('') }}">{{ w.word }}</a>#}
                             </li>
                         {% endif %}
                     {% endfor %}

@@ -4,16 +4,16 @@ lacces_homepage:
         _controller: LaccesBundle:Default:index
 
 lacces_signeur_fr:
-    path:     /signeurFr
+    path:     /signaire/Fr
     defaults:
-        _controller: LaccesBundle:Default:signeurFr
+        _controller: LaccesBundle:Default:signaireFr
 
 lacces_signeur_en:
-    path:     /signeurEn
+    path:     /signaire/En
     defaults:
-        _controller: LaccesBundle:Default:signeurEn
+        _controller: LaccesBundle:Default:signaireEn
 
 lacces_word:
-    path:     /{word}
+    path:     /word/{word}
     defaults:
         _controller: LaccesBundle:Default:word
