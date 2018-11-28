@@ -10,13 +10,12 @@ $(document).ready(function(){
   });
 
   if($("#btnEn").is(":checked")){
-    $("#imgEn").attr("class","red");
-    $("#imgEn").css("border", "solid red 2px");
-    $("#imgFr").css("border", "solid black 2px");
+    $("#imgEn").css({"border": "solid red 2px !important"});
+    $("#imgFr").css({"border": "solid black 2px !important"});
   };
 
   if($("#btnEn").is(":checked")){
-    $("#imgFr").css("border", "solid red 2px");
-    $("#imgEn").css("border", "solid black 2px");
+    $("#imgFr").css('border', 'solid red 2px !important');
+    $("#imgEn").css('border', 'solid black 2px !important');
   };
 });
