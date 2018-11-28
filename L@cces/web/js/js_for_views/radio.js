@@ -1,21 +1,26 @@
 $(document).ready(function(){
+  checked();
   $("#imgFr").click(function(){
     $("#btnEn").removeAttr("checked");
     $("#btnFr").attr("checked", true);
+    checked();
   });
 
   $("#imgEn").click(function(){
     $("#btnFr").removeAttr("checked");
     $("#btnEn").attr("checked", true);
+    checked();
   });
 
-  if($("#btnEn").is(":checked")){
-    $("#imgEn").css({"border": "solid red 2px !important"});
-    $("#imgFr").css({"border": "solid black 2px !important"});
-  };
+  function checked(){
+    if($("#btnEn").is(":checked")){
+      $("#imgEn").css("border-color", "red");
+      $("#imgFr").css("border-color", "black");
+    };
 
-  if($("#btnEn").is(":checked")){
-    $("#imgFr").css('border', 'solid red 2px !important');
-    $("#imgEn").css('border', 'solid black 2px !important');
-  };
+    if($("#btnFr").is(":checked")){
+      $("#imgFr").css("border-color", "red");
+      $("#imgEn").css("border-color", "black");
+    };
+  }
 });
