@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 
     $('.slide').on('click', function (){
-        if($("#search-on").css("visibility") == "hidden"){
+        if($("#search-on").css("visibility") == "hidden" || $(".word-box").css("visibility") == "visible"){
             $("#search-on").css("visibility", "visible");
             $(".word-box").css("visibility", "hidden");
         }

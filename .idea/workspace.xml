@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6df9506f-fd24-407d-a9b8-05398b69fa3f" name="Default Changelist" comment="salut kev7">
+    <list default="true" id="6df9506f-fd24-407d-a9b8-05398b69fa3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css" afterDir="false" />
@@ -22,6 +22,7 @@
         <counts>
           <entry key="project.closed" value="6" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.27" value="2" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.31" value="1" />
@@ -29,7 +30,7 @@
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -61,22 +62,22 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Word" value="100" />
-          <entry key="css" value="3052" />
-          <entry key="js" value="211" />
+          <entry key="css" value="3098" />
+          <entry key="js" value="357" />
           <entry key="php" value="1468" />
-          <entry key="twig" value="4379" />
-          <entry key="txt" value="117" />
+          <entry key="twig" value="4404" />
+          <entry key="txt" value="118" />
           <entry key="yml" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="3052" />
+          <entry key="CSS" value="3098" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="214" />
+          <entry key="JavaScript" value="360" />
           <entry key="PHP" value="1468" />
-          <entry key="PLAIN_TEXT" value="117" />
-          <entry key="Twig" value="4475" />
+          <entry key="PLAIN_TEXT" value="118" />
+          <entry key="Twig" value="4500" />
           <entry key="YAML" value="110" />
         </counts>
       </usages-collector>
@@ -105,17 +106,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="493">
               <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-169">
-              <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+            <state relative-caret-position="374">
+              <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
               <folding>
                 <element signature="e#50#88#0#PHP" expanded="true" />
               </folding>
@@ -126,17 +127,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="17">
+              <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            <state relative-caret-position="561">
+              <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -144,7 +145,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
+            <state relative-caret-position="211">
               <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
             </state>
           </provider>
@@ -244,8 +245,9 @@
       <path value="$PROJECT_DIR$/L@cces/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="137" />
+    <option name="y" value="-9" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -438,10 +440,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/L@cces/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/config/routing.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/L@cces/web/css/css_for_views/radio.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/L@cces/web/js/js_for_views/radio.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -449,8 +449,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signaires/signaireEn.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signaires/signaireFr.html.twig</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -458,8 +456,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signeurs/signeurEn.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signeurs/signeurFr.html.twig</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -573,6 +569,7 @@
       <workItem from="1543390379077" duration="329000" />
       <workItem from="1543393013986" duration="1439000" />
       <workItem from="1543394960233" duration="7602000" />
+      <workItem from="1543408529062" duration="3806000" />
     </task>
     <task id="LOCAL-00001" summary="ah!">
       <created>1542806618968</created>
@@ -707,17 +704,24 @@
       <option name="project" value="LOCAL" />
       <updated>1543399117280</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="salut kev8">
+      <created>1543408550381</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1543408550381</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92299000" />
+    <option name="totallyTimeSpent" value="96105000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23522976" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11727079" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -755,7 +759,8 @@
     <MESSAGE value="salut kev5" />
     <MESSAGE value="salut kev6" />
     <MESSAGE value="salut kev7" />
-    <option name="LAST_COMMIT_MESSAGE" value="salut kev7" />
+    <MESSAGE value="salut kev8" />
+    <option name="LAST_COMMIT_MESSAGE" value="salut kev8" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/L@cces/web/js/menu.js" />
@@ -825,26 +830,12 @@
     <entry file="file://$PROJECT_DIR$/L@cces/composer.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/SearchBarre/searchBarre.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/web/pictures/logo/logo_lacces.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-101" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/config/routing.yml">
@@ -854,41 +845,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/SearchBarre/searchBarre.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+          <folding>
+            <element signature="e#50#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        <state relative-caret-position="17">
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
+        <state relative-caret-position="211">
           <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-169">
-          <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
-          <folding>
-            <element signature="e#50#88#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="561">
+          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
         </state>
       </provider>
     </entry>
