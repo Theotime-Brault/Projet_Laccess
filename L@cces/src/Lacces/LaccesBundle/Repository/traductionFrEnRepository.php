@@ -10,4 +10,19 @@ namespace Lacces\LaccesBundle\Repository;
  */
 class traductionFrEnRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function findIdFrByIdEn($id){
+    return $this->createQueryBuilder('c')
+    ->where('c.idEn = :en')
+    ->setParameter('en', $id)
+    ->getQuery()
+    ->getOneOrNullResult();
+  }
+
+  public function findIdEnByIdFr($id){
+    return $this->createQueryBuilder('c')
+    ->where('c.idFr = :en')
+    ->setParameter('en', $id)
+    ->getQuery()
+    ->getOneOrNullResult();
+  }
 }
