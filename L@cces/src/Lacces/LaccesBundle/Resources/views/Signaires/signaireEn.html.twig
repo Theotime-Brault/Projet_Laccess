@@ -1,31 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/radio.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/signaireEn.css') }}">
+
 {% endblock %}
 
 {% block body %}
-
-    <ul class="collapsible collapsible-accordion">
-        {% for letter in 'a'..'z' %}
-        <li class="bold">
-            <a class="collapsible-header waves-effect">{{ letter|upper }}<i class="material-icons right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-                <ul>
-                    {% for w in wordEn %}
-                        {% if w.word|first == letter %}
-                            <li class="white">
-                                <a class="waves-effect" href="../word/{{ w.word }}">{{ w.word }}</a>
-                                {#<a class="waves-effect" href="{{ asset('') }}">{{ w.word }}</a>#}
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-
+    <section>
+        <div class="container">
+            <ul class="collapsible collapsible-accordion-2">
+                {% for letter in 'a'..'z' %}
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect" id="lettreMaj">{{ letter|upper }}<i class="material-icons right" id="material-icons_arrow_drop_down_2">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                {% for w in wordEn %}
+                                    {% if w.word|first == letter %}
+                                        <li class="white">
+                                            <a class="waves-effect" id="wordHover" href="../word/{{ w.word }}">- {{ w.word }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
 
 {% endblock %}

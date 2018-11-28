@@ -1,0 +1,38 @@
+#lettreMaj
+{
+    color: orange;
+    font-weight: bold;
+}
+
+#wordHover
+{
+    color: blueviolet;
+}
+
+#wordHover:hover
+{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#wordHover:active
+{
+    text-decoration: underline;
+    font-weight: bold;
+    color:orange;
+}
+
+#wordHover:visited
+{
+    color:grey;
+}
+
+#material-icons_arrow_drop_down_2
+{
+    color: black;
+}
+
+#lettreMaj:hover
+{
+    background-color:#F0E0BB;
+}
