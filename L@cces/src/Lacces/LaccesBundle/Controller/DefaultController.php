@@ -54,4 +54,14 @@ class DefaultController extends Controller
     {
         return $this->render('@Lacces/SearchBarre/searchBarre.html.twig');
     }
+
+    public function signeurFrAction()
+    {
+        return $this->render('@Lacces/Signeurs/signeurFr.html.twig');
+    }
+
+    public function signeurEnAction()
+    {
+        return $this->render('@Lacces/Signeurs/signeurEn.html.twig');
+    }
 }

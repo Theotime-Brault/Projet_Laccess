@@ -3,6 +3,16 @@ lacces_homepage:
     defaults:
         _controller: LaccesBundle:Default:index
 
+lacces_signeur_fr:
+    path:     /signeurFr
+    defaults:
+        _controller: LaccesBundle:Default:signeurFr
+
+lacces_signeur_en:
+    path:     /signeurEn
+    defaults:
+        _controller: LaccesBundle:Default:signeurEn
+
 lacces_word:
     path:     /{word}
     defaults:
