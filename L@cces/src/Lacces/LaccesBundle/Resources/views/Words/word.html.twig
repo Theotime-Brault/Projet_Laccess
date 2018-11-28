@@ -9,7 +9,18 @@
     <main>
         <div class="container">
             <section class="word">
-                <div class="row center-align">
+                <div id="#content">
+                <div id="icon-search" >
+                    <a class="slide btn-floating btn-large waves-effect grey lighten-3 " href="#">
+                        <i class="material-icons">search</i>
+                    </a>
+                </div>
+                <div id="search-box" class="">
+                    {{ render(controller("LaccesBundle:Default:searchBarre")) }}
+                </div>
+                </div>
+
+                <div class="row">
                     <div id="row-box">
                         <div class="word-box">
                             <div class="center-align word-translate">
@@ -23,14 +34,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="icon-search" >
-                    <a class="slide btn-floating btn-large waves-effect grey lighten-3 " href="#">
-                        <i class="material-icons">search</i>
-                    </a>
-                </div>
-                <div id="search-box" class="">
-                    {{ render(controller("LaccesBundle:Default:searchBarre")) }}
-                </div>
+
             </section>
 
             <section class="video">
@@ -41,13 +45,13 @@
                     <embed src="{{ word.videoLink }}" allowfullscreen="true" width="425" height="344">
 
                     <iframe width="425" height="344" src="{{ word.videoLink }}" frameborder="0" allowfullscreen></iframe>
-                    -->
+                    -
                     <iframe width="560" height="315" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
                 <div class="col s12 center-align">
                     <iframe width="560" height="315" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                --></div>
             </section>
         </div>
     </main>

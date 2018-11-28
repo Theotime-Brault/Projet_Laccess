@@ -10,7 +10,6 @@ $(document).ready(function(){
             $(".word-box").css("visibility", "hidden");
         }
         else {
-            $("#search-on").css("visibility", "hidden");
             $(".word-box").css("visibility", "visible");
         };
     });
