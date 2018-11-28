@@ -17,8 +17,8 @@ class DefaultController extends Controller
     {
         $i = 0;
         $em = $this->getDoctrine()->getManager();
-        $wordsEnObj = $em->getRepository('LaccesBundle:wordEn')->findAll();
-        $wordsFrObj = $em->getRepository('LaccesBundle:wordFr')->findAll();
+        $wordsEnObj = $em->getRepository('LaccesBundle:wordEn')->findByPopularity();
+        $wordsFrObj = $em->getRepository('LaccesBundle:wordFr')->findByPopularity();
 
         return $this->render('@Lacces/Default/index.html.twig', [
           'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,

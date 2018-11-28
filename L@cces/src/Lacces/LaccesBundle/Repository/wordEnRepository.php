@@ -18,10 +18,17 @@ class wordEnRepository extends \Doctrine\ORM\EntityRepository
     ->getOneOrNullResult();
   }
 
-  public function findAll (){
+  public function findByPopularity (){
     return $this->createQueryBuilder('c')
     ->orderBy('c.popularity', 'DESC')
     ->addOrderBy('c.word', 'ASC')
+    ->getQuery()
+    ->getResult();
+  }
+
+  public function findAll(){
+    return $this->createQueryBuilder('c')
+    ->orderBy('c.word', 'ASC')
     ->getQuery()
     ->getResult();
   }
