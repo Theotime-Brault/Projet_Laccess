@@ -7,4 +7,24 @@
 
 {% block body %}
 
+    <ul class="collapsible collapsible-accordion">
+        {% for letter in 'a'..'z' %}
+        <li class="bold">
+            <a class="collapsible-header waves-effect">{{ letter|upper }}<i class="material-icons right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+                <ul>
+                    {% for w in wordEn %}
+                        {% if w.word|first == letter %}
+                            <li class="white">
+                                <a class="waves-effect" href="{{ asset('') }}">{{ w.word }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+
 {% endblock %}

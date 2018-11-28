@@ -62,6 +62,12 @@ class DefaultController extends Controller
 
     public function signeurEnAction()
     {
-        return $this->render('@Lacces/Signeurs/signeurEn.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $wordsEnObj = $em->getRepository('LaccesBundle:wordEn')->findAll();
+
+        return $this->render('@Lacces/Signeurs/signeurEn.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'wordEn' => $wordsEnObj,
+        ]);
     }
 }
