@@ -26,28 +26,40 @@ class DefaultController extends Controller
           'wordFr' => $wordsFrObj,
         ]);
     }
-/*
-    public function wordAction($word)
+
+    public function wordAction($word, $langue)
     {
-        return $this->render('@Lacces/Words/word.html.twig', array('word' => $word));
-    }*/
+        $em = $this->getDoctrine()->getManager();
 
-    public function wordAction($word)
-    {
-        $repository = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('LaccesBundle:wordFr');
+        if($langue == "fr"){
+          $objWord = $em->getRepository('LaccesBundle:wordFr')->findOneBy(array('word' => $word));
+          $objWordTrad = $em->getRepository('LaccesBundle:wordEn')
+          ->findOneBy(array(
+              'id' => $em
+                      ->getRepository('LaccesBundle:traductionFrEn')
+                      ->findIdEnByIdFr($objWord->getId())
+          ));
+        }else if($langue == "en"){
+          $objWord = $em->getRepository('LaccesBundle:wordEn')->findOneBy(array('word' => $word));
+          $objWordTrad = $em->getRepository('LaccesBundle:wordFr')
+          ->findOneBy(array(
+            'id' => $em
+                    ->getRepository('LaccesBundle:traductionFrEn')
+                    ->findIdFrByIdEn($objWord->getId())
+            ));
+        }else{
+          $this->redirectToRoute('');
+        }
 
-        $response = $repository->findOneBy(array(
-            'word' => $word));
-
-        if (null === $response)
+        if (null === $objWordTrad)
         {
             throw new NotFoundHttpException("Le mot " . $word . " n'existe pas.");
         }
 
         return $this->render('@Lacces/Words/word.html.twig', array(
-            'word' => $response));
+            'word' => $objWord,
+            'wordTrad' => $objWordTrad
+          ));
     }
 
     public function searchBarreAction()

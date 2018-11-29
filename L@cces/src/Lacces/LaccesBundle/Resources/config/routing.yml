@@ -14,6 +14,6 @@ lacces_signeur_en:
         _controller: LaccesBundle:Default:signaireEn
 
 lacces_word:
-    path:     /word/{word}
+    path:     /word/{langue}/{word}
     defaults:
         _controller: LaccesBundle:Default:word
