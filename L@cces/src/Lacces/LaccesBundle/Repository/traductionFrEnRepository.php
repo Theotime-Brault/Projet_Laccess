@@ -14,14 +14,18 @@ class traductionFrEnRepository extends \Doctrine\ORM\EntityRepository
     return $this->createQueryBuilder('c')
     ->where('c.idEn = :en')
     ->setParameter('en', $id)
+    ->leftJoin('c.idFr', 'id')
+    ->addSelect('id')
     ->getQuery()
     ->getOneOrNullResult();
   }
 
   public function findIdEnByIdFr($id){
     return $this->createQueryBuilder('c')
-    ->where('c.idFr = :en')
-    ->setParameter('en', $id)
+    ->where('c.idFr = :fr')
+    ->setParameter('fr', $id)
+    ->leftJoin('c.idEn', 'id')
+    ->addSelect('id')
     ->getQuery()
     ->getOneOrNullResult();
   }
