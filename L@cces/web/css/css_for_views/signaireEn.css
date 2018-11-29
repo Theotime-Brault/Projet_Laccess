@@ -2,23 +2,32 @@
 {
     color: orange;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
-#wordHover
+#word
 {
     color: black;
+    transition-duration: 0.5s;
 }
 
-#wordHover:hover
+.flow-text
 {
+    font-size: 1.3rem
+}
+
+#word:hover
+{
+    transition-duration: 0.5s;
     font-weight: bold;
+    font-size: 1.7rem;
 }
 
-#wordHover:active
+#word:active
 {
-    text-decoration: underline;
     font-weight: bold;
     color:orange;
+    transition-duration: 0.05s;
 }
 
 #material-icons_arrow_drop_down
@@ -33,4 +42,3 @@
 {
     background-color:#F0E0BB;
 }
-
