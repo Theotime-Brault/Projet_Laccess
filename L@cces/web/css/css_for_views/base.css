@@ -26,30 +26,14 @@ body
     border-bottom: 1px solid #757575;
     background-color: #ffffff;
 }
-/*
-.collapsible-header a:active
-{
-    -webkit-animation: arrowRotate 2s infinite;
-    -o-animation: arrowRotate 2s infinite;
-    animation: arrowRotate 2s infiniten;
-}
-
-@keyframes arrowRotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(90deg);}
-}*/
-
 
 .nav-wrapper
 {
-    width: 100%;
+    width:100%;
     line-height: 64px;
     display: flex;
-
     z-index: 5000;
 }
-
-
 
 @media (min-width: 768px){
 
