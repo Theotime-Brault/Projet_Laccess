@@ -60,15 +60,23 @@ a .material-icons
 {
     width: 0%;
     opacity: 0;
-    right: 10%;
+    right: 20%;
     transition: all .75s;
     position: absolute;
 }
 
 #search-box.show
 {
-    width: 90%;
+    width: 80%;
     opacity: 1;
     z-index: 100;
     position: absolute;
+}
+
+@media (max-width: 602px)
+{
+    #search-box.show
+    {
+        width: 80%;
+    }
 }
