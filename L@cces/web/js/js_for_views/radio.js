@@ -15,12 +15,12 @@ $(document).ready(function(){
   function checked(){
     if($("#btnEn").is(":checked")){
       $("#imgEn").css("border-color", "#f4a733");
-      $("#imgFr").css("border-color", "black");
+      $("#imgFr").css("border-color", "white");
     };
 
     if($("#btnFr").is(":checked")){
       $("#imgFr").css("border-color", "#f4a733");
-      $("#imgEn").css("border-color", "black");
+      $("#imgEn").css("border-color", "white");
     };
   }
 });

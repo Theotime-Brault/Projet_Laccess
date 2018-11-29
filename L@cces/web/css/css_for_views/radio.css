@@ -1,15 +1,15 @@
 #imgEn{
   border-radius: 150px;
-  width: 50%;
-  height: 50%;
-  border: solid black 2px;
+  width: 40%;
+  height: 40%;
+  border: solid white 2px;
   padding: 6%;
 }
 
 #imgFr{
   border-radius: 150px;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   border: solid black 2px;
   padding: 6%;
 }
@@ -20,5 +20,5 @@
 }
 
 #radiobtn{
-  visibility: hidden;
+  visibility: hidden !important;
 }
