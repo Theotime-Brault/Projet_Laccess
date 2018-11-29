@@ -84,10 +84,16 @@
     }
 }
 
-.video
-{
+@media (max-width: 602px) {
+    .video {
+        background-color: red;
+        min-height: 50vh;
+    }
+}
+
+.video {
     background-color: red;
-    min-height: 100vh;
+    min-height: 70vh;
 }
 
 .main-container
