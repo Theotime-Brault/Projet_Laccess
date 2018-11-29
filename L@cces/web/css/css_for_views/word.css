@@ -119,18 +119,15 @@
 .container-video-over
 {
     background-color: #0f9d58;
-
     width: 70%;
     height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    margin: auto;
+    top:0;
 }
 
 .btn-play
 {
-
-
     margin: auto;
 }
 
