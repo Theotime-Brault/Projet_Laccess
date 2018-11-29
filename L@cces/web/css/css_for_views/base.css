@@ -109,5 +109,10 @@ nav .brand-logo
 section
 {
     margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
+}
+
+p
+{
+    margin: 0;
 }
