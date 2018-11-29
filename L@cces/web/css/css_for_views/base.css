@@ -91,3 +91,17 @@ nav .brand-logo
     display: flex;
     align-items: center;
 }
+
+#liImg
+{
+    position: relative;
+}
+
+#imgEntest
+{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
