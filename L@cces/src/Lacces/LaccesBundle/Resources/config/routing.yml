@@ -17,3 +17,5 @@ lacces_word:
     path:     /word/{langue}/{word}
     defaults:
         _controller: LaccesBundle:Default:word
+    requirements:
+      langue: en|fr
