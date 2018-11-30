@@ -82,4 +82,9 @@ class DefaultController extends Controller
             'wordEn' => $wordsEnObj,
         ]);
     }
+
+    public function contactAction()
+    {
+        return $this->render('@Lacces/Contact/contact.html.twig');
+    }
 }
