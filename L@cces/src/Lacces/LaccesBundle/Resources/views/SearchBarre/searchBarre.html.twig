@@ -1,8 +1,22 @@
-<form>
+<form method="POST">
     <div id="search-on">
         <div class="input-field ui-widget">
             <input class="search" id="search-barre" placeholder="Rechercher un mot" />
-            <button id="btnSearch" type="submit" class="btn"><i class="material-icons">search</i></button>
+            <a id="btnSearch" type="submit" class="btn"><i class="material-icons">search</i></a>
         </div>
     </div>
 </form>
+<script>
+
+  $('#btnSearch').click(function (){
+     var  s = $('#search-barre').val();
+     if(s != ""){
+       if($("#btnFr").is(":checked")){
+         var l = "fr";
+       }else{
+         var l = "en";
+       }
+       $('#btnSearch').attr('href', "/word/"+l+"/"+s);
+     }
+  })
+</script>
