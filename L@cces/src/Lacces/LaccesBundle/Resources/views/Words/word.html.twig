@@ -9,34 +9,31 @@
     <main>
         <div class="container">
             <section class="word">
-                <div id="#content">
-                    <div id="icon-search" >
-                        <p>
-                            <a class="slide btn-floating btn-large waves-effect" href="#">
-                                <i class="material-icons" id="material-icons-clear">clear</i>
-                                <i class="material-icons" id="material-icons-search">search</i>
+                <div id="icon-search" >
+                    <p>
+                        <a class="slide btn-floating btn-large waves-effect" href="#">
+                            <i class="material-icons" id="material-icons-clear">clear</i>
+                            <i class="material-icons" id="material-icons-search">search</i>
 
-                            </a>
-                        </p>
-                    </div>
-                    <div id="search-box" class="">
-                        <p>
-                            {{ render(controller("LaccesBundle:Default:searchBarre")) }}
-                        </p>
-                    </div>
+                        </a>
+                    </p>
+                </div>
+                <div id="search-box" class="">
+                    <p>
+                        {{ render(controller("LaccesBundle:Default:searchBarre")) }}
+                    </p>
+                </div>
 
-
-                    <div class="row">
-                        <div id="row-box">
-                            <div class="word-box">
-                                <div class="center-align word-translate">
-                                    <p>
-                                        <strong>{{ word.word }}</strong>
-                                    </p>
-                                    <p>
-                                        {{ wordTrad.word }}
-                                    </p>
-                                </div>
+                <div class="row">
+                    <div id="row-box">
+                        <div class="word-box">
+                            <div class="center-align word-translate">
+                                <p>
+                                    <strong>{{ word.word }}</strong>
+                                </p>
+                                <p>
+                                    {{ wordTrad.word }}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -64,14 +61,14 @@
                         <div class="container-video center">
                             <iframe width="" height="" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <a>
+                        <a href="">
                             <div class="row center">
                                 <p>{{ word.contextSentence }}</p>
                             </div>
                         </a>
-                        <a>
+                        <a href="">
                             <div class="container-video-over">
-                                <a class="btn-floating btn-large waves-effect btn-play" href="#">
+                                <a class="btn-floating btn-large waves-effect btn-play" href="">
                                     <i class="material-icons">play_arrow</i>
                                 </a>
                             </div>
@@ -79,18 +76,18 @@
                     </div>
 
                     <div class="container-video2">
-                        <a>
+                        <a href="">
                             <div class="container-video center">
                                 <iframe width="" height="" src="{{ wordTrad.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </a>
-                        <a>
+                        <a href="">
                             <div class="row center">
                                 <p>{{ wordTrad.contextSentence }}</p>
                             </div>
                         </a>
                         <div class="container-video-over">
-                            <a class="btn-floating btn-large waves-effect btn-play" href="#">
+                            <a class="btn-floating btn-large waves-effect btn-play" href="">
                                 <i class="material-icons">play_arrow</i>
                             </a>
                         </div>

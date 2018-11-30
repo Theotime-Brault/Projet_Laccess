@@ -3,12 +3,6 @@
     position: relative;
 }
 
-#content
-{
-    display: flex;
-    align-items: center;
-}
-
 #row-box
 {
 
