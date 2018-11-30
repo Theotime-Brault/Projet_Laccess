@@ -87,4 +87,14 @@ class DefaultController extends Controller
     {
         return $this->render('@Lacces/Contact/contact.html.twig');
     }
+
+    public function mentionsAction()
+    {
+        return $this->render('@Lacces/Mentions_legales/mentions.html.twig');
+    }
+
+    public function faqAction()
+    {
+        return $this->render('@Lacces/FAQ/faq.html.twig');
+    }
 }
