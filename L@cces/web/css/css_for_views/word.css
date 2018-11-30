@@ -120,6 +120,12 @@
     top:0;
 }
 
+.container-video-over.onclick
+{
+    background-color: yellow;
+    height: 100%;
+}
+
 .btn-play
 {
     margin: auto;

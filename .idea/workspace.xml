@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,22 +66,22 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Word" value="100" />
-          <entry key="css" value="4229" />
-          <entry key="js" value="674" />
+          <entry key="css" value="4251" />
+          <entry key="js" value="826" />
           <entry key="php" value="1468" />
-          <entry key="twig" value="5298" />
-          <entry key="txt" value="140" />
+          <entry key="twig" value="5320" />
+          <entry key="txt" value="145" />
           <entry key="yml" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="4229" />
+          <entry key="CSS" value="4251" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="677" />
+          <entry key="JavaScript" value="829" />
           <entry key="PHP" value="1468" />
-          <entry key="PLAIN_TEXT" value="140" />
-          <entry key="Twig" value="5394" />
+          <entry key="PLAIN_TEXT" value="145" />
+          <entry key="Twig" value="5416" />
           <entry key="YAML" value="110" />
         </counts>
       </usages-collector>
@@ -127,26 +128,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1887">
-              <caret line="111" column="22" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+            <state relative-caret-position="670">
+              <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="85" column="28" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
+            <state relative-caret-position="357">
+              <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -154,8 +155,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2074">
-              <caret line="122" column="14" selection-start-line="122" selection-start-column="14" selection-end-line="122" selection-end-column="14" />
+            <state relative-caret-position="585">
+              <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -198,11 +199,11 @@
         <option value="$PROJECT_DIR$/L@cces/web/js/js_for_views/base.js" />
         <option value="$PROJECT_DIR$/L@cces/web/app_dev.php" />
         <option value="$PROJECT_DIR$/L@cces/web/.htaccess" />
-        <option value="$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js" />
         <option value="$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/L@cces/web/css/css_for_views/base.css" />
-        <option value="$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css" />
         <option value="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" />
+        <option value="$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css" />
+        <option value="$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js" />
       </list>
     </option>
   </component>
@@ -473,7 +474,7 @@
       <workItem from="1543394960233" duration="7602000" />
       <workItem from="1543408529062" duration="9903000" />
       <workItem from="1543476836682" duration="22473000" />
-      <workItem from="1543567051335" duration="318000" />
+      <workItem from="1543567051335" duration="1700000" />
     </task>
     <task id="LOCAL-00001" summary="ah!">
       <created>1542806618968</created>
@@ -706,11 +707,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543504577346</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="changement word">
+      <created>1543567398578</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1543567398578</updated>
+    </task>
+    <task id="LOCAL-00035" summary="changement word">
+      <created>1543567713058</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1543567713058</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124993000" />
+    <option name="totallyTimeSpent" value="126375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -779,9 +794,9 @@
     <MESSAGE value="salut kev9" />
     <MESSAGE value="salut kev10" />
     <MESSAGE value="changement base" />
-    <MESSAGE value="changement word" />
     <MESSAGE value="changement" />
-    <option name="LAST_COMMIT_MESSAGE" value="changement" />
+    <MESSAGE value="changement word" />
+    <option name="LAST_COMMIT_MESSAGE" value="changement word" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/L@cces/web/js/menu.js" />
@@ -910,29 +925,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
-          <caret line="111" column="22" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="122" column="14" selection-start-line="122" selection-start-column="14" selection-end-line="122" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        <state relative-caret-position="670">
+          <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="85" column="28" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
+        <state relative-caret-position="357">
+          <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
         </state>
       </provider>
     </entry>

@@ -4,6 +4,7 @@ $(document).ready(function(){
     });
 
 
+    // function search
     $('.slide').on('click', function (){
         if($("#search-on").css("visibility") == "hidden" || $(".word-box").css("visibility") == "visible"){
             $("#search-on").css("visibility", "visible");
@@ -16,5 +17,18 @@ $(document).ready(function(){
             $("#material-icons-search").css("visibility", "visible");
             $("#material-icons-clear").css("visibility", "hidden");
         };
+    });
+/*
+    $('.container-video-over').on('click', function(){
+        $(".container-video-over").toggleClass(".onclick");
+    });*/
+
+    $('.container-video-over').on('click', function(){
+        if($(".container-video-over").css("height") != "100%") {
+            $(".container-video-over").css("height", "100%");
+        }
+        else {
+            $(".container-video-over").css("height", "25%");
+        }
     });
 });
