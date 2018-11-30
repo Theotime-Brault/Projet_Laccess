@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="{{ asset('css/css_for_views/word.css') }}">
 {% endblock %}
 
+{% block title %}
+    Mot
+{% endblock %}
+
 {% block body %}
 
     <main>
@@ -39,7 +43,9 @@
                     </div>
                 </div>
             </section>
+        </div>
 
+        <div class="container" id="container-video">
             <section class="video"><!--
                 <div class="col s12 m12 x5 xl5 center">
                     <div class="container-video center">
@@ -62,12 +68,13 @@
                             <iframe width="" height="" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <a href="">
-                            <div class="row center">
+                            <div class="row center contextSentence">
                                 <p>{{ word.contextSentence }}</p>
                             </div>
                         </a>
+
                         <a href="">
-                            <div class="container-video-over">
+                            <div class="container-video-over1">
                                 <a class="btn-floating btn-large waves-effect btn-play" href="">
                                     <i class="material-icons">play_arrow</i>
                                 </a>
@@ -79,14 +86,13 @@
                         <div class="container-video center">
                             <iframe width="" height="" src="{{ wordTrad.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        </a>
                         <a href="">
-                            <div class="row center">
+                            <div class="row center contextSentence">
                                 <p>{{ wordTrad.contextSentence }}</p>
                             </div>
                         </a>
                         <a href="">
-                            <div class="container-video-over">
+                            <div class="container-video-over2">
                                 <a class="btn-floating btn-large waves-effect btn-play" href="">
                                     <i class="material-icons">play_arrow</i>
                                 </a>
