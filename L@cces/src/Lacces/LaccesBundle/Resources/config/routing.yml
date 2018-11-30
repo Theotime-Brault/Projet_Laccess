@@ -19,3 +19,8 @@ lacces_word:
         _controller: LaccesBundle:Default:word
     requirements:
       langue: en|fr
+
+lacces_contact:
+    path:     /contact
+    defaults:
+        _controller: LaccesBundle:Default:contact
