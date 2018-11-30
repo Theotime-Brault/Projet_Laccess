@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}L@cces - Accueil{% endblock %}</title>
+        <title>L@cces - {% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="{{ asset('css/jquery_materialize/materialize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base.css') }}">
@@ -11,6 +11,8 @@
         {% block stylesheets %}
 
         {% endblock %}
+
+        <script src="{{ asset('js/jquery_materialize/jquery.js') }}"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
@@ -70,7 +72,6 @@
         {% block body %}{% endblock %}
     </body>
 
-    <script src="{{ asset('js/jquery_materialize/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>
     <script src="{{ asset('js/js_for_views/base.js') }}"></script>
     <script src="{{ asset('js/jquery_materialize/jquery-ui.min.js') }}"></script>
