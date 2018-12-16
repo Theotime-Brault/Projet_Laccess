@@ -34,6 +34,31 @@ body
     display: flex;
 }
 
+nav
+{
+    padding: 8px;
+}
+
+.btn-menu a
+{
+    margin: 0 !important;
+    padding: 0 !important;
+
+}
+
+.btn-menu
+{
+    margin: 0 4px;
+    padding: 12px;
+    border-radius: 50%;
+    width: 48px !important;
+}
+
+.btn-menu:hover
+{
+    background-color: #eeeeee;
+}
+
 .navbar-fixed
 {
     z-index: 5000;
@@ -72,6 +97,20 @@ body
     width: 100%;
     display: flex;
     align-items: center;
+}
+
+.btn-menu
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.btn-menu .material-icons
+{
+    position: absolute;
 }
 
 #material-icons_arrow_drop_down

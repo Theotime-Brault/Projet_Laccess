@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6df9506f-fd24-407d-a9b8-05398b69fa3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L@cces/web/css/css_for_views/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/web/css/css_for_views/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L@cces/web/js/js_for_views/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/web/js/js_for_views/base.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +22,7 @@
     <session id="-1476248422">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.27" value="2" />
@@ -30,35 +32,36 @@
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Word" value="2" />
-          <entry key="css" value="11" />
+          <entry key="css" value="13" />
           <entry key="gitignore" value="1" />
           <entry key="htaccess" value="1" />
           <entry key="js" value="11" />
           <entry key="json" value="1" />
           <entry key="php" value="12" />
           <entry key="png" value="1" />
-          <entry key="twig" value="7" />
+          <entry key="twig" value="9" />
           <entry key="word" value="1" />
           <entry key="yml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="11" />
+          <entry key="CSS" value="13" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="11" />
           <entry key="PHP" value="12" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Twig" value="10" />
+          <entry key="Twig" value="12" />
           <entry key="YAML" value="5" />
           <entry key="htaccess" value="1" />
         </counts>
@@ -66,22 +69,22 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Word" value="100" />
-          <entry key="css" value="4251" />
-          <entry key="js" value="826" />
+          <entry key="css" value="4912" />
+          <entry key="js" value="1709" />
           <entry key="php" value="1468" />
-          <entry key="twig" value="5320" />
+          <entry key="twig" value="5626" />
           <entry key="txt" value="145" />
           <entry key="yml" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="4251" />
+          <entry key="CSS" value="4912" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="829" />
+          <entry key="JavaScript" value="1712" />
           <entry key="PHP" value="1468" />
           <entry key="PLAIN_TEXT" value="145" />
-          <entry key="Twig" value="5416" />
+          <entry key="Twig" value="5722" />
           <entry key="YAML" value="110" />
         </counts>
       </usages-collector>
@@ -92,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="108" selection-start-line="19" selection-start-column="108" selection-end-line="19" selection-end-column="108" />
+            <state relative-caret-position="357">
+              <caret line="21" column="108" selection-start-line="21" selection-start-column="108" selection-end-line="21" selection-end-column="108" />
             </state>
           </provider>
         </entry>
@@ -101,44 +104,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/SearchBarre/searchBarre.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+            <state relative-caret-position="408">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="55" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/base.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/base.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+            <state relative-caret-position="425">
+              <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -146,17 +122,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
+            <state relative-caret-position="255">
+              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
+            <state relative-caret-position="34">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -174,6 +150,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>search-on</find>
+      <find>row</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,14 +173,14 @@
         <option value="$PROJECT_DIR$/L@cces/web/css/radio.css" />
         <option value="$PROJECT_DIR$/L@cces/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/L@cces/web/js/js_for_views/menu.js" />
-        <option value="$PROJECT_DIR$/L@cces/web/js/js_for_views/base.js" />
         <option value="$PROJECT_DIR$/L@cces/web/app_dev.php" />
         <option value="$PROJECT_DIR$/L@cces/web/.htaccess" />
-        <option value="$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js" />
+        <option value="$PROJECT_DIR$/L@cces/web/js/js_for_views/base.js" />
         <option value="$PROJECT_DIR$/L@cces/web/css/css_for_views/base.css" />
+        <option value="$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig" />
         <option value="$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css" />
-        <option value="$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js" />
       </list>
     </option>
   </component>
@@ -259,9 +236,8 @@
       <path value="$PROJECT_DIR$/L@cces/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="137" />
-    <option name="y" value="-9" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -474,7 +450,8 @@
       <workItem from="1543394960233" duration="7602000" />
       <workItem from="1543408529062" duration="9903000" />
       <workItem from="1543476836682" duration="22473000" />
-      <workItem from="1543567051335" duration="1700000" />
+      <workItem from="1543567051335" duration="8627000" />
+      <workItem from="1544963788322" duration="7326000" />
     </task>
     <task id="LOCAL-00001" summary="ah!">
       <created>1542806618968</created>
@@ -721,17 +698,31 @@
       <option name="project" value="LOCAL" />
       <updated>1543567713058</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="changement word">
+      <created>1543568849322</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1543568849322</updated>
+    </task>
+    <task id="LOCAL-00037" summary="changement word">
+      <created>1543575341532</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1543575341532</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126375000" />
+    <option name="totallyTimeSpent" value="140628000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11940298" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24726477" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -752,7 +743,7 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.118336886" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11940298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -897,57 +888,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="108" selection-start-line="19" selection-start-column="108" selection-end-line="19" selection-end-column="108" />
+        <state relative-caret-position="357">
+          <caret line="21" column="108" selection-start-line="21" selection-start-column="108" selection-end-line="21" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/searchBarre.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/SearchBarre/searchBarre.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="55" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
+        <state relative-caret-position="425">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/base.js">
+    <entry file="file://$PROJECT_DIR$/L@cces/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        <state relative-caret-position="425">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+        <state relative-caret-position="550">
+          <caret line="131" column="1" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Words/word.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
+        <state relative-caret-position="255">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+        <state relative-caret-position="34">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
