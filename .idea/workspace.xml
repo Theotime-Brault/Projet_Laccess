@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6df9506f-fd24-407d-a9b8-05398b69fa3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L@cces/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signaires/signaireEn.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signaires/signaireEn.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/L@cces/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/L@cces/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,11 +93,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="signaireEn.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="signaireEn.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signaires/signaireEn.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="578">
+              <caret line="34" selection-start-line="34" selection-end-line="34" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/L@cces/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -147,6 +155,7 @@
         <option value="$PROJECT_DIR$/L@cces/web/css/css_for_views/word.css" />
         <option value="$PROJECT_DIR$/L@cces/web/js/js_for_views/word.js" />
         <option value="$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signaires/signaireEn.html.twig" />
+        <option value="$PROJECT_DIR$/L@cces/.gitignore" />
       </list>
     </option>
   </component>
@@ -254,92 +263,20 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Lacces" type="462c0819:PsiDirectoryNode" />
               <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Projet_Laccess" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projet_Laccess" type="462c0819:PsiDirectoryNode" />
               <item name="L@cces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lacces" type="462c0819:PsiDirectoryNode" />
-              <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Projet_Laccess" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projet_Laccess" type="462c0819:PsiDirectoryNode" />
               <item name="L@cces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lacces" type="462c0819:PsiDirectoryNode" />
-              <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projet_Laccess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet_Laccess" type="462c0819:PsiDirectoryNode" />
-              <item name="L@cces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lacces" type="462c0819:PsiDirectoryNode" />
-              <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Contact" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projet_Laccess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet_Laccess" type="462c0819:PsiDirectoryNode" />
-              <item name="L@cces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lacces" type="462c0819:PsiDirectoryNode" />
-              <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Default" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projet_Laccess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet_Laccess" type="462c0819:PsiDirectoryNode" />
-              <item name="L@cces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lacces" type="462c0819:PsiDirectoryNode" />
-              <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="FAQ" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projet_Laccess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet_Laccess" type="462c0819:PsiDirectoryNode" />
-              <item name="L@cces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lacces" type="462c0819:PsiDirectoryNode" />
-              <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Mentions_legales" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projet_Laccess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet_Laccess" type="462c0819:PsiDirectoryNode" />
-              <item name="L@cces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lacces" type="462c0819:PsiDirectoryNode" />
-              <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="SearchBarre" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projet_Laccess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projet_Laccess" type="462c0819:PsiDirectoryNode" />
-              <item name="L@cces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Lacces" type="462c0819:PsiDirectoryNode" />
-              <item name="LaccesBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Signaires" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="pictures" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -400,7 +337,7 @@
       <workItem from="1543844271547" duration="8000" />
       <workItem from="1543847608731" duration="18000" />
       <workItem from="1543847742963" duration="713000" />
-      <workItem from="1545034352024" duration="2557000" />
+      <workItem from="1545034352024" duration="3280000" />
     </task>
     <task id="LOCAL-00001" summary="ah!">
       <created>1542806618968</created>
@@ -651,7 +588,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131067000" />
+    <option name="totallyTimeSpent" value="131790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -834,13 +771,6 @@
     <entry file="file://$PROJECT_DIR$/L@cces/web/css/index.css" />
     <entry file="file://$PROJECT_DIR$/L@cces/web/js/radio.js" />
     <entry file="file://$PROJECT_DIR$/L@cces/web/css/word.css" />
-    <entry file="file://$PROJECT_DIR$/L@cces/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -947,16 +877,6 @@
     <entry file="file://$PROJECT_DIR$/L@cces/app/config/parameters.yml.dist">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="41" />
-          <folding>
-            <element signature="e#50#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -985,9 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signaires/signaireFr.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Entity/traductionFrEn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -995,10 +912,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-415">
+          <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <folding>
+            <element signature="e#50#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signaires/signaireFr.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/L@cces/src/Lacces/LaccesBundle/Resources/views/Signaires/signaireEn.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        <state relative-caret-position="578">
+          <caret line="34" selection-start-line="34" selection-end-line="34" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/L@cces/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
         </state>
       </provider>
     </entry>
