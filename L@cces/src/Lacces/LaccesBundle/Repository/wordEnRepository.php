@@ -10,7 +10,7 @@ namespace Lacces\LaccesBundle\Repository;
  */
 class wordEnRepository extends \Doctrine\ORM\EntityRepository
 {
-  public function getWordEnByWord($w){
+  public function findWordEnByWord($w){
     return $this->createQueryBuilder('c')
     ->where('c.word = :word')
     ->setParameter('word', $w)

@@ -32,33 +32,20 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         if($langue == "fr"){
-          $objWord = $em->getRepository('LaccesBundle:wordFr')->findOneBy(array('word' => $word));
-          $objWordTrad = $em->getRepository('LaccesBundle:wordEn')
-          ->findOneBy(array(
-              'id' => $em
-                      ->getRepository('LaccesBundle:traductionFrEn')
-                      ->findIdEnByIdFr($objWord->getId())
-          ));
+          $objWord = $em->getRepository('LaccesBundle:wordFr')->findWordEnByWord($word);
         }else if($langue == "en"){
-          $objWord = $em->getRepository('LaccesBundle:wordEn')->findOneBy(array('word' => $word));
-          $objWordTrad = $em->getRepository('LaccesBundle:wordFr')
-          ->findOneBy(array(
-            'id' => $em
-                    ->getRepository('LaccesBundle:traductionFrEn')
-                    ->findIdFrByIdEn($objWord->getId())
-            ));
+          $objWord = $em->getRepository('LaccesBundle:wordEn')->findWordFrByWord($word);
         }else{
           $this->redirectToRoute('');
         }
 
-        if (null === $objWordTrad)
-        {
-            throw new NotFoundHttpException("Le mot " . $word . " n'existe pas.");
+        if(!$objWord){
+          throw $this->createNotFoundException('Cette page n éxiste pas');
         }
 
         return $this->render('@Lacces/Words/word.html.twig', array(
             'word' => $objWord,
-            'wordTrad' => $objWordTrad
+            'langue' => $langue,
           ));
     }
 
