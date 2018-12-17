@@ -76,6 +76,20 @@ class wordFr
     }
 
     /**
+    * @return PersistentCollection
+    */
+    public function getWordEns(){
+      return $this->wordEns;
+    }
+
+    /**
+     * @param PersistentCollection $wordEns
+     */
+    public function setWordEns(PersistentCollection $wordEns){
+      $this->wordEns = $wordEns;
+    }
+
+    /**
      * Set word.
      *
      * @param string $word

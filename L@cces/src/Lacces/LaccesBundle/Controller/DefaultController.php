@@ -32,9 +32,9 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         if($langue == "fr"){
-          $objWord = $em->getRepository('LaccesBundle:wordFr')->findWordEnByWord($word);
+          $objWord = $em->getRepository('LaccesBundle:wordFr')->findByWord($word);
         }else if($langue == "en"){
-          $objWord = $em->getRepository('LaccesBundle:wordEn')->findWordFrByWord($word);
+          $objWord = $em->getRepository('LaccesBundle:wordEn')->findByWord($word);
         }else{
           $this->redirectToRoute('');
         }
