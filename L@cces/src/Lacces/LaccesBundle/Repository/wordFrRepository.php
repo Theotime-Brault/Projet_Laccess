@@ -14,6 +14,8 @@ class wordFrRepository extends \Doctrine\ORM\EntityRepository
     return $this->createQueryBuilder('c')
     ->where('c.word = :word')
     ->setParameter('word', $w)
+    ->leftJoin('c.wordEns', 'b')
+    ->addSelect('b')
     ->getQuery()
     ->getOneOrNullResult();
   }
