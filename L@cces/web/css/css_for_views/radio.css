@@ -1,17 +1,34 @@
-#imgEn, #imgFr{
+#imgEn, #imgFr
+{
   border-radius: 50%;
-  width: 40%;
-  height: 40%;
+  width: 50%;
   border: solid white 2px;
   padding: 1%;
 }
 
-
-.b-flag{
-  text-align: center;
-  margin-top: 20%;
+@media (max-width: 993px)
+{
+    #imgEn, #imgFr
+    {
+        width: 60%;
+        height: 60%;
+    }
 }
 
-#radiobtn{
-  visibility: hidden !important;
+@media (max-width: 602px)
+{
+    #imgEn, #imgFr
+    {
+        width: 70%;
+        height: 70%;
+    }
 }
+
+#radiobtn
+{
+    visibility: hidden !important;
+    height: 0;
+}
+
+
+

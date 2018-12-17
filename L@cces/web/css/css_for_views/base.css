@@ -1,6 +1,7 @@
 body
 {
     background-color: #ffffff;
+    height: 100vh;
 }
 
 
@@ -144,12 +145,12 @@ nav .brand-logo
     right: 10px;
     top: 10px;
 }
-
+/*
 section
 {
     margin-top: 2%;
     margin-bottom: 1%;
-}
+}*/
 
 p
 {
