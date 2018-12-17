@@ -40,3 +40,31 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.z-depth-2
+{
+
+}
+
+
+
+
+
+/**********************/
+
+.row-container
+{
+    padding: 5%;
+}
+
+.row-flag
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-img-flag
+{
+    width: 100%;
+    height: 100%;
+}
