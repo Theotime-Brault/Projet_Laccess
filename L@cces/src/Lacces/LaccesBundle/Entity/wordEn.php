@@ -3,6 +3,8 @@
 namespace Lacces\LaccesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
+use Doctrine\ORM\Mapping\JoinTable;
 
 /**
  * wordEn
@@ -55,6 +57,12 @@ class wordEn
      * @ORM\Column(name="popularity", type="integer")
      */
     private $popularity;
+
+    /**
+     * @var PersistentCollection
+     * @ORM\ ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordFr", mappedBy="wordEns")
+     */
+    private $wordFrs;
 
 
     /**
