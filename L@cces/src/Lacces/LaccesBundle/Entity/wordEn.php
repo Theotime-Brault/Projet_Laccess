@@ -76,6 +76,20 @@ class wordEn
     }
 
     /**
+    * @return PersistentCollection
+    */
+    public function getWordFrs(){
+      return $this->wordFrs;
+    }
+
+    /**
+     * @param PersistentCollection $wordFrs
+     */
+    public function setWordFrs(PersistentCollection $wordFrs){
+      $this->wordFrs = $wordFrs;
+    }
+
+    /**
      * Set word.
      *
      * @param string $word

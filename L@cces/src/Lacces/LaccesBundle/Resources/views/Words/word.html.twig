@@ -37,7 +37,17 @@
                                         <strong>{{ word.word }}</strong>
                                     </p>
                                     <p>
-                                        {{ wordTrad.word }}
+                                      <span>
+                                        {% if langue == "fr" %}
+                                          {% for w in word.wordEns %}
+                                            {{ w.word }}
+                                          {% endfor %}
+                                        {% else %}
+                                          {% for w in word.wordFrs %}
+                                            {{ w.word }}
+                                          {% endfor %}
+                                        {% endif %}
+                                      </span>
                                     </p>
                                 </div>
                             </div>
@@ -86,11 +96,11 @@
 
                     <div class="container-video2">
                         <div class="container-video center">
-                            <iframe width="" height="" src="{{ wordTrad.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="" height="" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <a href="">
                             <div class="row center contextSentence">
-                                <p>{{ wordTrad.contextSentence }}</p>
+                                <p>{{ word.contextSentence }}</p>
                             </div>
                         </a>
                         <a href="">
