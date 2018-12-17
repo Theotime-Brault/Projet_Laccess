@@ -3,6 +3,8 @@
 namespace Lacces\LaccesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
+use Doctrine\ORM\Mapping\JoinTable;
 
 /**
  * wordFr
@@ -57,6 +59,13 @@ class wordFr
     private $popularity;
 
     /**
+     * @var PersistentCollection
+     * @ORM\ ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordEn", inversedBy="wordFrs")
+     * @JoinTable(name="traductionFrEn")
+     */
+    private $wordEns;
+
+    /**
      * Get id.
      *
      * @return int
@@ -64,6 +73,20 @@ class wordFr
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+    * @return PersistentCollection
+    */
+    public function getWordEns(){
+      return $this->wordEns;
+    }
+
+    /**
+     * @param PersistentCollection $wordEns
+     */
+    public function setWordEns(PersistentCollection $wordEns){
+      $this->wordEns = $wordEns;
     }
 
     /**
