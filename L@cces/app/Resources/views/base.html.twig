@@ -51,13 +51,13 @@
                 </li>
                 <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
-                        <li class="bold">
+                        {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' or app.request.attributes.get('_route') == 'lacces_signaire_en' %}
+                        <li class="bold active" id="sng">
+                        {% else %}
+                        <li class="bold" id="sng">
+                            {% endif %}
                             <a class="collapsible-header waves-effect" id="collapsible-header-click">Signaires<i class="material-icons right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
-                            {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' or app.request.attributes.get('_route') == 'lacces_signaire_en' %}
-                                <div class="collapsible-body" style="display: block">
-                                    {% else %}
                                 <div class="collapsible-body">
-                                    {% endif %}
                                 <ul>
                                     {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' %}
                                     <li class="active" id="liImg">
