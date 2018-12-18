@@ -80,6 +80,22 @@ main
     width: 50%;
 }
 
+@media (max-width: 993px)
+{
+    .row-container
+    {
+        width: 60%;
+    }
+}
+
+@media (max-width: 602px)
+{
+    .row-container
+    {
+        width: 70%;
+    }
+}
+
 .container-main
 {
     display: flex;
