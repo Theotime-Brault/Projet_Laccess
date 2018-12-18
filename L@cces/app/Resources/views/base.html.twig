@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 {% if app.request.attributes.get('_route') == 'lacces_homepage' %}
-                <li class="bold active">
+                <li class="bold active active-item-menu">
                     {% else %}
                 <li class="bold">
                     {% endif %}
@@ -61,7 +61,7 @@
                                 <div class="collapsible-body">
                                 <ul>
                                     {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' %}
-                                    <li class="active" id="liImg">
+                                    <li class="active active-item-menu" id="liImg">
                                     {% else %}
                                     <li class="white" id="liImg">{#
 
@@ -72,7 +72,7 @@
                                         <a class="waves-effect" href="{{ asset('signaire/Fr') }}">Langue des signes Française</a>
                                     </li>
                                     {% if app.request.attributes.get('_route') == 'lacces_signaire_en' %}
-                                    <li class="active">
+                                    <li class="active active-item-menu">
                                     {% else %}
                                     <li class="white">
                                         {% endif %}
@@ -86,9 +86,23 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="bold">
                     <a class="waves-effect" href="#">Exercices</a>
                 </li>
+
+                {% if app.request.attributes.get('_route') != 'lacces_homepage' %}
+                    {% if app.request.attributes.get('_route') != 'lacces_contact' %}
+                        <li class="bold">
+                            <a class="waves-effect" href="{{ asset('/contact') }}">Contact</a>
+                        </li>
+                    {% endif %}
+                    {% if app.request.attributes.get('_route') != 'lacces_faq' %}
+                        <li class="bold">
+                            <a class="waves-effect" href="{{ asset('/faq') }}">FAQ</a>
+                        </li>
+                    {% endif %}
+                {% endif %}
                 <li>
                     <div class="row">
                         <div class="container-row-icons-menu">

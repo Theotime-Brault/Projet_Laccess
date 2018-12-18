@@ -257,7 +257,7 @@ p
     }
 }
 
-.active, .active>a{
+.active-item-menu, .active-item-menu>a{
     background-color: #f4a733 !important;
     color: white !important;
 }
