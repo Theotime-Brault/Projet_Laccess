@@ -27,6 +27,11 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @param $word
+     * @param $langue
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function wordAction($word, $langue)
     {
         $em = $this->getDoctrine()->getManager();
