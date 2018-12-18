@@ -159,3 +159,100 @@ p
 {
     margin: 0;
 }
+
+
+
+/***********************************************************
+************************* CSS Icons ************************
+***********************************************************/
+
+.container-row-icons-menu, .container-row-icons
+{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.container-row-icons-menu
+{
+    display: none;
+}
+
+.row-footer
+{
+    margin-bottom: 0 !important;
+    padding: 1%;
+}
+
+.container-row-icons
+{
+    width: 25%;
+}
+
+.container-icons
+{
+    color: white;
+    background-color: #757575;
+    border-radius: 50%;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-icons:hover
+{
+    background-color: #f4a733;
+}
+
+.container-icons img
+{
+    width: 28px;
+    height: 28px;
+    margin: 8px;
+}
+
+.container-row-link a:hover
+{
+    color: #f4a733;
+}
+
+.divider
+{
+    width: 98%;
+    margin: auto;
+}
+
+@media (max-width: 993px)
+{
+    .container-row-icons
+    {
+        width: 40%;
+    }
+}
+
+@media (max-width: 602px)
+{
+    .container-row-icons
+    {
+        display: none;
+    }
+
+    .container-row-icons-menu
+    {
+        display: flex;
+        visibility: visible;
+        height: 100%;
+        width: 40%;
+    }
+
+    .container-icons
+    {
+        margin: 12px;
+    }
+
+    .divider
+    {
+        display: none;
+    }
+}
