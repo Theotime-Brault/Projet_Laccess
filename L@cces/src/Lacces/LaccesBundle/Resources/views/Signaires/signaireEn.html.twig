@@ -14,8 +14,15 @@
             <ul class="collapsible collapsible-accordion">
                 {% for letter in 'a'..'z' %}
                     <li class="bold">
-                        <img href="" />
-                        <a class="collapsible-header waves-effect" id="lettreMaj">{{ letter|upper }}<i class="material-icons right material-icons_arrow_drop_down">arrow_drop_down</i></a>
+                        <a class="collapsible-header waves-effect collapsible-ASL">
+                            <div id="lettreMaj">
+                                {{ letter|upper }}
+                                <i class="material-icons material-icons_arrow_drop_down" id="fleche">arrow_drop_down</i>
+                            </div>
+                            <div>
+                                <img class="alphabet-ASL right" src="{{ asset('pictures/alphabetLS/ASL/ASL-Main-N.png') }}" />
+                            </div>
+                        </a>
                         <div class="collapsible-body">
                             <ul>
                                 {% for w in wordEn %}

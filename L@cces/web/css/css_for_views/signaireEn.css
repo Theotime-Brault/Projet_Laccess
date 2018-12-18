@@ -2,7 +2,10 @@
 {
     color: orange;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.2em;
+    display:flex;
+    align-items: center;
+    margin-left: 1%;
 }
 
 #word
@@ -33,12 +36,19 @@
 .material-icons_arrow_drop_down
 {
     color: #757575;
-    position:absolute;
-    right: 10px;
-
+    position: absolute;
+    margin-left: 3%;
 }
 
-#lettreMaj:hover
+.collapsible-ASL:hover
 {
     background-color:#F0E0BB;
 }
+
+.alphabet-ASL
+{
+    max-width: 4%;
+    display:flex;
+    align-items: center;
+}
+
