@@ -53,13 +53,13 @@
                     <ul class="collapsible collapsible-accordion">
                         <li class="bold">
                             <a class="collapsible-header waves-effect" id="collapsible-header-click">Signaires<i class="material-icons right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
-                            {% if app.request.attributes.get('_route') == 'lacces_signeur_fr' or app.request.attributes.get('_route') == 'lacces_signeur_en' %}
+                            {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' or app.request.attributes.get('_route') == 'lacces_signaire_en' %}
                                 <div class="collapsible-body" style="display: block">
                                     {% else %}
                                 <div class="collapsible-body">
                                     {% endif %}
                                 <ul>
-                                    {% if app.request.attributes.get('_route') == 'lacces_signeur_fr' %}
+                                    {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' %}
                                     <li class="active" id="liImg">
                                     {% else %}
                                     <li class="white" id="liImg">{#
@@ -70,7 +70,7 @@
                                         {% endif %}
                                         <a class="waves-effect" href="{{ asset('signaire/Fr') }}">Langue des signes Française</a>
                                     </li>
-                                    {% if app.request.attributes.get('_route') == 'lacces_signeur_en' %}
+                                    {% if app.request.attributes.get('_route') == 'lacces_signaire_en' %}
                                     <li class="active">
                                     {% else %}
                                     <li class="white">

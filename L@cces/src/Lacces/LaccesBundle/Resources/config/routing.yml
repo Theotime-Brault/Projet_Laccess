@@ -3,12 +3,12 @@ lacces_homepage:
     defaults:
         _controller: LaccesBundle:Default:index
 
-lacces_signeur_fr:
+lacces_signaire_fr:
     path:     /signaire/Fr
     defaults:
         _controller: LaccesBundle:Default:signaireFr
 
-lacces_signeur_en:
+lacces_signaire_en:
     path:     /signaire/En
     defaults:
         _controller: LaccesBundle:Default:signaireEn
