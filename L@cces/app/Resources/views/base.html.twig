@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 {% if app.request.attributes.get('_route') == 'lacces_homepage' %}
-                <li class="bold active">
+                <li class="bold active active-item-menu">
                     {% else %}
                 <li class="bold">
                     {% endif %}
@@ -61,7 +61,7 @@
                                 <div class="collapsible-body">
                                 <ul>
                                     {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' %}
-                                    <li class="active" id="liImg">
+                                    <li class="active active-item-menu" id="liImg">
                                     {% else %}
                                     <li class="white" id="liImg">{#
 
@@ -72,7 +72,7 @@
                                         <a class="waves-effect" href="{{ asset('signaire/Fr') }}">Langue des signes Française</a>
                                     </li>
                                     {% if app.request.attributes.get('_route') == 'lacces_signaire_en' %}
-                                    <li class="active">
+                                    <li class="active active-item-menu">
                                     {% else %}
                                     <li class="white">
                                         {% endif %}
