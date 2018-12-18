@@ -1,4 +1,16 @@
 #search-barre:focus
 {
-    
+
+}
+
+.container-focus
+{
+    visibility: visible;
+    display: block;
+}
+
+.container-focus-active
+{
+    visibility: hidden;
+    display: none;
 }
