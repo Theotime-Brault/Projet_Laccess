@@ -34,3 +34,4 @@ lacces_faq:
     path:     /faq
     defaults:
         _controller: LaccesBundle:Default:faq
+
