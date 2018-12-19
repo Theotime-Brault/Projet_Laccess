@@ -34,13 +34,4 @@ class wordFrRepository extends \Doctrine\ORM\EntityRepository
     ->getQuery()
     ->getResult();
   }
-
-  public function getVideoLinkByWord($w){
-    return $this->createQueryBuilder('c')
-    ->select('videoLink')
-    ->where('c.word = :word')
-    ->setParameter('word', $w)
-    ->getQuery()
-    ->getOneOrNullResult();
-  }
 }
