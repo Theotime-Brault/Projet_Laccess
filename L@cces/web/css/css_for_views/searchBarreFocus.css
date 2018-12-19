@@ -6,24 +6,8 @@
 
 .container-focus-active-search
 {
-    margin-top: 2% !important;
+    margin-top: 75px !important;
     transition-timing-function: ease-in;
-}
-
-@media (max-width: 993px)
-{
-    .container-focus-active-search
-    {
-        margin-top: 10%;
-    }
-}
-
-@media (max-width: 602px)
-{
-    .container-focus-active-search
-    {
-        margin-top: 20%;
-    }
 }
 
 .container-focus-active-main
