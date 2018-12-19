@@ -1,5 +1,12 @@
 $(document).ready(function () {
-    $('.sidenav').sidenav();
+
+    $('.sidenav').sidenav({
+        closeOnClick: true,
+        draggable: true,
+        /*isOpen: function (el) {
+            console.log("ouvert");
+        }*/
+    });
 
     $('.collapsible').collapsible();
 
