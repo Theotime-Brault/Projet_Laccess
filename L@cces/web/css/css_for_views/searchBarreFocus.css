@@ -6,9 +6,24 @@
 
 .container-focus-active-search
 {
-    margin-top: 20px !important;
+    margin-top: 2% !important;
     transition-timing-function: ease-in;
+}
 
+@media (max-width: 993px)
+{
+    .container-focus-active-search
+    {
+        margin-top: 10%;
+    }
+}
+
+@media (max-width: 602px)
+{
+    .container-focus-active-search
+    {
+        margin-top: 20%;
+    }
 }
 
 .container-focus-active-main
@@ -28,15 +43,4 @@
     width: 100% !important;
     transition-duration: 800ms;
     transition-timing-function: ease-in-out;
-}
-
-@keyframes mon {
-    0%{
-        transform: translateY(0px);
-    }
-
-    100%{
-        transform: translateY(-45%);
-    }
-
 }
