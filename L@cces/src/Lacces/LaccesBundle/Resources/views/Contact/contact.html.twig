@@ -8,4 +8,10 @@
 
 {% block body %}
 
+    {{ include('@Lacces/flash_message.html.twig') }}
+
+    <div>
+        {{ form(form) }}
+    </div>
+
 {% endblock %}
