@@ -264,3 +264,10 @@ p
     background-color: white !important;
     color: black !important;
 }
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

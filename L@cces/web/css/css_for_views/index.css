@@ -25,20 +25,6 @@ a
     bottom: 0;
 }
 
-html
-{
-    height: 100%;
-}
-
-body {
-
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-}
-
-
 .row-flag
 {
     display: flex;
@@ -51,12 +37,9 @@ body {
     height: 100%;
 }
 
-main
+.container-main
 {
     height: 88%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .row-container
@@ -90,12 +73,5 @@ main
     {
         width: 70%;
     }
-}
-
-.container-main
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
