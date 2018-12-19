@@ -25,11 +25,6 @@ a
     bottom: 0;
 }
 
-footer
-{
-
-}
-
 html
 {
     height: 100%;
@@ -73,7 +68,7 @@ main
 {
     width: 70%;
     margin: auto;
-    /*transition-duration: 90ms;*/
+    transition-duration: 800ms;
 }
 
 @media (max-width: 993px)
@@ -101,6 +96,6 @@ main
 {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 }
 
