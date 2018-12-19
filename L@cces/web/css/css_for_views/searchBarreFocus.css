@@ -2,15 +2,34 @@
 {
 
 }
-
+/*
 .container-focus
 {
     visibility: visible;
     display: block;
-}
+}*/
 
 .container-focus-active
 {
     visibility: hidden;
     display: none;
+}
+
+.container-focus-active-search
+{
+    margin-top: 20px !important;
+    transition-timing-function: ease-in;
+}
+
+.container-focus-active-main
+{
+    justify-content: flex-start;
+
+}
+
+.container-focus-active-container-search
+{
+    width: 100% !important;
+    transition-duration: 120ms;
+    transition-timing-function: ease-in;
 }

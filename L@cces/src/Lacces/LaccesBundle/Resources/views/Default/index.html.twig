@@ -41,11 +41,11 @@
         </section>
         <section id="container-search">
             <div class="row">
-                <div class="col s1 m2 x2 xl2"></div>
-                <div class="col s10 m8 x8 xl8">
+                <!--<div class="col s1 m2 x2 xl2"></div>
+                <div class="col s10 m8 x8 xl8">-->
                     {% include('@Lacces/SearchBarre/searchBarre.html.twig') %}
-                </div>
-                <div class="col s1 m2 x2 xl2"></div>
+                <!--</div>
+                <div class="col s1 m2 x2 xl2"></div>-->
             </div>
         </section>
         <section class="container-focus">
@@ -123,17 +123,21 @@
             $("#search-barre").keyup(function() {
             if($("#btnFr").is(':checked')){
                 $("#search-barre").autocomplete({
-                    source: tabFr
+                    source: tabFr,
+                    minLength: 1
                 });
             }
 
             if($("#btnEn").is(':checked')){
                 $("#search-barre").autocomplete({
-                    source: tabEn
+                    source: tabEn,
+                    minLength: 1
                 });
             }
             });
         });
+
+
     </script>
     <script src="{{ asset('js/js_for_views/radio.js') }}"></script>
 {% endblock %}

@@ -148,12 +148,6 @@ nav .brand-logo
     right: 10px;
     top: 10px;
 }
-/*
-section
-{
-    margin-top: 2%;
-    margin-bottom: 1%;
-}*/
 
 p
 {
@@ -256,6 +250,10 @@ p
         display: none;
     }
 }
+
+
+
+/***************************************/
 
 .active-item-menu, .active-item-menu>a{
     background-color: #f4a733 !important;

@@ -69,11 +69,23 @@ main
     width: 50%;
 }
 
+#container-search
+{
+    width: 70%;
+    margin: auto;
+    /*transition-duration: 90ms;*/
+}
+
 @media (max-width: 993px)
 {
     .row-container
     {
-        width: 60%;
+        width: 80%;
+    }
+
+    #container-search
+    {
+        width: 90%;
     }
 }
 
@@ -92,7 +104,3 @@ main
     justify-content: space-around;
 }
 
-#container-search
-{
-
-}
