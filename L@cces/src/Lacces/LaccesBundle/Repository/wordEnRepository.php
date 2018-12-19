@@ -22,10 +22,11 @@ class wordEnRepository extends \Doctrine\ORM\EntityRepository
 
   public function findByPopularity (){
     return $this->createQueryBuilder('c')
-    ->orderBy('c.popularity', 'DESC')
-    ->addOrderBy('c.word', 'ASC')
-    ->getQuery()
-    ->getResult();
+        ->orderBy('c.popularity', 'DESC')
+        ->addOrderBy('c.word', 'ASC')
+        ->getQuery()
+        ->setMaxResults(12)
+        ->getResult();
   }
 
   public function findAll(){
@@ -33,14 +34,5 @@ class wordEnRepository extends \Doctrine\ORM\EntityRepository
     ->orderBy('c.word', 'ASC')
     ->getQuery()
     ->getResult();
-  }
-
-  public function getVideoLinkByWord($w){
-    return $this->createQueryBuilder('c')
-    ->select('videoLink')
-    ->where('c.word = :word')
-    ->setParameter('word', $w)
-    ->getQuery()
-    ->getOneOrNullResult();
   }
 }
