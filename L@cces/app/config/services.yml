@@ -12,4 +12,8 @@ services:
         autoconfigure: true
         # this means you cannot fetch services directly from the container via $container->get()
         # if you need to do this, you can override this setting on individual services
-        public: false
+        public: true
+
+    Lacces\LaccesBundle\Controller\:
+        resource: '../../src/Lacces/LaccesBundle/Controller'
+        tags: ['controller.service_arguments']

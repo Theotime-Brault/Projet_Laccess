@@ -7,18 +7,17 @@ use Lacces\LaccesBundle\Entity\wordFr;
 use Lacces\LaccesBundle\Entity\wordEn;
 use Lacces\LaccesBundle\Repository\wordFrRepository;
 use Lacces\LaccesBundle\Repository\wordEnRepository;
+use Lacces\LaccesBundle\Entity\Form;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\ResetType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints as Assert;
-
+use Symfony\Component\Validator\Constraints\Email;
 
 
 class DefaultController extends Controller
@@ -90,88 +89,50 @@ class DefaultController extends Controller
 
     public function contactAction(Request $request)
     {
-        $firstname = $lastname = $email = $object = $message = NULL;
 
-        $contact_error_firstnamemin = NULL;
+        $formulaire = new Form();
 
-        $form = $this->createFormBuilder()
+        $form = $this->createFormBuilder($formulaire)
+            ->add('nom', TextType::class, array('attr' => array(
+                'maxlength' => "30",
+                'class' => "formValue",
+                'data-length' => "30",
+            )))
+            ->add('prenom', TextType::class, array('attr' => array(
+                'maxlength' => "30",
+                'class' => "formValue",
+                'data-length' => "30",
+            )))
+            ->add('Email', EmailType::class, array('attr' => array(
+                'class' => "validate",
+            )))
 
-            ->add('firstname', TextType::class, array('constraints' => array(new NotBlank(array(//'message' => 'contact.error.firstname'
-        )), new Length(array('min' => 3,
-                             'max' => 10,
-                )))))
+            ->add('message', TextareaType::class, array('attr' => array(
+                'maxlength' => "500",
+                'class' => "materialize-textarea formValue",
+                'data-length' => "500"
+            )))
+            ->add('submit', SubmitType::class, array(
+                'label' => 'Envoyer',
+                'attr' => array(
+                    'class' => "btn background-color-orange-lacces"
+            )))
 
-            ->add('lastname', TextType::class, array('constraints' => array(new NotBlank(array(
-        )), new Length(array('min' => 3,
-                             'max' => 10,
-        )))))
-
-            ->add('email', TextType::class, array('constraints' => array(
-                new Assert\Email(array('checkMX' => true)),
-                new NotBlank(),
-        )))
-
-            ->add('object', TextType::class, array('constraints' => array(new Length(array('min' => 3)))))
-
-            ->add('message', TextareaType::class, array('constraints' => array(new NotBlank(array(
-        )), new Length(array('min' => 8,
-                             'max' => 10,
-        )))))
-
-        ->add('send', SubmitType::class, array('label' => 'Envoyer'))
-        ->add('reset', ResetType::class, array('label' => 'Reset'))
-        ->getForm();
+            ->getForm();
 
         $form->handleRequest($request);
 
-        if ($form->isValid() ) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
-            if ($request->isMethod('POST')) {
+            $formulaire = $form->getData();
 
-                $request = Request::createFromGlobals();
 
-                $firstname = $form["firstname"]->getData();
-                $lastname = $form["lastname"]->getData();
-                $email = $form["email"]->getData();
-                $object = $form["object"]->getData();
-                $message = $form["message"]->getData();
-
-                $message = \Swift_Message::newInstance()
-                    ->setSubject($object)
-                    ->setFrom(array($email))
-                    ->setTo('theotime98@hotmail.fr')
-                    ->setCharset('utf-8')
-                    ->setContentType('text/html')
-                    ->setBody($this->render('@Lacces/SwiftMailer/email.html.twig', array(
-                        'firstname' => $firstname,
-                        'lastname' => $lastname,
-                        'email' => $email,
-                        'object' => $object,
-                        'message' => $message)));
-
-                $this->get('mailer')->send($message);
-
-                $this->addFlash('success', 'Ok');
-                $this->addFlash('sent', 'Ok');
-
-            } else {
-                $this->addFlash('error', 'Can\'t be reached like this');
-            }
-        }
-        else if (($form->isValid() === FALSE) && ($request->isMethod('POST'))) {
-
-            $this->addFlash('error', 'Can\'t be reached like this');
-            $this->addFlash('not_sent', 'Not Ok');
+            return $this->redirectToRoute('lacces_homepage');
 
         }
 
         return $this->render('@Lacces/Contact/contact.html.twig', array(
-            'form'      => $form->createView(),
-            'firstname' => $firstname,
-            'lastname'  => $lastname,
-            'email'     => $email,
-            'object'    => $object,
-            'message'   => $message
+            'form' => $form->createView(),
         ));
     }
 
@@ -184,5 +145,4 @@ class DefaultController extends Controller
     {
         return $this->render('@Lacces/FAQ/faq.html.twig');
     }
-
 }
