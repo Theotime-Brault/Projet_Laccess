@@ -139,7 +139,7 @@ class DefaultController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $formulaire = $form->getData();
-
+            $this->addFlash('info', "Le message a bien été envoyé !");
 
             return $this->redirectToRoute('lacces_homepage');
 
