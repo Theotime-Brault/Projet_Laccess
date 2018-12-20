@@ -37,7 +37,7 @@
       }else{
           l = "";
       }
-      if(!word){
+      if(word != "" && l != ""){
           $.ajax({
               cache: false,
               data: {'langue':l, 'word':word},

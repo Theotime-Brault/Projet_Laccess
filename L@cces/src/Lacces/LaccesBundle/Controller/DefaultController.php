@@ -168,12 +168,14 @@ class DefaultController extends Controller
      * @param $word
      * @return JsonResponse
      */
-    public function autoCompleteAction($langue, $word){
+    public function autoCompleteAction(Request $request){
         $em = $this->getDoctrine()->getManager();
+        $langue = $request->request->get('langue');
+        $word = $request->request->get('word');
         if($langue == "fr"){
-            $words = $em->getRepository('LaccesBundle:wordFr')->finByPopularity();
+            $words = $em->getRepository('LaccesBundle:wordFr')->findByPopularity();
         }elseif($langue == "en"){
-            $words = $em->getRepository('LaccesBundle:wordEn')->finByPopularity();
+            $words = $em->getRepository('LaccesBundle:wordEn')->findByPopularity();
         }else{
             $words =null;
         }
