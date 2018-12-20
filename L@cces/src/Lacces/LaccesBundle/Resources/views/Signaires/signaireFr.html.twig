@@ -26,7 +26,7 @@
                         <div class="collapsible-body">
                             <ul>
                                 {% for w in wordFr %}
-                                    {% if w.word|first == letter %}
+                                    {% if w.word|first|lower == letter %}
                                         <li class="white">
                                             <a class="flow-text" id="word" href="../word/fr/{{ w.word }}">{{ w.word }}</a>
                                         </li>
