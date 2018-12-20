@@ -283,7 +283,7 @@ main
     background-color: #f4a733;
 }
 
-.btn:hover
+.btn:hover, .btn:focus
 {
     background-color: darkviolet!important;
 }
