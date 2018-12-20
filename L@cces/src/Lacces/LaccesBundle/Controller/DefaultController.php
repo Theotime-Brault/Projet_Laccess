@@ -164,8 +164,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @param $langue
-     * @param $word
      * @return JsonResponse
      */
     public function autoCompleteAction(Request $request){
@@ -173,9 +171,9 @@ class DefaultController extends Controller
         $langue = $request->request->get('langue');
         $word = $request->request->get('word');
         if($langue == "fr"){
-            $words = $em->getRepository('LaccesBundle:wordFr')->findByPopularity();
+            $words = $em->getRepository('LaccesBundle:wordFr')->findByPopularity($word);
         }elseif($langue == "en"){
-            $words = $em->getRepository('LaccesBundle:wordEn')->findByPopularity();
+            $words = $em->getRepository('LaccesBundle:wordEn')->findByPopularity($word);
         }else{
             $words =null;
         }

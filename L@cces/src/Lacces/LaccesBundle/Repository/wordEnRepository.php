@@ -20,8 +20,10 @@ class wordEnRepository extends \Doctrine\ORM\EntityRepository
     ->getOneOrNullResult();
   }
 
-  public function findByPopularity (){
+  public function findByPopularity ($motif){
     return $this->createQueryBuilder('c')
+        ->like('c.word = :word')
+        ->setParameter('word', $motif)
         ->orderBy('c.popularity', 'DESC')
         ->addOrderBy('c.word', 'ASC')
         ->getQuery()
