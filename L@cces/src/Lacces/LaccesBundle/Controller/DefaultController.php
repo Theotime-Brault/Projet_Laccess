@@ -10,6 +10,7 @@ use Lacces\LaccesBundle\Repository\wordEnRepository;
 use Lacces\LaccesBundle\Entity\Form;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -137,5 +138,18 @@ class DefaultController extends Controller
     public function faqAction()
     {
         return $this->render('@Lacces/FAQ/faq.html.twig');
+    }
+
+    public function autoComplete($word, $langue){
+        $em = $this->getDoctrine()->getManager();
+        if($langue == "fr"){
+            $words = $em->getRepository('LaccesBundle:wordFr')->finByPopularity();
+        }elseif($langue == "en"){
+            $words = $em->getRepository('LaccesBundle:wordEn')->finByPopularity();
+        }else{
+            $words =null;
+        }
+
+        return new JsonResponse(array('words'=>$words));
     }
 }
