@@ -63,19 +63,15 @@
                                     {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' %}
                                     <li class="active active-item-menu" id="liImg">
                                     {% else %}
-                                    <li class="white" id="liImg">{#
-
-                                    dfghifdhoifghofjdhoifjhoifgoijf
-
-                                    #}
-                                        {% endif %}
+                                    <li class="white" id="liImg">
+                                    {% endif %}
                                         <a class="waves-effect" href="{{ asset('signaire/Fr') }}">Langue des signes Française</a>
                                     </li>
                                     {% if app.request.attributes.get('_route') == 'lacces_signaire_en' %}
                                     <li class="active active-item-menu">
                                     {% else %}
                                     <li class="white">
-                                        {% endif %}
+                                    {% endif %}
                                         <a class="waves-effect" href="{{ asset('signaire/En') }}">American Sign Language</a>
                                     </li>
                                     <li>
