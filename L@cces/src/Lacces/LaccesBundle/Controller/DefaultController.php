@@ -67,7 +67,13 @@ class DefaultController extends Controller
 
     public function signaireFrAction()
     {
-        return $this->render('@Lacces/Signaires/signaireFr.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $wordsFrObj = $em->getRepository('LaccesBundle:wordFr')->findAll();
+
+        return $this->render('@Lacces/Signaires/signaireFr.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'wordFr' => $wordsFrObj,
+        ]);
     }
 
     public function signaireEnAction()
@@ -99,6 +105,7 @@ class DefaultController extends Controller
             )))
             ->add('Email', EmailType::class, array('attr' => array(
                 'class' => "validate",
+                'type' => "email"
             )))
 
             ->add('message', TextareaType::class, array('attr' => array(

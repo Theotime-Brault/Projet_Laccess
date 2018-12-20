@@ -285,7 +285,7 @@ main
 
 .btn:hover, .btn:focus
 {
-    background-color: darkviolet!important;
+    background-color: #69085a!important;
 }
 
 .formValue:focus, .validate:focus
