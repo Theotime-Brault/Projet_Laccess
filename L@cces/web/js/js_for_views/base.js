@@ -10,4 +10,11 @@ $(document).ready(function () {
     $('#collapsible-header-click').on('click', function () {
         $('.material-icons').toggleClass('rotate')
     });
+
+    //chrono message flash
+    $(function() {
+        $('.message-flash').delay(1500).fadeOut();
+    });
+
+
 });
