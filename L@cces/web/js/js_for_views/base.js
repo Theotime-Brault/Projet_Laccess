@@ -13,4 +13,15 @@ $(document).ready(function () {
     $('#collapsible-header-click').on('click', function () {
         $('.material-icons').toggleClass('rotate')
     });
+
+
+    $(document).ready(function(){
+        $('input.autocomplete').autocomplete({
+            data: {
+                "Apple": null,
+                "Microsoft": null,
+                "Google": 'https://placehold.it/250x250'
+            },
+        });
+    });
 });
