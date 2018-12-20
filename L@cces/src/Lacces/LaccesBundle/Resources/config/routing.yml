@@ -35,3 +35,7 @@ lacces_faq:
     defaults:
         _controller: LaccesBundle:Default:faq
 
+auto_complete:
+    path:   /search
+    defaults:
+        _controller: LaccesBundle:Default:autoComplete
