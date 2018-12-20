@@ -115,7 +115,7 @@ class DefaultController extends Controller
             ->add('submit', SubmitType::class, array(
                 'label' => 'Envoyer',
                 'attr' => array(
-                    'class' => "btn background-color-orange-lacces"
+                    'class' => "btn background-color-orange-lacces waves-effect"
             )))
 
             ->getForm();
