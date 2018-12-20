@@ -140,7 +140,7 @@ class DefaultController extends Controller
         return $this->render('@Lacces/FAQ/faq.html.twig');
     }
 
-    public function autoComplete($word, $langue){
+    public function autoCompleteAction($word, $langue){
         $em = $this->getDoctrine()->getManager();
         if($langue == "fr"){
             $words = $em->getRepository('LaccesBundle:wordFr')->finByPopularity();

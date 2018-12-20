@@ -104,37 +104,5 @@
 {% endblock %}
 
 {% block javascripts %}
-    {#
-    <script>
-        $(function(){
-            var tabFr = [
-            {% for w in wordFr %}
-            "{{ w.word }}",
-            {% endfor %}
-            ];
-            var tabEn = [
-            {% for w in wordEn %}
-            "{{ w.word }}",
-            {% endfor %}
-            ];
-            $("#search-barre").keyup(function() {
-            if($("#btnFr").is(':checked')){
-                $("#search-barre").autocomplete({
-                    source: tabFr,
-                    minLength: 1
-                });
-            }
-
-            if($("#btnEn").is(':checked')){
-                $("#search-barre").autocomplete({
-                    source: tabEn,
-                    minLength: 1
-                });
-            }
-            });
-        });
-
-
-    </script>#}
     <script src="{{ asset('js/js_for_views/radio.js') }}"></script>
 {% endblock %}
