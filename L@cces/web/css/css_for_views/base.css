@@ -271,3 +271,9 @@ main
     flex-direction: column;
     justify-content: center;
 }
+
+.container-main-nav
+{
+    display: block;
+    margin-top: 75px;
+}

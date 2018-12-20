@@ -42,7 +42,7 @@
 
 .collapsible-ASL:hover
 {
-    background-color:#F0E0BB;
+    background-color: #eeeeee;
 }
 
 .alphabet-ASL
@@ -50,12 +50,5 @@
     max-width: 4%;
     display:flex;
     align-items: center;
-}
-
-
-
-.container-main
-{
-    display: block;
 }
 
