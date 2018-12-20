@@ -60,11 +60,17 @@ class DefaultController extends Controller
           ));
     }
 
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function searchBarreAction()
     {
         return $this->render('@Lacces/SearchBarre/searchBarre.html.twig');
     }
 
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function signaireFrAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -76,6 +82,9 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function signaireEnAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -87,6 +96,10 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
     public function contactAction(Request $request)
     {
 
@@ -137,6 +150,9 @@ class DefaultController extends Controller
         ));
     }
 
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function mentionsAction()
     {
         return $this->render('@Lacces/Mentions_legales/mentions.html.twig');
@@ -147,7 +163,12 @@ class DefaultController extends Controller
         return $this->render('@Lacces/FAQ/faq.html.twig');
     }
 
-    public function autoCompleteAction($word, $langue){
+    /**
+     * @param $langue
+     * @param $word
+     * @return JsonResponse
+     */
+    public function autoCompleteAction($langue, $word){
         $em = $this->getDoctrine()->getManager();
         if($langue == "fr"){
             $words = $em->getRepository('LaccesBundle:wordFr')->finByPopularity();
