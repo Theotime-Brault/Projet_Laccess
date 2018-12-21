@@ -1,15 +1,17 @@
 $(document).ready(function(){
-
+/*
     $(document).ready(function(){
         $('.fixed-action-btn').floatingActionButton();
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.fixed-action-btn');
-        var instances = M.FloatingActionButton.init(elems, {
-            direction: 'left'
-        });
-    });
+    */
+/*
+    const social = document.querySelector('.fixed-action-btn');
+    M.FloatingActionButton(social,{
+       direction: 'left',
+        hoverEnabled: false
+    });*/
+
 
     $('.slide').on('click', function () {
         $('#search-box').toggleClass('show')
