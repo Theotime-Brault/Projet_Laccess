@@ -1,3 +1,9 @@
+.background-color-orange-lacces
+{
+    background-color: #f4a733;
+}
+
+
 body
 {
     background-color: #ffffff;
@@ -278,25 +284,20 @@ main
     margin-top: 75px;
 }
 
-.background-color-orange-lacces
-{
-    background-color: #f4a733;
-}
-
 .btn:hover, .btn:focus
 {
-    background-color: #69085a!important;
+    background-color: #69085a !important;
 }
 
 .formValue:focus, .validate:focus
 {
-    border-bottom: 1px solid #69085a!important;
-    box-shadow: 0 1px 0 0 #69085a!important;
+    border-bottom: 1px solid #69085a !important;
+    box-shadow: 0 1px 0 0 #69085a !important;
 }
 
-.active
+.active, .focus
 {
-    color: #69085a!important;
+    color: #69085a !important;
 }
 
 .message-flash
