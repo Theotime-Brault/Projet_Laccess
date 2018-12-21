@@ -1,16 +1,6 @@
 $(document).ready(function(){
-/*
-    $(document).ready(function(){
-        $('.fixed-action-btn').floatingActionButton();
-    });
 
-    */
-/*
-    const social = document.querySelector('.fixed-action-btn');
-    M.FloatingActionButton(social,{
-       direction: 'left',
-        hoverEnabled: false
-    });*/
+    /*$('.fixed-action-btn').floatingActionButton();*/
 
 
     $('.slide').on('click', function () {
