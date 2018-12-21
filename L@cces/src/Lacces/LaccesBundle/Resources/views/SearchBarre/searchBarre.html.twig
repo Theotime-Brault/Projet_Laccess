@@ -45,8 +45,8 @@
               type: 'POST',
               dataType: "json",
               success: function (response) {
-                  console.log(response);
-                  $('#result').html(response.words);
+                  console.log(response.words[0]);
+                  $('#result').html(response.words[0]);
 
               },
               error: function (response) {
