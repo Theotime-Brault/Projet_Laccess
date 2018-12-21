@@ -39,3 +39,8 @@ auto_complete:
     path:   /search
     defaults:
         _controller: LaccesBundle:Default:autoComplete
+
+lacces_exercices:
+    path:   /exercices
+    defaults:
+        _controller: LaccesBundle:Default:exercices

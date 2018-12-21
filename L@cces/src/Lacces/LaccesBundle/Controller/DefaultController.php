@@ -188,4 +188,9 @@ class DefaultController extends Controller
 
         return new JsonResponse(array('words'=>$words));
     }
+
+    public function exercicesAction()
+    {
+        return $this->render('@Lacces/Exercices/exercices.html.twig');
+    }
 }
