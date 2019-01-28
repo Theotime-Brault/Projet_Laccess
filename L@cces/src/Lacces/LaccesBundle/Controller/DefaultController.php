@@ -101,60 +101,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
-     */
-    public function contactAction(Request $request)
-    {
-
-        $formulaire = new Form();
-
-        $form = $this->createFormBuilder($formulaire)
-            ->add('nom', TextType::class, array('attr' => array(
-                'maxlength' => "30",
-                'class' => "formValue",
-                'data-length' => "30",
-            )))
-            ->add('prenom', TextType::class, array('attr' => array(
-                'maxlength' => "30",
-                'class' => "formValue",
-                'data-length' => "30",
-            )))
-            ->add('Email', EmailType::class, array('attr' => array(
-                'class' => "validate",
-                'type' => "email"
-            )))
-
-            ->add('message', TextareaType::class, array('attr' => array(
-                'maxlength' => "500",
-                'class' => "materialize-textarea formValue",
-                'data-length' => "500"
-            )))
-            ->add('submit', SubmitType::class, array(
-                'label' => 'Envoyer',
-                'attr' => array(
-                    'class' => "btn btn-contact background-color-orange-lacces waves-effect",
-            )))
-
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $formulaire = $form->getData();
-            $this->addFlash('info', "Le message a bien été envoyé !");
-
-            return $this->redirectToRoute('lacces_homepage');
-
-        }
-
-        return $this->render('@Lacces/Contact/contact.html.twig', array(
-            'form' => $form->createView(),
-        ));
-    }
-
-    /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function mentionsAction()

@@ -38,8 +38,7 @@ monolog:
         #    level: info
 
 swiftmailer:
-    transport: smtp
-    host: 127.0.0.1:8000
-    username: null
-    password: null
-    delivery_addresses: ['theotime98@hotmail.fr']
+    transport: gmail
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
