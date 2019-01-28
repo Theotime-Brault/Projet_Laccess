@@ -57,13 +57,11 @@
                                                 <iframe id="video1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             </div>
                                         </div>
-                                        {#}<a id="context-sentence-block-video-1">#}
-                                            <div id="context-sentence-block-video-1" class="context-sentence card-content">
-                                                <p class="flow-text">
-                                                    {{ word.contextSentence }}
-                                                </p>
-                                            </div>
-                                        {#</a>#}
+                                        <div id="context-sentence-block-video-1" class="context-sentence card-content">
+                                            <p class="flow-text">
+                                                {{ word.contextSentence }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </article>
                             </div>
@@ -82,21 +80,19 @@
                                                 <iframe id="video" width="1100" height="619" src="https://www.youtube.com/embed/D6ofFxMTEMY?rel=0{#{{ word.videoLink }}#}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             </div>
                                         </div>
-                                        {#<a id="context-sentence-block-video-2">#}
-                                            <div id="context-sentence-block-video-2" class="context-sentence card-content">
-                                                <p class="flow-text">
-                                                    {% if langue == "fr" %}
-                                                        {% for w in word.wordEns %}
-                                                            {{ w.contextSentence }}
-                                                        {% endfor %}
-                                                    {% else %}
-                                                        {% for w in word.wordFrs %}
-                                                            {{ w.contextSentence }}
-                                                        {% endfor %}
-                                                    {% endif %}
-                                                </p>
-                                            </div>
-                                        {#</a>#}
+                                        <div id="context-sentence-block-video-2" class="context-sentence card-content">
+                                            <p class="flow-text">
+                                                {% if langue == "fr" %}
+                                                    {% for w in word.wordEns %}
+                                                        {{ w.contextSentence }}
+                                                    {% endfor %}
+                                                {% else %}
+                                                    {% for w in word.wordFrs %}
+                                                        {{ w.contextSentence }}
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </p>
+                                        </div>
                                     </div>
                                 </article>
                             </div>
