@@ -1,143 +1,48 @@
-#row-box-word
+body, .container-body
 {
-    position: relative;
+    height: 100%;
 }
 
-#row-box
+.container-video
 {
-
-    top: 0;
-    position: absolute;
     width: 100%;
-}
-
-.word-box
-{
-}
-
-.word-translate
-{
-    line-height: 29px;
-}
-
-#tmp
-{
-
-}
-
-#icon-search
-{
-    height: 56px;
-    width: 56px;
-    float: right;
-    position: relative;
-}
-
-#icon-search .btn-floating
-{
-    background-color: #f4a733;
-}
-
-#material-icons-clear
-{
-    visibility: hidden;
-    position: absolute;
-}
-
-#search-on
-{
-    visibility: hidden;
+    height: 100%;
 }
 
 #search-box
 {
-    width: 0%;
-    opacity: 0;
-    right: 20%;
-    transition: all .75s;
+    display: none;
     position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
 }
 
-#search-box.show
+.block-video
 {
-    width: 80%;
-    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 100;
-    position: absolute;
+    cursor: pointer;
 }
 
-.main-container
+.block, .block-video
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: yellow;
-    height: 100%;
-}
-
-.container-video1, .container-video2
-{
-    background-color: #0D47A1;
-    position: relative;
-    width: 70%;
-    height: 50%;
-    padding-top: 10%;
-    padding-bottom: 10%;
-}
-
-@media (max-width: 602px)
-{
-    #search-box.show {
-        width: 80%;
-    }
-}
-
-@media (max-width: 993px)
-{
-    #container-video, .container-video1, .container-video2
-    {
-        width: 95%;
-    }
-}
-
-.video
-{
-    min-height: 78vh;
-    height: 78vh;
-}
-
-
-
-.container-video2
-{
-    background-color: green;
-}
-
-.container-video-over1, .container-video-over2
-{
-    display: block;
-    background-color: #0f9d58;
     width: 100%;
     height: 100%;
-    position: absolute;
-    margin: auto;
-    top:0;
-    opacity: 1;
 }
 
-.btn-play
+.block
 {
-    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-iframe
+.context-sentence p
 {
-    display: none;
-}
-
-.contextSentence
-{
-    display: none;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    color: #000000;
+    cursor: pointer;
 }

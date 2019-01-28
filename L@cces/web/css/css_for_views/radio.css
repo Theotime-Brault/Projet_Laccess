@@ -26,6 +26,7 @@
 
 #radiobtn
 {
+    display: none;
     visibility: hidden !important;
     height: 0;
 }

@@ -5,134 +5,136 @@
 {% endblock %}
 
 {% block title %}
-    Mot
+    Mot {{ word.word|lower }}
 {% endblock %}
 
 {% block body %}
-
-    <main class="container-main container-main-nav">
-        <div class="container">
-            <!--
-            <section class="word">
-                <div class="fixed-action-btn">
-                    <a class="btn-floating btn-large background-color-orange-lacces">
-                        <i class="large material-icons">view_module</i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a class="btn-floating ">
-                                <i class="material-icons">search</i>
-                                <i class="material-icons" id="material-icons-clear">clear</i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            -->
-
-            <section class="word">
-                <div id="row-box-word">
-                    <div id="icon-search" >
-                        <p>
-                            <a class="slide btn-floating btn-large waves-effect">
-                                <i class="material-icons" id="material-icons-clear">clear</i>
-                                <i class="material-icons" id="material-icons-search">search</i>
-                            </a>
-                        </p>
-                    </div>
+    <div class="container-body">
+        <main>
+            <div class="container">
+                <div class="container-main-flex">
                     <div id="search-box" class="">
                         <p>
                             {% include('@Lacces/SearchBarre/searchBarre.html.twig') %}
                         </p>
                     </div>
-
-                    <div class="row">
-                        <div id="row-box">
-                            <div class="word-box">
-                                <div class="center-align word-translate">
-                                    <p>
-                                        <strong>{{ word.word }}</strong>
+                    <section>
+                        <div class="row">
+                            <div class="card center">
+                                <div class="card-content">
+                                    <p class="flow-text">
+                                        <strong>{{ word.word|lower }}</strong>
                                     </p>
-                                    <p>
-                                      <span>
+                                    <p class="flow-text">
                                         {% if langue == "fr" %}
-                                          {% for w in word.wordEns %}
-                                            {{ w.word }}
-                                          {% endfor %}
+                                            {% for w in word.wordEns %}
+                                                {{ w.word|lower }}
+                                            {% endfor %}
                                         {% else %}
-                                          {% for w in word.wordFrs %}
-                                            {{ w.word }}
-                                          {% endfor %}
+                                            {% for w in word.wordFrs %}
+                                                {{ w.word|lower }}
+                                            {% endfor %}
                                         {% endif %}
-                                      </span>
                                     </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+                    </section>
 
-        <div class="container" id="container-video">
-            <section class="video"><!--
-                <div class="col s12 m12 x5 xl5 center">
-                    <div class="container-video center">
-                        <iframe width="560" height="315" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="container-video-over">
-                        <a class="btn-floating btn-large waves-effect" href="#">
-                            <i class="material-icons">play_arrow</i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col s12 m12 x5 xl5 center">
-                    <div class="container-video center">
-                        <iframe width="auto" height="315" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>-->
-                <div class="main-container">
-                    <div class="container-video1">
-                        <div class="container-video center">
-                            <iframe width="" height="" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <section class="container-video">
+                        <div class="row">
+                            <div id="card-video-1" class="col s12 m6 x6 offset-x3">
+                                <article>
+                                    <div class="card center">
+                                        <div class="card-image">
+                                            <div class="video-container">
+                                                <a id="block-video-1" class="block-video">
+                                                    <div class="block grey">
+                                                        <i class="material-icons white-text large">play_circle_outline</i>
+                                                        <span class="card-title">Langue des signes française</span>
+                                                    </div>
+                                                </a>
+                                                <iframe id="video1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                        {#}<a id="context-sentence-block-video-1">#}
+                                            <div id="context-sentence-block-video-1" class="context-sentence card-content">
+                                                <p class="flow-text">
+                                                    {{ word.contextSentence }}
+                                                </p>
+                                            </div>
+                                        {#</a>#}
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div id="card-video-2" class="col s12 m6 x6 offset-x3">
+                                <article>
+                                    <div class="card center">
+                                        <div class="card-image">
+                                            <div class="video-container">
+                                                <a id="block-video-2" class="block-video">
+                                                    <div class="block grey">
+                                                        <i class="material-icons white-text large">play_circle_outline</i>
+                                                        <span class="card-title">American sign language</span>
+                                                    </div>
+                                                </a>
+                                                <iframe id="video" width="1100" height="619" src="https://www.youtube.com/embed/D6ofFxMTEMY?rel=0{#{{ word.videoLink }}#}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                        {#<a id="context-sentence-block-video-2">#}
+                                            <div id="context-sentence-block-video-2" class="context-sentence card-content">
+                                                <p class="flow-text">
+                                                    {% if langue == "fr" %}
+                                                        {% for w in word.wordEns %}
+                                                            {{ w.contextSentence }}
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        {% for w in word.wordFrs %}
+                                                            {{ w.contextSentence }}
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                </p>
+                                            </div>
+                                        {#</a>#}
+                                    </div>
+                                </article>
+                            </div>
                         </div>
-                        <a href="">
-                            <div class="row center contextSentence">
-                                <p>{{ word.contextSentence }}</p>
-                            </div>
-                        </a>
-
-                        <a href="">
-                            <div class="container-video-over1">
-                                <a class="btn-floating btn-large waves-effect btn-play" href="">
-                                    <i class="material-icons">play_arrow</i>
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="container-video2">
-                        <div class="container-video center">
-                            <iframe width="" height="" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <a href="">
-                            <div class="row center contextSentence">
-                                <p>{{ word.contextSentence }}</p>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="container-video-over2">
-                                <a class="btn-floating btn-large waves-effect btn-play" href="">
-                                    <i class="material-icons">play_arrow</i>
-                                </a>
-                            </div>
-                        </a>
-                    </div>
+                    </section>
                 </div>
+            </div>
 
-            </section>
-        </div>
-    </main>
+
+            <div class="fixed-action-btn click-to-toggle direction-top">
+                <a class="btn-floating btn-large pulse background-color-orange-lacces">
+                    <i class="large material-icons white-text">add</i>
+                </a>
+                <ul>
+                    <li>
+                        <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Affichez les phrases de contextualisation" id="display-sentences">
+                            <i class="material-icons white-text">view_list</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Affichez les vidéos" id="display-videos">
+                            <i class="material-icons white-text">video_library</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Lire les vidéos" id="play-videos">
+                            <i class="material-icons "white-text>play_circle_filled</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Effectuez une recherche"{#href=""#} id="search-box-click" data-target="search-box">
+                            <i class="material-icons white-text">search</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
 {% endblock %}
 
 {% block javascripts %}

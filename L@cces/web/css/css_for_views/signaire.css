@@ -1,6 +1,6 @@
 #lettreMaj
 {
-    color: orange;
+    color: #f4a733;
     font-weight: bold;
     font-size: 1.2em;
     display:flex;
@@ -21,15 +21,14 @@
 
 #word:hover
 {
-    transition-duration: 0.2s;
-    font-weight: bold;
+    transition-duration: 0.15s;
+    color: #f4a733;
     font-size: 1.7rem;
 }
 
 #word:active
 {
-    font-weight: bold;
-    color:orange;
+    color: #69085a;
     transition-duration: 0.05s;
 }
 

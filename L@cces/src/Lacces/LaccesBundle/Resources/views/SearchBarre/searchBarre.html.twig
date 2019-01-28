@@ -1,12 +1,15 @@
 <form method="POST">
     <div id="search-on">
         <div class="input-field ui-widget">
-            <input class="search" id="search-barre" autocomplete="off" placeholder="Rechercher un mot" />
-            <a id="btnSearch" class="btn"><i class="material-icons">search</i></a>
+            <input name="search-barre" class="search" id="search-barre" autocomplete="off" placeholder="Rechercher un mot" />
+            <a id="btnSearch" class="btn">
+                <i class="material-icons orange-text">search</i>
+            </a>
         </div>
-        <div id="result"></div>
     </div>
+    <div id="result"></div>
 </form>
+
 <script>
 
   $('#btnSearch').click(function (){

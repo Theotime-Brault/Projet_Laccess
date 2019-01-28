@@ -1,0 +1,17 @@
+@media (max-width: 768px)
+{
+    .row-container, .index-text
+    {
+        width: 80%;
+    }
+
+    #container-search
+    {
+        width: 90%;
+    }
+
+    .container-img-flag > img
+    {
+        cursor: auto;
+    }
+}

@@ -1,0 +1,397 @@
+.background-color-orange-lacces
+{
+    background-color: #f4a733 !important;
+}
+
+.background-color-violet-lacces
+{
+    background-color: #69085a !important;
+}
+
+.color-orange-lacces
+{
+    color: #f4a733;
+}
+
+.color-violet-lacces
+{
+    color: #69085a;
+}
+
+
+body, footer
+{
+    background-color: #ffffff;
+}
+
+body
+{
+    height: 100vh;
+}
+
+main
+{
+    height: inherit;
+    overflow-y: auto;
+}
+
+.container-body
+{
+    height: calc(100vh - 64px - 1.5rem);
+    padding-top: 1.5rem;
+}
+
+.container-main-flex, .container-main-center
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-main-flex
+{
+    height: 100%;
+    position: relative;
+}
+
+p
+{
+    margin: 0;
+}
+
+.container-search, .container-search-active
+{
+    margin: auto;
+}
+
+.container-focus, .container-search-active
+{
+    transition: all 800ms ease-in-out;
+}
+
+.container-search
+{
+    transition: all 1000ms;
+    cubic-bezier(.42,.08,.57,.88);
+}
+
+.container-search
+{
+    width: 70%;
+}
+
+.container-search-active
+{
+    width: 100%;
+}
+
+.container-focus
+{
+    /*height: 100%;*/
+}
+
+
+/*******************************************************
+********************** nav barre ***********************
+*******************************************************/
+
+.brand-logo #logo_lacces
+{
+    height: 48px;
+}
+
+.sidenav
+{
+    z-index: 10000;
+}
+
+.sidenav-trigger .material-icons
+{
+    color: #757575;
+}
+
+.no-padding .material-icons
+{
+    color: #757575;
+}
+
+.sidenav .divider
+{
+    margin: 0;
+    height: 8px;
+    border-bottom: 1px solid #757575;
+    background-color: #ffffff;
+}
+
+.nav-wrapper
+{
+    width:100%;
+    line-height: 64px;
+    display: flex;
+}
+
+nav
+{
+    padding: 8px;
+}
+
+.btn-menu a
+{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.btn-menu
+{
+    margin: 0 4px;
+    padding: 12px;
+    border-radius: 50%;
+    width: 48px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.btn-menu:hover, .btn-menu:focus, .btn-menu:active
+{
+    background-color: #eeeeee;
+}
+
+.navbar-fixed
+{
+    z-index: 5000;
+}
+
+.sidenav-close
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.sidenav .collapsible-header
+{
+    padding: 0 32px;
+}
+
+.sidenav .collapsible-body li a
+{
+    padding: 0 48px 0 48px;
+}
+
+#container_logo_lacces
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.btn-menu .material-icons
+{
+    position: absolute;
+}
+
+#material-icons_arrow_drop_down
+{
+    margin-right: 0;
+}
+
+#material-icons_arrow_drop_down.rotate
+{
+    margin-right: 0;
+    transform: rotate(180deg);
+    transition: 0.5s ease-out;
+}
+
+nav .brand-logo
+{
+    display: flex;
+    align-items: center;
+}
+
+
+/***********************************************************
+************************* CSS icons ************************
+***********************************************************/
+
+.container-row-icons-menu, .container-row-icons
+{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.container-row-icons-menu
+{
+    display: none;
+}
+
+.container-row-icons
+{
+    width: 25%;
+}
+
+.container-icons
+{
+    color: white;
+    background-color: #757575;
+    border-radius: 50%;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-icons:hover
+{
+    background-color: #f4a733;
+}
+
+.container-icons img
+{
+    width: 28px;
+    height: 28px;
+    margin: 8px;
+}
+
+.divider
+{
+    width: 98%;
+    margin: auto;
+}
+
+/***************************************/
+
+.active-item-menu, .active-item-menu > a
+{
+    color: white !important;
+}
+
+#sng
+{
+    background-color: white !important;
+    color: black !important;
+}
+
+.btn-contact:hover, .btn-contact:focus
+{
+    background-color: #69085a !important;
+}
+
+.formValue:focus, .validate:focus
+{
+    border-bottom: 1px solid #69085a !important;
+    box-shadow: 0 1px 0 0 #69085a !important;
+}
+
+.active, .focus
+{
+    color: #69085a !important;
+}
+
+
+/**** A revoir ***/
+.message-flash
+{
+    position: absolute;
+    color: white;
+    height: auto;
+   /* width: 100%;*/
+    max-width: 100%;
+    /*margin: auto;*/
+    min-height: 48px;
+    line-height: 1.5em;
+    padding: 10px 25px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    border-radius: 100px!important;
+
+    -webkit-box-shadow:  0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+@-webkit-keyframes slideInDown {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slideInDown {
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideInLeft {
+    from {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+@-webkit-keyframes slideOutUp {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+@keyframes slideOutUp {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+.slideOutUp {
+    -webkit-animation-name: slideOutUp;
+    animation-name: slideOutUp;
+}

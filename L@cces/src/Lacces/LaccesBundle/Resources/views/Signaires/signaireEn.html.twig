@@ -9,34 +9,38 @@
 {% block title %}Langue des signes Française{% endblock %}
 
 {% block body %}
-<main class="container-main container-main-nav">
-    <div class="container">
-        <ul class="collapsible collapsible-accordion">
-            {% for letter in 'a'..'z' %}
-                <li class="bold">
-                    <a class="collapsible-header waves-effect collapsible-ASL">
-                        <div id="lettreMaj">
-                            {{ letter|upper }}
-                            <i class="material-icons material-icons_arrow_drop_down" id="fleche">arrow_drop_down</i>
-                        </div>
-                        <div>
-                            <img class="alphabet-ASL right" src="{{ asset('pictures/alphabetLS/ASL/ASL-Main-N.png') }}" />
-                        </div>
-                    </a>
-                    <div class="collapsible-body">
-                        <ul>
-                            {% for w in wordEn %}
-                                {% if w.word|first|lower == letter %}
-                                    <li class="white">
-                                        <a class="flow-text" id="word" href="../word/en/{{ w.word }}">{{ w.word }}</a>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+
+    <div class="container-body">
+        <main>
+            <div class="container">
+                <ul class="collapsible collapsible-accordion">
+                    {% for letter in 'a'..'z' %}
+                        <li class="bold">
+                            <a class="collapsible-header waves-effect collapsible-ASL">
+                                <div id="lettreMaj">
+                                    {{ letter|upper }}
+                                    <i class="material-icons material-icons_arrow_drop_down" id="fleche">arrow_drop_down</i>
+                                </div>
+                                <div>
+                                    <img class="alphabet-ASL right" src="{{ asset('pictures/alphabetLS/ASL/ASL-Main-N.png') }}" />
+                                </div>
+                            </a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    {% for w in wordEn %}
+                                        {% if w.word|first|lower == letter %}
+                                            <li class="white">
+                                                <a class="flow-text" id="word" href="../word/en/{{ w.word }}">{{ w.word }}</a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </main>
     </div>
-</main>
+
 {% endblock %}

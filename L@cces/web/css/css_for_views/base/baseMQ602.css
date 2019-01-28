@@ -1,0 +1,56 @@
+/*******************************************************
+********************** nav barre ***********************
+*******************************************************/
+
+@media only screen and (max-device-width: 602px)
+{
+    /*
+    .sidenav
+    {
+        top: 56px;
+    }*/
+
+    .sidenav-close
+    {
+        height: 56px;
+    }
+
+    .container-body
+    {
+        height: calc(100vh - 56px - 1.5rem);
+    }
+}
+
+/***********************************************************
+************************* CSS icons ************************
+***********************************************************/
+
+@media only screen and (max-device-width: 602px)
+{
+    .container-row-icons
+    {
+        display: none;
+    }
+
+    .container-row-icons-menu
+    {
+        display: flex;
+        visibility: visible;
+        height: 100%;
+        width: 40%;
+    }
+
+    .container-icons
+    {
+        margin: 12px;
+    }
+
+    .divider
+    {
+        display: none;
+    }
+}
+
+@media all  {
+    
+}

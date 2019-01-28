@@ -1,120 +1,121 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-  <link rel="stylesheet" href="{{ asset('css/css_for_views/index.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/css_for_views/radio.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/index/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/index/indexMQ768.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/index/indexMQ602.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/radio.css') }}">
 {% endblock %}
 
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+    <div class="container-body">
+        <main>
+            <div class="container">
+                {% block message_flash %}
+                    {% for msg in app.session.flashBag.get('info') %}
+                         <div class="message-flash center background-color-orange-lacces">
+                             <p>{{ msg }}</p>
+                         </div>
+                    {% endfor %}
+                {% endblock %}
+                <div class="container-main-flex">
+                    <div class="container-main">
+                        <section class="container-focus">
+                            <div class="row center row-container">
+                                <div class="center row-flag">
+                                    <div class="container-img-flag">
+                                        <img class="z-depth-2" id="imgFr" alt="Choisir langue française" src="{{ asset('pictures/flags/flagLSF.png') }}"/>
+                                    </div>
+                                    <div class="container-img-flag">
+                                        <img class="z-depth-2" id="imgEn" alt="Choose american language" src="{{ asset('pictures/flags/flagASL.png') }}"/>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div id="radiobtn">
+                                <div>
+                                    <label>
+                                        <input type="radio" id="btnFr" name="langue" checked="true"/>
+                                        <span>fr</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="langue" id="btnEn"/>
+                                        <span>en</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </section>
 
-{% block message_flash %}
-    <div class="container">
-        <div class="row">
-             {% for msg in app.session.flashBag.get('info') %}
-                  <div class="message-flash center background-color-orange-lacces">
-                      <p>{{ msg }}</p>
-                   </div>
-              {% endfor %}
-         </div>
-     </div>
-{% endblock %}
+                        <section>
+                            <div class="row">
+                                <div class="container-search">
+                                    {% include('@Lacces/SearchBarre/searchBarre.html.twig') %}
+                                </div>
+                            </div>
+                        </section>
 
-
-<main class="container-main">
-    <div class="container">
-        <section class="container-focus">
-
-            <div class="row center row-container">
-                <div class="row center row-flag">
-                    <div class="container-img-flag">
-                        <img class="z-depth-2" id="imgFr" src="{{ asset('pictures/flags/flagLSF.png') }}"/>
+                        <section id="sentence-content" class="container-focus">
+                            <div class="row center">
+                                <p class="flow-text index-text">Le français anglais signé en vidéo et en face à face</p>
+                            </div>
+                        </section>
                     </div>
-                    <div class="container-img-flag">
-                        <img class="z-depth-2" id="imgEn" src="{{ asset('pictures/flags/flagASL.png') }}"/>
+                </div>
+            </div>
+        </main>
+        <footer id="footer-index" class="container-focus-footer">
+            <div class="container-footer">
+                <div class="container center">
+                    <div class="row row-footer">
+                        <div class="container-row-link">
+                            <div class="col s4 m4">
+                                <a href="{{ asset('faq') }}">
+                                    FAQ
+                                </a>
+                            </div>
+                            <div class="col s4 m4">
+                                <a href="{{ asset('mentions_legales') }}">
+                                    Mentions légales
+                                </a>
+                            </div>
+                            <div class="col s4 m4">
+                                <a href="{{ asset('contact') }}">
+                                    Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider">
+                </div>
+                <div class="container center">
+                    <div class="row row-footer">
+                        <div class="container-row-icons">
+                            <a href="">
+                                <div class="container-icons">
+                                    <img alt="Lien vers la page facebook" src="{{ asset('pictures/icons/facebook-f-white.svg') }}"/>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="container-icons">
+                                    <img alt="Partager le l'application" src="{{ asset('pictures/icons/share-alt-white.svg') }}"/>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="container-icons">
+                                    <img alt="Lien vers le site du consortium L@cces" src="{{ asset('pictures/icons/globe-white.svg') }}"/>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div id="radiobtn">
-                <div>
-                    <label>
-                        <input type="radio" id="btnFr" name="langue" checked="true"/>
-                    <span>fr</span>
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input type="radio" name="langue" id="btnEn"/>
-                        <span>en</span>
-                    </label>
-                </div>
-            </div>
-        </section>
-        <section id="container-search">
-            <div class="row">
-                    {% include('@Lacces/SearchBarre/searchBarre.html.twig') %}
-            </div>
-        </section>
-        <section class="container-focus">
-            <div class="row">
-                <p class="flow-text center">
-                    Le français anglais signé en vidéo et en face à face
-                </p>
-            </div>
-        </section>
+        </footer>
     </div>
-</main>
-<footer class="container-focus">
-    <div class="center footer">
-        <div class="container">
-            <div class="row row-footer">
-                <div class="container-row-link">
-                    <div class="col s4 m4">
-                        <a href="{{ asset('faq') }}">
-                            FAQ
-                        </a>
-                    </div>
-                    <div class="col s4 m4">
-                        <a href="{{ asset('mentions_legales') }}">
-                            Mentions légales
-                        </a>
-                    </div>
-                    <div class="col s4 m4">
-                        <a href="{{ asset('contact') }}">
-                            Contact
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="divider">
-        </div>
-        <div class="container">
-            <div class="row center row-footer">
-                <div class="container-row-icons">
-                    <a href="">
-                        <div class="container-icons">
-                            <img id="facebook-icon" src="{{ asset('pictures/icons/facebook-f-white.svg') }}"/>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="container-icons">
-                            <img id="share-icon" src="{{ asset('pictures/icons/share-alt-white.svg') }}"/>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="container-icons">
-                            <img id="globe-icon" src="{{ asset('pictures/icons/globe-white.svg') }}"/>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 {% endblock %}
 
 {% block javascripts %}
