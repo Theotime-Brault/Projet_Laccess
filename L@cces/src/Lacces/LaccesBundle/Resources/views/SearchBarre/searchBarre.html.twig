@@ -40,16 +40,21 @@
       }else{
           l = "";
       }
-      if(word != "" && l != ""){
+
+      console.log($("#btnFr").is(":checked"));
+      console.log(word);
+      console.log(l);
+
+      if(word && l){
           $.ajax({
-              cache: false,
-              data: {'langue':l, 'word':word},
+              //cache: false,
+              data: {'l':l, 'word':word},
               url:  "{{ path('auto_complete') }}",
               type: 'POST',
               dataType: "json",
               success: function (response) {
-                  console.log(response.words[0]);
-                  $('#result').html(response.words[0]);
+                  console.log(response);
+                  //$('#result').html(response.words[0]);
 
               },
               error: function (response) {

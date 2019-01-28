@@ -22,6 +22,7 @@ class wordFrRepository extends \Doctrine\ORM\EntityRepository
 
   public function findByPopularity ($motif){
     return $this->createQueryBuilder('c')
+        ->select('c.word')
         ->where('c.word LIKE :word')
         ->setParameter('word', $motif)
         ->orderBy('c.popularity', 'DESC')

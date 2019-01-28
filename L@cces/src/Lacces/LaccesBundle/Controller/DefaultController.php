@@ -117,19 +117,16 @@ class DefaultController extends Controller
      * @return JsonResponse
      */
     public function autoCompleteAction(Request $request){
-        $encoders = array(new XmlEncoder(), new JsonEncoder());
-        $normalizers = array(new ObjectNormalizer());
-        $serializer = new Serializer($normalizers, $encoders);
 
         $em = $this->getDoctrine()->getManager();
-        $langue = $request->request->get('langue');
+        $l = $request->request->get('l');
         $word = $request->request->get('word');
-        if($langue == "fr"){
-            $words = $em->getRepository('LaccesBundle:wordFr')->findByPopularity($word);
-        }elseif($langue == "en"){
-            $words = $em->getRepository('LaccesBundle:wordEn')->findByPopularity($word);
+        if($l == "fr"){
+            $words = $em->getRepository('LaccesBundle:wordFr')->findByPopularity($word."%");
+        }elseif($l == "en"){
+            $words = $em->getRepository('LaccesBundle:wordEn')->findByPopularity($word."%");
         }else{
-            $words =null;
+            $words = null;
         }
 
         return new JsonResponse(array('words'=>$words));
