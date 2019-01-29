@@ -71,4 +71,21 @@ input::placeholder
     left: 0;
 }
 
+#result>a:hover{
+    color: white;
+}
+
+#result .card-content:hover{
+    background-color: #f4a733;
+}
+
+#result .card{
+    margin-bottom: 0.5rem;
+}
+
+#result .card-content{
+    padding: 0.4rem;
+
+}
+
 

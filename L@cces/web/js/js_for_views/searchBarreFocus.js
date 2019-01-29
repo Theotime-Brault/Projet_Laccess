@@ -27,5 +27,6 @@ $(document).ready(function () {
         $("#search-on").css({
             height: "56px"});
         $('#result').css('display', 'none');
+        $('#result').html("");
     });
 });
