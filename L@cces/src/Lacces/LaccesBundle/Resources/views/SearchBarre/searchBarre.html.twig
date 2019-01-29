@@ -49,16 +49,28 @@
               type: 'POST',
               dataType: "json",
               success: function (response) {
-                  /*for(var i=0; i<response.word.length; i++){
-                      console.log(response.word);
-                      console.log("oui");
-                  }*/
-                  console.log(response[word][word][1]);
+                  result(response);
               },
               error: function (response) {
-
               }
           })
+
+          function result(response){
+              $('#result').html("");
+              for (var i = 0; i < response['words'].length; i++) {
+                  $('#result').append(
+                      "<a href=\"#\" class=\"\">" +
+                      "<div class=\"card\">" +
+                      "<div class=\"card-content\">" + response['words'][i]['word'] + "</div>" +
+                      "</div>" +
+                      "</a>"
+                  );
+              }
+          }
       }
+  })
+    
+  $('.card-content').click(function () {
+      $('#search-barre').val($('#result').html());
   })
 </script>
