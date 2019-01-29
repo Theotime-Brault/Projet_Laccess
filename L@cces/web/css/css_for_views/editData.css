@@ -1,0 +1,10 @@
+#form_langue_0, #form_langue_1 {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+    margin-left: 10px;
+}
+
+#form_langue {
+    display: flex;
+}

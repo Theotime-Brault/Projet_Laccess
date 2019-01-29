@@ -1,1 +1,30 @@
-<body>Ajouter data</body>
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/editData.css') }}">
+
+{% endblock %}
+
+{% block title %}Ajouter un mot{% endblock %}
+
+{% block body %}
+
+    <div class="container-body">
+        <main class="container-main-center">
+            <div class="container">
+                <div class="row center">
+                    <h3>Ajouter un mot</h3>
+                </div>
+                {{ include('@Lacces/formAddWord.html.twig') }}
+            </div>
+        </main>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="{{ asset('js/js_for_views/contact.js') }}"></script>
+{% endblock %}
+
