@@ -61,7 +61,7 @@
                   $('#result').append(
                       "<a href=\"#\" class=\"\">" +
                       "<div class=\"card\">" +
-                      "<div class=\"card-content\">" + response['words'][i]['word'] + "</div>" +
+                      "<div class=\"card-content\" id=\"\">" + response['words'][i]['word'] + "</div>" +
                       "</div>" +
                       "</a>"
                   );
@@ -69,8 +69,10 @@
           }
       }
   })
-    
-  $('.card-content').click(function () {
-      $('#search-barre').val($('#result').html());
+
+  $('#result>a').click(function(){
+      var s = $(this).text();
+      console.log($(this).text());
+      $('#search-barre').val(s);
   })
 </script>

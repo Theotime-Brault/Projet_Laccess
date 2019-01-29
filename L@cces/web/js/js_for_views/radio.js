@@ -4,12 +4,14 @@ $(document).ready(function(){
     $("#btnEn").removeAttr("checked");
     $("#btnFr").attr("checked", true);
     checked();
+    $('#result').html("");
   });
 
   $("#imgEn").click(function(){
     $("#btnFr").removeAttr("checked");
     $("#btnEn").attr("checked", true);
     checked();
+    $('#result').html("");
   });
 
   function checked(){
