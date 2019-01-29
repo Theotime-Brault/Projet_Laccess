@@ -41,21 +41,19 @@
           l = "";
       }
 
-      console.log($("#btnFr").is(":checked"));
-      console.log(word);
-      console.log(l);
-
       if(word && l){
           $.ajax({
-              //cache: false,
+              cache: false,
               data: {'l':l, 'word':word},
               url:  "{{ path('auto_complete') }}",
               type: 'POST',
               dataType: "json",
               success: function (response) {
-                  console.log(response);
-                  //$('#result').html(response.words[0]);
-
+                  /*for(var i=0; i<response.word.length; i++){
+                      console.log(response.word);
+                      console.log("oui");
+                  }*/
+                  console.log(response[word][word][1]);
               },
               error: function (response) {
 
