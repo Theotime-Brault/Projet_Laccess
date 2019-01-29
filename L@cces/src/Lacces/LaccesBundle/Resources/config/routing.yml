@@ -44,3 +44,18 @@ lacces_exercices:
     path:   /exercices
     defaults:
         _controller: LaccesBundle:Default:exercices
+
+lacces_editDate_edit:
+    path: /editData/edit
+    defaults:
+        _controller: LaccesBundle:EditData:edit
+
+lacces_editDate_add:
+    path: /editData/add
+    defaults:
+        _controller: LaccesBundle:EditData:add
+
+lacces_editDate_remove:
+    path: /editData/remove
+    defaults:
+        _controller: LaccesBundle:EditData:remove
