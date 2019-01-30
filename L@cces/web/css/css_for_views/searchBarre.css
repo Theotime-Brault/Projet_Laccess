@@ -60,9 +60,41 @@ input::placeholder
   padding: 0;
 }
 
+#close-barre
+{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#container-image
+{
+    position: relative;
+}
+
+#container-img-flag
+{
+    position: absolute;
+    display: none;
+    right: 4.5rem;
+    top: 0;
+}
+
+.image-circle
+{
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    border-radius: 50% 0 0 50%;
+}
+
 .ui-menu-item-wrapper:focus .ui-menu-item-wrapper:hover .ui-menu-item-wrapper:active .ui-menu-item-wrapper:target .ui-menu-item-wrapper:enabled{
     color: white !important;
     background-color: #f4a733 !important;
 }
+
+
+
 
 

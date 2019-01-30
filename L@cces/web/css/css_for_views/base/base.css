@@ -98,6 +98,8 @@ noscript
     z-index: 9999;
     padding: 8px;
     box-shadow: 0 0 5px 0 #757575;
+    transform: translateY(0);
+    animation: fadeInUp 0.5s;
 }
 
 noscript .row
