@@ -7,10 +7,10 @@
             </a>
         </div>
     </div>
-    <div id="result"></div>
 </form>
 
 <script>
+$('document').ready(function () {
 
   $('#btnSearch').click(function (){
      var  s = $('#search-barre').val();
@@ -30,16 +30,17 @@
      }
   });
 
-  $('#search-barre').keyup(function () {
-      var word = $('#search-barre').val();
-      var l;
-      if($("#btnFr").is(":checked")) {
-          l = "fr";
-      }else if($("#btnEn").is(":checked")) {
-          l = "en";
-      }else{
-          l = "";
-      }
+
+    $('#search-barre').keyup(function () {
+          var word = $('#search-barre').val();
+          var l;
+          if($("#btnFr").is(":checked")) {
+              l = "fr";
+          }else if($("#btnEn").is(":checked")) {
+              l = "en";
+          }else{
+              l = "";
+          }
 
       if(word && l){
           $.ajax({
@@ -53,26 +54,19 @@
               },
               error: function (response) {
               }
-          })
+          });
 
           function result(response){
-              $('#result').html("");
+              var mots = [];
               for (var i = 0; i < response['words'].length; i++) {
-                  $('#result').append(
-                      "<a href=\"#\" class=\"\">" +
-                      "<div class=\"card\">" +
-                      "<div class=\"card-content\" id=\"\">" + response['words'][i]['word'] + "</div>" +
-                      "</div>" +
-                      "</a>"
-                  );
+                  mots[i] = response['words'][i]['word'];
               }
+
+              $('#search-barre').autocomplete({
+                  source: mots,
+              });
           }
       }
-  })
-
-  $('#result>a').click(function(){
-      var s = $(this).text();
-      console.log($(this).text());
-      $('#search-barre').val(s);
-  })
+  });
+})
 </script>

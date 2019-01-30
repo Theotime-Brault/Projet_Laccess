@@ -90,6 +90,34 @@ p
     /*height: 100%;*/
 }
 
+noscript
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 8px;
+    box-shadow: 0 0 5px 0 #757575;
+}
+
+noscript .row
+{
+    margin-bottom: 0;
+}
+
+noscript .material-icons
+{
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+}
+
+noscript .material-icons:hover
+{
+    background-color: #cf7f06;
+}
 
 /*******************************************************
 ********************** nav barre ***********************
