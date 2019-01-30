@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>L@cces - {% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        {#<link rel="stylesheet" href="{{ asset('css/jquery_materialize/jquery-ui.min.css') }}">#}
+        <link rel="stylesheet" href="{{ asset('css/jquery_materialize/jquery-ui.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/jquery_materialize/materialize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/base.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/baseMQ768.css') }}">
@@ -133,12 +133,28 @@
             </li>
         </ul>
 
+        <noscript class="background-color-orange-lacces white-text center flow-text">
+            <div class="container">
+                <div class="row">
+                    <div class="s6 m8 x12">
+                        <p>
+                            Javascript doit être activé pour une utilisation optimal de l'application !
+                        </p>
+
+                    </div>
+                    <div class="row">
+                        <i class="material-icons">close</i>
+                    </div>
+                </div>
+            </div>
+        </noscript>
+
         {% block body %}
         {% endblock %}
     </body>
 
     <script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>
-    {#<script src="{{ asset('js/jquery_materialize/jquery-ui.min.js') }}"></script>#}
+    <script src="{{ asset('js/jquery_materialize/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/js_for_views/base.js') }}"></script>
     <script src="{{ asset('js/js_for_views/searchBarreFocus.js') }}"></script>
     {% block javascripts %}
