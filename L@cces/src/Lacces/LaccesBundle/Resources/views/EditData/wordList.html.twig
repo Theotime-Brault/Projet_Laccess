@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/signaire.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/langue.css') }}">
+
+{% endblock %}
+
+{% block title %}Liste des mots{% endblock %}
+
+{% block body %}
+    <div class="container-body">
+        <main>
+            <div class="container">
+                {% if langue == 'fr' %}
+                    <div class="row center">
+                        <a id="btn-langue" class="btn background-color-orange-lacces" href="#">Passer en Anglais</a>
+                    </div>
+                {% else %}
+                    <div class="row center">
+                        <a id="btn-langue" class="btn background-color-orange-lacces" href="en">Passer en Français</a>
+                    </div>
+                {% endif %}
+                <ul class="collapsible collapsible-accordion">
+                    {% for letter in 'a'..'z' %}
+                        <li class="bold">
+                            <a class="collapsible-header waves-effect collapsible-ASL">
+                                <div id="lettreMaj">
+                                    {{ letter|upper }}
+                                    <i class="material-icons material-icons_arrow_drop_down" id="fleche">arrow_drop_down</i>
+                                </div>
+                            </a>
+                            <div class="collapsible-body">
+                                <ul>
+
+                                    {% if langue == 'fr' %}
+                                    <div id="motFr">
+                                        {% for w in wordFr %}
+                                            {% if w.word|first|lower == letter %}
+                                                <li class="white">
+                                                    <a class="flow-text" id="word" href="../word/en/{{ w.word }}">{{ w.word }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    {% else %}
+                                    <div id="motEn">
+                                        {% for w in wordEn %}
+                                            {% if w.word|first|lower == letter %}
+                                                <li class="white">
+                                                    <a class="flow-text" id="word" href="../word/en/{{ w.word }}">{{ w.word }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+
+                                </ul>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </main>
+    </div>
+
+{% endblock %}
