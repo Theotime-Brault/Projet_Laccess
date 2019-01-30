@@ -1,0 +1,64 @@
+{{ form_start(form)}}
+
+
+<div class="row">
+    <div class="input-field col s12 m6">
+        {{ form_label(form.wordFr)}}
+        {{ form_errors(form.wordFr)}}
+        {{ form_widget(form.wordFr)}}
+    </div>
+    <div class="input-field col s12 m6">
+        {{ form_label(form.wordEn)}}
+        {{ form_errors(form.wordEn)}}
+        {{ form_widget(form.wordEn)}}
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="input-field col s12 m6">
+        {{ form_label(form.videoLinkFr)}}
+        {{ form_errors(form.videoLinkFr)}}
+        {{ form_widget(form.videoLinkFr)}}
+    </div>
+    <div class="input-field col s12 m6">
+        {{ form_label(form.videoLinkEn)}}
+        {{ form_errors(form.videoLinkEn)}}
+        {{ form_widget(form.videoLinkEn)}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="input-field col s12 m6">
+        {{ form_label(form.contextSentenceFr)}}
+        {{ form_errors(form.contextSentenceFr)}}
+        {{ form_widget(form.contextSentenceFr)}}
+    </div>
+    <div class="input-field col s12 m6">
+        {{ form_label(form.contextSentenceEn)}}
+        {{ form_errors(form.contextSentenceEn)}}
+        {{ form_widget(form.contextSentenceEn)}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="input-field col s12 m6">
+        {{ form_label(form.videoDescriptionFr)}}
+        {{ form_errors(form.videoDescriptionFr)}}
+        {{ form_widget(form.videoDescriptionFr)}}
+    </div>
+    <div class="input-field col s12 m6">
+        {{ form_label(form.videoDescriptionEn)}}
+        {{ form_errors(form.videoDescriptionEn)}}
+        {{ form_widget(form.videoDescriptionEn)}}
+    </div>
+</div>
+
+<div class="row center">
+    {{ form_widget(form.submit) }}
+</div>
+{{ form_end(form)}}
+
+
+
