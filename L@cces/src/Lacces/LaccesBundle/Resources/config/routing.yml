@@ -46,7 +46,7 @@ lacces_exercices:
         _controller: LaccesBundle:Default:exercices
 
 lacces_editDate_edit:
-    path: /editData/edit/{wordFrId}/{wordEnId}
+    path: /editData/edit/{wordId}/{langue}
     defaults:
         _controller: LaccesBundle:EditData:edit
     requirements:

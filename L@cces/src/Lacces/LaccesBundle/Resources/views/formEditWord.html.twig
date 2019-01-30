@@ -1,0 +1,44 @@
+{{ form_start(form)}}
+
+
+<div class="row">
+    <div class="input-field">
+        {{ form_label(form.word)}}
+        {{ form_errors(form.word)}}
+        {{ form_widget(form.word)}}
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="input-field">
+        {{ form_label(form.videoLink)}}
+        {{ form_errors(form.videoLink)}}
+        {{ form_widget(form.videoLink)}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="input-field">
+        {{ form_label(form.contextSentence)}}
+        {{ form_errors(form.contextSentence)}}
+        {{ form_widget(form.contextSentence)}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="input-field">
+        {{ form_label(form.videoDescription)}}
+        {{ form_errors(form.videoDescription)}}
+        {{ form_widget(form.videoDescription)}}
+    </div>
+</div>
+
+<div class="row center">
+    {{ form_widget(form.submit) }}
+</div>
+{{ form_end(form)}}
+
+
+
