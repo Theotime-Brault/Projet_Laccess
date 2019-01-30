@@ -4,28 +4,21 @@
 
 {% endblock %}
 
-{% block title %}Ajouter un mot{% endblock %}
+{% block title %}Modifier le mot "{{ word }}"{% endblock %}
 
 {% block body %}
 
     <div class="container-body">
 
-        {% block message_flash %}
-            {% for msg in app.session.flashBag.get('info') %}
-                <div id="center-message">
-                    <div class="message-flash background-color-orange-lacces">
-                        <p>{{ msg }}</p>
-                    </div>
-                </div>
-            {% endfor %}
-        {% endblock %}
-
         <main class="container-main-center">
             <div class="container">
                 <div class="row center">
-                    <h3>Modifier un mot</h3>
+                    <h3>Modifier le mot "{{ word }}"</h3>
                 </div>
-                {{ include('@Lacces/formAddWord.html.twig') }}
+                {{ include('@Lacces/formEditWord.html.twig') }}
+                <div class="row center">
+                    <a id="btn-langue" class="btn background-color-orange-lacces" href="../../wordList/{{ langue }}">Retour</a>
+                </div>
             </div>
         </main>
     </div>

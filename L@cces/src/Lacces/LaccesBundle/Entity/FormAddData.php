@@ -4,7 +4,7 @@ namespace Lacces\LaccesBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class FormData
+class FormAddData
 {
   /**
    * @Assert\NotBlank

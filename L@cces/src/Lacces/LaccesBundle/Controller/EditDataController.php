@@ -2,7 +2,8 @@
 
 namespace Lacces\LaccesBundle\Controller;
 
-use Lacces\LaccesBundle\Entity\FormData;
+use Lacces\LaccesBundle\Entity\FormAddData;
+use Lacces\LaccesBundle\Entity\FormEditData;
 use Lacces\LaccesBundle\Entity\FormLangue;
 use Lacces\LaccesBundle\Entity\traductionFrEn;
 use Lacces\LaccesBundle\Entity\wordEn;
@@ -16,67 +17,41 @@ use Symfony\Component\HttpFoundation\Request;
 
 class EditDataController extends Controller
 {
-    public function editAction(Request $request, $wordFrId, $wordEnId) {
+    public function editAction(Request $request, $wordId, $langue) {
 
       $em = $this->getDoctrine()->getManager();
 
-      $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($wordFrId);
-      $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($wordEnId);
+      if($langue == 'fr') {
+        $word = $em->getRepository('LaccesBundle:wordFr')->find($wordId);
+      } else {
+        $word = $em->getRepository('LaccesBundle:wordEn')->find($wordId);
+      }
 
-      $formulaire = new FormData();
+      $formulaire = new FormEditData();
 
       $form = $this->createFormBuilder($formulaire)
 
-        //MOT FRANCAIS
-
-        ->add('wordFr', TextType::class, array('attr' => array(
+        ->add('word', TextType::class, array('attr' => array(
           'maxlength' => "50",
-          'value' => $wordFr->getWord(),
+          'value' => $word->getWord(),
           'class' => "formValue",
           'data-length' => "50",
         )))
-        ->add('videoLinkFr', TextType::class, array('attr' => array(
+        ->add('videoLink', TextType::class, array('attr' => array(
           'maxlength' => "200",
-          'value' => $wordFr->getVideoLink(),
+          'value' => $word->getVideoLink(),
           'class' => "formValue",
           'data-length' => "200",
         )))
-        ->add('contextSentenceFr', TextType::class, array('attr' => array(
+        ->add('contextSentence', TextType::class, array('attr' => array(
           'maxlength' => "200",
-          'value' => $wordFr->getContextSentence(),
+          'value' => $word->getContextSentence(),
           'class' => "formValue",
           'data-length' => "200",
         )))
-        ->add('videoDescriptionFr', TextType::class, array('attr' => array(
+        ->add('videoDescription', TextType::class, array('attr' => array(
           'maxlength' => "200",
-          'value' => $wordFr->getVideoDescription(),
-          'class' => "formValue",
-          'data-length' => "200",
-        )))
-
-        //MOT ANGLAIS
-
-        ->add('wordEn', TextType::class, array('attr' => array(
-          'maxlength' => "50",
-          'value' => $wordEn->getWord(),
-          'class' => "formValue",
-          'data-length' => "50",
-        )))
-        ->add('videoLinkEn', TextType::class, array('attr' => array(
-          'maxlength' => "200",
-          'value' => $wordEn->getVideoLink(),
-          'class' => "formValue",
-          'data-length' => "200",
-        )))
-        ->add('contextSentenceEn', TextType::class, array('attr' => array(
-          'maxlength' => "200",
-          'value' => $wordEn->getContextSentence(),
-          'class' => "formValue",
-          'data-length' => "200",
-        )))
-        ->add('videoDescriptionEn', TextType::class, array('attr' => array(
-          'maxlength' => "200",
-          'value' => $wordEn->getVideoDescription(),
+          'value' => $word->getVideoDescription(),
           'class' => "formValue",
           'data-length' => "200",
         )))
@@ -97,27 +72,21 @@ class EditDataController extends Controller
         $formulaire = $form->getData();
         $this->addFlash('info', "Le mot à bien été modifié !");
 
-        $wordFr->setWord($formulaire->getWordFr());
-        $wordFr->setVideoLink($formulaire->getVideoLinkFr());
-        $wordFr->setContextSentence($formulaire->getContextSentenceFr());
-        $wordFr->setVideoDescription($formulaire->getVideoDescriptionFr());
+        $word->setWord($formulaire->getWord());
+        $word->setVideoLink($formulaire->getVideoLink());
+        $word->setContextSentence($formulaire->getContextSentence());
+        $word->setVideoDescription($formulaire->getVideoDescription());
 
-        $wordEn->setWord($formulaire->getWordEn());
-        $wordEn->setVideoLink($formulaire->getVideoLinkEn());
-        $wordEn->setContextSentence($formulaire->getContextSentenceEn());
-        $wordEn->setVideoDescription($formulaire->getVideoDescriptionEn());
-
-        $em->persist($wordFr);
-        $em->persist($wordEn);
-
+        $em->persist($word);
         $em->flush();
 
-        return $this->render('@Lacces/EditData/editData.html.twig', array(
-          'form' => $form->createView(),
-        ));
+        return $this->redirectToRoute('lacces_wordList', array('langue' => $langue));
+
       }
       return $this->render('@Lacces/EditData/editData.html.twig', array(
+        'langue' => $langue,
         'form' => $form->createView(),
+        'word' => $word->getWord()
       ));
     }
 
@@ -127,7 +96,7 @@ class EditDataController extends Controller
    */
     public function addAction(Request $request) {
 
-      $formulaire = new FormData();
+      $formulaire = new FormAddData();
 
       $form = $this->createFormBuilder($formulaire)
 
