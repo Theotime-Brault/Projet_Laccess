@@ -8,9 +8,14 @@
         </div>
     </div>
     <div id="result"></div>
+
+    <div>
+        <input type="text" id="autocomplete-input">
+    </div>
 </form>
 
 <script>
+$('document').ready(function () {
 
   $('#btnSearch').click(function (){
      var  s = $('#search-barre').val();
@@ -30,6 +35,45 @@
      }
   });
 
+
+    $('#autocomplete-input').keyup(function () {
+          var word = $('#autocomplete-input').val();
+          var l;
+          if($("#btnFr").is(":checked")) {
+              l = "fr";
+          }else if($("#btnEn").is(":checked")) {
+              l = "en";
+          }else{
+              l = "";
+          }
+
+      if(word && l){
+          $.ajax({
+              cache: false,
+              data: {'l':l, 'word':word},
+              url:  "{{ path('auto_complete') }}",
+              type: 'POST',
+              dataType: "json",
+              success: function (response) {
+                  result(response);
+              },
+              error: function (response) {
+              }
+          });
+
+          function result(response){
+              var mots = [];
+              for (var i = 0; i < response['words'].length; i++) {
+                  mots[i] = response['words'][i]['word'];
+              }
+
+              $('#autocomplete-input').autocomplete({
+                  source: mots,
+              });
+          }
+      }
+  })
+  /*
   $('#search-barre').keyup(function () {
       var word = $('#search-barre').val();
       var l;
@@ -59,20 +103,25 @@
               $('#result').html("");
               for (var i = 0; i < response['words'].length; i++) {
                   $('#result').append(
-                      "<a href=\"#\" class=\"\">" +
+                      "<a href=\"#\" class=\"\" id=\""+i+"\">" +
                       "<div class=\"card\">" +
-                      "<div class=\"card-content\" id=\"\">" + response['words'][i]['word'] + "</div>" +
+                      "<div class=\"card-content\">" + response['words'][i]['word'] + "</div>" +
                       "</div>" +
                       "</a>"
                   );
               }
           }
       }
-  })
+  });
 
   $('#result>a').click(function(){
       var s = $(this).text();
       console.log($(this).text());
       $('#search-barre').val(s);
-  })
+  });
+
+  $('#search-barre').keyup(40, function () {
+      $('#0').css("background-color", "#f4a733")
+  })*/
+})
 </script>
