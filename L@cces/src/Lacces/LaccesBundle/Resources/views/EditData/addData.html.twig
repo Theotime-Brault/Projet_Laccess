@@ -11,6 +11,17 @@
 {% block body %}
 
     <div class="container-body">
+
+        {% block message_flash %}
+            {% for msg in app.session.flashBag.get('info') %}
+                <div id="center-message">
+                    <div class="message-flash background-color-orange-lacces">
+                        <p>{{ msg }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endblock %}
+
         <main class="container-main-center">
             <div class="container">
                 <div class="row center">

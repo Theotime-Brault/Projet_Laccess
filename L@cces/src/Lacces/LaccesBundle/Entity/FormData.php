@@ -7,107 +7,171 @@ use Symfony\Component\Validator\Constraints as Assert;
 class FormData
 {
   /**
-   * @Assert\Choice(choices={"Fr", "En"})
+   * @Assert\NotBlank
    */
-  protected $langue;
+  protected $wordFr;
 
   /**
    * @Assert\NotBlank
    */
-  protected $word;
+  protected $videoLinkFr;
 
   /**
    * @Assert\NotBlank
    */
-  protected $videoLink;
+  protected $contextSentenceFr;
 
   /**
    * @Assert\NotBlank
    */
-  protected $contextSentence;
+  protected $videoDescriptionFr;
 
   /**
    * @Assert\NotBlank
    */
-  protected $videoDescription;
+  protected $wordEn;
+
+  /**
+   * @Assert\NotBlank
+   */
+  protected $videoLinkEn;
+
+  /**
+   * @Assert\NotBlank
+   */
+  protected $contextSentenceEn;
+
+  /**
+   * @Assert\NotBlank
+   */
+  protected $videoDescriptionEn;
+
 
   /**
    * @return mixed
    */
-  public function getLangue()
+  public function getWordFr()
   {
-    return $this->langue;
+    return $this->wordFr;
   }
 
   /**
-   * @param mixed $langue
+   * @param mixed $wordFr
    */
-  public function setLangue($langue)
+  public function setWordFr($wordFr)
   {
-    $this->langue = $langue;
-  }
-
-  /**
-   * @return mixed
-   */
-  public function getWord()
-  {
-    return $this->word;
-  }
-
-  /**
-   * @param mixed $word
-   */
-  public function setWord($word)
-  {
-    $this->word = $word;
-  }
-
-  /**
-   * @return mixed
-   */
-  public function getVideoLink()
-  {
-    return $this->videoLink;
-  }
-
-  /**
-   * @param mixed $videoLink
-   */
-  public function setVideoLink($videoLink)
-  {
-    $this->videoLink = $videoLink;
+    $this->wordFr = $wordFr;
   }
 
   /**
    * @return mixed
    */
-  public function getContextSentence()
+  public function getVideoLinkFr()
   {
-    return $this->contextSentence;
+    return $this->videoLinkFr;
   }
 
   /**
-   * @param mixed $contextSentence
+   * @param mixed $videoLinkFr
    */
-  public function setContextSentence($contextSentence)
+  public function setVideoLinkFr($videoLinkFr)
   {
-    $this->contextSentence = $contextSentence;
+    $this->videoLinkFr = $videoLinkFr;
   }
 
   /**
    * @return mixed
    */
-  public function getVideoDescription()
+  public function getContextSentenceFr()
   {
-    return $this->videoDescription;
+    return $this->contextSentenceFr;
   }
 
   /**
-   * @param mixed $videoDescription
+   * @param mixed $contextSentenceFr
    */
-  public function setVideoDescription($videoDescription)
+  public function setContextSentenceFr($contextSentenceFr)
   {
-    $this->videoDescription = $videoDescription;
+    $this->contextSentenceFr = $contextSentenceFr;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getVideoDescriptionFr()
+  {
+    return $this->videoDescriptionFr;
+  }
+
+  /**
+   * @param mixed $videoDescriptionFr
+   */
+  public function setVideoDescriptionFr($videoDescriptionFr)
+  {
+    $this->videoDescriptionFr = $videoDescriptionFr;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getWordEn()
+  {
+    return $this->wordEn;
+  }
+
+  /**
+   * @param mixed $wordEn
+   */
+  public function setWordEn($wordEn)
+  {
+    $this->wordEn = $wordEn;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getVideoLinkEn()
+  {
+    return $this->videoLinkEn;
+  }
+
+  /**
+   * @param mixed $videoLinkEn
+   */
+  public function setVideoLinkEn($videoLinkEn)
+  {
+    $this->videoLinkEn = $videoLinkEn;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getContextSentenceEn()
+  {
+    return $this->contextSentenceEn;
+  }
+
+  /**
+   * @param mixed $contextSentenceEn
+   */
+  public function setContextSentenceEn($contextSentenceEn)
+  {
+    $this->contextSentenceEn = $contextSentenceEn;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getVideoDescriptionEn()
+  {
+    return $this->videoDescriptionEn;
+  }
+
+  /**
+   * @param mixed $videoDescriptionEn
+   */
+  public function setVideoDescriptionEn($videoDescriptionEn)
+  {
+    $this->videoDescriptionEn = $videoDescriptionEn;
   }
 }
