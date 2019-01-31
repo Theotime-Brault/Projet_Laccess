@@ -217,7 +217,7 @@ class EditDataController extends Controller
         //$idFr = $wordFr->getId();
         //$idEn = $wordEn->getId();
 
-        $link = $em->getRepository('LaccesBundle:traductionFrEn')->findByIds($idFr, $idEn);
+        //$link = $em->getRepository('LaccesBundle:traductionFrEn')->findByIds($idFr, $idEn);
         //$em->remove($link);
         //$em->remove($wordFr);
         //$em->remove($wordEn);
