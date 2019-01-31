@@ -2,6 +2,7 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/css_for_views/word.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/searchBarre.css') }}">
 {% endblock %}
 
 {% block title %}
@@ -41,58 +42,116 @@
                         </div>
                     </section>
 
-                    <section class="container-video">
-                        <div class="row">
-                            <article id="article-card-1" class="col s12 m6 x6 offset-x3">
-                                <div class="card center">
-                                    <div id="card-video-1" class="card-image">
-                                        <div class="video-container">
-                                            <a id="block-video-1" class="block-video">
-                                                <div class="block grey">
-                                                    <i class="material-icons white-text large">play_circle_outline</i>
-                                                    <span class="card-title">Langue des signes française</span>
-                                                </div>
-                                            </a>
-                                            <iframe id="video1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                    <div id="context-sentence-block-video-1" class="context-sentence card-content">
-                                        <p class="flow-text">
-                                            {{ word.contextSentence }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
 
-                            <article id="article-card-2" class="col s12 m6 x6 offset-x3">
-                                <div class="card center">
-                                    <div id="card-video-2" class="card-image">
-                                        <div class="video-container">
-                                            <a id="block-video-2" class="block-video">
-                                                <div class="block grey">
-                                                    <i class="material-icons white-text large">play_circle_outline</i>
-                                                    <span class="card-title">American sign language</span>
+                    <section class="container-video">
+                        <ul class="collapsible popout">
+                            <li class="active">
+                                <div class="collapsible-header">
+                                    Mots
+                                </div>
+                                <div class="collapsible-body">
+                                    <div class="row">
+                                        <article id="article-card-1" class="col s12 m6 x6">
+                                            <div class="card center">
+                                                <div class="card-image">
+                                                    <div class="video-container">
+                                                        <a id="block-video-1" class="block-video">
+                                                            <div class="block grey">
+                                                                <i class="material-icons white-text large">play_circle_outline</i>
+                                                                <span class="card-title">Langue des signes française</span>
+                                                            </div>
+                                                        </a>
+                                                        <iframe id="video1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    </div>
                                                 </div>
-                                            </a>
-                                            <iframe id="video" width="1100" height="619" src="https://www.youtube.com/embed/D6ofFxMTEMY?rel=0{#{{ word.videoLink }}#}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                    <div id="context-sentence-block-video-2" class="context-sentence card-content">
-                                        <p class="flow-text">
-                                            {% if langue == "fr" %}
-                                                {% for w in word.wordEns %}
-                                                    {{ w.contextSentence }}
-                                                {% endfor %}
-                                            {% else %}
-                                                {% for w in word.wordFrs %}
-                                                    {{ w.contextSentence }}
-                                                {% endfor %}
-                                            {% endif %}
-                                        </p>
+                                            </div>
+                                        </article>
+
+                                        <article id="article-card-2" class="col s12 m6 x6">
+                                            <div class="card center">
+                                                <div class="card-image">
+                                                    <div class="video-container">
+                                                        <a id="block-video-2" class="block-video">
+                                                            <div class="block grey">
+                                                                <i class="material-icons white-text large">play_circle_outline</i>
+                                                                <span class="card-title">American sign language</span>
+                                                            </div>
+                                                        </a>
+                                                        <iframe id="video1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
                                     </div>
                                 </div>
-                            </article>
-                        </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">
+                                    Phrases de contextualisation
+                                </div>
+                                <div class="collapsible-body">
+                                    <div class="row">
+                                        <article id="article-card-sentence-1" class="col s12 m6 x6 offset-x3">
+                                            <div class="card center">
+                                                <div id="card-video-1" class="card-image">
+                                                    <div class="video-container">
+                                                        <a id="block-video-sentence-1" class="block-video">
+                                                            <div class="block grey">
+                                                                <i class="material-icons white-text large">play_circle_outline</i>
+                                                                <span class="card-title">Langue des signes française</span>
+                                                            </div>
+                                                        </a>
+                                                        <iframe id="video1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    </div>
+                                                </div>
+                                                <div id="context-sentence-block-video-1" class="context-sentence card-content">
+                                                    <p class="flow-text">
+                                                        {{ word.contextSentence }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </article>
+
+                                        <article id="article-card-sentence-2" class="col s12 m6 x6 offset-x3">
+                                            <div class="card center">
+                                                <div id="card-video-2" class="card-image">
+                                                    <div class="video-container">
+                                                        <a id="block-video-sentence-2" class="block-video">
+                                                            <div class="block grey">
+                                                                <i class="material-icons white-text large">play_circle_outline</i>
+                                                                <span class="card-title">American sign language</span>
+                                                            </div>
+                                                        </a>
+                                                        <iframe id="video" width="1100" height="619" src="https://www.youtube.com/embed/D6ofFxMTEMY?rel=0{#{{ word.videoLink }}#}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    </div>
+                                                </div>
+                                                <div id="context-sentence-block-video-2" class="context-sentence card-content">
+                                                    <p class="flow-text">
+                                                        {% if langue == "fr" %}
+                                                            {% for w in word.wordEns %}
+                                                                {{ w.contextSentence }}
+                                                            {% endfor %}
+                                                        {% else %}
+                                                            {% for w in word.wordFrs %}
+                                                                {{ w.contextSentence }}
+                                                            {% endfor %}
+                                                        {% endif %}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">
+                                    Exercice
+                                </div>
+                                <div class="collapsible-body">
+
+                                </div>
+                            </li>
+                        </ul>
                     </section>
                 </div>
             </div>
@@ -131,4 +190,5 @@
 
 {% block javascripts %}
     <script src="{{ asset('js/js_for_views/word.js') }}"></script>
+    <script src="{{ asset('js/js_for_views/searchBarreFocus.js') }}"></script>
 {% endblock %}

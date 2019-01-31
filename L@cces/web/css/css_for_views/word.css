@@ -3,6 +3,16 @@ body, .container-body
     height: 100%;
 }
 
+.row
+{
+    margin-bottom: 0;
+}
+
+.collapsible-body
+{
+    padding: 0;
+}
+
 .container-video
 {
     width: 100%;
@@ -46,3 +56,4 @@ body, .container-body
     color: #000000;
     cursor: pointer;
 }
+
