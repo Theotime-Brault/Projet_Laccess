@@ -129,7 +129,25 @@ class DefaultController extends Controller
             $words = null;
         }
 
+/*
+        if($word && $l == "fr"){
+            $wordsFr = $em->getRepository('LaccesBundle:wordFr')->findByPopularity($word."%");
+            dump($wordsFr);
+            for ($i=0; $i<sizeof($wordsFr); $i++){
+                $wordsEn[$i] = $wordsFr[$i]->getWordEns();
+            }
+        }else if($word && $l == "en"){
+            $wordsEn = $em->getRepository('LaccesBundle:wordEn')->findByPopularity($word."%");
+            for ($i=0; $i<sizeof($wordsEn); $i++){
+                $wordsFr[$i] = $wordsEn[$i]->getWordFrs();
+            }
+        }else{
+            $wordsFr = null;
+            $wordsEn = null;
+        }
+*/
         return new JsonResponse(array('words'=>$words));
+        //return new JsonResponse(array('wordsFr'=>$wordsFr, 'wordsEn'=>$wordsEn));
     }
 
     public function exercicesAction()
