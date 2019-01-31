@@ -4,6 +4,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/css_for_views/signaire.css') }}">
     <link rel="stylesheet" href="{{ asset('css/css_for_views/langue.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/wordList.css') }}">
 
 {% endblock %}
 
@@ -51,6 +52,7 @@
                                             {% if w.word|first|lower == letter %}
                                                 <li class="white">
                                                     <a class="flow-text" id="word" href="../edit/{{ w.id }}/fr">{{ w.word }}</a>
+                                                    <a class="flow-text supprimer" id="supprimer" data-parent="{{ w.id }}" href="#">Supprimer</a>
                                                 </li>
                                             {% endif %}
                                         {% endfor %}
@@ -61,6 +63,7 @@
                                             {% if w.word|first|lower == letter %}
                                                 <li class="white">
                                                     <a class="flow-text" id="word" href="../edit/{{ w.id }}/en">{{ w.word }}</a>
+                                                    <a class="flow-text supprimer" id="supprimer" data-parent="{{ w.id }}" href="#">Supprimer</a>
                                                 </li>
                                             {% endif %}
                                         {% endfor %}
@@ -79,4 +82,37 @@
         </main>
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready( function ()
+        {
+            $('.supprimer').click(function(e)
+            {
+                e.preventDefault();
+                var id = this.getAttribute("data-parent");
+                var langue = "{{ langue }}";
+                var wordRemove = $(this).parent("li");
+
+                if(confirm('Supprimer cet élément ?'))
+                {
+                    $.ajax
+                    (
+                        {
+                        type: "POST",
+                        url: "{{ path('lacces_editData_remove') }}",
+                        data: {'id':id, 'langue':langue },
+                        success: function(msg)
+                        {
+                            $(this).delay(1200,function(){
+                                wordRemove.slideUp(500,function() {
+                                });
+                            });
+                        }}
+                    );
+                }
+            });
+        });
+    </script>
 {% endblock %}

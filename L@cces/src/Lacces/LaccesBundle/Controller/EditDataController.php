@@ -4,14 +4,15 @@ namespace Lacces\LaccesBundle\Controller;
 
 use Lacces\LaccesBundle\Entity\FormAddData;
 use Lacces\LaccesBundle\Entity\FormEditData;
-use Lacces\LaccesBundle\Entity\FormLangue;
 use Lacces\LaccesBundle\Entity\traductionFrEn;
 use Lacces\LaccesBundle\Entity\wordEn;
 use Lacces\LaccesBundle\Entity\wordFr;
+use Lacces\LaccesBundle\Repository\wordFrRepository;
+use Lacces\LaccesBundle\Repository\wordEnRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 
@@ -197,9 +198,34 @@ class EditDataController extends Controller
         'form' => $form->createView(),
       ));
     }
+    public function removeAction(Request $request) {
 
-    public function removeAction() {
-        return $this->render('@Lacces/EditData/removeData.html.twig');
+        $id = $request->get('id');
+        $langue = $request->get('langue');
+        $em = $this->getDoctrine()->getManager();
+
+
+        if($langue == "fr") {
+          $word = $em->getRepository('LaccesBundle:wordFr')->find($id);
+          //$wordFr = $em->getRepository('LaccesBundle:wordFr')->find($id);
+          //$wordEn = $em->getRepository('LaccesBundle:wordEn')->findByWord($wordFr->getWord());
+        } else if($langue == "en") {
+          $word = $em->getRepository('LaccesBundle:wordEn')->find($id);
+          //$wordEn = $em->getRepository('LaccesBundle:wordEn')->find($id);
+          //$wordFr = $em->getRepository('LaccesBundle:wordEn')->findByWord($wordEn->getWord());
+        }
+        //$idFr = $wordFr->getId();
+        //$idEn = $wordEn->getId();
+
+        $link = $em->getRepository('LaccesBundle:traductionFrEn')->findByIds($idFr, $idEn);
+        //$em->remove($link);
+        //$em->remove($wordFr);
+        //$em->remove($wordEn);
+      $em->remove($word);
+      $em->flush();
+
+      return new JsonResponse(array('id' => $id));
+
     }
 
     public function wordListAction(Request $request, $langue) {
