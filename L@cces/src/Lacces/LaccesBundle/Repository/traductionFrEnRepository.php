@@ -3,6 +3,8 @@
 namespace Lacces\LaccesBundle\Repository;
 
 use \Doctrine\ORM\EntityRepository;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
  * wordEnRepository
@@ -12,6 +14,11 @@ use \Doctrine\ORM\EntityRepository;
  */
 class traductionFrEnRepository extends EntityRepository
 {
+    public function __construct(RegistryInterface $registry)
+    {
+        parent::__construct($registry, traductionFrEn::class);
+    }
+
 
   public function findByIds($idFr, $idEn) {
     return $this->createQueryBuilder('c')

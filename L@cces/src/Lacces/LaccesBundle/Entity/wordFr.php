@@ -60,7 +60,7 @@ class wordFr
 
     /**
      * @var PersistentCollection
-     * @ORM\ ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordEn", inversedBy="wordFrs")
+     * @ORM\ ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordEn", inversedBy="wordFrs", cascade={"persist", "remove"})
      * @JoinTable(name="traductionFrEn")
      */
     private $wordEns;

@@ -4,7 +4,6 @@ namespace Lacces\LaccesBundle\Controller;
 
 use Lacces\LaccesBundle\Entity\FormAddData;
 use Lacces\LaccesBundle\Entity\FormEditData;
-use Lacces\LaccesBundle\Entity\traductionFrEn;
 use Lacces\LaccesBundle\Entity\wordEn;
 use Lacces\LaccesBundle\Entity\wordFr;
 use Lacces\LaccesBundle\Repository\wordFrRepository;
@@ -207,22 +206,11 @@ class EditDataController extends Controller
 
         if($langue == "fr") {
           $word = $em->getRepository('LaccesBundle:wordFr')->find($id);
-          //$wordFr = $em->getRepository('LaccesBundle:wordFr')->find($id);
-          //$wordEn = $em->getRepository('LaccesBundle:wordEn')->findByWord($wordFr->getWord());
         } else if($langue == "en") {
           $word = $em->getRepository('LaccesBundle:wordEn')->find($id);
-          //$wordEn = $em->getRepository('LaccesBundle:wordEn')->find($id);
-          //$wordFr = $em->getRepository('LaccesBundle:wordEn')->findByWord($wordEn->getWord());
         }
-        //$idFr = $wordFr->getId();
-        //$idEn = $wordEn->getId();
-
-        //$link = $em->getRepository('LaccesBundle:traductionFrEn')->findByIds($idFr, $idEn);
-        //$em->remove($link);
-        //$em->remove($wordFr);
-        //$em->remove($wordEn);
-      $em->remove($word);
-      $em->flush();
+        $em->remove($word);
+        $em->flush();
 
       return new JsonResponse(array('id' => $id));
 
