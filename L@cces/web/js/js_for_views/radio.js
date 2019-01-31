@@ -4,7 +4,6 @@ $(document).ready(function(){
     $("#btnEn").removeAttr("checked");
     $("#btnFr").attr("checked", true);
     checked();
-    $('#result').html("");
     flagEn();
   });
 
@@ -12,7 +11,6 @@ $(document).ready(function(){
     $("#btnFr").removeAttr("checked");
     $("#btnEn").attr("checked", true);
     checked();
-    $('#result').html("");
     flagFr();
   });
 
