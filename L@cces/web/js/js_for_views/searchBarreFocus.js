@@ -41,19 +41,19 @@ $(document).ready(function () {
         $("#btnSearch").fadeIn();
     });
 
-    $("#img2").click(function () {
-        $("#img1").css("display , block");
-        $("#img2").css("display, none");
-        $("#img1").fadeIn();
-        $("#img2").fadeOut();
+    $("#imgFlagFr").click(function () {
+        $("#imgFlagEn").css("display , block");
+        $("#imgFlagFr").css("display, none");
+        $("#imgFlagEn").fadeIn();
+        $("#imgFlagFr").fadeOut();
 
     });
 
-    $("#img1").click(function () {
-        $("#img2").css("display, block");
-        $("#img1").css("display, none");
-        $("#img2").fadeIn();
-        $("#img1").fadeOut();
+    $("#imgFlagEn").click(function () {
+        $("#imgFlagFr").css("display, block");
+        $("#imgFlagEn").css("display, none");
+        $("#imgFlagFr").fadeIn();
+        $("#imgFlagEn").fadeOut();
     });
 
 });
