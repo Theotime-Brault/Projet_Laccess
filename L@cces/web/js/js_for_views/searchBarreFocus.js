@@ -42,18 +42,24 @@ $(document).ready(function () {
     });
 
     $("#imgFlagFr").click(function () {
+        flagFr();
+    });
+
+    $("#imgFlagEn").click(function () {
+        flagEn();
+    });
+
+    function flagFr(){
         $("#imgFlagEn").css("display , block");
         $("#imgFlagFr").css("display, none");
         $("#imgFlagEn").fadeIn();
         $("#imgFlagFr").fadeOut();
+    }
 
-    });
-
-    $("#imgFlagEn").click(function () {
+    function flagEn(){
         $("#imgFlagFr").css("display, block");
         $("#imgFlagEn").css("display, none");
         $("#imgFlagFr").fadeIn();
         $("#imgFlagEn").fadeOut();
-    });
-
+    }
 });
