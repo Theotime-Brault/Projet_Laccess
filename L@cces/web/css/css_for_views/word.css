@@ -19,6 +19,16 @@ body, .container-body
     height: 100%;
 }
 
+.active
+{
+    color: #ffffff !important;
+}
+
+.active .collapsible-header
+{
+    background-color: #f4a733;
+}
+
 #search-box
 {
     display: none;
