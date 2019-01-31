@@ -18,6 +18,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 class EditDataController extends Controller
 {
+    public function adminAction()
+    {
+        return $this->render("@Lacces/Administration/administration.html.twig");
+    }
+
     public function editAction(Request $request, $wordId, $langue) {
 
       $em = $this->getDoctrine()->getManager();
