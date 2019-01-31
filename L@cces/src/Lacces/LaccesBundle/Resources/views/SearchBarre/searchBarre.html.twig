@@ -7,8 +7,8 @@
             </a>
             <div id="container-img">
                 <div id="container-img-flag">
-                    <img id="img1" class="image-circle" src="{{ asset('pictures/flags/FlagEN_SearchBar.png') }} ">
-                    <img id="img2" class="image-circle" src="{{ asset('pictures/flags/FlagFR_SearchBar.png') }}">
+                    <img id="imgFlagEn" class="image-circle" src="{{ asset('pictures/flags/FlagEN_SearchBar.png') }} ">
+                    <img id="imgFlagFr" class="image-circle" src="{{ asset('pictures/flags/FlagFR_SearchBar.png') }}">
                 </div>
             </div>
         </div>
@@ -16,6 +16,21 @@
 </form>
 <div id="close-barre" class="btn-floating background-color-orange-lacces">
     <i class="material-icons white-text">close</i>
+</div>
+
+<div id="radiobtn">
+    <div>
+        <label>
+            <input type="radio" id="btnFr" name="langue" checked="true"/>
+            <span>fr</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="langue" id="btnEn"/>
+            <span>en</span>
+        </label>
+    </div>
 </div>
 
 <script>
@@ -77,5 +92,15 @@ $('document').ready(function () {
           }
       }
   });
+    
+    $('.image-circle').click(function () {
+        if ($("#btnEn").is(":checked")) {
+            $("#btnEn").removeAttr("checked");
+            $("#btnFr").attr("checked", true);
+        } else if ($("#btnFr").is(":checked")) {
+            $("#btnFr").removeAttr("checked");
+            $("#btnEn").attr("checked", true);
+        }
+    })
 })
 </script>

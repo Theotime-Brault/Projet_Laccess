@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/baseMQ768.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/baseMQ602.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/searchBarre.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/css_for_views/radio.css') }}">
         {% block stylesheets %}
 
         {% endblock %}
@@ -23,21 +24,33 @@
     </head>
     <body>
         <div class="navbar-fixed">
-            <div class="row">
-                <div class="nav-wrapper">
-                    <nav class="nav-wrapper white">
-                        <div class="btn-menu">
-                            <a href="" class="sidenav-trigger show-on-large" data-target="slide-out">
-                                <i class="material-icons">menu</i>
-                            </a>
-                        </div>
-                        <div id="container_logo_lacces">
-                            <a href="{{ asset('') }}" class="brand-logo center">
-                                <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces.png') }}/>
-                            </a>
-                        </div>
-                    </nav>
-                </div>
+            <div class="nav-wrapper">
+                <nav class="nav-wrapper white">
+                    <div class="btn-menu">
+                        <a href="" class="sidenav-trigger show-on-large" data-target="slide-out">
+                            <i class="material-icons">menu</i>
+                        </a>
+                    </div>
+                    <div id="container_logo_lacces">
+                        <a href="{{ asset('') }}" class="brand-logo center">
+                            <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces.png') }}/>
+                        </a>
+                    </div>
+                    <div class="nav-link">
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <div class="btn waves-effect background-color-orange-lacces white-text center btn-log">
+                                <a href="{#{{ path('') }}#}">
+                                    Administration
+                                </a>
+                            </div>
+                            <div class="btn waves-effect background-color-violet-lacces white-text center btn-log">
+                                <a href="{{ path('logout') }}">
+                                    Déconnexion
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </nav>
             </div>
         </div>
 

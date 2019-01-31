@@ -79,6 +79,7 @@ input::placeholder
     display: none;
     right: 4.5rem;
     top: 0;
+    cursor: pointer;
 }
 
 .image-circle

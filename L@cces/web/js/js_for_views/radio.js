@@ -4,14 +4,22 @@ $(document).ready(function(){
     $("#btnEn").removeAttr("checked");
     $("#btnFr").attr("checked", true);
     checked();
-    $('#result').html("");
+    flagEn();
   });
 
   $("#imgEn").click(function(){
     $("#btnFr").removeAttr("checked");
     $("#btnEn").attr("checked", true);
     checked();
-    $('#result').html("");
+    flagFr();
+  });
+
+  $("#imgFlagEn").click(function(){
+    checked();
+  });
+
+  $("#imgFlagFr").click(function(){
+    checked();
   });
 
   function checked(){
@@ -24,5 +32,19 @@ $(document).ready(function(){
       $("#imgFr").css("border-color", "#f4a733");
       $("#imgEn").css("border-color", "white");
     };
+  }
+
+  function flagFr(){
+    $("#imgFlagEn").css("display , block");
+    $("#imgFlagFr").css("display, none");
+    $("#imgFlagEn").fadeIn();
+    $("#imgFlagFr").fadeOut();
+  }
+
+  function flagEn(){
+    $("#imgFlagFr").css("display, block");
+    $("#imgFlagEn").css("display, none");
+    $("#imgFlagFr").fadeIn();
+    $("#imgFlagEn").fadeOut();
   }
 });

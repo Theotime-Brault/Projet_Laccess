@@ -3,23 +3,27 @@ $(document).ready(function(){
 
     $('.fixed-action-btn').floatingActionButton();
 
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+    });
+
     //Appartition de la barre de recherche au clickAction
     $("#search-box-click").on("click", function(){
         $("#search-box").css("display", "block");
         $("#search-box").css("animation", "slideInDown 400ms");
         $("input").focus();
     });
-
+/*
     $("#search-barre").on("blur", function(){
         $("#search-box").css("animation", "slideOutUp 200ms");
         setTimeout(function () {
             $("#search-box").css("display", "none");
         }, 150);
     });
-
+*/
 
     //Affichage des phrases au clickAction
-
+/*
     $("#display-sentences").click(function(){
         $(".card-image").slideUp("slow");
         $(".context-sentence").slideDown("slow");
@@ -29,7 +33,7 @@ $(document).ready(function(){
             $("article").removeClass("m8 offset-m2");
         });
     });
-
+*//*
     //Affichage des vidéos au clickAction
     $("#display-videos").click(function(){
         $(".context-sentence").slideUp("fast");
@@ -41,7 +45,7 @@ $(document).ready(function(){
             $("article").removeClass("m8 offset-m2");
         });
     });
-
+*/
     //Lancement des 2 vidéos simultanément au clickAction (non mobile)
     $("#play-videos").on("click", function(ev) {
         $(".block-video").fadeOut("fast");
@@ -51,6 +55,28 @@ $(document).ready(function(){
         ev.preventDefault();
     });
 
+
+    $("#article-card-1").click(function () {
+        $("#block-video-1").fadeOut("fast");
+        $("#block-video-2").fadeIn("fast");
+    });
+
+    $("#article-card-2").click(function () {
+        $("#block-video-2").fadeOut("fast");
+        $("#block-video-1").fadeIn("fast");
+    });
+
+    $("#article-card-sentence-1").click(function () {
+        $("#block-video-sentence-1").fadeOut("fast");
+        $("#block-video-sentence-2").fadeIn("fast");
+    });
+
+    $("#article-card-sentence-2").click(function () {
+        $("#block-video-sentence-2").fadeOut("fast");
+        $("#block-video-sentence-1").fadeIn("fast");
+    });
+
+/*
 
     $("#article-card-1").click(function () {
         $("#block-video-1").fadeOut("fast");
@@ -89,7 +115,7 @@ $(document).ready(function(){
             $("#article-card-1").show();
         }
     });*/
-
+/*
     if($(window).width() < 600)
     {
         $(".context-sentence").css("display", "none");
@@ -98,6 +124,6 @@ $(document).ready(function(){
     if($(window).width() >= 600)
     {
         $(".context-sentence").css("display", "block");
-    }
+    }*/
 
 });
