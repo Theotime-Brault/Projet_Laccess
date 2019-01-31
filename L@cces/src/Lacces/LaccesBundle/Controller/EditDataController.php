@@ -6,6 +6,7 @@ use Lacces\LaccesBundle\Entity\FormAddData;
 use Lacces\LaccesBundle\Entity\FormEditData;
 use Lacces\LaccesBundle\Entity\wordEn;
 use Lacces\LaccesBundle\Entity\wordFr;
+use Lacces\LaccesBundle\Entity\traductionFrEn;
 use Lacces\LaccesBundle\Repository\wordFrRepository;
 use Lacces\LaccesBundle\Repository\wordEnRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
