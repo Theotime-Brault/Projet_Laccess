@@ -46,7 +46,7 @@
                     <section class="container-video">
                         <ul class="collapsible popout">
                             <li class="active">
-                                <div class="collapsible-header">
+                                <div class="collapsible-header flow-text">
                                     Mots
                                 </div>
                                 <div class="collapsible-body">
@@ -77,7 +77,17 @@
                                                                 <span class="card-title">American sign language</span>
                                                             </div>
                                                         </a>
-                                                        <iframe id="video1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                        <iframe id="video1" width="1100" height="619" src="
+                                                        {% if langue == "fr" %}
+                                                            {% for w in word.wordEns %}
+                                                                {{ w.videoLink }}
+                                                            {% endfor %}
+                                                        {% else %}
+                                                            {% for w in word.wordFrs %}
+                                                                {{ w.videoLink }}
+                                                            {% endfor %}
+                                                        {% endif %}"
+                                                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                     </div>
                                                 </div>
                                             </div>
@@ -86,7 +96,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header">
+                                <div class="collapsible-header flow-text">
                                     Phrases de contextualisation
                                 </div>
                                 <div class="collapsible-body">
@@ -122,7 +132,17 @@
                                                                 <span class="card-title">American sign language</span>
                                                             </div>
                                                         </a>
-                                                        <iframe id="video" width="1100" height="619" src="https://www.youtube.com/embed/D6ofFxMTEMY?rel=0{#{{ word.videoLink }}#}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                        <iframe id="video" width="1100" height="619" src="
+                                                        {% if langue == "fr" %}
+                                                            {% for w in word.wordEns %}
+                                                                {{ w.videoLink }}
+                                                            {% endfor %}
+                                                        {% else %}
+                                                            {% for w in word.wordFrs %}
+                                                                {{ w.videoLink }}
+                                                            {% endfor %}
+                                                        {% endif %}"
+                                                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                     </div>
                                                 </div>
                                                 <div id="context-sentence-block-video-2" class="context-sentence card-content">
@@ -144,7 +164,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header">
+                                <div class="collapsible-header flow-text">
                                     Exercice
                                 </div>
                                 <div class="collapsible-body">
