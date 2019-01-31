@@ -4,13 +4,10 @@
         <meta charset="UTF-8" />
         <title>L@cces - {% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="{{ asset('css/jquery_materialize/jquery-ui.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/jquery_materialize/materialize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/base.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/baseMQ768.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/baseMQ602.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/css_for_views/searchBarre.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/css_for_views/radio.css') }}">
         {% block stylesheets %}
 
         {% endblock %}
@@ -39,8 +36,8 @@
                     <div class="nav-link">
                         {% if is_granted('ROLE_ADMIN') %}
                             <div class="btn waves-effect background-color-orange-lacces white-text center btn-log">
-                                <a href="{{ path('administration') }}">
-                                    Administration
+                                <a href="{{ path('lacces_homepage') }}">
+                                    Lacces
                                 </a>
                             </div>
                             <div class="btn waves-effect background-color-violet-lacces white-text center btn-log">
@@ -61,7 +58,7 @@
                 </a>
             </li>
             {% if app.request.attributes.get('_route') == 'lacces_homepage' %}
-            <li class="bold active active-item-menu background-color-orange-lacces">
+            <li class="bold active active-item-menu background-color-violet-lacces">
             {% else %}
             <li class="bold">
             {% endif %}
@@ -71,24 +68,24 @@
                 <ul class="collapsible collapsible-accordion">
                     {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' or app.request.attributes.get('_route') == 'lacces_signaire_en' %}
                     <li class="bold active" id="sng">
-                    {% else %}
+                        {% else %}
                     <li class="bold" id="sng">
-                    {% endif %}
-                        <a class="collapsible-header waves-effect" id="collapsible-header-click">Signaires<i class="material-icons right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
+                        {% endif %}
+                        <a class="collapsible-header waves-effect" id="collapsible-header-click">Gestion des mots jfijsmfj<i class="material-icons right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
                         <div class="collapsible-body">
                             <ul>
                                 {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' %}
-                                <li class="active active-item-menu background-color-orange-lacces" id="liImg">
-                                {% else %}
+                                <li class="active active-item-menu background-color-violet-lacces" id="liImg">
+                            {% else %}
                                 <li class="white" id="liImg">
-                                {% endif %}
+                                    {% endif %}
                                     <a class="waves-effect" href="{{ asset('signaire/Fr') }}">Langue des signes Française</a>
                                 </li>
                                 {% if app.request.attributes.get('_route') == 'lacces_signaire_en' %}
-                                <li class="active active-item-menu background-color-orange-lacces">
-                                {% else %}
+                                <li class="active active-item-menu background-color-violet-lacces">
+                                    {% else %}
                                 <li class="white">
-                                {% endif %}
+                                    {% endif %}
                                     <a class="waves-effect" href="{{ asset('signaire/En') }}">American Sign Language</a>
                                 </li>
                                 <li>
@@ -106,47 +103,6 @@
 
             <li class="bold">
                 <a class="waves-effect" href="{{ asset('editData/wordList/fr') }}">Gestion des mots</a>
-            </li>
-
-                {#
-                {% if app.request.attributes.get('_route') != 'lacces_homepage' %}
-                    {% if app.request.attributes.get('_route') != 'lacces_contact' %}
-                        <li class="bold active active-item-menu background-color-orange-lacces">
-                    {% else %}
-                        <li class="bold">
-                    {% endif %}
-                            <a class="waves-effect" href="{{ asset('/contact') }}">Contact</a>
-                        </li>
-                    {% if app.request.attributes.get('_route') != 'lacces_faq' %}
-                        <li class="bold active active-item-menu background-color-orange-lacces">
-                    {% else %}
-                        <li class="bold">
-                    {% endif %}
-                            <a class="waves-effect" href="{{ asset('/faq') }}">FAQ</a>
-                        </li>
-                {% endif %}
-                #}
-
-            <li>
-                <div class="row">
-                    <div class="container-row-icons-menu">
-                        <a href="">
-                            <div class="container-icons">
-                                <img alt="Lien vers la page facebook" src="{{ asset('pictures/icons/facebook-f-white.svg') }}"/>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="container-icons">
-                                <img alt="Partager le l'application" src="{{ asset('pictures/icons/share-alt-white.svg') }}"/>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="container-icons">
-                                <img alt="Lien vers le site du consortium L@cces" src="{{ asset('pictures/icons/globe-white.svg') }}"/>
-                            </div>
-                        </a>
-                    </div>
-                </div>
             </li>
         </ul>
 
@@ -167,11 +123,8 @@
         {% block body %}
         {% endblock %}
     </body>
-
     <script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>
-    <script src="{{ asset('js/jquery_materialize/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/js_for_views/base.js') }}"></script>
-    <script src="{{ asset('js/js_for_views/searchBarreFocus.js') }}"></script>
     {% block javascripts %}
     {% endblock %}
 </html>

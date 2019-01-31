@@ -71,9 +71,9 @@ lacces_wordList:
         langue: fr|en
 
 adminLogin:
-    path: /admin
+    path: /adminLogin
     defaults:
-        _controller: LaccesBundle:Security:admin
+        _controller: LaccesBundle:Security:adminLogin
 
 login_check:
     path: /login_check
@@ -84,3 +84,8 @@ logout:
     path: /logout
     defaults:
         _controller: LaccesBundle:Security:logout
+
+administration:
+    path: /administration
+    defaults:
+        _controller: LaccesBundle:EditData:admin

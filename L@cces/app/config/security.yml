@@ -26,9 +26,9 @@ security:
 
             # https://symfony.com/doc/current/security/form_login_setup.html
             form_login:
-                login_path: admin
+                login_path: adminLogin
                 check_path: login_check
-                default_target_path: lacces_homepage
+                default_target_path: administration
                 always_use_default_target_path: true
             logout:
                 path: logout

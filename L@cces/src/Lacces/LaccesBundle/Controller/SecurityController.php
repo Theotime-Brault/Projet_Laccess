@@ -14,13 +14,13 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends Controller
 {
-    public function adminAction(AuthenticationUtils $authenticationUtils)
+    public function adminLoginAction(AuthenticationUtils $authenticationUtils)
     {
         $error = $authenticationUtils->getLastAuthenticationError();
 
         $lastUserName = $authenticationUtils->getLastUsername();
 
-        return $this->render('@Lacces/Security/admin.html.twig', array(
+        return $this->render('@Lacces/Security/adminLogin.html.twig', array(
             'last_username' => $lastUserName,
             'error' => $error,
         ));
