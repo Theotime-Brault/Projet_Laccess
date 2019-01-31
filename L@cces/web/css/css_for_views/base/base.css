@@ -163,6 +163,8 @@ noscript .material-icons:hover
 nav
 {
     padding: 8px;
+    display: flex;
+    align-items: center;
 }
 
 .btn-menu a
@@ -243,6 +245,17 @@ nav .brand-logo
     align-items: center;
 }
 
+.nav-link
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-log
+{
+    text-transform: none;
+    margin-left: 0.5rem;
+}
 
 /***********************************************************
 ************************* CSS icons ************************

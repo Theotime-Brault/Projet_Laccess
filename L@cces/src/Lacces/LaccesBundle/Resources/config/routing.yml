@@ -69,3 +69,18 @@ lacces_wordList:
         _controller: LaccesBundle:EditData:wordList
     requirements:
         langue: fr|en
+
+adminLogin:
+    path: /admin
+    defaults:
+        _controller: LaccesBundle:Security:admin
+
+login_check:
+    path: /login_check
+    defaults:
+        _controller: LaccesBundle:Security:loginCheck
+
+logout:
+    path: /logout
+    defaults:
+        _controller: LaccesBundle:Security:logout
