@@ -87,7 +87,7 @@ class EditDataController extends Controller
         return $this->redirectToRoute('lacces_wordList', array('langue' => $langue));
 
       }
-      return $this->render('@Lacces/EditData/editData.html.twig', array(
+      return $this->render('@Lacces/Administration/EditData/editData.html.twig', array(
         'langue' => $langue,
         'form' => $form->createView(),
         'word' => $word->getWord()
@@ -193,11 +193,11 @@ class EditDataController extends Controller
 
         $em->flush();
 
-        return $this->render('@Lacces/EditData/addData.html.twig', array(
+        return $this->render('@Lacces/Administration/EditData/addData.html.twig', array(
           'form' => $form->createView(),
         ));
       }
-      return $this->render('@Lacces/EditData/addData.html.twig', array(
+      return $this->render('@Lacces/Administration/EditData/addData.html.twig', array(
         'form' => $form->createView(),
       ));
     }
@@ -228,7 +228,7 @@ class EditDataController extends Controller
       $wordsEnObj = $em->getRepository('LaccesBundle:wordEn')->findAll();
 
 
-      return $this->render('@Lacces/EditData/wordList.html.twig', [
+      return $this->render('@Lacces/Administration/EditData/wordList.html.twig', [
         'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         'wordFr' => $wordsFrObj,
         'wordEn' => $wordsEnObj,
