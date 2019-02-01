@@ -1,11 +1,13 @@
 $(document).ready(function () {
+
+
     $("#search-barre").on("focus", function(){
         $(".container-focus-footer").css("animation", "fadeOutDown 250ms");
         $(".container-focus-footer").css("opacity", "0");
 
-        $(".container-main").toggleClass("container-main-active");
+        $(".container-main").addClass("container-main-active");
         $(".container-main-active").removeClass("container-main");
-        $(".container-search").toggleClass("container-search-active");
+        $(".container-search").addClass("container-search-active");
         $(".container-search-active").removeClass("container-search");
         $("#btnSearch").fadeOut();
         $('#search-on').css({
@@ -18,8 +20,9 @@ $(document).ready(function () {
                 $("#container-img-flag").fadeIn();
             }, 200);
         });
-
     });
+
+
 
     $("#close-barre").click(function(){
         $(".container-main-active").toggleClass("container-main");

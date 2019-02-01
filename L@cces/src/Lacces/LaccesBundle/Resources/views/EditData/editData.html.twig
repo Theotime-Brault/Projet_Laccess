@@ -9,15 +9,18 @@
 {% block body %}
 
     <div class="container-body">
-
-        <main class="container-main-center">
+        <main>
             <div class="container">
-                <div class="row center">
-                    <h3>Modifier le mot "{{ word }}"</h3>
-                </div>
-                {{ include('@Lacces/formEditWord.html.twig') }}
-                <div class="row center">
-                    <a id="btn-langue" class="btn background-color-orange-lacces" href="../../wordList/{{ langue }}">Retour</a>
+                <div class="container-main-flex">
+                    <section>
+                        <div class="row center">
+                            <h3>Modifier le mot "{{ word }}"</h3>
+                        </div>
+                        {{ include('@Lacces/formEditWord.html.twig') }}
+                        <div class="row center">
+                            <a id="btn-langue" class="btn background-color-orange-lacces" href="../../wordList/{{ langue }}">Retour</a>
+                        </div>
+                    </section>
                 </div>
             </div>
         </main>
