@@ -94,15 +94,34 @@
                             </ul>
                         </div>
                     </li>
-                </ul>
+                    <li>
+                        <a class="collapsible-header waves-effect" id="collapsible-header-click">Gestion des mots<i class="material-icons right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                {% if app.request.attributes.get('_route') == 'lacces_editData_add' %}
+                                <li class="active active-item-menu background-color-violet-lacces">
+                            {% else %}
+                                <li class="white">
+                                    {% endif %}
+                                    <a class="waves-effect" href="{{ asset('editData/add') }}">Ajouter un mot</a>
+                                </li>
+                                {% if app.request.attributes.get('_route') == 'lacces_wordList' %}
+                                <li class="active active-item-menu background-color-violet-lacces" id="liImg">
+                            {% else %}
+                                <li class="white" id="liImg">
+                                    {% endif %}
+                                    <a class="waves-effect" href="{{ asset('editData/wordList/fr') }}">Editer les mots</a>
+                                </li>
+                                <li>
+                                    <div class="divider"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
             </li>
 
             <li class="bold">
                 <a class="waves-effect" href="{{ asset('exercices') }}">Exercices</a>
-            </li>
-
-            <li class="bold">
-                <a class="waves-effect" href="{{ asset('editData/wordList/fr') }}">Gestion des mots</a>
             </li>
         </ul>
 

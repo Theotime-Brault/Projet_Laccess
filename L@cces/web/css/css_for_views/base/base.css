@@ -446,3 +446,7 @@ nav .brand-logo
     -webkit-animation-name: slideOutUp;
     animation-name: slideOutUp;
 }
+
+li {
+    list-style: none;
+}
