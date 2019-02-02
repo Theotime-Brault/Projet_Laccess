@@ -1,0 +1,10 @@
+.sidenav .divider
+{
+    background-color: #212121;
+    border-bottom: 1px solid #ffffff;
+}
+
+.sidenav li>a
+{
+    color: #ffffff;
+}
