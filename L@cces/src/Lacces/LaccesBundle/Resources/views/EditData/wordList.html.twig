@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends '@Lacces/Administration/administration.html.twig' %}
 
 {% block stylesheets %}
 
@@ -24,60 +24,77 @@
                         </div>
                     {% endfor %}
                 {% endblock %}
-                <div class="row center">
-                    {% if langue == 'fr' %}
-                        <a id="btn-langue" class="btn background-color-orange-lacces" href="en">Passer en Anglais</a>
-                    {% else %}
-                        <a id="btn-langue" class="btn background-color-orange-lacces" href="fr">Passer en Français</a>
-                    {% endif %}
-                    <a id="btn-langue" class="btn background-color-orange-lacces" href="../add">Ajouter un mot</a>
-                </div>
+                <div class="container-main-flex">
+                    <section>
+                        <div class="row center">
+                            {% if langue == 'fr' %}
+                                <a id="btn-langue" class="btn background-color-orange-lacces" href="en">Passer en Anglais</a>
+                            {% else %}
+                                <a id="btn-langue" class="btn background-color-orange-lacces" href="fr">Passer en Français</a>
+                            {% endif %}
+                            <a id="btn-langue" class="btn background-color-orange-lacces" href="../add">Ajouter un mot</a>
+                        </div>
 
-
-                <ul class="collapsible collapsible-accordion">
-                    {% for letter in 'a'..'z' %}
-                        <li class="bold">
-                            <a class="collapsible-header waves-effect collapsible-ASL">
-                                <div id="lettreMaj">
-                                    {{ letter|upper }}
-                                    <i class="material-icons material-icons_arrow_drop_down" id="fleche">arrow_drop_down</i>
-                                </div>
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-
-                                    {% if langue == 'fr' %}
-                                    <div id="motFr">
-                                        {% for w in wordFr %}
-                                            {% if w.word|first|lower == letter %}
-                                                <li class="white">
-                                                    <a class="flow-text" id="word" href="../edit/{{ w.id }}/fr">{{ w.word }}</a>
-                                                    <a class="flow-text supprimer" id="supprimer" data-parent="{{ w.id }}" href="#">Supprimer</a>
-                                                </li>
-                                            {% endif %}
-                                        {% endfor %}
+                        <div class="collapsible collapsible-accordion">
+                            {% for letter in 'a'..'z' %}
+                                <li class="bold">
+                                    <a class="collapsible-header waves-effect collapsible-ASL">
+                                        <div id="lettreMaj">
+                                            {{ letter|upper }}
+                                            <i class="material-icons material-icons_arrow_drop_down" id="fleche">arrow_drop_down</i>
+                                        </div>
+                                    </a>
+                                    <div class="collapsible-body">
+                                        <table>
+                                            <tbody>
+                                                {% if langue == 'fr' %}
+                                                    <div id="motFr">
+                                                        {% for w in wordFr %}
+                                                            {% if w.word|first|lower == letter %}
+                                                                <tr>
+                                                                    <td>
+                                                                        <a class="flow-text" id="word" href="../edit/{{ w.id }}/fr">{{ w.word }}</a>
+                                                                        <a class="flow-text supprimer" id="supprimer" data-parent="{{ w.id }}" href="#">
+                                                                            <i class="material-icons right color-violet-lacces">delete_forever</i>
+                                                                        </a>
+                                                                        <a class="flow-text" data-parent="{{ w.id }}" href="../edit/{{ w.id }}/fr">
+                                                                            <i class="material-icons right color-violet-lacces">edit</i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </div>
+                                                    {% else %}
+                                                    <div id="motEn">
+                                                        {% for w in wordEn %}
+                                                            {% if w.word|first|lower == letter %}
+                                                                <tr>
+                                                                    <td>
+                                                                        <a class="flow-text" id="word" href="../edit/{{ w.id }}/en">{{ w.word }}</a>
+                                                                        <a class="flow-text supprimer" id="supprimer" data-parent="{{ w.id }}" href="#">
+                                                                            <i class="material-icons right">delete_forever</i>
+                                                                        </a>
+                                                                        <a class="flow-text" data-parent="{{ w.id }}" href="../edit/{{ w.id }}/en">
+                                                                            <i class="material-icons right">edit</i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </div>
+                                                {% endif %}
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    {% else %}
-                                    <div id="motEn">
-                                        {% for w in wordEn %}
-                                            {% if w.word|first|lower == letter %}
-                                                <li class="white">
-                                                    <a class="flow-text" id="word" href="../edit/{{ w.id }}/en">{{ w.word }}</a>
-                                                    <a class="flow-text supprimer" id="supprimer" data-parent="{{ w.id }}" href="#">Supprimer</a>
-                                                </li>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                    {% endif %}
-
-                                </ul>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-                <div class="row center">
-                    <a id="btn-langue" class="btn background-color-orange-lacces" href="../../">Retour</a>
+                                </li>
+                            {% endfor %}
+                        </div>
+                    </section>
                 </div>
+            </div>
+            <div class="row center">
+                <a id="btn-langue" class="btn background-color-orange-lacces" href="../../">Retour</a>
             </div>
         </main>
     </div>
@@ -93,7 +110,7 @@
                 e.preventDefault();
                 var id = this.getAttribute("data-parent");
                 var langue = "{{ langue }}";
-                var wordRemove = $(this).parent("li");
+                var wordRemove = $(this).parent("td");
 
                 if(confirm('Supprimer cet élément ?'))
                 {

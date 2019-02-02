@@ -3,7 +3,7 @@
 namespace Lacces\LaccesBundle\Repository;
 
 use \Doctrine\ORM\EntityRepository;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Lacces\LaccesBundle\Entity\traductionFrEn;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**

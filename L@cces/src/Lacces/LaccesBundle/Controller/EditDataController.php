@@ -7,8 +7,6 @@ use Lacces\LaccesBundle\Entity\FormEditData;
 use Lacces\LaccesBundle\Entity\wordEn;
 use Lacces\LaccesBundle\Entity\wordFr;
 use Lacces\LaccesBundle\Entity\traductionFrEn;
-use Lacces\LaccesBundle\Repository\wordFrRepository;
-use Lacces\LaccesBundle\Repository\wordEnRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -215,6 +213,7 @@ class EditDataController extends Controller
         } else if($langue == "en") {
           $word = $em->getRepository('LaccesBundle:wordEn')->find($id);
         }
+
         $em->remove($word);
         $em->flush();
 
