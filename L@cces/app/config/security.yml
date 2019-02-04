@@ -35,7 +35,7 @@ security:
                 target: lacces_homepage
 
     access_control:
-        - { path: ^/editData, roles: ROLE_ADMIN }
+        - { path: ^/administration, roles: ROLE_ADMIN }
 
     encoders:
         Symfony\Component\Security\Core\User\User: bcrypt

@@ -47,7 +47,7 @@ class ContactController extends Controller
             ->add('submit', SubmitType::class, array(
                 'label' => 'Envoyer',
                 'attr' => array(
-                    'class' => "btn btn-contact background-color-orange-lacces waves-effect",
+                    'class' => "btn btn-hover background-color-orange-lacces waves-effect",
                 )))
             ->getForm();
 
