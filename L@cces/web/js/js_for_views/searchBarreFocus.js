@@ -14,7 +14,7 @@ $(document).ready(function () {
             height: "40px",
             "transition-duration": "200ms"});
         $('#result').css('display', 'block');
-        $(".row-container").slideToggle("400", function () {
+        $(".row-container").slideUp("400", function () {
             setTimeout(function () {
                 $("#close-barre").fadeIn();
                 $("#container-img-flag").fadeIn();
@@ -29,7 +29,7 @@ $(document).ready(function () {
         $(".container-main").removeClass("container-main-active");
         $(".container-search-active").toggleClass("container-search");
         $(".container-search").removeClass("container-search-active");
-        $(".row-container").slideToggle("200");
+        $(".row-container").slideDown("200");
         setTimeout(function() {
             $(".container-focus-footer").css("animation", "fadeInUp 1s");
             $(".container-focus-footer").css("opacity", "1");
