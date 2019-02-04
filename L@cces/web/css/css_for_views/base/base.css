@@ -320,7 +320,7 @@ nav .brand-logo
     color: black !important;
 }
 
-.btn-contact:hover, .btn-contact:focus
+.btn:hover
 {
     background-color: #69085a !important;
 }

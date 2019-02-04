@@ -3,8 +3,6 @@
 {% block stylesheets %}
 
     <link rel="stylesheet" href="{{ asset('css/css_for_views/signaire.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/css_for_views/langue.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/css_for_views/wordList.css') }}">
 
 {% endblock %}
 
@@ -26,11 +24,11 @@
                 {% endblock %}
                 <div class="row center">
                     {% if langue == 'fr' %}
-                        <a id="btn-langue" class="btn background-color-orange-lacces" href="en">Passer en Anglais</a>
+                        <a class="btn background-color-orange-lacces" href="en">Passer en Anglais</a>
                     {% else %}
-                        <a id="btn-langue" class="btn background-color-orange-lacces" href="fr">Passer en Français</a>
+                        <a class="btn background-color-orange-lacces" href="fr">Passer en Français</a>
                     {% endif %}
-                    <a id="btn-langue" class="btn background-color-orange-lacces" href="../add">Ajouter un mot</a>
+                    <a class="btn background-color-orange-lacces" href="../add">Ajouter un mot</a>
                 </div>
 
                 <div class="collapsible collapsible-accordion">
@@ -43,7 +41,7 @@
                                 </div>
                             </a>
                             <div class="collapsible-body">
-                                <table>
+                                <table class="highlight">
                                     <tbody>
                                         {% if langue == 'fr' %}
                                             <div id="motFr">
@@ -90,7 +88,7 @@
                 </div>
             </div>
             <div class="row center">
-                <a id="btn-langue" class="btn background-color-orange-lacces" href="../../">Retour</a>
+                <a class="btn background-color-orange-lacces" href="../../..">Retour</a>
             </div>
         </main>
     </div>
