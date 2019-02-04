@@ -1,11 +1,51 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/exercice.css') }}">
 {% endblock %}
 
 {% block title %}Exercices{% endblock %}
 
-{% block body %}
+{% block navbarre %}
 
+
+{% endblock %}
+
+{% block body %}<div class="nav-content">
+    <div class = "row">
+        <ul class = "tabs tab-demo z-depth-1">
+            <li class = "tab">
+                <a href="#inbox">Trouvez les phrases</a>
+            </li>
+            <li class = "tab">
+                <a href="#unread">Etudiez vidéos</a>
+            </li>
+            <li class = "tab">
+                <a href = "#outbox">Quizz</a>
+            </li>
+            <li class = "tab">
+                <a href = "#sent">QCM Vidéo</a>
+            </li>
+            <li class = "tab">
+                <a href = "#sent">Reformer les phrases</a>
+            </li>
+    </div>
+</div>
+    <div class="container-body">
+        <main>
+            <div class="container">
+                <div id = "inbox" class = "col s12">Inbox</div>
+                <div id = "unread" class = "col s12">Unread</div>
+                <div id = "outbox" class = "col s12">Outbox (Disabled)</div>
+                <div id = "sent" class = "col s12">Sent</div>
+            </div>
+        </main>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $('.tabs').tabs();
+
+    </script>
 {% endblock %}

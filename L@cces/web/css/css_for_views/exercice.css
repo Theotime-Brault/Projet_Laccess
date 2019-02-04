@@ -1,0 +1,14 @@
+.nav-content
+{
+    position: fixed;
+    top: 64px;
+    width: 100%;
+    z-index: 100;
+}
+
+@media only screen and (max-device-width: 602px)
+{
+    .nav-content {
+        top: 56px;
+    }
+}
