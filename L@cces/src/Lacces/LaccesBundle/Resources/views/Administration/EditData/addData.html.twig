@@ -7,9 +7,7 @@
 {% block title %}Ajouter un mot{% endblock %}
 
 {% block body %}
-
     <div class="container-body">
-
         {% block message_flash %}
             {% for msg in app.session.flashBag.get('info') %}
                 <div id="center-message">
@@ -20,19 +18,22 @@
             {% endfor %}
         {% endblock %}
 
-        <main class="container-main-center">
+        <main>
             <div class="container">
-                <div class="row center">
-                    <h3>Ajouter un mot</h3>
-                </div>
-                {{ include('@Lacces/formAddWord.html.twig') }}
-                <div class="row center">
-                    <a id="btn-langue" class="btn background-color-orange-lacces" href="wordList/fr">Retour</a>
+                <div class="container-main-flex">
+                    <section>
+                        <div class="row center">
+                            <h3>Ajouter un mot</h3>
+                        </div>
+                        {{ include('@Lacces/formAddWord.html.twig') }}
+                        <div class="row center">
+                            <a id="btn-langue" class="btn background-color-orange-lacces" href="wordList/fr">Retour</a>
+                        </div>
+                    </section>
                 </div>
             </div>
         </main>
     </div>
-
 {% endblock %}
 
 {% block javascripts %}

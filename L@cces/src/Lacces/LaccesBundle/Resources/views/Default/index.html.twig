@@ -39,6 +39,11 @@
                                 <div class="container-search">
                                     {% include('@Lacces/SearchBarre/searchBarre.html.twig') %}
                                 </div>
+                                {% for message in app.flashes('info') %}
+                                    <div>
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
                             </div>
                         </section>
 

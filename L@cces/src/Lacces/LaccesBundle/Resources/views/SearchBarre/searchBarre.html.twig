@@ -35,24 +35,34 @@
 
 <script>
 $('document').ready(function () {
+    function submitSearch(){
+        var  s = $('#search-barre').val();
+        var l;
+        if($("#btnFr").is(":checked")) {
+            l = "fr";
+        }else if($("#btnEn").is(":checked")) {
+            l = "en";
+        }else{
+            l = "";
+        }
 
-  $('#btnSearch').click(function (){
-     var  s = $('#search-barre').val();
-      var l;
-      if($("#btnFr").is(":checked")) {
-          l = "fr";
-      }else if($("#btnEn").is(":checked")) {
-          l = "en";
-      }else{
-          l = "";
-      }
+        if(s != "" && l){
+            $('form').attr('action', "/word/"+l+"/"+s);
+            $('form').submit();
+        }else{
+            $('form').removeAttr('action');
+        }
+    }
 
-     if(s != "" && !l){
-         $('#btnSearch').attr('href', "/word/"+l+"/"+s);
-     }else{
-         $('#btnSearch').attr('href', "/");
-     }
-  });
+    $('#btnSearch').click(function (){
+      submitSearch();
+    });
+    
+    $('#search-barre').keyup(function(e) {
+        if (e.keyCode == 13) {
+            submitSearch();
+        }
+    });
 
 
     $('#search-barre').keyup(function () {

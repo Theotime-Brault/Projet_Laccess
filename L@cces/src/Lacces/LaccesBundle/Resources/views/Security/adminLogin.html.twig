@@ -18,16 +18,19 @@
                             {{ error.messageKey|trans(error.messageData, 'security') }}
                         </div>
                     {% endif %}
+                    <div class="row center">
+                        <div class="col s12 m8 offset-m2">
+                            <form action="{{ path('login_check') }}" method="post">
+                                <label for="username">Identifiant</label>
+                                <input type="text" id="username" name="_username" value="{{ last_username }}"/>
 
-                    <form action="{{ path('login_check') }}" method="post">
-                        <label for="username">Identifiant</label>
-                        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
+                                <label for="password">Mot de passe</label>
+                                <input type="password" id="password" name="_password"/>
 
-                        <label for="password">Mot de passe</label>
-                        <input type="password" id="password" name="_password"/>
-
-                        <button class="btn waves-effect background-color-orange-lacces" type="submit">Se connecter</button>
-                    </form>
+                                <button class="btn waves-effect background-color-orange-lacces" type="submit">Se connecter</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

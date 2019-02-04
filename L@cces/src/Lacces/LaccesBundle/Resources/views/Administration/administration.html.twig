@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/base.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/baseMQ768.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/baseMQ602.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/css_for_views/administration/base.css') }}">
         {% block stylesheets %}
 
         {% endblock %}
@@ -15,17 +16,17 @@
         <script src="{{ asset('js/jquery_materialize/jquery.js') }}"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <meta name="theme-color" content="#f4a733">
+        <meta name="theme-color" content="#212121">
 
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
+    <body class="grey lighten-5">
         <div class="navbar-fixed">
             <div class="nav-wrapper">
-                <nav class="nav-wrapper white">
+                <nav class="nav-wrapper grey darken-4">
                     <div class="btn-menu">
                         <a href="" class="sidenav-trigger show-on-large" data-target="slide-out">
-                            <i class="material-icons">menu</i>
+                            <i class="material-icons white-text">menu</i>
                         </a>
                     </div>
                     <div id="container_logo_lacces">
@@ -35,80 +36,48 @@
                     </div>
                     <div class="nav-link">
                         {% if is_granted('ROLE_ADMIN') %}
-                            <div class="btn waves-effect background-color-orange-lacces white-text center btn-log">
-                                <a href="{{ path('lacces_homepage') }}">
-                                    Lacces
-                                </a>
-                            </div>
-                            <div class="btn waves-effect background-color-violet-lacces white-text center btn-log">
-                                <a href="{{ path('logout') }}">
-                                    Déconnexion
-                                </a>
-                            </div>
+                            <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('lacces_homepage') }}">
+                                Lacces
+                            </a>
+                            <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
+                                Déconnexion
+                            </a>
                         {% endif %}
                     </div>
                 </nav>
             </div>
         </div>
 
-        <ul class="sidenav white" id="slide-out">
+        <ul class="sidenav grey darken-4" id="slide-out">
             <li class="sidenav-close">
                 <a class="sidenav-close waves-effect">
-                    <i class="material-icons">arrow_back</i>
+                    <i class="material-icons white-text">arrow_back</i>
                 </a>
             </li>
-            {% if app.request.attributes.get('_route') == 'lacces_homepage' %}
+            {% if app.request.attributes.get('_route') == 'administration' %}
             <li class="bold active active-item-menu background-color-violet-lacces">
             {% else %}
             <li class="bold">
             {% endif %}
-                <a class="waves-effect" href="{{ asset('') }}">Accueil</a>
+                <a class="waves-effect" href="{{ asset('administration') }}">Accueil</a>
             </li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
-                    {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' or app.request.attributes.get('_route') == 'lacces_signaire_en' %}
-                    <li class="bold active" id="sng">
-                        {% else %}
-                    <li class="bold" id="sng">
-                        {% endif %}
-                        <a class="collapsible-header waves-effect" id="collapsible-header-click">Gestion des mots jfijsmfj<i class="material-icons right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                {% if app.request.attributes.get('_route') == 'lacces_signaire_fr' %}
-                                <li class="active active-item-menu background-color-violet-lacces" id="liImg">
-                            {% else %}
-                                <li class="white" id="liImg">
-                                    {% endif %}
-                                    <a class="waves-effect" href="{{ asset('signaire/Fr') }}">Langue des signes Française</a>
-                                </li>
-                                {% if app.request.attributes.get('_route') == 'lacces_signaire_en' %}
-                                <li class="active active-item-menu background-color-violet-lacces">
-                                    {% else %}
-                                <li class="white">
-                                    {% endif %}
-                                    <a class="waves-effect" href="{{ asset('signaire/En') }}">American Sign Language</a>
-                                </li>
-                                <li>
-                                    <div class="divider"></div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
                     <li>
-                        <a class="collapsible-header waves-effect" id="collapsible-header-click">Gestion des mots<i class="material-icons right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
+                        <a class="collapsible-header waves-effect" id="collapsible-header-click">Gestion des mots<i class="material-icons white-text right" id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
                         <div class="collapsible-body">
                             <ul>
                                 {% if app.request.attributes.get('_route') == 'lacces_editData_add' %}
                                 <li class="active active-item-menu background-color-violet-lacces">
                             {% else %}
-                                <li class="white">
+                                <li class="grey darken-4">
                                     {% endif %}
                                     <a class="waves-effect" href="{{ asset('editData/add') }}">Ajouter un mot</a>
                                 </li>
                                 {% if app.request.attributes.get('_route') == 'lacces_wordList' %}
                                 <li class="active active-item-menu background-color-violet-lacces" id="liImg">
                             {% else %}
-                                <li class="white" id="liImg">
+                                <li class="grey darken-4" id="liImg">
                                     {% endif %}
                                     <a class="waves-effect" href="{{ asset('editData/wordList/fr') }}">Editer les mots</a>
                                 </li>
@@ -119,10 +88,6 @@
                         </div>
                     </li>
                 </ul>
-            </li>
-
-            <li class="bold">
-                <a class="waves-effect" href="{{ asset('exercices') }}">Exercices</a>
             </li>
         </ul>
 
