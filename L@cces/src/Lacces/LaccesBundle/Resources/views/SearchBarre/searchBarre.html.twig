@@ -46,7 +46,7 @@ $('document').ready(function () {
             l = "";
         }
 
-        if(s != "" && l){
+        if(s && l){
             $('form').attr('action', "/word/"+l+"/"+s);
             $('form').submit();
         }else{
