@@ -1,3 +1,22 @@
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(244,167,51,0.8);
+
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+     background: rgba(244,167,51,0.4);
+ }
+
+
 .background-color-orange-lacces
 {
     background-color: #f4a733 !important;
@@ -38,7 +57,8 @@ main
 .container-body
 {
     height: calc(100vh - 64px - 1.5rem);
-    padding-top: 1.5rem;
+    position: relative;
+    top: 1.5rem;
 }
 
 .container-main-flex, .container-main-center
@@ -190,7 +210,7 @@ nav
     background-color: #eeeeee;
 }
 
-.navbar-fixed
+.navbar-fixed nav
 {
     z-index: 5000;
 }

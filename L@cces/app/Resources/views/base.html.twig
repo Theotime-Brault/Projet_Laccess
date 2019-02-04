@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>L@cces - {% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="{{ asset('css/jquery_materialize/jquery-ui.min.css') }}">
+        {#<link rel="stylesheet" href="{{ asset('css/jquery_materialize/jquery-ui.min.css') }}">#}
         <link rel="stylesheet" href="{{ asset('css/jquery_materialize/materialize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/base.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/baseMQ768.css') }}">
@@ -24,30 +24,30 @@
     </head>
     <body>
         <div class="navbar-fixed">
-            <div class="nav-wrapper">
-                <nav class="nav-wrapper white">
-                    <div class="btn-menu">
-                        <a href="" class="sidenav-trigger show-on-large" data-target="slide-out">
-                            <i class="material-icons">menu</i>
+            <nav class="nav-wrapper white">
+                <div class="btn-menu">
+                    <a href="" class="sidenav-trigger show-on-large" data-target="slide-out">
+                        <i class="material-icons">menu</i>
+                    </a>
+                </div>
+                <div id="container_logo_lacces">
+                    <a href="{{ asset('') }}" class="brand-logo center">
+                        <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces.png') }}/>
+                    </a>
+                </div>
+                <div class="nav-link">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('administration') }}">
+                            Administration
                         </a>
-                    </div>
-                    <div id="container_logo_lacces">
-                        <a href="{{ asset('') }}" class="brand-logo center">
-                            <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces.png') }}/>
+                        <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
+                            Déconnexion
                         </a>
-                    </div>
-                    <div class="nav-link">
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('administration') }}">
-                                Administration
-                            </a>
-                            <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
-                                Déconnexion
-                            </a>
-                        {% endif %}
-                    </div>
-                </nav>
-            </div>
+                    {% endif %}
+                </div>
+            </nav>
+            {% block navbarre %}
+            {% endblock %}
         </div>
 
         <ul class="sidenav white" id="slide-out">
