@@ -2,16 +2,19 @@
 
 namespace Lacces\LaccesBundle\Controller;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\PersistentCollection;
 use Lacces\LaccesBundle\Entity\Forms\FormAddData;
 use Lacces\LaccesBundle\Entity\Forms\FormEditData;
 use Lacces\LaccesBundle\Entity\wordEn;
 use Lacces\LaccesBundle\Entity\wordFr;
-use Lacces\LaccesBundle\Entity\traductionFrEn;
+//use Lacces\LaccesBundle\Entity\traductionFrEn;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Collection;
 
 
 class EditDataController extends Controller
@@ -163,10 +166,10 @@ class EditDataController extends Controller
 
       if ($form->isSubmitted() && $form->isValid()) {
 
+          $em = $this->getDoctrine()->getManager();
         $formulaire = $form->getData();
         $this->addFlash('info', "Le mot à bien été crée !");
 
-        $traduction = new traductionFrEn();
         $monMotFr = new wordFr();
         $monMotEn = new wordEn();
 
@@ -176,22 +179,18 @@ class EditDataController extends Controller
         $monMotFr->setVideoDescription($formulaire->getVideoDescriptionFr());
         $monMotFr->setPopularity(0);
 
-        $traduction->setWordFr($monMotFr);
-
         $monMotEn->setWord($formulaire->getWordEn());
         $monMotEn->setVideoLink($formulaire->getVideoLinkEn());
         $monMotEn->setContextSentence($formulaire->getContextSentenceEn());
         $monMotEn->setVideoDescription($formulaire->getVideoDescriptionEn());
         $monMotEn->setPopularity(0);
+        $monMotEn->setWordFrs(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordEn'), new ArrayCollection([$monMotFr])));
+        $monMotFr->setWordEns(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordFr'), new ArrayCollection([$monMotEn])));
 
-        $traduction->setWordEn($monMotEn);
-
-        $em = $this->getDoctrine()->getManager();
         $em->persist($monMotFr);
         $em->persist($monMotEn);
-        $em->persist($traduction);
+          $em->flush();
 
-        $em->flush();
 
         return $this->render('@Lacces/Administration/EditData/addData.html.twig', array(
           'form' => $form->createView(),
