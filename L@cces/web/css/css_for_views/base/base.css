@@ -1,21 +1,20 @@
-::-webkit-scrollbar {
+::-webkit-scrollbar
+{
     width: 6px;
+    height: 0;
 }
 
-
-
-/* Handle */
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb
+{
     -webkit-border-radius: 10px;
     border-radius: 10px;
     background: rgba(244,167,51,0.8);
-
 }
 
-::-webkit-scrollbar-thumb:window-inactive {
+::-webkit-scrollbar-thumb:window-inactive
+{
      background: rgba(244,167,51,0.4);
- }
-
+}
 
 .background-color-orange-lacces
 {
