@@ -1,6 +1,6 @@
 <?php
 
-namespace Lacces\LaccesBundle\Entity;
+namespace Lacces\LaccesBundle\Entity\Forms;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
