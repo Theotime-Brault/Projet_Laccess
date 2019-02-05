@@ -65,44 +65,4 @@ $(document).ready(function () {
         $("#imgFlagFr").fadeIn();
         $("#imgFlagEn").fadeOut();
     }
-
-
-    function submitSearch(){
-        var  s = $('#search-barre').val();
-        var l;
-        if($("#btnFr").is(":checked")) {
-            l = "fr";
-        }else if($("#btnEn").is(":checked")) {
-            l = "en";
-        }else{
-            l = "";
-        }
-
-        if(s && l){
-            $('form').attr('action', "/word/"+l+"/"+s);
-            $('form').submit();
-        }else{
-            $('form').removeAttr('action');
-        }
-    }
-
-    $('#btnSearch').click(function (){
-        submitSearch();
-    });
-
-    $('#search-barre').keyup(function(e) {
-        if (e.keyCode == 13) {
-            submitSearch();
-        }
-    });
-
-    $('.image-circle').click(function () {
-        if ($("#btnEn").is(":checked")) {
-            $("#btnEn").removeAttr("checked");
-            $("#btnFr").attr("checked", true);
-        } else if ($("#btnFr").is(":checked")) {
-            $("#btnFr").removeAttr("checked");
-            $("#btnEn").attr("checked", true);
-        }
-    })
 });

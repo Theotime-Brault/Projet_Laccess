@@ -3,7 +3,6 @@
 namespace Lacces\LaccesBundle\Repository;
 
 use \Doctrine\ORM\EntityRepository;
-use Lacces\LaccesBundle\Entity\traductionFrEn;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -18,18 +17,4 @@ class traductionFrEnRepository extends EntityRepository
     {
         parent::__construct($registry, traductionFrEn::class);
     }
-
-
-  public function findByIds($idFr, $idEn) {
-    return $this->createQueryBuilder('c')
-      ->where('c.word_fr = :word_fr')
-      ->andWhere('c.word_en = :word_en')
-      ->setParameters(array(
-        'word_en' => $idEn,
-        'word_fr' => $idFr
-      ))
-      ->getQuery()
-      ->getOneOrNullResult();
-
-  }
 }
