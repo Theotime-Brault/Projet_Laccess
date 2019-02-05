@@ -11,27 +11,28 @@
 
 {% endblock %}
 
-{% block body %}<div class="nav-content">
-    <div class = "row">
-        <ul class = "tabs tab-demo z-depth-1">
-            <li class = "tab">
-                <a href="#inbox">Trouvez les phrases</a>
-            </li>
-            <li class = "tab">
-                <a href="#unread">Etudiez vidéos</a>
-            </li>
-            <li class = "tab">
-                <a href = "#outbox">Quizz</a>
-            </li>
-            <li class = "tab">
-                <a href = "#sent">QCM Vidéo</a>
-            </li>
-            <li class = "tab">
-                <a href = "#sent">Reformer les phrases</a>
-            </li>
-        </ul>
+{% block body %}
+    <div class="nav-content">
+        <div class = "row center">
+            <ul class = "tabs z-depth-1">
+                <li class = "tab">
+                    <a href="#inbox">Trouvez les phrases</a>
+                </li>
+                <li class = "tab">
+                    <a href="#unread">Etudiez vidéos</a>
+                </li>
+                <li class = "tab">
+                    <a href = "#outbox">Quizz</a>
+                </li>
+                <li class = "tab">
+                    <a href = "#sent">QCM Vidéo</a>
+                </li>
+                <li class = "tab">
+                    <a href = "#sent">Reformer les phrases</a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
     <div class="container-body">
         <main>
             <div class="container">
@@ -45,8 +46,9 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script>
-        $('.tabs').tabs();
 
+
+    <script>
+        $(".tabs").tabs();
     </script>
 {% endblock %}
