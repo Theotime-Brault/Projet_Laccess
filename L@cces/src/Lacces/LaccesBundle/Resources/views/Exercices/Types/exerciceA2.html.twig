@@ -1,0 +1,25 @@
+<div class="test col s12 m12 l8 offset-l2">
+    <div class="card">
+        <div class="card-content center black-text flow-text">
+            <p>
+                Regardez la vidéo ASL et trouvez la phrase signée en anglais.
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">
+            <p class="center black-text flow-text">
+                Mot
+            </p>
+        </div>
+        <div class="card-image">
+            <div class="video-container">
+                <iframe id="video1" width="1100" height="619" src="{#{{ word.videoLink }}#}https://www.youtube.com/embed/IOhk8--LILs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="card-content">
+            <input id="proposition" class="formValue" autocomplete="off" placeholder="Trouvez la phrase signée : ">
+        </div>
+    </div>
+</div>

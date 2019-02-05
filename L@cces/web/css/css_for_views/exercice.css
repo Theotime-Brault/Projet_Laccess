@@ -12,3 +12,30 @@
         top: 56px;
     }
 }
+
+.tabs .indicator
+{
+    background-color: #69085a !important;
+}
+
+.tabs .tab a
+{
+    color: rgba(0,0,0,0.87) !important;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active
+{
+    background-color: #f4a733 !important;
+    color: #ffffff !important;
+}
+
+.container-body
+{
+    height: calc(100vh - 64px - 4rem);
+    top: 4rem;
+}
+
+.tabs-content
+{
+    height: calc(100vh - 64px - 5.5rem);
+}
