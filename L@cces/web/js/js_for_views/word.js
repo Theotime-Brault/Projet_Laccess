@@ -47,12 +47,12 @@ $(document).ready(function(){
     });
 */
     //Lancement des 2 vidéos simultanément au clickAction (non mobile)
-    $("#play-videos").on("click", function(ev) {
-        $(".block-video").fadeOut("fast");
-        $("#video")[0].src += "&autoplay=1";
-        ev.preventDefault();
-        $("#video1")[0].src += "&autoplay=1";
-        ev.preventDefault();
+
+    var video = document.getElementById('video');
+    var play = document.getElementsByClassName('play');
+
+    play.addEventListener("click", function() {
+        video.play();
     });
 
 
