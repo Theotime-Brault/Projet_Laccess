@@ -25,8 +25,7 @@ class wordEn
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="word", type="string", length=255)
+     * @ORM\Column(name="word", type="string", length=255, unique=true)
      */
     private $word;
 
