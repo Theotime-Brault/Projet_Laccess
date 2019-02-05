@@ -2,7 +2,7 @@
 
 namespace Lacces\LaccesBundle\Controller;
 
-use Lacces\LaccesBundle\Entity\Form;
+use Lacces\LaccesBundle\Entity\Forms\Form;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;

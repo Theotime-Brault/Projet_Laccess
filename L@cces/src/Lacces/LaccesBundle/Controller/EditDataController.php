@@ -2,8 +2,8 @@
 
 namespace Lacces\LaccesBundle\Controller;
 
-use Lacces\LaccesBundle\Entity\FormAddData;
-use Lacces\LaccesBundle\Entity\FormEditData;
+use Lacces\LaccesBundle\Entity\Forms\FormAddData;
+use Lacces\LaccesBundle\Entity\Forms\FormEditData;
 use Lacces\LaccesBundle\Entity\wordEn;
 use Lacces\LaccesBundle\Entity\wordFr;
 use Lacces\LaccesBundle\Entity\traductionFrEn;
