@@ -39,3 +39,8 @@
 {
     height: calc(100vh - 64px - 5.5rem);
 }
+
+#card-image-1, #card-image-2
+{
+    display: none;
+}
