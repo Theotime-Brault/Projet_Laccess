@@ -207,7 +207,6 @@ class EditDataController extends Controller
 
 
       return $this->render('@Lacces/Administration/EditData/wordList.html.twig', [
-        'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         'wordFr' => $wordsFrObj,
         'wordEn' => $wordsEnObj,
         'langue' => $langue
