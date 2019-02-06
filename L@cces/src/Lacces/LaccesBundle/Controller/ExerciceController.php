@@ -9,10 +9,10 @@ class ExerciceController extends Controller
   /**
    * @return \Symfony\Component\HttpFoundation\Response
    */
-  public function exercicesAction($word, $langue)
+  public function exercicesAction( /*$word, $langue*/)
   {
 
-    if($langue == "fr" || $langue == "en") {
+    /*if($langue == "fr" || $langue == "en") {
 
       $em = $this->getDoctrine()->getManager();
 
@@ -27,13 +27,15 @@ class ExerciceController extends Controller
         return $this->redirectToRoute('lacces_homepage');
       }
 
-      return $this->redirectToRoute('lacces_exercices', array(
+      return $this->render('@Lacces/Exercices/exercices.html.twig', array(
+        'word' => $objWord,
         'langue' => $langue,
-        'word' => $word
       ));
     }
 
-    return $this->redirectToRoute('lacces_homepage');
+    return $this->redirectToRoute('lacces_homepage');*/
+
+    return $this->render('@Lacces/Exercices/exercices.html.twig');
 
   }
 }
