@@ -54,7 +54,7 @@ class wordFr
 
     /**
      * @var PersistentCollection
-     * @ORM\ ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordEn", inversedBy="wordFrs", cascade={"persist", "remove"})
+     * @ORM\ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordEn", inversedBy="wordFrs", cascade={"persist", "remove"})
      * @JoinTable(name="traductionFrEn")
      */
     private $wordEns;
@@ -138,30 +138,6 @@ class wordFr
     }
 
     /**
-     * Set videoDescription.
-     *
-     * @param string $videoDescription
-     *
-     * @return wordFr
-     */
-    public function setVideoDescription($videoDescription)
-    {
-        $this->videoDescription = $videoDescription;
-
-        return $this;
-    }
-
-    /**
-     * Get videoDescription.
-     *
-     * @return string
-     */
-    public function getVideoDescription()
-    {
-        return $this->videoDescription;
-    }
-
-    /**
      * Set contextSentence.
      *
      * @param string $contextSentence
@@ -192,7 +168,6 @@ class wordFr
      *
      * @return wordFr
      */
-
     public function setPopularity($popularity)
     {
         $this->popularity = $popularity;

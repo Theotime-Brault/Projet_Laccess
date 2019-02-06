@@ -24,11 +24,6 @@ class FormAddData
   /**
    * @Assert\NotBlank
    */
-  protected $videoDescriptionFr;
-
-  /**
-   * @Assert\NotBlank
-   */
   protected $wordEn;
 
   /**
@@ -40,12 +35,6 @@ class FormAddData
    * @Assert\NotBlank
    */
   protected $contextSentenceEn;
-
-  /**
-   * @Assert\NotBlank
-   */
-  protected $videoDescriptionEn;
-
 
   /**
    * @return mixed
@@ -98,22 +87,6 @@ class FormAddData
   /**
    * @return mixed
    */
-  public function getVideoDescriptionFr()
-  {
-    return $this->videoDescriptionFr;
-  }
-
-  /**
-   * @param mixed $videoDescriptionFr
-   */
-  public function setVideoDescriptionFr($videoDescriptionFr)
-  {
-    $this->videoDescriptionFr = $videoDescriptionFr;
-  }
-
-  /**
-   * @return mixed
-   */
   public function getWordEn()
   {
     return $this->wordEn;
@@ -157,21 +130,5 @@ class FormAddData
   public function setContextSentenceEn($contextSentenceEn)
   {
     $this->contextSentenceEn = $contextSentenceEn;
-  }
-
-  /**
-   * @return mixed
-   */
-  public function getVideoDescriptionEn()
-  {
-    return $this->videoDescriptionEn;
-  }
-
-  /**
-   * @param mixed $videoDescriptionEn
-   */
-  public function setVideoDescriptionEn($videoDescriptionEn)
-  {
-    $this->videoDescriptionEn = $videoDescriptionEn;
   }
 }

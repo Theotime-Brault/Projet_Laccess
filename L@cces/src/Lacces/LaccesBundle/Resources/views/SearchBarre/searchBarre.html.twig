@@ -75,18 +75,18 @@ $('document').ready(function () {
     });
 
     function submitSearch(){
-        var  s = $('#search-barre').val();
-        var l;
+        var  word = $('#search-barre').val();
+        var langue;
         if($("#btnFr").is(":checked")) {
-            l = "fr";
+            langue = "fr";
         }else if($("#btnEn").is(":checked")) {
-            l = "en";
+            langue = "en";
         }else{
-            l = "";
+            langue = "";
         }
 
-        if(s && l){
-            $('form').attr('action', "/word/"+l+"/"+s);
+        if(word && langue){
+            $('form').attr('action', "/word/"+langue+"/"+word);
             $('form').submit();
         }else{
             $('form').removeAttr('action');

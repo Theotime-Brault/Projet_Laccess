@@ -29,9 +29,9 @@ class qcmVideoFr
     private $question;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="solution", type="string", length=255)
+     * @ORM\Column(name="solution", type="integer", length=255)
      */
     private $solution;
 
@@ -94,7 +94,7 @@ class qcmVideoFr
     /**
      * Get solution.
      *
-     * @return string
+     * @return int
      */
     public function getSolution()
     {
@@ -104,7 +104,7 @@ class qcmVideoFr
     /**
      * Set videoLink.
      *
-     * @param string $videoLink
+     * @param integer $videoLink
      *
      * @return qcmVideoFr
      */

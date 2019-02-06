@@ -35,7 +35,7 @@ class qcmEn
      *
      * @ORM\Column(name="soltuion", type="integer")
      */
-    private $soltuion;
+    private $solution;
 
     /**
      * @var wordEn
@@ -86,13 +86,13 @@ class qcmEn
     /**
      * Set soltuion
      *
-     * @param integer $soltuion
+     * @param integer $solution
      *
      * @return qcmEn
      */
-    public function setSoltuion($soltuion)
+    public function setSolution($solution)
     {
-        $this->soltuion = $soltuion;
+        $this->solution = $solution;
 
         return $this;
     }
@@ -102,9 +102,9 @@ class qcmEn
      *
      * @return int
      */
-    public function getSoltuion()
+    public function getSolution()
     {
-        return $this->soltuion;
+        return $this->solution;
     }
 
     /**
