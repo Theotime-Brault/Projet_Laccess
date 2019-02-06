@@ -198,7 +198,6 @@ nav
     padding: 12px;
     border-radius: 50%;
     width: 48px;
-    height: 100%;
     display: flex;
     align-items: center;
     position: relative;
@@ -274,6 +273,16 @@ nav .brand-logo
 {
     text-transform: none;
     margin-left: 0.5rem;
+}
+
+.nav-wrapper a
+{
+    height: 100% !important;
+}
+
+nav .sidenav-trigger
+{
+    margin: 0;
 }
 
 /***********************************************************
