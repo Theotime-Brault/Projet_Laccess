@@ -62,6 +62,8 @@ class DefaultController extends Controller
         }
 
         $objWord->setPopularity($objWord->getPopularity() + 1);
+        $em->persist($objWord);
+        $em->flush();
 
         return $this->render('@Lacces/Words/word.html.twig', array(
             'word' => $objWord,

@@ -168,7 +168,6 @@ class wordFr
      *
      * @return wordFr
      */
-
     public function setPopularity($popularity)
     {
         $this->popularity = $popularity;
