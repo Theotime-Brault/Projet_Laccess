@@ -8,3 +8,8 @@
 {
     color: #ffffff;
 }
+
+.btn-menu:hover, .btn-menu:focus, .btn-menu:active
+{
+    background-color: #69085a;
+}
