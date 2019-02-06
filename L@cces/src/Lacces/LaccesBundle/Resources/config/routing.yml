@@ -40,11 +40,6 @@ auto_complete:
     defaults:
         _controller: LaccesBundle:Default:autoComplete
 
-lacces_exercices:
-    path:   /exercices
-    defaults:
-        _controller: LaccesBundle:Default:exercices
-
 lacces_editData_edit:
     path: /administration/editData/edit/{wordId}/{langue}
     defaults:
@@ -89,3 +84,8 @@ administration:
     path: /administration
     defaults:
         _controller: LaccesBundle:EditData:admin
+
+lacces_exercices:
+    path:   /exercices/{langue}/{word}
+    defaults:
+        _controller: LaccesBundle:Exercice:exercices
