@@ -12,6 +12,10 @@ $(document).ready(function(){
         $("#search-box").css("display", "block");
         $("#search-box").css("animation", "slideInDown 400ms");
         $("input").focus();
+        setTimeout(function () {
+            $("#close-barre").fadeIn();
+            $("#container-img-flag").fadeIn();
+        }, 200);
     });
 /*
     $("#search-barre").on("blur", function(){
@@ -19,6 +23,8 @@ $(document).ready(function(){
         setTimeout(function () {
             $("#search-box").css("display", "none");
         }, 150);
+        $("#close-barre").fadeOut(10);
+        $("#container-img-flag").fadeOut(10);
     });
 */
 
