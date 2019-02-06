@@ -1,0 +1,395 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="1445" height="549" view_box="0 0 1445 549"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Mon, 04 Feb 2019 01:58:05</desc>
+
+<rect id="frame" x="0" y="0" width="1445" height="549" fill="#ffffbf" stroke="none" stroke-width="0"/>
+
+<!-- Association qcm_reponse_video_en -->
+<line x1="808" y1="321" x2="808" y2="422" stroke="#f46d43" stroke-width="2"/>
+<text x="813.0" y="389" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<line x1="808" y1="506" x2="808" y2="422" stroke="#f46d43" stroke-width="2"/>
+<text x="813.0" y="464" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<g id="association-qcm_reponse_video_en">
+	<path d="M 873 397 a 14 14 90 0 1 14 14 V 422 h -158 V 411 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 887 422.0 v 11 a 14 14 90 0 1 -14 14 H 743 a 14 14 90 0 1 -14 -14 V 422.0 H 158" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="729" y="397" width="158" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="729" y1="422" x2="887" y2="422" stroke="#f46d43" stroke-width="1"/>
+	<text x="736" y="414.7" fill="#000000" font-family="Verdana" font-size="12">qcm_reponse_video_en</text>
+</g>
+
+<!-- Association word_qcm_en -->
+<line x1="491" y1="321" x2="491" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="496.0" y="271" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<line x1="808" y1="77" x2="491" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="719" y="100.50152867" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-word_qcm_en">
+	<path d="M 527 195 a 14 14 90 0 1 14 14 V 220 h -100 V 209 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 541 220.0 v 11 a 14 14 90 0 1 -14 14 H 455 a 14 14 90 0 1 -14 -14 V 220.0 H 100" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="441" y="195" width="100" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="441" y1="220" x2="541" y2="220" stroke="#f46d43" stroke-width="1"/>
+	<text x="448" y="212.7" fill="#000000" font-family="Verdana" font-size="12">word_qcm_en</text>
+</g>
+
+<!-- Association qcm_reponse_video_fr -->
+<line x1="996" y1="321" x2="996" y2="422" stroke="#f46d43" stroke-width="2"/>
+<text x="1001.0" y="389" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<line x1="996" y1="506" x2="996" y2="422" stroke="#f46d43" stroke-width="2"/>
+<text x="1001.0" y="464" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<g id="association-qcm_reponse_video_fr">
+	<path d="M 1059 397 a 14 14 90 0 1 14 14 V 422 h -154 V 411 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 1073 422.0 v 11 a 14 14 90 0 1 -14 14 H 933 a 14 14 90 0 1 -14 -14 V 422.0 H 154" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="919" y="397" width="154" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="919" y1="422" x2="1073" y2="422" stroke="#f46d43" stroke-width="1"/>
+	<text x="926" y="414.7" fill="#000000" font-family="Verdana" font-size="12">qcm_reponse_video_fr</text>
+</g>
+
+<!-- Association word_reformulation_fr -->
+<line x1="1358" y1="321" x2="1172" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="1277" y="303.903127147" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<line x1="491" y1="77" x2="1172" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="558" y="83.6231253013" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-word_reformulation_fr">
+	<path d="M 1234 195 a 14 14 90 0 1 14 14 V 220 h -152 V 209 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 1248 220.0 v 11 a 14 14 90 0 1 -14 14 H 1110 a 14 14 90 0 1 -14 -14 V 220.0 H 152" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="1096" y="195" width="152" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="1096" y1="220" x2="1248" y2="220" stroke="#f46d43" stroke-width="1"/>
+	<text x="1103" y="212.7" fill="#000000" font-family="Verdana" font-size="12">word_reformulation_fr</text>
+</g>
+
+<!-- Association word_qcm_video_en -->
+<line x1="808" y1="321" x2="808" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="813.0" y="262" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<line x1="808" y1="77" x2="808" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="813.0" y="162" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-word_qcm_video_en">
+	<path d="M 864 195 a 14 14 90 0 1 14 14 V 220 h -140 V 209 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 878 220.0 v 11 a 14 14 90 0 1 -14 14 H 752 a 14 14 90 0 1 -14 -14 V 220.0 H 140" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="738" y="195" width="140" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="738" y1="220" x2="878" y2="220" stroke="#f46d43" stroke-width="1"/>
+	<text x="745" y="212.7" fill="#000000" font-family="Verdana" font-size="12">word_qcm_video_en</text>
+</g>
+
+<!-- Association qcm_reponse_en -->
+<line x1="491" y1="321" x2="491" y2="422" stroke="#f46d43" stroke-width="2"/>
+<text x="496.0" y="380" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<line x1="491" y1="506" x2="491" y2="422" stroke="#f46d43" stroke-width="2"/>
+<text x="496.0" y="464" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<g id="association-qcm_reponse_en">
+	<path d="M 537 397 a 14 14 90 0 1 14 14 V 422 h -120 V 411 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 551 422.0 v 11 a 14 14 90 0 1 -14 14 H 445 a 14 14 90 0 1 -14 -14 V 422.0 H 120" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="431" y="397" width="120" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="431" y1="422" x2="551" y2="422" stroke="#f46d43" stroke-width="1"/>
+	<text x="438" y="414.7" fill="#000000" font-family="Verdana" font-size="12">qcm_reponse_en</text>
+</g>
+
+<!-- Association word_qcm_fr -->
+<line x1="640" y1="321" x2="640" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="645.0" y="271" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<line x1="491" y1="77" x2="640" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="558" y="135.368921588" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-word_qcm_fr">
+	<path d="M 674 195 a 14 14 90 0 1 14 14 V 220 h -96 V 209 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 688 220.0 v 11 a 14 14 90 0 1 -14 14 H 606 a 14 14 90 0 1 -14 -14 V 220.0 H 96" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="592" y="195" width="96" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="592" y1="220" x2="688" y2="220" stroke="#f46d43" stroke-width="1"/>
+	<text x="599" y="212.7" fill="#000000" font-family="Verdana" font-size="12">word_qcm_fr</text>
+</g>
+
+<!-- Association word_signification_video_fr -->
+<line x1="316" y1="321" x2="100" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="220" y="301.607772363" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<line x1="491" y1="77" x2="100" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="402" y="94.5341211419" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-word_signification_video_fr">
+	<path d="M 177 195 a 14 14 90 0 1 14 14 V 220 h -182 V 209 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 191 220.0 v 11 a 14 14 90 0 1 -14 14 H 23 a 14 14 90 0 1 -14 -14 V 220.0 H 182" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="9" y="195" width="182" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="9" y1="220" x2="191" y2="220" stroke="#f46d43" stroke-width="1"/>
+	<text x="16" y="212.7" fill="#000000" font-family="Verdana" font-size="12">word_signification_video_fr</text>
+</g>
+
+<!-- Association traductionFrEn -->
+<line x1="491" y1="77" x2="640" y2="77" stroke="#f46d43" stroke-width="2"/>
+<text x="558" y="69.0" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<line x1="808" y1="77" x2="640" y2="77" stroke="#f46d43" stroke-width="2"/>
+<text x="719" y="69.0" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-traductionFrEn">
+	<path d="M 678 52 a 14 14 90 0 1 14 14 V 77 h -104 V 66 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 692 77.0 v 11 a 14 14 90 0 1 -14 14 H 602 a 14 14 90 0 1 -14 -14 V 77.0 H 104" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="588" y="52" width="104" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="588" y1="77" x2="692" y2="77" stroke="#f46d43" stroke-width="1"/>
+	<text x="595" y="69.7" fill="#000000" font-family="Verdana" font-size="12">traductionFrEn</text>
+</g>
+
+<!-- Association qcm_reponse_fr -->
+<line x1="640" y1="321" x2="640" y2="422" stroke="#f46d43" stroke-width="2"/>
+<text x="645.0" y="380" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<line x1="640" y1="506" x2="640" y2="422" stroke="#f46d43" stroke-width="2"/>
+<text x="645.0" y="464" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<g id="association-qcm_reponse_fr">
+	<path d="M 683 397 a 14 14 90 0 1 14 14 V 422 h -114 V 411 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 697 422.0 v 11 a 14 14 90 0 1 -14 14 H 597 a 14 14 90 0 1 -14 -14 V 422.0 H 114" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="583" y="397" width="114" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="583" y1="422" x2="697" y2="422" stroke="#f46d43" stroke-width="1"/>
+	<text x="590" y="414.7" fill="#000000" font-family="Verdana" font-size="12">qcm_reponse_fr</text>
+</g>
+
+<!-- Association word_signification_video_en -->
+<line x1="100" y1="321" x2="316" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="178" y="300.204994585" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<line x1="808" y1="77" x2="316" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="719" y="89.2748330551" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-word_signification_video_en">
+	<path d="M 395 195 a 14 14 90 0 1 14 14 V 220 h -186 V 209 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 409 220.0 v 11 a 14 14 90 0 1 -14 14 H 237 a 14 14 90 0 1 -14 -14 V 220.0 H 186" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="223" y="195" width="186" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="223" y1="220" x2="409" y2="220" stroke="#f46d43" stroke-width="1"/>
+	<text x="230" y="212.7" fill="#000000" font-family="Verdana" font-size="12">word_signification_video_en</text>
+</g>
+
+<!-- Association word_qcm_video_fr -->
+<line x1="996" y1="321" x2="996" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="1001.0" y="262" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<line x1="491" y1="77" x2="996" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="558" y="88.7504766927" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-word_qcm_video_fr">
+	<path d="M 1050 195 a 14 14 90 0 1 14 14 V 220 h -136 V 209 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 1064 220.0 v 11 a 14 14 90 0 1 -14 14 H 942 a 14 14 90 0 1 -14 -14 V 220.0 H 136" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="928" y="195" width="136" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="928" y1="220" x2="1064" y2="220" stroke="#f46d43" stroke-width="1"/>
+	<text x="935" y="212.7" fill="#000000" font-family="Verdana" font-size="12">word_qcm_video_fr</text>
+</g>
+
+<!-- Association word_reformulation_en -->
+<line x1="1172" y1="321" x2="1358" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="1235" y="302.274094888" fill="#1a9850" font-family="Verdana" font-size="12">1,1</text>
+<line x1="808" y1="77" x2="1358" y2="220" stroke="#f46d43" stroke-width="2"/>
+<text x="875" y="87.1268300203" fill="#1a9850" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-word_reformulation_en">
+	<path d="M 1422 195 a 14 14 90 0 1 14 14 V 220 h -156 V 209 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 1436 220.0 v 11 a 14 14 90 0 1 -14 14 H 1294 a 14 14 90 0 1 -14 -14 V 220.0 H 156" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+	<rect x="1280" y="195" width="156" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="1280" y1="220" x2="1436" y2="220" stroke="#f46d43" stroke-width="1"/>
+	<text x="1287" y="212.7" fill="#000000" font-family="Verdana" font-size="12">word_reformulation_en</text>
+</g>
+
+<!-- Entity qcm_video_fr -->
+<g id="entity-qcm_video_fr">
+	<g id="frame-qcm_video_fr">
+		<rect x="949" y="270" width="94" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="949" y="295.0" width="94" height="77" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="949" y="270" width="94" height="102" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="949" y1="295" x2="1043" y2="295" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="954" y="287.7" fill="#000000" font-family="Verdana" font-size="12">qcm_video_fr</text>
+	<text x="954" y="312.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="954" y1="315" x2="966" y2="315" stroke="#000000" stroke-width="1"/>
+	<text x="954" y="329.8" fill="#000000" font-family="Verdana" font-size="12">question</text>
+	<text x="954" y="346.8" fill="#000000" font-family="Verdana" font-size="12">videoLink</text>
+	<text x="954" y="363.8" fill="#000000" font-family="Verdana" font-size="12">solution</text>
+</g>
+
+<!-- Entity word_en -->
+<g id="entity-word_en">
+	<g id="frame-word_en">
+		<rect x="746" y="9" width="124" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="746" y="34.0" width="124" height="111" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="746" y="9" width="124" height="136" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="746" y1="34" x2="870" y2="34" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="781" y="26.7" fill="#000000" font-family="Verdana" font-size="12">word_en</text>
+	<text x="751" y="51.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="751" y1="54" x2="763" y2="54" stroke="#000000" stroke-width="1"/>
+	<text x="751" y="68.7" fill="#000000" font-family="Verdana" font-size="12">word</text>
+	<text x="751" y="85.8" fill="#000000" font-family="Verdana" font-size="12">videoLinkWord</text>
+	<text x="751" y="102.8" fill="#000000" font-family="Verdana" font-size="12">videoLinkSentence</text>
+	<text x="751" y="119.8" fill="#000000" font-family="Verdana" font-size="12">contextSentence</text>
+	<text x="751" y="136.8" fill="#000000" font-family="Verdana" font-size="12">popularity</text>
+</g>
+
+<!-- Entity signification_video_fr -->
+<g id="entity-signification_video_fr">
+	<g id="frame-signification_video_fr">
+		<rect x="246" y="270" width="140" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="246" y="295.0" width="140" height="77" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="246" y="270" width="140" height="102" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="246" y1="295" x2="386" y2="295" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="251" y="287.7" fill="#000000" font-family="Verdana" font-size="12">signification_video_fr</text>
+	<text x="251" y="312.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="251" y1="315" x2="263" y2="315" stroke="#000000" stroke-width="1"/>
+	<text x="251" y="329.8" fill="#000000" font-family="Verdana" font-size="12">question</text>
+	<text x="251" y="346.8" fill="#000000" font-family="Verdana" font-size="12">solution</text>
+	<text x="251" y="363.8" fill="#000000" font-family="Verdana" font-size="12">videoLink</text>
+</g>
+
+<!-- Entity word_fr -->
+<g id="entity-word_fr">
+	<g id="frame-word_fr">
+		<rect x="429" y="9" width="124" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="429" y="34.0" width="124" height="111" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="429" y="9" width="124" height="136" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="429" y1="34" x2="553" y2="34" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="467" y="26.7" fill="#000000" font-family="Verdana" font-size="12">word_fr</text>
+	<text x="434" y="51.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="434" y1="54" x2="446" y2="54" stroke="#000000" stroke-width="1"/>
+	<text x="434" y="68.7" fill="#000000" font-family="Verdana" font-size="12">word</text>
+	<text x="434" y="85.8" fill="#000000" font-family="Verdana" font-size="12">videoLinkWord</text>
+	<text x="434" y="102.8" fill="#000000" font-family="Verdana" font-size="12">videoLinkSentence</text>
+	<text x="434" y="119.8" fill="#000000" font-family="Verdana" font-size="12">contextSentence</text>
+	<text x="434" y="136.8" fill="#000000" font-family="Verdana" font-size="12">popularity</text>
+</g>
+
+<!-- Entity reformulation_en -->
+<g id="entity-reformulation_en">
+	<g id="frame-reformulation_en">
+		<rect x="1114" y="279" width="116" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="1114" y="304.0" width="116" height="59" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="1114" y="279" width="116" height="84" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="1114" y1="304" x2="1230" y2="304" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="1119" y="296.7" fill="#000000" font-family="Verdana" font-size="12">reformulation_en</text>
+	<text x="1119" y="321.8" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="1119" y1="324" x2="1131" y2="324" stroke="#000000" stroke-width="1"/>
+	<text x="1119" y="338.8" fill="#000000" font-family="Verdana" font-size="12">question</text>
+	<text x="1119" y="355.8" fill="#000000" font-family="Verdana" font-size="12">solution</text>
+</g>
+
+<!-- Entity qcm_fr -->
+<g id="entity-qcm_fr">
+	<g id="frame-qcm_fr">
+		<rect x="609" y="279" width="62" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="609" y="304.0" width="62" height="59" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="609" y="279" width="62" height="84" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="609" y1="304" x2="671" y2="304" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="618" y="296.7" fill="#000000" font-family="Verdana" font-size="12">qcm_fr</text>
+	<text x="614" y="321.8" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="614" y1="324" x2="626" y2="324" stroke="#000000" stroke-width="1"/>
+	<text x="614" y="338.8" fill="#000000" font-family="Verdana" font-size="12">question</text>
+	<text x="614" y="355.8" fill="#000000" font-family="Verdana" font-size="12">solution</text>
+</g>
+
+<!-- Entity qcm_enonce_video_en -->
+<g id="entity-qcm_enonce_video_en">
+	<g id="frame-qcm_enonce_video_en">
+		<rect x="733" y="472" width="150" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="733" y="497.0" width="150" height="43" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="733" y="472" width="150" height="68" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="733" y1="497" x2="883" y2="497" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="738" y="489.7" fill="#000000" font-family="Verdana" font-size="12">qcm_enonce_video_en</text>
+	<text x="738" y="514.8" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="738" y1="517" x2="750" y2="517" stroke="#000000" stroke-width="1"/>
+	<text x="738" y="531.8" fill="#000000" font-family="Verdana" font-size="12">enonces</text>
+</g>
+
+<!-- Entity qcm_enonce_fr -->
+<g id="entity-qcm_enonce_fr">
+	<g id="frame-qcm_enonce_fr">
+		<rect x="588" y="472" width="104" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="588" y="497.0" width="104" height="43" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="588" y="472" width="104" height="68" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="588" y1="497" x2="692" y2="497" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="593" y="489.7" fill="#000000" font-family="Verdana" font-size="12">qcm_enonce_fr</text>
+	<text x="593" y="514.8" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="593" y1="517" x2="605" y2="517" stroke="#000000" stroke-width="1"/>
+	<text x="593" y="531.8" fill="#000000" font-family="Verdana" font-size="12">enonces</text>
+</g>
+
+<!-- Entity qcm_enonce_en -->
+<g id="entity-qcm_enonce_en">
+	<g id="frame-qcm_enonce_en">
+		<rect x="436" y="472" width="110" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="436" y="497.0" width="110" height="43" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="436" y="472" width="110" height="68" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="436" y1="497" x2="546" y2="497" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="441" y="489.7" fill="#000000" font-family="Verdana" font-size="12">qcm_enonce_en</text>
+	<text x="441" y="514.8" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="441" y1="517" x2="453" y2="517" stroke="#000000" stroke-width="1"/>
+	<text x="441" y="531.8" fill="#000000" font-family="Verdana" font-size="12">enonces</text>
+</g>
+
+<!-- Entity qcm_enonce_video_fr -->
+<g id="entity-qcm_enonce_video_fr">
+	<g id="frame-qcm_enonce_video_fr">
+		<rect x="924" y="472" width="144" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="924" y="497.0" width="144" height="43" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="924" y="472" width="144" height="68" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="924" y1="497" x2="1068" y2="497" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="929" y="489.7" fill="#000000" font-family="Verdana" font-size="12">qcm_enonce_video_fr</text>
+	<text x="929" y="514.8" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="929" y1="517" x2="941" y2="517" stroke="#000000" stroke-width="1"/>
+	<text x="929" y="531.8" fill="#000000" font-family="Verdana" font-size="12">enonces</text>
+</g>
+
+<!-- Entity qcm_video_en -->
+<g id="entity-qcm_video_en">
+	<g id="frame-qcm_video_en">
+		<rect x="758" y="270" width="100" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="758" y="295.0" width="100" height="77" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="758" y="270" width="100" height="102" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="758" y1="295" x2="858" y2="295" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="763" y="287.7" fill="#000000" font-family="Verdana" font-size="12">qcm_video_en</text>
+	<text x="763" y="312.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="763" y1="315" x2="775" y2="315" stroke="#000000" stroke-width="1"/>
+	<text x="763" y="329.8" fill="#000000" font-family="Verdana" font-size="12">question</text>
+	<text x="763" y="346.8" fill="#000000" font-family="Verdana" font-size="12">videoLink</text>
+	<text x="763" y="363.8" fill="#000000" font-family="Verdana" font-size="12">solution</text>
+</g>
+
+<!-- Entity signification_video_en -->
+<g id="entity-signification_video_en">
+	<g id="frame-signification_video_en">
+		<rect x="27" y="270" width="146" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="27" y="295.0" width="146" height="77" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="27" y="270" width="146" height="102" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="27" y1="295" x2="173" y2="295" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="32" y="287.7" fill="#000000" font-family="Verdana" font-size="12">signification_video_en</text>
+	<text x="32" y="312.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="32" y1="315" x2="44" y2="315" stroke="#000000" stroke-width="1"/>
+	<text x="32" y="329.8" fill="#000000" font-family="Verdana" font-size="12">question</text>
+	<text x="32" y="346.8" fill="#000000" font-family="Verdana" font-size="12">solution</text>
+	<text x="32" y="363.8" fill="#000000" font-family="Verdana" font-size="12">videoLink</text>
+</g>
+
+<!-- Entity reformulation_fr -->
+<g id="entity-reformulation_fr">
+	<g id="frame-reformulation_fr">
+		<rect x="1303" y="279" width="110" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="1303" y="304.0" width="110" height="59" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="1303" y="279" width="110" height="84" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="1303" y1="304" x2="1413" y2="304" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="1308" y="296.7" fill="#000000" font-family="Verdana" font-size="12">reformulation_fr</text>
+	<text x="1308" y="321.8" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="1308" y1="324" x2="1320" y2="324" stroke="#000000" stroke-width="1"/>
+	<text x="1308" y="338.8" fill="#000000" font-family="Verdana" font-size="12">question</text>
+	<text x="1308" y="355.8" fill="#000000" font-family="Verdana" font-size="12">solution</text>
+</g>
+
+<!-- Entity qcm_en -->
+<g id="entity-qcm_en">
+	<g id="frame-qcm_en">
+		<rect x="460" y="279" width="62" height="25" fill="#a6d96a" stroke="#a6d96a" stroke-width="0"/>
+		<rect x="460" y="304.0" width="62" height="59" fill="#d9ef8b" stroke="#d9ef8b" stroke-width="0"/>
+		<rect x="460" y="279" width="62" height="84" fill="none" stroke="#66bd63" stroke-width="2"/>
+		<line x1="460" y1="304" x2="522" y2="304" stroke="#66bd63" stroke-width="1"/>
+	</g>
+	<text x="466" y="296.7" fill="#000000" font-family="Verdana" font-size="12">qcm_en</text>
+	<text x="465" y="321.8" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="465" y1="324" x2="477" y2="324" stroke="#000000" stroke-width="1"/>
+	<text x="465" y="338.8" fill="#000000" font-family="Verdana" font-size="12">question</text>
+	<text x="465" y="355.8" fill="#000000" font-family="Verdana" font-size="12">solution</text>
+</g>
+</svg>
