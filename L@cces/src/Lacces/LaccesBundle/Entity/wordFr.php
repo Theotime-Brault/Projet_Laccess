@@ -5,6 +5,7 @@ namespace Lacces\LaccesBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\PersistentCollection;
 use Doctrine\ORM\Mapping\JoinTable;
+use Lacces\LaccesBundle\Entity\Exercise\qcmFr;
 
 /**
  * wordFr
@@ -40,13 +41,6 @@ class wordFr
     /**
      * @var string
      *
-     * @ORM\Column(name="videoDescription", type="text")
-     */
-    private $videoDescription;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="contextSentence", type="text")
      */
     private $contextSentence;
@@ -64,6 +58,13 @@ class wordFr
      * @JoinTable(name="traductionFrEn")
      */
     private $wordEns;
+
+    /**
+     * @var qcmFr
+     * @ORM\OneToOne(targetEntity="App\Entity\Exercise\qcmFr", mappedBy="wordId", cascade={"persist", "remove"})
+     * @ORM\Column(name="qcmFr", type="integer")
+     */
+    private $qcmFr;
 
     /**
      * Get id.
@@ -208,5 +209,21 @@ class wordFr
     public function getPopularity()
     {
         return $this->popularity;
+    }
+
+    /**
+     * @return qcmFr
+     */
+    public function getQcmFr()
+    {
+        return $this->qcmFr;
+    }
+
+    /**
+     * @param qcmFr $qcmFr
+     */
+    public function setQcmFr($qcmFr)
+    {
+        $this->qcmFr = $qcmFr;
     }
 }

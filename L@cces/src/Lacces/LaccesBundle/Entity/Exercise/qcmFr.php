@@ -3,6 +3,7 @@
 namespace Lacces\LaccesBundle\Entity\Exercise;
 
 use Doctrine\ORM\Mapping as ORM;
+use Lacces\LaccesBundle\Entity\wordFr;
 
 /**
  * qcmFr
@@ -34,6 +35,13 @@ class qcmFr
      * @ORM\Column(name="solution", type="integer")
      */
     private $solution;
+
+    /**
+     * @var wordFr
+     * @ORM\Column(name="wordFr", type="integer")
+     * @ORM\OneToOne(targetEntity="App\Entity\wordFr", inversedBy="qcmFr")
+     */
+    private $wordFr;
 
 
     /**
@@ -92,6 +100,22 @@ class qcmFr
     public function getSolution()
     {
         return $this->solution;
+    }
+
+    /**
+     * @return wordFr
+     */
+    public function getWordFr()
+    {
+        return $this->wordFr;
+    }
+
+    /**
+     * @param wordFr $wordFr
+     */
+    public function setWordFr($wordFr)
+    {
+        $this->wordFr = $wordFr;
     }
 }
 
