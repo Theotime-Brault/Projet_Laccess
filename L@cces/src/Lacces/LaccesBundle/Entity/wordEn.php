@@ -39,13 +39,6 @@ class wordEn
     /**
      * @var string
      *
-     * @ORM\Column(name="videoDescription", type="text")
-     */
-    private $videoDescription;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="contextSentence", type="text")
      */
     private $contextSentence;
@@ -59,7 +52,7 @@ class wordEn
 
     /**
      * @var PersistentCollection
-     * @ORM\ ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordFr", mappedBy="wordEns", cascade={"persist", "remove"})
+     * @ORM\ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordFr", mappedBy="wordEns", cascade={"persist", "remove"})
      */
     private $wordFrs;
 
@@ -140,30 +133,6 @@ class wordEn
     public function getVideoLink()
     {
         return $this->videoLink;
-    }
-
-    /**
-     * Set videoDescription.
-     *
-     * @param string $videoDescription
-     *
-     * @return wordFr
-     */
-    public function setVideoDescription($videoDescription)
-    {
-        $this->videoDescription = $videoDescription;
-
-        return $this;
-    }
-
-    /**
-     * Get videoDescription.
-     *
-     * @return string
-     */
-    public function getVideoDescription()
-    {
-        return $this->videoDescription;
     }
 
     /**
