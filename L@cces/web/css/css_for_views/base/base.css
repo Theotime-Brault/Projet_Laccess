@@ -194,13 +194,13 @@ nav
 
 .btn-menu
 {
-    margin: 0 4px;
-    padding: 12px;
+    margin: 0 4px !important;
+    padding: 15px;
     border-radius: 50%;
-    width: 48px;
-    display: flex;
-    align-items: center;
-    position: relative;
+    width: 53px;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .btn-menu:hover, .btn-menu:focus, .btn-menu:active
@@ -283,6 +283,15 @@ nav .brand-logo
 nav .sidenav-trigger
 {
     margin: 0;
+}
+
+.span-menu
+{
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #757575;
+    height: 2.75px;
 }
 
 /***********************************************************
