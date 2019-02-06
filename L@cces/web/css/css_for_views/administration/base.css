@@ -9,7 +9,7 @@
     color: #ffffff;
 }
 
-.btn-menu:hover, .btn-menu:focus, .btn-menu:active
+.btn-menu:hover, .btn-menu:focus, .btn-menu:active, nav ul a:hover
 {
     background-color: #69085a;
 }

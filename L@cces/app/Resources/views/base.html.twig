@@ -35,17 +35,31 @@
                         <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces.png') }}/>
                     </a>
                 </div>
-                <div class="nav-link">
-                    {% if is_granted('ROLE_ADMIN') %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <ul class="right">
+                        <li>
+                            <a class="dropdown-trigger" href="#!" data-target="dropdown">
+                                <i class="material-icons grey-text ">more_vert</i>
+                            </a>
+                        </li>
+                    </ul>
+                {% endif %}
+            </nav>
+            {% if is_granted('ROLE_ADMIN') %}
+                <ul id='dropdown' class='dropdown-content-l'>
+                    <li>
                         <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('administration') }}">
                             Administration
                         </a>
+                    </li>
+                    <li>
                         <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
                             Déconnexion
                         </a>
-                    {% endif %}
-                </div>
-            </nav>
+                    </li>
+                </ul>
+            {% endif %}
+
             {% block navbarre %}
             {% endblock %}
         </div>

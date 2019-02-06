@@ -22,31 +22,56 @@
     </head>
     <body class="grey lighten-5">
         <div class="navbar-fixed">
-            <div class="nav-wrapper">
-                <nav class="nav-wrapper grey darken-4">
-                    <div class="btn-menu">
-                        <a href="" class="sidenav-trigger show-on-large" data-target="slide-out">
-                            <i class="material-icons white-text">menu</i>
-                        </a>
-                    </div>
-                    <div id="container_logo_lacces">
-                        <a href="{{ asset('') }}" class="brand-logo center">
-                            <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces_white.png') }}/>
-                        </a>
-                    </div>
-                    <div class="nav-link">
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('lacces_homepage') }}">
-                                Lacces
+            <nav class="nav-wrapper grey darken-4">
+                <div class="btn-menu">
+                    <a href="" class="sidenav-trigger show-on-large" data-target="slide-out">
+                        <i class="material-icons white-text">menu</i>
+                    </a>
+                </div>
+                <div id="container_logo_lacces">
+                    <a href="{{ asset('') }}" class="brand-logo center">
+                        <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces_white.png') }}/>
+                    </a>
+                </div>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <ul class="right {#hide-on-med-and-up show-on-small#}">
+                        <li>
+                            <a class="dropdown-trigger" href="#!" data-target="dropdown">
+                                <i class="material-icons white-text ">more_vert</i>
                             </a>
-                            <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
-                                Déconnexion
-                            </a>
-                        {% endif %}
-                    </div>
-                </nav>
-            </div>
+                        </li>
+                    </ul>
+                {% endif %}
+            {#
+                <div class="nav-link hide-on-small-and-down show-on-medium-and-up">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('lacces_homepage') }}">
+                            Lacces
+                        </a>
+                        <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
+                            Déconnexion
+                        </a>
+                    {% endif %}
+                </div>#}
+            </nav>
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <ul id='dropdown' class='dropdown-content-l'>
+                    <li>
+                        <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('lacces_homepage') }}">
+                            Lacces
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
+                            Déconnexion
+                        </a>
+                    </li>
+                </ul>
+            {% endif %}
         </div>
+
+
 
         <ul class="sidenav grey darken-4" id="slide-out">
             <li class="sidenav-close">

@@ -50,11 +50,11 @@
                                                         <tr>
                                                             <td>
                                                                 <a class="flow-text" id="word" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/fr') }}">{{ w.word }}</a>
-                                                                <a class="flow-text supprimer" id="supprimer" data-parent="{{ w.id }}" href="">
-                                                                    <i class="material-icons right color-violet-lacces">delete_forever</i>
+                                                                <a class="flow-text tooltipped right supprimer" id="supprimer" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Supprimer" href="">
+                                                                    <i class="material-icons color-violet-lacces">delete_forever</i>
                                                                 </a>
-                                                                <a class="flow-text" data-parent="{{ w.id }}" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/fr') }}">
-                                                                    <i class="material-icons right color-violet-lacces">edit</i>
+                                                                <a class="flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Editer" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/fr') }}">
+                                                                    <i class="material-icons color-violet-lacces">edit</i>
                                                                 </a>
                                                             </td>
                                                         </tr>

@@ -267,13 +267,41 @@ nav .brand-logo
 .nav-link
 {
     display: flex;
+    flex-direction: row !important;
     justify-content: space-between;
 }
 
 .btn-log
 {
     text-transform: none;
-    margin-left: 0.5rem;
+    width: 100%;
+}
+
+.dropdown-content-l
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    z-index: 25000;
+    margin: 0;
+}
+
+.dropdown-content-l li
+{
+    width: 100%;
+}
+
+nav ul a:hover
+{
+    border-radius: 50%;
+    background-color: #f5f5f5;
+}
+
+nav ul a
+{
+    -webkit-transition: none;
 }
 
 /***********************************************************
