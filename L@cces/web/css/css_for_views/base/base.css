@@ -194,13 +194,14 @@ nav
 
 .btn-menu
 {
-    margin: 0 4px !important;
-    padding: 15px;
+    margin: 0 4px;
+    padding: 12px;
     border-radius: 50%;
-    width: 53px;
-    display: flex !important;
-    flex-direction: column;
-    justify-content: space-around;
+    width: 48px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .btn-menu:hover, .btn-menu:focus, .btn-menu:active
@@ -273,25 +274,6 @@ nav .brand-logo
 {
     text-transform: none;
     margin-left: 0.5rem;
-}
-
-.nav-wrapper a
-{
-    height: 100% !important;
-}
-
-nav .sidenav-trigger
-{
-    margin: 0;
-}
-
-.span-menu
-{
-    display: block;
-    width: 100%;
-    border-radius: 10px;
-    background-color: #757575;
-    height: 2.75px;
 }
 
 /***********************************************************
