@@ -9,7 +9,7 @@ $(document).ready(function () {
         $(".dropdown-content-l").slideDown(100);
     });
 
-    $(".dropdown-trigger").on("blur", function(){
+    $(".container-body").on("click", function(){
         $(".dropdown-content-l").slideUp(100);
     });
 
