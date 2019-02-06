@@ -52,13 +52,13 @@ class wordEn
 
     /**
      * @var PersistentCollection
-     * @ORM\ ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordFr", mappedBy="wordEns", cascade={"persist", "remove"})
+     * @ORM\ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordFr", mappedBy="wordEns", cascade={"persist", "remove"})
      */
     private $wordFrs;
 
     /**
      * @var PersistentCollection
-     * @ORM\ OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmEn", mappedBy="wordEn", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmEn", mappedBy="wordEn", cascade={"persist", "remove"})
      */
     private $qcmsEn;
 
