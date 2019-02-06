@@ -61,7 +61,7 @@
                                                                 <span class="card-title">Langue des signes française</span>
                                                             </div>
                                                         </a>
-                                                        <iframe id="video1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                        <iframe id="video-word-1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                     </div>
                                                 </div>
                                             </div>
@@ -77,7 +77,7 @@
                                                                 <span class="card-title">American sign language</span>
                                                             </div>
                                                         </a>
-                                                        <iframe id="video1" width="1100" height="619" src="
+                                                        <iframe id="video-word-2" width="1100" height="619" src="
                                                         {% if langue == "fr" %}
                                                             {% for w in word.wordEns %}
                                                                 {{ w.videoLink }}
@@ -111,7 +111,7 @@
                                                                 <span class="card-title">Langue des signes française</span>
                                                             </div>
                                                         </a>
-                                                        <iframe id="video1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                        <iframe id="video-sentence-1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                     </div>
                                                 </div>
                                                 <div id="context-sentence-block-video-1" class="context-sentence card-content">
@@ -132,7 +132,7 @@
                                                                 <span class="card-title">American sign language</span>
                                                             </div>
                                                         </a>
-                                                        <iframe id="video" width="1100" height="619" src="
+                                                        <iframe id="video-sentence-2" width="1100" height="619" src="
                                                         {% if langue == "fr" %}
                                                             {% for w in word.wordEns %}
                                                                 {{ w.videoLink }}
@@ -193,7 +193,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Lire les vidéos" id="play-videos">
+                        <a class="btn-floating tooltipped background-color-violet-lacces play" data-position="left" data-tooltip="Lire les vidéos" id="play-videos">
                             <i class="material-icons white-text">play_circle_filled</i>
                         </a>
                     </li>

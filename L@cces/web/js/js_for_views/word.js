@@ -54,11 +54,23 @@ $(document).ready(function(){
 */
     //Lancement des 2 vidéos simultanément au clickAction (non mobile)
 
-    var video = document.getElementById('video');
-    var play = document.getElementsByClassName('play');
 
-    play.addEventListener("click", function() {
-        video.play();
+    /*$(".play").on("click", function(ev) {
+        $(".block-video").fadeOut("fast");
+        $("#video-word-1")[0].src += "&autoplay=1";
+        ev.preventDefault();
+        $("#video-word-2")[0].src += "&autoplay=1";
+        ev.preventDefault();
+        });
+    */
+
+
+
+    var video = document.getElementById("video-word-1");
+    $('.play').click(function() {
+        $(".block-video").fadeOut("fast");
+        video.start = true;
+        //video.load();
     });
 
 
