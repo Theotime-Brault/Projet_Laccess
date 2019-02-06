@@ -3,6 +3,7 @@
 namespace Lacces\LaccesBundle\Entity\Exercise;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
 use Lacces\LaccesBundle\Entity\wordFr;
 
 /**
@@ -38,10 +39,15 @@ class qcmFr
 
     /**
      * @var wordFr
-     * @ORM\Column(name="wordFr", type="integer")
-     * @ORM\OneToOne(targetEntity="App\Entity\wordFr", inversedBy="qcmFr")
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\wordFr", inversedBy="qcmsFr")
      */
     private $wordFr;
+
+    /**
+     * @var PersistentCollection
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmEnonceFr", mappedBy="qcmFr", cascade={"persist", "remove"})
+     */
+    private $qcmEnoncesFr;
 
 
     /**
@@ -116,6 +122,22 @@ class qcmFr
     public function setWordFr($wordFr)
     {
         $this->wordFr = $wordFr;
+    }
+
+    /**
+     * @return PersistentCollection
+     */
+    public function getQcmEnoncesFr()
+    {
+        return $this->qcmEnoncesFr;
+    }
+
+    /**
+     * @param PersistentCollection $qcmEnoncesFr
+     */
+    public function setQcmEnoncesFr($qcmEnoncesFr)
+    {
+        $this->qcmEnoncesFr = $qcmEnoncesFr;
     }
 }
 

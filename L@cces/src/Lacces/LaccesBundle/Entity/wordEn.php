@@ -63,6 +63,12 @@ class wordEn
      */
     private $wordFrs;
 
+    /**
+     * @var PersistentCollection
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmEn", mappedBy="wordEn", cascade={"persist", "remove"})
+     */
+    private $qcmsEn;
+
 
     /**
      * Get id.
@@ -207,5 +213,21 @@ class wordEn
     public function getPopularity()
     {
         return $this->popularity;
+    }
+
+    /**
+     * @return PersistentCollection
+     */
+    public function getQcmsEn()
+    {
+        return $this->qcmsEn;
+    }
+
+    /**
+     * @param PersistentCollection $qcmsEn
+     */
+    public function setQcmsEn($qcmsEn)
+    {
+        $this->qcmsEn = $qcmsEn;
     }
 }
