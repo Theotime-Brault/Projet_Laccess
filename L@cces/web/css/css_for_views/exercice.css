@@ -44,3 +44,8 @@
 {
     display: none;
 }
+
+.carousel.carousel-slider .carousel-item p
+{
+    font-size: inherit;
+}
