@@ -12,6 +12,10 @@ $(document).ready(function(){
         $("#search-box").css("display", "block");
         $("#search-box").css("animation", "slideInDown 400ms");
         $("input").focus();
+        setTimeout(function () {
+            $("#close-barre").fadeIn();
+            $("#container-img-flag").fadeIn();
+        }, 200);
     });
 /*
     $("#search-barre").on("blur", function(){
@@ -19,6 +23,8 @@ $(document).ready(function(){
         setTimeout(function () {
             $("#search-box").css("display", "none");
         }, 150);
+        $("#close-barre").fadeOut(10);
+        $("#container-img-flag").fadeOut(10);
     });
 */
 
@@ -48,11 +54,23 @@ $(document).ready(function(){
 */
     //Lancement des 2 vidéos simultanément au clickAction (non mobile)
 
-    var video = document.getElementById('video');
-    var play = document.getElementsByClassName('play');
 
-    play.addEventListener("click", function() {
-        video.play();
+    /*$(".play").on("click", function(ev) {
+        $(".block-video").fadeOut("fast");
+        $("#video-word-1")[0].src += "&autoplay=1";
+        ev.preventDefault();
+        $("#video-word-2")[0].src += "&autoplay=1";
+        ev.preventDefault();
+        });
+    */
+
+
+
+    var video = document.getElementById("video-word-1");
+    $('.play').click(function() {
+        $(".block-video").fadeOut("fast");
+        video.start = true;
+        //video.load();
     });
 
 

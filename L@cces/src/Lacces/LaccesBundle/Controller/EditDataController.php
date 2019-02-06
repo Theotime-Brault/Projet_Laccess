@@ -8,13 +8,11 @@ use Lacces\LaccesBundle\Entity\Forms\FormAddData;
 use Lacces\LaccesBundle\Entity\Forms\FormEditData;
 use Lacces\LaccesBundle\Entity\wordEn;
 use Lacces\LaccesBundle\Entity\wordFr;
-//use Lacces\LaccesBundle\Entity\traductionFrEn;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Validator\Constraints\Collection;
 
 
 class EditDataController extends Controller
@@ -56,12 +54,6 @@ class EditDataController extends Controller
           'class' => "formValue",
           'data-length' => "200",
         )))
-        ->add('videoDescription', TextType::class, array('attr' => array(
-          'maxlength' => "200",
-          'value' => $word->getVideoDescription(),
-          'class' => "formValue",
-          'data-length' => "200",
-        )))
 
         //VALIDATION
 
@@ -82,7 +74,6 @@ class EditDataController extends Controller
         $word->setWord($formulaire->getWord());
         $word->setVideoLink($formulaire->getVideoLink());
         $word->setContextSentence($formulaire->getContextSentence());
-        $word->setVideoDescription($formulaire->getVideoDescription());
 
         $em->persist($word);
         $em->flush();
@@ -124,11 +115,6 @@ class EditDataController extends Controller
           'class' => "formValue",
           'data-length' => "200",
         )))
-        ->add('videoDescriptionFr', TextType::class, array('attr' => array(
-          'maxlength' => "200",
-          'class' => "formValue",
-          'data-length' => "200",
-        )))
 
         //MOT ANGLAIS
 
@@ -143,11 +129,6 @@ class EditDataController extends Controller
           'data-length' => "200",
         )))
         ->add('contextSentenceEn', TextType::class, array('attr' => array(
-          'maxlength' => "200",
-          'class' => "formValue",
-          'data-length' => "200",
-        )))
-        ->add('videoDescriptionEn', TextType::class, array('attr' => array(
           'maxlength' => "200",
           'class' => "formValue",
           'data-length' => "200",
@@ -176,13 +157,11 @@ class EditDataController extends Controller
         $monMotFr->setWord($formulaire->getWordFr());
         $monMotFr->setVideoLink($formulaire->getVideoLinkFr());
         $monMotFr->setContextSentence($formulaire->getContextSentenceFr());
-        $monMotFr->setVideoDescription($formulaire->getVideoDescriptionFr());
         $monMotFr->setPopularity(0);
 
         $monMotEn->setWord($formulaire->getWordEn());
         $monMotEn->setVideoLink($formulaire->getVideoLinkEn());
         $monMotEn->setContextSentence($formulaire->getContextSentenceEn());
-        $monMotEn->setVideoDescription($formulaire->getVideoDescriptionEn());
         $monMotEn->setPopularity(0);
         $monMotEn->setWordFrs(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordEn'), new ArrayCollection([$monMotFr])));
         $monMotFr->setWordEns(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordFr'), new ArrayCollection([$monMotEn])));
