@@ -3,6 +3,7 @@
 namespace Lacces\LaccesBundle\Repository;
 
 use \Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 
 /**
  * wordFrRepository
@@ -13,13 +14,16 @@ use \Doctrine\ORM\EntityRepository;
 class wordFrRepository extends EntityRepository
 {
   public function findByWord($w){
-    return $this->createQueryBuilder('c')
-    ->where('c.word = :word')
-    ->setParameter('word', $w)
-    ->leftJoin('c.wordEns', 'b')
-    ->addSelect('b')
-    ->getQuery()
-    ->getOneOrNullResult();
+    try {
+      return $this->createQueryBuilder('c')
+        ->where('c.word = :word')
+        ->setParameter('word', $w)
+        ->leftJoin('c.wordEns', 'b')
+        ->addSelect('b')
+        ->getQuery()
+        ->getOneOrNullResult();
+    } catch (NonUniqueResultException $e) {
+    }
   }
 
   public function findByPopularity ($motif){

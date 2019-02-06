@@ -7,7 +7,7 @@ use Lacces\LaccesBundle\Entity\wordFr;
 use Lacces\LaccesBundle\Entity\wordEn;
 use Lacces\LaccesBundle\Repository\wordFrRepository;
 use Lacces\LaccesBundle\Repository\wordEnRepository;
-use Lacces\LaccesBundle\Entity\Form;
+use Lacces\LaccesBundle\Entity\Forms\Form;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
@@ -60,6 +60,8 @@ class DefaultController extends Controller
             $this->addFlash('info', "Le mot rechercher n'existe pas.");
             return $this->redirectToRoute('lacces_homepage');
         }
+
+        $objWord->setPopularity($objWord->getPopularity() + 1);
 
         return $this->render('@Lacces/Words/word.html.twig', array(
             'word' => $objWord,

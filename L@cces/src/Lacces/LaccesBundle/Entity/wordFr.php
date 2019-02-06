@@ -138,30 +138,6 @@ class wordFr
     }
 
     /**
-     * Set videoDescription.
-     *
-     * @param string $videoDescription
-     *
-     * @return wordFr
-     */
-    public function setVideoDescription($videoDescription)
-    {
-        $this->videoDescription = $videoDescription;
-
-        return $this;
-    }
-
-    /**
-     * Get videoDescription.
-     *
-     * @return string
-     */
-    public function getVideoDescription()
-    {
-        return $this->videoDescription;
-    }
-
-    /**
      * Set contextSentence.
      *
      * @param string $contextSentence
