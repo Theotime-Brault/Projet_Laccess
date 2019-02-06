@@ -12,15 +12,25 @@ class ExerciceController extends Controller
   public function exercicesAction($word, $langue)
   {
 
-    if($langue == "fr") {
+    if($langue == "fr" || $langue == "en") {
+
+      $em = $this->getDoctrine()->getManager();
+
+      if($langue == "fr"){
+        $objWord = $em->getRepository('LaccesBundle:wordFr')->findByWord($word);
+      }else {
+        $objWord = $em->getRepository('LaccesBundle:wordEn')->findByWord($word);
+      }
+
+      if(!$objWord){
+        $this->addFlash('info', "Le mot rechercher n'existe pas.");
+        return $this->redirectToRoute('lacces_homepage');
+      }
 
       return $this->redirectToRoute('lacces_exercices', array(
         'langue' => $langue,
         'word' => $word
       ));
-
-    } else if ($langue == "en") {
-
     }
 
     return $this->redirectToRoute('lacces_homepage');
