@@ -42,19 +42,6 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="input-field col s12 m6">
-        {{ form_label(form.videoDescriptionFr)}}
-        {{ form_errors(form.videoDescriptionFr)}}
-        {{ form_widget(form.videoDescriptionFr)}}
-    </div>
-    <div class="input-field col s12 m6">
-        {{ form_label(form.videoDescriptionEn)}}
-        {{ form_errors(form.videoDescriptionEn)}}
-        {{ form_widget(form.videoDescriptionEn)}}
-    </div>
-</div>
-
 <div class="row center">
     <a class="btn btn-hover background-color-orange-lacces" href="{{ asset('administration/editData/wordList/fr') }}">Retour</a>
     {{ form_widget(form.submit) }}
