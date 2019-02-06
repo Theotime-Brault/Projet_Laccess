@@ -28,6 +28,11 @@ class qcmEnonceFr
      */
     private $enonces;
 
+    /**
+     * @var qcmFr
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmFr", inversedBy="qcmEnoncesFr")
+     */
+    private $qcmFr;
 
     /**
      * Get id
@@ -61,6 +66,22 @@ class qcmEnonceFr
     public function getEnonces()
     {
         return $this->enonces;
+    }
+
+    /**
+     * @return qcmFr
+     */
+    public function getQcmFr()
+    {
+        return $this->qcmFr;
+    }
+
+    /**
+     * @param qcmFr $qcmFr
+     */
+    public function setQcmFr($qcmFr)
+    {
+        $this->qcmFr = $qcmFr;
     }
 }
 

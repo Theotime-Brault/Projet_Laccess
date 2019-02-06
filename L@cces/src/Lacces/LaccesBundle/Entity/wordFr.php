@@ -60,11 +60,10 @@ class wordFr
     private $wordEns;
 
     /**
-     * @var qcmFr
-     * @ORM\OneToOne(targetEntity="App\Entity\Exercise\qcmFr", mappedBy="wordId", cascade={"persist", "remove"})
-     * @ORM\Column(name="qcmFr", type="integer")
+     * @var PersistentCollection
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmFr", mappedBy="wordFr", cascade={"persist", "remove"})
      */
-    private $qcmFr;
+    private $qcmsFr;
 
     /**
      * Get id.
@@ -212,18 +211,18 @@ class wordFr
     }
 
     /**
-     * @return qcmFr
+     * @return PersistentCollection
      */
-    public function getQcmFr()
+    public function getQcmsFr()
     {
-        return $this->qcmFr;
+        return $this->qcmsFr;
     }
 
     /**
-     * @param qcmFr $qcmFr
+     * @param PersistentCollection $qcmsFr
      */
-    public function setQcmFr($qcmFr)
+    public function setQcmsFr($qcmsFr)
     {
-        $this->qcmFr = $qcmFr;
+        $this->qcmsFr = $qcmsFr;
     }
 }
