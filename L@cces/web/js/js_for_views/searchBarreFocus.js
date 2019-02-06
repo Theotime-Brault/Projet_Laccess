@@ -55,14 +55,14 @@ $(document).ready(function () {
     function flagFr(){
         $("#imgFlagEn").css("display , block");
         $("#imgFlagFr").css("display, none");
-        $("#imgFlagEn").fadeIn();
-        $("#imgFlagFr").fadeOut();
+        $("#imgFlagEn").fadeIn(10);
+        $("#imgFlagFr").fadeOut(10);
     }
 
     function flagEn(){
         $("#imgFlagFr").css("display, block");
         $("#imgFlagEn").css("display, none");
-        $("#imgFlagFr").fadeIn();
-        $("#imgFlagEn").fadeOut();
+        $("#imgFlagFr").fadeIn(10);
+        $("#imgFlagEn").fadeOut(10);
     }
 });
