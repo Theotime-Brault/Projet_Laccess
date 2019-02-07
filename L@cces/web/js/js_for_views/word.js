@@ -100,7 +100,6 @@ $(document).ready(function(){
         $("#block-video-sentence-2").fadeOut("fast");
         $("#block-video-sentence-1").fadeIn("fast");
     });
-
 /*
 
     $("#article-card-1").click(function () {

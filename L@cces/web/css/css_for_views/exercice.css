@@ -26,8 +26,8 @@
 
 .tabs .tab a:hover, .tabs .tab a.active
 {
-    background-color: #f4a733 !important;
-    color: #ffffff !important;
+    background-color: rgba(244, 167, 51, 0.25) !important;
+    color: #000000 !important;
 }
 
 .container-body

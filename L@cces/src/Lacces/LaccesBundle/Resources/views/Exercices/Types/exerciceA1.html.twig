@@ -15,11 +15,14 @@
         </div>
         <div class="card-image">
             <div class="video-container">
-                <iframe id="video1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe title="{{ word.word }}" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="card-content">
-            <input id="proposition" class="formValue" autocomplete="off" placeholder="Trouvez la phrase signée : ">
+            <div class="input-field">
+                <label for="proposition">Trouvez la phrase</label>
+                <input id="proposition" name="proposition" type="text" class="formValue" autocomplete="off" >
+            </div>
         </div>
         <div class="card-action hide">
             <button id="revoir-video" class="btn waves-effect background-color-orange-lacces">Revoir la vidéo</button>
