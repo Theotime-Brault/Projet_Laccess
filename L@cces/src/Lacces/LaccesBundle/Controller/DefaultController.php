@@ -210,8 +210,4 @@ class DefaultController extends Controller
         return $this->redirectToRoute('lacces_homepage');
     }
 
-    public function exercicesAction()
-    {
-        return $this->render('@Lacces/Exercices/exercices.html.twig');
-    }
 }
