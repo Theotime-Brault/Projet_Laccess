@@ -11,9 +11,18 @@ $(document).ready(function(){
         $("#search-box").css("animation", "slideInDown 400ms");
         $("input").focus();
         setTimeout(function () {
-            $("#close-barre").fadeIn();
-            $("#container-img-flag").fadeIn();
+            $("#close-barre").fadeIn(10);
+            $("#container-img-flag").fadeIn(10);
         }, 200);
+    });
+
+    $("#close-barre").click(function(){
+        $("#search-box").css("animation", "slideOutUp 200ms");
+        setTimeout(function () {
+            $("#search-box").css("display", "none");
+        }, 150);
+        $("#close-barre").fadeOut(10);
+        $("#container-img-flag").fadeOut(10);
     });
 /*
     $("#search-barre").on("blur", function(){

@@ -22,11 +22,6 @@ class FormEditData
   protected $contextSentence;
 
   /**
-   * @Assert\NotBlank
-   */
-  protected $videoDescription;
-
-  /**
    * @return mixed
    */
   public function getWord()
@@ -72,21 +67,5 @@ class FormEditData
   public function setContextSentence($contextSentence)
   {
     $this->contextSentence = $contextSentence;
-  }
-
-  /**
-   * @return mixed
-   */
-  public function getVideoDescription()
-  {
-    return $this->videoDescription;
-  }
-
-  /**
-   * @param mixed $videoDescription
-   */
-  public function setVideoDescription($videoDescription)
-  {
-    $this->videoDescription = $videoDescription;
   }
 }

@@ -40,4 +40,18 @@ class wordEnRepository extends EntityRepository
     ->getQuery()
     ->getResult();
   }
+
+  public function findAlea() {
+
+    return  $this->createQueryBuilder('c')
+      ->addSelect('RAND() as HIDDEN rand')
+      ->addOrderBy('rand')
+      ->getQuery()
+      ->getResult();
+
+  }
+
+
+
+
 }
