@@ -3,6 +3,11 @@ body
     overflow: hidden;
 }
 
+.container-body
+{
+    height: calc(100vh - 64px - 1.5rem);
+}
+
 .container, .container-main-flex
 {
     height: 100%;

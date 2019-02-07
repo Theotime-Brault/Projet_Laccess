@@ -2,13 +2,15 @@
 {
     width: 6px;
     height: 0;
+    position: relative;
+    top: 1.5rem;
 }
 
 ::-webkit-scrollbar-thumb
 {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: rgba(244,167,51,0.8);
+    background: rgba(244,167,51,0.7);
 }
 
 ::-webkit-scrollbar-thumb:window-inactive
@@ -55,7 +57,7 @@ main
 
 .container-body
 {
-    height: calc(100vh - 64px - 1.5rem);
+    /*height: calc(100vh - 64px - 1.5rem);*/
     position: relative;
     top: 1.5rem;
 }
@@ -280,7 +282,7 @@ nav .brand-logo
 
 .dropdown-content-l
 {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     display: none;
