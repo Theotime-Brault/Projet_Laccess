@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 
-class EditDataController extends Controller
+class EditDataWordController extends Controller
 {
     public function adminAction()
     {

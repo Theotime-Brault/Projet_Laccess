@@ -43,7 +43,7 @@ auto_complete:
 lacces_editData_edit:
     path: /administration/editData/edit/{wordId}/{langue}
     defaults:
-        _controller: LaccesBundle:EditData:edit
+        _controller: LaccesBundle:EditDataWord:edit
     requirements:
         wordFrId: /d+
         wordEnId: /d+
@@ -51,17 +51,17 @@ lacces_editData_edit:
 lacces_editData_add:
     path: /administration/editData/add
     defaults:
-        _controller: LaccesBundle:EditData:add
+        _controller: LaccesBundle:EditDataWord:add
 
 lacces_editData_remove:
     path: /administration/editData/remove
     defaults:
-        _controller: LaccesBundle:EditData:remove
+        _controller: LaccesBundle:EditDataWord:remove
 
 lacces_wordList:
     path: /administration/editData/wordList/{langue}
     defaults:
-        _controller: LaccesBundle:EditData:wordList
+        _controller: LaccesBundle:EditDataWord:wordList
     requirements:
         langue: fr|en
 
