@@ -66,6 +66,24 @@ class wordFr
     private $qcmsFr;
 
     /**
+     * @var PersistentCollection
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmVideoFr", mappedBy="wordFr", cascade={"persist", "remove"})
+     */
+    private $qcmsVideoFr;
+
+    /**
+     * @var PersistentCollection
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\reformulationFr", mappedBy="wordFr", cascade={"persist", "remove"})
+     */
+    private $reformulationsFr;
+
+    /**
+     * @var PersistentCollection
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\significationVideoFr", mappedBy="wordFr", cascade={"persist", "remove"})
+     */
+    private $significationsVideoFr;
+
+    /**
      * Get id.
      *
      * @return int
@@ -199,5 +217,53 @@ class wordFr
     public function setQcmsFr($qcmsFr)
     {
         $this->qcmsFr = $qcmsFr;
+    }
+
+    /**
+     * @return PersistentCollection
+     */
+    public function getQcmsVideoFr()
+    {
+        return $this->qcmsVideoFr;
+    }
+
+    /**
+     * @param PersistentCollection $qcmsVideoFr
+     */
+    public function setQcmsVideoFr($qcmsVideoFr)
+    {
+        $this->qcmsVideoFr = $qcmsVideoFr;
+    }
+
+    /**
+     * @return PersistentCollection
+     */
+    public function getReformulationsFr()
+    {
+        return $this->reformulationsFr;
+    }
+
+    /**
+     * @param PersistentCollection $reformulationsFr
+     */
+    public function setReformulationsFr($reformulationsFr)
+    {
+        $this->reformulationsFr = $reformulationsFr;
+    }
+
+    /**
+     * @return PersistentCollection
+     */
+    public function getSignificationsVideoFr()
+    {
+        return $this->significationsVideoFr;
+    }
+
+    /**
+     * @param PersistentCollection $significationsVideoFr
+     */
+    public function setSignificationsVideoFr($significationsVideoFr)
+    {
+        $this->significationsVideoFr = $significationsVideoFr;
     }
 }

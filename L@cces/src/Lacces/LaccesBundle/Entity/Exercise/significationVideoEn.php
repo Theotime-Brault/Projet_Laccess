@@ -42,6 +42,12 @@ class significationVideoEn
      */
     private $videoLink;
 
+    /**
+     * @var wordEn
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\wordEn", inversedBy="significationsVideoEn")
+     */
+    private $wordEn;
+
 
     /**
      * Get id.
@@ -123,5 +129,21 @@ class significationVideoEn
     public function getVideoLink()
     {
         return $this->videoLink;
+    }
+
+    /**
+     * @return wordEn
+     */
+    public function getWordEn()
+    {
+        return $this->wordEn;
+    }
+
+    /**
+     * @param wordEn $wordEn
+     */
+    public function setWordEn($wordEn)
+    {
+        $this->wordEn = $wordEn;
     }
 }

@@ -42,6 +42,17 @@ class qcmVideoEn
      */
     private $videoLink;
 
+    /**
+     * @var wordEn
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\wordEn", inversedBy="qcmsVideoEn")
+     */
+    private $wordEn;
+
+    /**
+     * @var PersistentCollection
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmEnonceVideoEn", mappedBy="qcmVideoEn", cascade={"persist", "remove"})
+     */
+    private $qcmVideoEnoncesEn;
 
     /**
      * Get id.
@@ -123,5 +134,37 @@ class qcmVideoEn
     public function getVideoLink()
     {
         return $this->videoLink;
+    }
+
+    /**
+     * @return wordEn
+     */
+    public function getWordEn()
+    {
+        return $this->wordEn;
+    }
+
+    /**
+     * @param wordEn $wordEn
+     */
+    public function setWordEn($wordEn)
+    {
+        $this->wordEn = $wordEn;
+    }
+
+    /**
+     * @return PersistentCollection
+     */
+    public function getQcmVideoEnoncesEn()
+    {
+        return $this->qcmVideoEnoncesEn;
+    }
+
+    /**
+     * @param PersistentCollection $qcmVideoEnoncesEn
+     */
+    public function setQcmVideoEnoncesEn($qcmVideoEnoncesEn)
+    {
+        $this->qcmVideoEnoncesEn = $qcmVideoEnoncesEn;
     }
 }

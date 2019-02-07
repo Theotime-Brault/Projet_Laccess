@@ -35,6 +35,11 @@ class reformulationEn
      */
     private $solution;
 
+    /**
+     * @var wordEn
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\wordEn", inversedBy="reformulationsEn")
+     */
+    private $wordEn;
 
     /**
      * Get id.
@@ -92,5 +97,21 @@ class reformulationEn
     public function getSolution()
     {
         return $this->solution;
+    }
+
+    /**
+     * @return wordEn
+     */
+    public function getWordEn()
+    {
+        return $this->wordEn;
+    }
+
+    /**
+     * @param wordEn $wordEn
+     */
+    public function setWordEn($wordEn)
+    {
+        $this->wordEn = $wordEn;
     }
 }

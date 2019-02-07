@@ -3,6 +3,7 @@
 namespace Lacces\LaccesBundle\Entity\Exercise;
 
 use Doctrine\ORM\Mapping as ORM;
+use Lacces\LaccesBundle\Entity\wordFr;
 
 /**
  * significationVideoFr
@@ -41,6 +42,12 @@ class significationVideoFr
      * @ORM\Column(name="videoLink", type="string", length=255)
      */
     private $videoLink;
+
+    /**
+     * @var wordFr
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\wordFr", inversedBy="significationsVideoFr")
+     */
+    private $wordFr;
 
 
     /**

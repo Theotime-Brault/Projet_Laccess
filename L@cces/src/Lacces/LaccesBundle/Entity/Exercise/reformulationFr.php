@@ -3,6 +3,7 @@
 namespace Lacces\LaccesBundle\Entity\Exercise;
 
 use Doctrine\ORM\Mapping as ORM;
+use Lacces\LaccesBundle\Entity\wordFr;
 
 /**
  * reformulationFr
@@ -34,6 +35,12 @@ class reformulationFr
      * @ORM\Column(name="solution", type="string", length=255)
      */
     private $solution;
+
+    /**
+     * @var wordFr
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\wordFr", inversedBy="reformulationsFr")
+     */
+    private $wordFr;
 
 
     /**

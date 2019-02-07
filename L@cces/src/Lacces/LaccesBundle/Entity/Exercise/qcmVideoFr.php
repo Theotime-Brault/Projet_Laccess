@@ -3,6 +3,7 @@
 namespace Lacces\LaccesBundle\Entity\Exercise;
 
 use Doctrine\ORM\Mapping as ORM;
+use Lacces\LaccesBundle\Entity\wordFr;
 
 /**
  * qcmVideoFr
@@ -42,6 +43,17 @@ class qcmVideoFr
      */
     private $videoLink;
 
+    /**
+     * @var wordFr
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\wordFr", inversedBy="qcmsVideoFr")
+     */
+    private $wordFr;
+
+    /**
+     * @var PersistentCollection
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmEnonceVideoFr", mappedBy="qcmVideoFr", cascade={"persist", "remove"})
+     */
+    private $qcmVideoEnoncesFr;
 
     /**
      * Get id.
@@ -123,5 +135,37 @@ class qcmVideoFr
     public function getVideoLink()
     {
         return $this->videoLink;
+    }
+
+    /**
+     * @return wordFr
+     */
+    public function getWordFr()
+    {
+        return $this->wordFr;
+    }
+
+    /**
+     * @param wordFr $wordFr
+     */
+    public function setWordFr($wordFr)
+    {
+        $this->wordFr = $wordFr;
+    }
+
+    /**
+     * @return PersistentCollection
+     */
+    public function getQcmVideoEnoncesFr()
+    {
+        return $this->qcmVideoEnoncesFr;
+    }
+
+    /**
+     * @param PersistentCollection $qcmVideoEnoncesFr
+     */
+    public function setQcmVideoEnoncesFr($qcmVideoEnoncesFr)
+    {
+        $this->qcmVideoEnoncesFr = $qcmVideoEnoncesFr;
     }
 }

@@ -28,6 +28,12 @@ class qcmEnonceVideoFr
      */
     private $enonces;
 
+    /**
+     * @var qcmVideoFr
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmVideoFr", inversedBy="qcmVideoEnoncesFr")
+     */
+    private $qcmVideoFr;
+
 
     /**
      * Get id.

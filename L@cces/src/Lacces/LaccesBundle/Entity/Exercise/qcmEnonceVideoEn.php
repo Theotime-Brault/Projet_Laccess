@@ -28,6 +28,12 @@ class qcmEnonceVideoEn
      */
     private $enonces;
 
+    /**
+     * @var qcmVideoEn
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\Exercise\qcmVideoEn", inversedBy="qcmVideoEnoncesEn")
+     */
+    private $qcmVideoEn;
+
 
     /**
      * Get id.
@@ -61,5 +67,21 @@ class qcmEnonceVideoEn
     public function getEnonces()
     {
         return $this->enonces;
+    }
+
+    /**
+     * @return qcmVideoEn
+     */
+    public function getQcmVideoEn()
+    {
+        return $this->qcmVideoEn;
+    }
+
+    /**
+     * @param qcmVideoEn $qcmVideoEn
+     */
+    public function setQcmVideoEn($qcmVideoEn)
+    {
+        $this->qcmVideoEn = $qcmVideoEn;
     }
 }
