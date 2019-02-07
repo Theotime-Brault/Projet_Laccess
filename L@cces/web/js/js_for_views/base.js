@@ -14,6 +14,12 @@ $(document).ready(function () {
     });
 
 
+
+    $(".exercices").on("click", function(){
+
+    });
+
+
     $('.collapsible').collapsible();
 
     $('#collapsible-header-click').on('click', function () {

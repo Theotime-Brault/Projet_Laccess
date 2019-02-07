@@ -86,6 +86,6 @@ administration:
         _controller: LaccesBundle:EditData:admin
 
 lacces_exercices:
-    path:   /exercices #/{langue}/{word}
+    path:   /exercices/{langue}
     defaults:
         _controller: LaccesBundle:Exercice:exercices

@@ -4,6 +4,11 @@ $(document).ready(function () {
        $(".card-action").removeClass("hide");
    });
 
+    $("#proposition").on("click", function () {
+        var valueIn = $("#proposition").val();
+    });
+
+
     $("#revoir-video").on("click", function () {
         $(".card-image").slideDown(300);
         $(".card-action").addClass("hide");
@@ -16,4 +21,5 @@ $(document).ready(function () {
     $("#card-content-2").on("click", function () {
         $("#card-image-2").slideToggle("fast");
     });
+
 });
