@@ -4,8 +4,12 @@ $(document).ready(function () {
        $(".card-action").removeClass("hide");
    });
 
-    $("#proposition").on("click", function () {
+    $("#envoyer").on("click", function () {
         var valueIn = $("#proposition").val();
+        var word = $("#word").attr("data-word");
+        if(word === valueIn) {
+            console.log("ça FONCTIONNE");
+        }
     });
 
 

@@ -29,19 +29,17 @@
                     </a>
                 </div>
                 <div id="container_logo_lacces">
-                    <a href="{{ asset('') }}" class="brand-logo center">
+                    <a href="{{ asset('administration') }}" class="brand-logo center">
                         <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces_white.png') }}/>
                     </a>
                 </div>
-                {% if is_granted('ROLE_ADMIN') %}
-                    <ul class="right {#hide-on-med-and-up show-on-small#}">
-                        <li>
-                            <a class="dropdown-trigger" data-target="dropdown">
-                                <i class="material-icons white-text ">more_vert</i>
-                            </a>
-                        </li>
-                    </ul>
-                {% endif %}
+                <ul class="right {#hide-on-med-and-up show-on-small#}">
+                    <li>
+                        <a class="dropdown-trigger" data-target="dropdown">
+                            <i class="material-icons white-text ">more_vert</i>
+                        </a>
+                    </li>
+                </ul>
             {#
                 <div class="nav-link hide-on-small-and-down show-on-medium-and-up">
                     {% if is_granted('ROLE_ADMIN') %}
@@ -54,21 +52,18 @@
                     {% endif %}
                 </div>#}
             </nav>
-
-            {% if is_granted('ROLE_ADMIN') %}
-                <ul id='dropdown' class='dropdown-content-l'>
-                    <li>
-                        <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('lacces_homepage') }}">
-                            Lacces
-                        </a>
-                    </li>
-                    <li>
-                        <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
-                            Déconnexion
-                        </a>
-                    </li>
-                </ul>
-            {% endif %}
+            <ul id='dropdown' class='dropdown-content-l'>
+                <li>
+                    <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('lacces_homepage') }}">
+                        Lacces
+                    </a>
+                </li>
+                <li>
+                    <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
+                        Déconnexion
+                    </a>
+                </li>
+            </ul>
         </div>
 
 

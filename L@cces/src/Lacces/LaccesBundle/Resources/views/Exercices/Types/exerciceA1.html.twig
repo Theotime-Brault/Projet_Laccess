@@ -9,7 +9,7 @@
 
     <div class="card">
         <div class="card-title">
-            <p class="flow-text center black-text ">
+            <p id="word" class="flow-text center black-text" data-word="{{ word.word }}">
                 {{ word.word }}
             </p>
         </div>
@@ -23,7 +23,7 @@
         </div>
         <div class="card-action hide">
             <button id="revoir-video" class="btn waves-effect background-color-orange-lacces">Revoir la vidéo</button>
-            <button class="btn waves-effect background-color-orange-lacces">Envoyez</button>
+            <button id="envoyer" class="btn waves-effect background-color-orange-lacces">Envoyez</button>
         </div>
     </div>
 
