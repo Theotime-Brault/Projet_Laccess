@@ -1,10 +1,10 @@
 <form method="POST">
     <div id="search-on">
         <div class="input-field ui-widget">
-            <input name="search-barre" class="search" id="search-barre" autocomplete="off" placeholder="Rechercher un mot" />
-            <a id="btnSearch" class="btn">
+            <input name="search-barre" class="autocomplete search" type="text" id="search-barre" autocomplete="off" placeholder="Rechercher un mot" />
+            <button type="submit" id="btnSearch" class="btn">
                 <i class="material-icons orange-text">search</i>
-            </a>
+            </button>
             <div id="container-img">
                 <div id="container-img-flag">
                     <img id="imgFlagEn" class="image-circle" src="{{ asset('pictures/flags/FlagEN_SearchBar.png') }} ">
@@ -35,6 +35,7 @@
 
 <script>
 $('document').ready(function () {
+    {#
     $('#search-barre').keyup(function () {
         var word = $('#search-barre').val();
         var l;
@@ -72,7 +73,7 @@ $('document').ready(function () {
                 });
             }
         }
-    });
+    });#}
 
     function submitSearch(){
         var  word = $('#search-barre').val();
@@ -87,21 +88,52 @@ $('document').ready(function () {
 
         if(word && langue){
             $('form').attr('action', "/word/"+langue+"/"+word);
-            $('form').submit();
+            //$('form').submit();
         }else{
             $('form').removeAttr('action');
         }
     }
-
-    $('#btnSearch').click(function (){
-        submitSearch();
-    });
-
+    {#
     $('#search-barre').keyup(function(e) {
         if (e.keyCode == 13) {
             submitSearch();
         }
+    });#}
+
+    $(".autocomplete").each(function () {
+        $('#search-barre').on("input change", function () {
+            var l;
+            if($("#btnFr").is(":checked")) {
+                l = "fr";
+            }else if($("#btnEn").is(":checked")) {
+                l = "en";
+            }else{
+                l = "";
+            }
+
+            $.ajax({
+                url: "{{ path('auto_complete') }}",
+                type: 'POST',
+                cache: false,
+                data: {'l':l, 'word':$('#search-barre').val()},
+                success: function (response) {
+                    var mots = response['words'];
+                    if (!mots || !mots.length) return;
+                    var words = mots.map(function (item) {
+                        return "\"" + item['word'] + "\": null";
+                    });
+                    words = "{" + words + "}";
+                    submitSearch();
+                    $('#search-barre').autocomplete({
+                        data: JSON.parse(words)
+                    });
+                },
+                error: function (err) {
+                }
+            });
+        });
     });
+
 
     $('.image-circle').click(function () {
         if ($("#btnEn").is(":checked")) {

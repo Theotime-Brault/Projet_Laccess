@@ -90,9 +90,16 @@ input::placeholder
     border-radius: 50% 0 0 50%;
 }
 
-.ui-menu-item-wrapper:focus .ui-menu-item-wrapper:hover .ui-menu-item-wrapper:active .ui-menu-item-wrapper:target .ui-menu-item-wrapper:enabled{
-    color: white !important;
-    background-color: #f4a733 !important;
+#search-on span{
+    color: black;
+}
+
+#search-on span .highlight{
+    color: #f4a733;
+}
+
+#search-barre{
+    border: none;
 }
 
 
