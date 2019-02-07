@@ -5,7 +5,7 @@ $(document).ready(function () {
         draggable: true,
     });
 
-    $(".dropdown-trigger").click(function(){
+    $("#material-icons-dropdown").click(function(){
         $(".dropdown-content-l").slideDown(100);
     });
 
@@ -13,7 +13,7 @@ $(document).ready(function () {
         $(".dropdown-content-l").slideUp(100);
     });
 
-
+    $('#material-icons-dropdown-flag').dropdown();
 
     $(".exercices").on("click", function(){
 

@@ -12,7 +12,7 @@ $(document).ready(function(){
         $("input").focus();
         setTimeout(function () {
             $("#close-barre").fadeIn(10);
-            $("#container-img-flag").fadeIn(10);
+            $("#material-icons-dropdown-flag").fadeIn(10);
         }, 200);
     });
 
@@ -22,7 +22,7 @@ $(document).ready(function(){
             $("#search-box").css("display", "none");
         }, 150);
         $("#close-barre").fadeOut(10);
-        $("#container-img-flag").fadeOut(10);
+        $("#material-icons-dropdown-flag").fadeOut(10);
     });
 /*
     $("#search-barre").on("blur", function(){

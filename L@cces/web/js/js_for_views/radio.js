@@ -33,7 +33,7 @@ $(document).ready(function(){
       $("#imgEn").css("border-color", "white");
     };
   }
-
+/*
   function flagFr(){
     $("#imgFlagEn").css("display , block");
     $("#imgFlagFr").css("display, none");
@@ -46,5 +46,5 @@ $(document).ready(function(){
     $("#imgFlagEn").css("display, none");
     $("#imgFlagFr").fadeIn();
     $("#imgFlagEn").fadeOut();
-  }
+  }*/
 });

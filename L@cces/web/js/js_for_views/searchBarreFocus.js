@@ -4,12 +4,14 @@ $(document).ready(function () {
     $("#search-barre").on("focus", function(){
         $(".container-focus-footer").css("animation", "fadeOutDown 250ms");
         $(".container-focus-footer").css("opacity", "0");
-
         $(".container-main").addClass("container-main-active");
         $(".container-main-active").removeClass("container-main");
         $(".container-search").addClass("container-search-active");
         $(".container-search-active").removeClass("container-search");
-        $("#btnSearch").fadeOut();
+        $("#btnSearch").css({
+            "transition-duration": "200ms",
+            right: "2rem",
+        });
         $('#search-on').css({
             height: "40px",
             "transition-duration": "200ms"});
@@ -17,7 +19,7 @@ $(document).ready(function () {
         $(".row-container").slideUp("400", function () {
             setTimeout(function () {
                 $("#close-barre").fadeIn();
-                $("#container-img-flag").fadeIn();
+                $("#material-icons-dropdown-flag").fadeIn();
             }, 200);
         });
     });
@@ -40,10 +42,14 @@ $(document).ready(function () {
         $('#result').html("");
         $("#search-barre").blur();
         $("#close-barre").fadeOut(10);
-        $("#container-img-flag").fadeOut(10);
-        $("#btnSearch").fadeIn();
+        $("#material-icons-dropdown-flag").fadeOut(10);
+        $("#btnSearch").css({
+            "transition-duration": "200ms",
+            right: "0",
+        });
     });
 
+    /*
     $("#imgFlagFr").click(function () {
         flagFr();
     });
@@ -64,5 +70,5 @@ $(document).ready(function () {
         $("#imgFlagEn").css("display, none");
         $("#imgFlagFr").fadeIn(10);
         $("#imgFlagEn").fadeOut(10);
-    }
+    }*/
 });

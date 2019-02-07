@@ -37,7 +37,7 @@
                 {% if is_granted('ROLE_ADMIN') %}
                     <ul class="right">
                         <li>
-                            <a class="dropdown-trigger" data-target="dropdown">
+                            <a id="material-icons-dropdown" class="dropdown-trigger" data-target="dropdown">
                                 <i class="material-icons">more_vert</i>
                             </a>
                         </li>
@@ -176,7 +176,6 @@
 
     <script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>
     <script src="{{ asset('js/js_for_views/base.js') }}"></script>
-    <script src="{{ asset('js/js_for_views/searchBarreFocus.js') }}"></script>
     {% block javascripts %}
     {% endblock %}
 </html>

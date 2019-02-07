@@ -2,21 +2,29 @@
     <div id="search-on">
         <div class="input-field ui-widget">
             <input name="search-barre" class="autocomplete search" type="text" id="search-barre" autocomplete="off" placeholder="Rechercher un mot" />
+            <a id="material-icons-dropdown-flag" class='dropdown-trigger' href='#' data-target='dropdown-flag'>
+                <i class="material-icons">arrow_drop_down</i>
+            </a>
+            <ul id='dropdown-flag' class='dropdown-content'>
+                <li>
+                    <img id="imgFlagEn" class="image-circle" src="{{ asset('pictures/flags/FlagEN_SearchBar.jpg') }} ">
+                </li>
+                <li class="divider" tabindex="-1"></li>
+                <li>
+                    <img id="imgFlagFr" class="image-circle" src="{{ asset('pictures/flags/FlagFR_SearchBar.jpg') }}">
+                </li>
+            </ul>
             <button type="submit" id="btnSearch" class="btn">
                 <i class="material-icons orange-text">search</i>
             </button>
-            <div id="container-img">
-                <div id="container-img-flag">
-                    <img id="imgFlagEn" class="image-circle" src="{{ asset('pictures/flags/FlagEN_SearchBar.jpg') }} ">
-                    <img id="imgFlagFr" class="image-circle" src="{{ asset('pictures/flags/FlagFR_SearchBar.jpg') }}">
-                </div>
+
+            <div id="close-barre" class="btn-floating background-color-orange-lacces">
+                <i class="material-icons white-text">close</i>
             </div>
         </div>
     </div>
 </form>
-<div id="close-barre" class="btn-floating background-color-orange-lacces">
-    <i class="material-icons white-text">close</i>
-</div>
+
 
 <div id="radiobtn">
     <div>
