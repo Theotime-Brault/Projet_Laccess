@@ -83,7 +83,7 @@ logout:
 administration:
     path: /administration
     defaults:
-        _controller: LaccesBundle:EditData:admin
+        _controller: LaccesBundle:EditDataWord:admin
 
 lacces_exercices:
     path:   /exercices/{langue}
