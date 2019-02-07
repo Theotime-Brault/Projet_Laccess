@@ -5,7 +5,7 @@ $(document).ready(function () {
         draggable: true,
     });
 
-    $("#material-icons-dropdown").click(function(){
+    $(".material-icons-dropdown").click(function(){
         $(".dropdown-content-l").slideDown(100);
     });
 
@@ -26,7 +26,9 @@ $(document).ready(function () {
         $('.material-icons').toggleClass('rotate')
     });
 
-    $('.tooltipped').tooltip();
+    $('.tooltipped').tooltip({
+        enterDelay: 700,
+    });
 
     //chrono message flash
     $(function() {
