@@ -4,14 +4,14 @@ $(document).ready(function(){
     $("#btnEn").removeAttr("checked");
     $("#btnFr").attr("checked", true);
     checked();
-    flagEn();
+    //flagEn();
   });
 
   $("#imgEn").click(function(){
     $("#btnFr").removeAttr("checked");
     $("#btnEn").attr("checked", true);
     checked();
-    flagFr();
+    //flagFr();
   });
 
   $("#imgFlagEn").click(function(){
