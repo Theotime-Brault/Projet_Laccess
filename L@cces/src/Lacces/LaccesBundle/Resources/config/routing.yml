@@ -89,3 +89,13 @@ lacces_exercices:
     path:   /exercices/{langue}
     defaults:
         _controller: LaccesBundle:Exercice:exercices
+
+lacces_ex__fr_add:
+    path: /administration/exerciceFr/add
+    defaults:
+        _controller: LaccesBundle:EditDataExercice:exerciceAddFr
+
+lacces_ex__en_add:
+    path: /administration/exerciceEn/add
+    defaults:
+        _controller: LaccesBundle:EditDataExercice:exerciceAddEn
