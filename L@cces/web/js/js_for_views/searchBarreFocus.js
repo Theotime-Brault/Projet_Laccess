@@ -3,7 +3,10 @@ $(document).ready(function () {
 
     $("#search-barre").on("focus", function(){
         $(".container-focus-footer").css("animation", "fadeOutDown 250ms");
-        $(".container-focus-footer").css("opacity", "0");
+        $(".container-focus-footer").css({
+            opacity: "0",
+            display: "none",
+        });
         $(".container-main").addClass("container-main-active");
         $(".container-main-active").removeClass("container-main");
         $(".container-search").addClass("container-search-active");
@@ -34,7 +37,10 @@ $(document).ready(function () {
         $(".row-container").slideDown("200");
         setTimeout(function() {
             $(".container-focus-footer").css("animation", "fadeInUp 1s");
-            $(".container-focus-footer").css("opacity", "1");
+            $(".container-focus-footer").css({
+                opacity: "1",
+                display: "block",
+            });
         }, 200);
         $("#search-on").css({
             height: "56px"});
