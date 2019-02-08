@@ -11,9 +11,7 @@
         <link rel="stylesheet" href="{{ asset('css/css_for_views/searchBarre.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/radio.css') }}">
         {% block stylesheets %}
-
         {% endblock %}
-
         <script src="{{ asset('js/jquery_materialize/jquery.js') }}"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -37,7 +35,7 @@
                 {% if is_granted('ROLE_ADMIN') %}
                     <ul class="right">
                         <li>
-                            <a class="dropdown-trigger material-icons-dropdown" data-target="dropdown">
+                            <a class="dropdown-trigger material-icons-dropdown" href='#' data-target='dropdown-menu'>
                                 <i class="material-icons">more_vert</i>
                             </a>
                         </li>
@@ -45,12 +43,13 @@
                 {% endif %}
             </nav>
             {% if is_granted('ROLE_ADMIN') %}
-                <ul id='dropdown' class='dropdown-content-l'>
+                <ul id='dropdown-menu' class='dropdown-content'>
                     <li>
                         <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('administration') }}">
                             Administration
                         </a>
                     </li>
+                    <li class="divider" tabindex="-1"></li>
                     <li>
                         <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
                             Déconnexion
@@ -58,7 +57,6 @@
                     </li>
                 </ul>
             {% endif %}
-
             {% block navbarre %}
             {% endblock %}
         </div>
@@ -108,7 +106,6 @@
                     </li>
                 </ul>
             </li>
-
             <li class="bold">
                 <a class="waves-effect exercices" href="{{ asset('exercices/en') }}">Exercices</a>
             </li>
@@ -130,7 +127,6 @@
                         </li>
                 {% endif %}
                 #}
-
             <li>
                 <div class="row">
                     <div class="container-row-icons-menu">
@@ -171,8 +167,6 @@
         {% block body %}
         {% endblock %}
     </body>
-
-
 
     <script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>
     <script src="{{ asset('js/js_for_views/base.js') }}"></script>

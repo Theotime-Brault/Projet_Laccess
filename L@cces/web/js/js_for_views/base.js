@@ -4,7 +4,7 @@ $(document).ready(function () {
         closeOnClick: true,
         draggable: true,
     });
-
+/*
     $(".material-icons-dropdown").click(function(){
         $(".dropdown-content-l").slideDown(100);
     });
@@ -12,8 +12,16 @@ $(document).ready(function () {
     $(".container-body").on("click", function(){
         $(".dropdown-content-l").slideUp(100);
     });
+*/
+    $('.material-icons-dropdown').dropdown({
+        alignment: "left",
+        coverTrigger: false,
+        constrainWidth: false,
+    });
 
-    $('#material-icons-dropdown-flag').dropdown();
+    $('#material-icons-dropdown-flag').dropdown({
+        coverTrigger: false,
+    });
 
     $(".exercices").on("click", function(){
 
