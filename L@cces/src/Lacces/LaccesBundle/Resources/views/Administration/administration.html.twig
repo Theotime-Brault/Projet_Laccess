@@ -33,31 +33,21 @@
                         <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces_white_2.png') }}/>
                     </a>
                 </div>
-                <ul class="right {#hide-on-med-and-up show-on-small#}">
+                <ul class="right">
                     <li>
-                        <a class="dropdown-trigger material-icons-dropdown" data-target="dropdown">
+                        <a class="dropdown-trigger material-icons-dropdown" data-target="dropdown-menu">
                             <i class="material-icons white-text ">more_vert</i>
                         </a>
                     </li>
                 </ul>
-            {#
-                <div class="nav-link hide-on-small-and-down show-on-medium-and-up">
-                    {% if is_granted('ROLE_ADMIN') %}
-                        <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('lacces_homepage') }}">
-                            Lacces
-                        </a>
-                        <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
-                            Déconnexion
-                        </a>
-                    {% endif %}
-                </div>#}
             </nav>
-            <ul id='dropdown' class='dropdown-content-l'>
+            <ul id='dropdown-menu' class='dropdown-content'>
                 <li>
                     <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('lacces_homepage') }}">
                         Lacces
                     </a>
                 </li>
+                <li class="divider" tabindex="-1"></li>
                 <li>
                     <a class="btn waves-effect background-color-violet-lacces white-text center btn-log" href="{{ path('logout') }}">
                         Déconnexion
@@ -65,8 +55,6 @@
                 </li>
             </ul>
         </div>
-
-
 
         <ul class="sidenav grey darken-4" id="slide-out">
             <li class="sidenav-close">
@@ -125,8 +113,6 @@
                 </div>
             </div>
         </noscript>
-
-
 
         {% block body %}
         {% endblock %}
