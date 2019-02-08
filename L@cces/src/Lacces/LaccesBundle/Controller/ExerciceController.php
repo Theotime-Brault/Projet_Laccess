@@ -17,6 +17,10 @@ class ExerciceController extends Controller
       $em = $this->getDoctrine()->getManager();
 
       $motAlea = $this->motAleatoire($langue);
+      $motAleaId = $motAlea->getId();
+
+      var_dump($motAleaId);
+      $question = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEn($motAleaId);
 
       //NE DOIS NORMALEMENT JAMAIS ARRIVER
       if(!$motAlea){
@@ -25,7 +29,8 @@ class ExerciceController extends Controller
       }
 
       return $this->render('@Lacces/Exercices/exercices.html.twig', array(
-        'word' => $motAlea,
+        'word' => $motAlea->getWord(),
+        'question' => $question[0]->getQuestion(),
         'langue' => $langue,
       ));
     }
