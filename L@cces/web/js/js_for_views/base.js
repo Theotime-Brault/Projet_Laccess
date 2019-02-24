@@ -1,18 +1,9 @@
 $(document).ready(function () {
-
     $('.sidenav').sidenav({
         closeOnClick: true,
         draggable: true,
     });
-/*
-    $(".material-icons-dropdown").click(function(){
-        $(".dropdown-content-l").slideDown(100);
-    });
 
-    $(".container-body").on("click", function(){
-        $(".dropdown-content-l").slideUp(100);
-    });
-*/
     $('.material-icons-dropdown').dropdown({
         alignment: "left",
         coverTrigger: false,
@@ -26,7 +17,6 @@ $(document).ready(function () {
     $(".exercices").on("click", function(){
 
     });
-
 
     $('.collapsible').collapsible();
 
@@ -42,6 +32,4 @@ $(document).ready(function () {
     $(function() {
         $('.message-flash').delay(2000).fadeOut();
     });
-
-
 });

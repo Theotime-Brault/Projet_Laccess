@@ -2,17 +2,40 @@
 ********************** nav barre ***********************
 *******************************************************/
 
-@media only screen and (max-device-width: 602px)
+@media only screen and (max-device-width: 601px)
 {
-    /*
-    .sidenav
+    nav, nav ul a, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+        line-height: 48px !important;
+    }
+
+    nav ul a
     {
-        top: 56px;
-    }*/
+        height: 48px !important;
+        line-height: 56px !important;
+    }
+
+    nav i, nav a.sidenav-trigger
+    {
+        line-height: 48px !important;
+    }
+
+    nav ul a:hover
+    {
+        height: 48px !important;
+        line-height: 56px !important;
+    }
 
     .sidenav-close
     {
         height: 56px;
+    }
+}
+
+@media only screen and (min-width: 601px)
+{
+    nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i
+    {
+         line-height: 56px !important;
     }
 }
 

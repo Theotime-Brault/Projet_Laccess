@@ -6,6 +6,7 @@
     padding: 0 1.7rem 0 1.7rem;
     width: 100%;
     display: flex;
+    z-index: 100;
 }
 
 #search-on:hover

@@ -22,28 +22,31 @@
     <body>
         <div class="navbar-fixed">
             <nav class="nav-wrapper white">
-                <div class="btn-menu">
-                    <a class="sidenav-trigger show-on-large" data-target="slide-out">
-                        <i class="material-icons">menu</i>
-                    </a>
-                </div>
+                <ul class="left">
+                    <li>
+                        <a class="sidenav-trigger show-on-large" data-target="slide-out">
+                            <i class="material-icons">menu</i>
+                        </a>
+                    </li>
+                </ul>
+
                 <div id="container_logo_lacces">
                     <a href="{{ asset('') }}" class="brand-logo center">
                         <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces_2.png') }}/>
                     </a>
                 </div>
-                {% if is_granted('ROLE_ADMIN') %}
+                {% if is_granted("ROLE_ADMIN") %}
                     <ul class="right">
                         <li>
-                            <a class="dropdown-trigger material-icons-dropdown" href='#' data-target='dropdown-menu'>
+                            <a class="dropdown-trigger material-icons-dropdown" href="" data-target="dropdown-menu">
                                 <i class="material-icons">more_vert</i>
                             </a>
                         </li>
                     </ul>
                 {% endif %}
             </nav>
-            {% if is_granted('ROLE_ADMIN') %}
-                <ul id='dropdown-menu' class='dropdown-content'>
+            {% if is_granted("ROLE_ADMIN") %}
+                <ul id="dropdown-menu" class="dropdown-content">
                     <li>
                         <a class="btn waves-effect background-color-orange-lacces white-text center btn-log" href="{{ path('administration') }}">
                             Administration

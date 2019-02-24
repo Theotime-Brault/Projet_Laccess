@@ -12,18 +12,18 @@ $(document).ready(function () {
         $(".container-search").addClass("container-search-active");
         $(".container-search-active").removeClass("container-search");
         $("#btnSearch").css({
-            "transition-duration": "200ms",
+            "transition-duration": "100ms",
             right: "2rem",
         });
         $('#search-on').css({
             height: "40px",
-            "transition-duration": "200ms"});
+            "transition-duration": "100ms"});
         $('#result').css('display', 'block');
-        $(".row-container").slideUp("400", function () {
+        $(".row-container").slideUp("150", function () {
             setTimeout(function () {
                 $("#close-barre").fadeIn();
                 $("#material-icons-dropdown-flag").fadeIn();
-            }, 200);
+            }, 100);
         });
     });
 
@@ -34,9 +34,9 @@ $(document).ready(function () {
         $(".container-main").removeClass("container-main-active");
         $(".container-search-active").toggleClass("container-search");
         $(".container-search").removeClass("container-search-active");
-        $(".row-container").slideDown("200");
+        $(".row-container").slideDown("100");
         setTimeout(function() {
-            $(".container-focus-footer").css("animation", "fadeInUp 1s");
+            $(".container-focus-footer").css("animation", "fadeInUp 750ms");
             $(".container-focus-footer").css({
                 opacity: "1",
                 display: "block",
@@ -50,7 +50,7 @@ $(document).ready(function () {
         $("#close-barre").fadeOut(10);
         $("#material-icons-dropdown-flag").fadeOut(10);
         $("#btnSearch").css({
-            "transition-duration": "200ms",
+            "transition-duration": "100ms",
             right: "0",
         });
     });
