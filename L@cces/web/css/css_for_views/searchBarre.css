@@ -67,7 +67,7 @@ input::placeholder
 {
     display: none;
     position: absolute;
-    right: -1.5rem;
+    right: -1.6rem;
     top: 0;
 }
 
@@ -85,7 +85,7 @@ input::placeholder
     cursor: pointer;
 }
 
-.image-circle
+.image-flag-drowpdown
 {
     width: 100%;
     height: 50px;

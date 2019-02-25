@@ -92,14 +92,14 @@
                                 {% else %}
                                 <li class="white" id="liImg">
                                 {% endif %}
-                                    <a class="waves-effect" href="{{ asset('signaire/Fr') }}">Langue des signes Française</a>
+                                    <a class="waves-effect" href="{{ asset('signaire/Fr') }}"><span class="bold">L</span>angue des <span class="bold">S</span>ignes <span class="bold">F</span>rançaise</a>
                                 </li>
                                 {% if app.request.attributes.get('_route') == 'lacces_signaire_en' %}
                                 <li class="active active-item-menu background-color-orange-lacces">
                                 {% else %}
                                 <li class="white">
                                 {% endif %}
-                                    <a class="waves-effect" href="{{ asset('signaire/En') }}">American Sign Language</a>
+                                    <a class="waves-effect" href="{{ asset('signaire/En') }}"><span class="bold">A</span>merican <span class="bold">S</span>ign <span class="bold">L</span>anguage</a>
                                 </li>
                                 <li>
                                     <div class="divider"></div>

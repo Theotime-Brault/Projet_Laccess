@@ -7,11 +7,11 @@
             </a>
             <ul id='dropdown-flag' class='dropdown-content'>
                 <li>
-                    <img id="imgFlagEn" class="image-circle" src="{{ asset('pictures/flags/FlagEN_SearchBar.jpg') }} ">
+                    <img id="imgFlagEn" class="image-flag-drowpdown" src="{{ asset('pictures/flags/FlagEN_SearchBar.jpg') }} ">
                 </li>
                 <li class="divider" tabindex="-1"></li>
                 <li>
-                    <img id="imgFlagFr" class="image-circle" src="{{ asset('pictures/flags/FlagFR_SearchBar.jpg') }}">
+                    <img id="imgFlagFr" class="image-flag-drowpdown" src="{{ asset('pictures/flags/FlagFR_SearchBar.jpg') }}">
                 </li>
             </ul>
             <button type="submit" id="btnSearch" class="btn">
@@ -142,7 +142,7 @@ $('document').ready(function () {
     });
 
 
-    $('.image-circle').click(function () {
+    $('.image-flag-drowpdown').click(function () {
         if ($("#btnEn").is(":checked")) {
             $("#btnEn").removeAttr("checked");
             $("#btnFr").attr("checked", true);
@@ -151,5 +151,5 @@ $('document').ready(function () {
             $("#btnEn").attr("checked", true);
         }
     })
-})
+});
 </script>

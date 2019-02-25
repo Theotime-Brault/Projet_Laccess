@@ -83,6 +83,7 @@ a
 .index-text
 {
     margin: auto;
+    width: 50%;
 }
 
 @-webkit-keyframes fadeInUp {

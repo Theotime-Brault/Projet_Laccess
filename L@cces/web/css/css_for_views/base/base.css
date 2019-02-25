@@ -38,6 +38,10 @@
     color: #69085a;
 }
 
+.bold
+{
+    font-weight: bold;
+}
 
 body, footer
 {

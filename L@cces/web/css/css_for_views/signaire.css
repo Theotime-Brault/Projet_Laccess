@@ -1,4 +1,4 @@
-#lettreMaj
+.lettreMaj
 {
     color: #f4a733;
     font-weight: bold;
@@ -10,26 +10,18 @@
 
 #word
 {
-    color: black;
     transition-duration: 0.5s;
-}
-
-.flow-text
-{
-    font-size: 1.3rem
 }
 
 #word:hover
 {
-    transition-duration: 0.15s;
-    color: #f4a733;
-    font-size: 1.7rem;
+    transition-duration: 0.2s;
+    color: #f4a733 !important;
 }
 
 #word:active
 {
-    color: #69085a;
-    transition-duration: 0.05s;
+    color: #69085a !important;
 }
 
 .material-icons_arrow_drop_down
@@ -43,19 +35,3 @@
 {
     background-color: #eeeeee;
 }
-
-.alphabet-ASL
-{
-    max-width: 4%;
-    display:flex;
-    align-items: center;
-}
-/*
-.test
-{
-
-    top: calc(64px + 1.5rem);
-    height: 100%;
-    overflow-y: auto;
-}
-*/

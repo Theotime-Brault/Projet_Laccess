@@ -16,12 +16,9 @@
                     {% for letter in 'a'..'z' %}
                         <li class="bold">
                             <a class="collapsible-header waves-effect collapsible-ASL">
-                                <div id="lettreMaj">
+                                <div class="lettreMaj">
                                     {{ letter|upper }}
-                                    <i class="material-icons material-icons_arrow_drop_down" id="fleche">arrow_drop_down</i>
-                                </div>
-                                <div>
-                                    <img class="alphabet-ASL right" src="{{ asset('pictures/alphabetLS/LSF/LSF-Main-G.png') }}" />
+                                    <i class="material-icons material-icons_arrow_drop_down">arrow_drop_down</i>
                                 </div>
                             </a>
                             <div class="collapsible-body">
@@ -29,7 +26,7 @@
                                     {% for w in wordFr %}
                                         {% if w.word|first|lower == letter %}
                                             <li class="white">
-                                                <a class="flow-text" id="word" href="../word/fr/{{ w.word }}">{{ w.word }}</a>
+                                                <a class="flow-text black-text" id="word" href="../word/fr/{{ w.word }}">{{ w.word }}</a>
                                             </li>
                                         {% endif %}
                                     {% endfor %}

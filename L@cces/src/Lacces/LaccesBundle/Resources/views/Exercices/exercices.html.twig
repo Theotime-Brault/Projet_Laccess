@@ -15,20 +15,20 @@
     <div class="nav-content">
         <div class = "row center">
             <ul class = "tabs z-depth-1">
-                <li class = "tab">
-                    <a href="#exerciceA1">Trouvez les phrases</a>
+                <li class = "tab tooltipped" data-position="bottom" data-tooltip="Regardez la vidéo ASL et trouvez la phrase signée en anglais">
+                    <a href="#exerciceA1">Exercice A1</a>
                 </li>
-                <li class = "tab">
-                    <a href="#exerciceA2">Etudiez vidéos</a>
+                <li class = "tab tooltipped" data-position="bottom" data-tooltip="Lisez chaque phrase en français et en anglais. Etudiez les correspondances et / ou les différences.">
+                    <a href="#exerciceA2">Exercice A2</a>
                 </li>
-                <li class = "tab">
-                    <a href = "#outbox">Quizz</a>
+                <li class = "tab tooltipped" data-position="bottom" data-tooltip="QCM. Cocher la bonne réponse">
+                    <a href = "#exerciceB">Exercice B</a>
                 </li>
-                <li class = "tab">
-                    <a href = "#sent">QCM Vidéo</a>
+                <li class = "tab tooltipped" data-position="bottom" data-tooltip="Quelle phrase  est la plus proche de la phrase signée">
+                    <a href = "#exerciceC">Exercice C</a>
                 </li>
-                <li class = "tab">
-                    <a href = "#v">Reformer les phrases</a>
+                <li class = "tab tooltipped" data-position="bottom" data-tooltip="Recréez la phrase en mettant les mots dans l’ordre  pour recréer une phrase">
+                    <a href = "#exerciceD">Exercice D</a>
                 </li>
             </ul>
         </div>
@@ -37,11 +37,11 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div id = "exerciceA1">{% include('@Lacces/Exercices/Types/exerciceA1.html.twig') %}</div>
-                    <div id = "exerciceA2">{% include('@Lacces/Exercices/Types/exerciceA2.html.twig') %}</div>
-                    <div id = "outbox">Outbox (Disabled)</div>
-                    <div id = "sent">Sent</div>
-                    <div id = "v">Sent</div>
+                    <div id="exerciceA1">{% include('@Lacces/Exercices/Types/exerciceA1.html.twig') %}</div>
+                    <div id="exerciceA2">{% include('@Lacces/Exercices/Types/exerciceA2.html.twig') %}</div>
+                    <div id="exerciceB">Outbox (Disabled)</div>
+                    <div id="exerciceC">Sent</div>
+                    <div id="exerciceD">Sent</div>
                 </div>
             </div>
         </main>
