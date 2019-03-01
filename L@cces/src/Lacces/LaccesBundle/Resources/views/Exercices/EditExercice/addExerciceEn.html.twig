@@ -1,7 +1,7 @@
 {% extends '@Lacces/Administration/administration.html.twig' %}
 
 {% block stylesheets %}
-
+    <link rel="stylesheet" href="{{ asset('css/css_for_views/addExercice.css') }}">
 {% endblock %}
 
 {% block title %}Ajouter un exercice{% endblock %}
@@ -9,11 +9,31 @@
 {% block body %}
     <div>
         {{ form_start(form) }}
+        <div id="exForm"></div>
         {{ form_end(form) }}
     </div>
 {% endblock %}
 
 {% block javascripts %}
-
+    <script>
+        var $sport = $('#form_typeEx');
+        // When sport gets selected ...
+        $sport.change(function() {
+            // ... retrieve the corresponding form.
+            var $form = $(this).closest('form');
+            // Simulate form data, but only include the selected sport value.
+            var data = {};
+            data[$sport.attr('name')] = $sport.val();
+            // Submit data via AJAX to the form's action path.
+            $.ajax({
+                url : $form.attr('action'),
+                type: $form.attr('method'),
+                data : data,
+                success: function(html) {
+                    $('#exForm').html(html);
+                }
+            });
+        });
+    </script>
 {% endblock %}
 
