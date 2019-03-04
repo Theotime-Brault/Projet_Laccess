@@ -37,24 +37,26 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="preloader-background center ">
-                        <div class="preloader-wrapper medium active">
-                            <div class="spinner-layer spinner-yellow-only">
-                                <div class="circle-clipper left">
-                                    <div class="circle"></div>
-                                </div><div class="gap-patch">
-                                    <div class="circle"></div>
-                                </div><div class="circle-clipper right">
-                                    <div class="circle"></div>
+                    <div class="container-exercice">
+                        <div class="preloader-background center ">
+                            <div class="preloader-wrapper medium active">
+                                <div class="spinner-layer spinner-yellow-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div><div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div><div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div id="exerciceA1">{#{% include('@Lacces/Exercices/Types/exerciceA1.html.twig') %}#}</div>
+                        <div id="exerciceA2">{#{% include('@Lacces/Exercices/Types/exerciceA2.html.twig') %}#}</div>
+                        <div id="exerciceB">Outbox (Disabled)</div>
+                        <div id="exerciceC">Sent</div>
+                        <div id="exerciceD">Sent</div>
                     </div>
-                    <div id="exerciceA1">{#{% include('@Lacces/Exercices/Types/exerciceA1.html.twig') %}#}</div>
-                    <div id="exerciceA2">{#{% include('@Lacces/Exercices/Types/exerciceA2.html.twig') %}#}</div>
-                    <div id="exerciceB">Outbox (Disabled)</div>
-                    <div id="exerciceC">Sent</div>
-                    <div id="exerciceD">Sent</div>
                 </div>
             </div>
         </main>

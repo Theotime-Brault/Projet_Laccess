@@ -37,9 +37,14 @@
     top: 4rem;
 }
 
-.tabs-content
+.container-exercice
 {
     height: calc(100vh - 64px - 5.5rem);
+}
+
+.tabs-content
+{
+    height: inherit;
 }
 
 #card-image-1, #card-image-2
