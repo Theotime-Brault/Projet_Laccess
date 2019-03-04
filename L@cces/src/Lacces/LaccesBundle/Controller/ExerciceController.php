@@ -40,7 +40,7 @@ class ExerciceController extends Controller
     return $this->redirectToRoute('lacces_homepage');
 */
       return $this->render('@Lacces/Exercices/exercices.html.twig', array(
-          'word' => $motAlea->getWord(),
+          'word' => $motAlea,
           'question' => $question[0]->getQuestion(),
       ));
   }
@@ -131,7 +131,9 @@ class ExerciceController extends Controller
 
     public function exerciceBAction() {
 
-      //$exercice = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEn($motAleaId);
+      $em = $this->getDoctrine()->getManager();
+
+      $exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmEn')->findByWordEn();
 
       return $this->renderView('@Lacces/Exercices/Types/exerciceA1.html.twig');
     }
