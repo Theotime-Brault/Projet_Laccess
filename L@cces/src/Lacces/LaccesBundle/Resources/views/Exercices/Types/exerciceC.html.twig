@@ -1,0 +1,43 @@
+<div class="col s12 m12 l8 offset-l2">
+    <div class="card">
+        <div class="card-content center black-text flow-text">
+            <p>
+                {{ question }}
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-image">
+            <div class="video-container">
+                <iframe title="{{ word }}" width="1100" height="619" src="{#{{ word.videoLink }}#}https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="card-content">
+            <form action="">
+                <p>
+                    <label>
+                        <input class="with-gap" name="groupEnonce" />
+                        <span>Red</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="groupEnonce" type="radio" />
+                        <span>Yellow</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="groupEnonce" type="radio"  />
+                        <span>Green</span>
+                    </label>
+                </p>
+            </form>
+        </div>
+        <div class="card-action hide">
+            <button id="revoir-video" class="btn waves-effect background-color-orange-lacces">Revoir la vidéo</button>
+            <button id="envoyer" class="btn waves-effect background-color-orange-lacces">Envoyez</button>
+        </div>
+    </div>
+</div>
