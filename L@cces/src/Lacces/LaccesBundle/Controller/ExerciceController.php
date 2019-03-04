@@ -131,6 +131,7 @@ class ExerciceController extends Controller
 
     public function exerciceBAction() {
 
+      //$exercice = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEn($motAleaId);
 
       return $this->renderView('@Lacces/Exercices/Types/exerciceA1.html.twig');
     }
