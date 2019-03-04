@@ -19,7 +19,6 @@ class ExerciceController extends Controller
       $motAlea = $this->motAleatoire($langue);
       $motAleaId = $motAlea->getId();
 
-      var_dump($motAleaId);
       $question = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEn($motAleaId);
 
       //NE DOIS NORMALEMENT JAMAIS ARRIVER
