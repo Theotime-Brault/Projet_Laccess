@@ -128,4 +128,10 @@ class ExerciceController extends Controller
 
 
     }
+
+    public function exerciceBAction() {
+
+
+      return $this->renderView('@Lacces/Exercices/Types/exerciceA1.html.twig');
+    }
 }
