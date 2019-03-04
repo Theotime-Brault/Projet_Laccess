@@ -58,13 +58,17 @@ class ContactController extends Controller
             $formulaire = $form->getData();
             $this->addFlash('info', "Le message a bien été envoyé !");
 
-            $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')->setUsername('testlacces@gmail.com')->setPassword('TestL@cces1--');
+            //L'adresse qui recevra les mails :
+            $mail = 'testlacces@gmail.com';
+
+
+            $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')->setUsername($mail)->setPassword('TestL@cces1--');
 
 
             $mailer = \Swift_Mailer::newInstance($transport);
             $message = \Swift_Message::newInstance('Formulaire de Contact')
                 ->setFrom($formulaire->getEmail())
-                ->setTo('testlacces@gmail.com')
+                ->setTo($mail)
                 ->setCharset('UTF-8')
                 ->setContentType('text/html')
                 ->setBody('Nom : '.$formulaire->getNom()
