@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-content center black-text flow-text">
             <p>
-                {{ question }}
+                {{ obj_exerciceA1.question }}
             </p>
         </div>
     </div>
@@ -15,7 +15,7 @@
         </div>
         <div class="card-image">
             <div class="video-container">
-                <iframe title="{{ word }}" width="1100" height="619" src="{#{{ word.videoLink }}#}https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe title="{{ word }}" width="1100" height="619" src="{{ obj_exerciceA1.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="card-content">

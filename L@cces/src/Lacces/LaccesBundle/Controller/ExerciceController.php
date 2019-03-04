@@ -12,75 +12,14 @@ class ExerciceController extends Controller
    * @return \Symfony\Component\HttpFoundation\Response
    */
 
-  public function exercicesAction(/*$langue*/)
+  public function exercicesAction()
   {
-
-   // if($langue == "fr" || $langue == "en") {
-
-      $em = $this->getDoctrine()->getManager();
-
-      $motAlea = $this->motAleatoire("en");
-      $motAleaId = $motAlea->getId();
-
-      $question = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEn($motAleaId);
-
-      //NE DOIS NORMALEMENT JAMAIS ARRIVER
-      if(!$motAlea){
-        $this->addFlash('info', "Le mot rechercher n'existe pas.");
-        return $this->redirectToRoute('lacces_homepage');
-      }
-/*
-      return $this->render('@Lacces/Exercices/exercices.html.twig', array(
-        'word' => $motAlea->getWord(),
-        'question' => $question[0]->getQuestion(),
-        'langue' => $langue,
-      ));
-    }
-
-    return $this->redirectToRoute('lacces_homepage');
-*/
-      return $this->render('@Lacces/Exercices/exercices.html.twig', array(
-          'word' => $motAlea->getWord(),
-          'question' => $question[0]->getQuestion(),
-      ));
+      return $this->render('@Lacces/Exercices/exercices.html.twig');
   }
-/*
-  public function motAleatoire($langue) {
-
-    $em = $this->getDoctrine()->getManager();
-
-    /*if($langue == "fr") {
-      $mots = $em->getRepository('LaccesBundle:wordFr')->findAll();
-    } else {
-      $mots = $em->getRepository('LaccesBundle:wordEn')->findAll();
-    }
-
-    $idAlea = rand($mots[0]->getId(), sizeof($mots));
-
-    if($langue == "fr") {
-      //$motAlea = $em->getRepository('LaccesBundle:wordFr')->find($idAlea);
-    } else {
-      //$motAlea = $em->getRepository('LaccesBundle:wordEn')->find($idAlea);
-    }
-    */
 
 
-/*
-    if($langue == "fr") {
-      $tabMotAlea = $em->getRepository('LaccesBundle:wordFr')->findAlea();
-    } else {
-      $tabMotAlea = $em->getRepository('LaccesBundle:wordEn')->findAlea();
-    }
-
-    shuffle($tabMotAlea);
-    $motAlea = $tabMotAlea[0];
-
-    return $motAlea;
-  }
-*/
-
-
-    public function motAleatoire($langue) {
+    public function motAleatoire($langue)
+    {
 
         $em = $this->getDoctrine()->getManager();
 
@@ -94,19 +33,22 @@ class ExerciceController extends Controller
         $motAlea = $tabMotAlea[0];
 
         return $motAlea;
-  }
+    }
 
-    public function exerciceA1enAction(Request $request)
+    public function exerciceA1Action(Request $request)
     {
+      $langue = $request->request->get('langue');
 
-        //if($langue == "fr" || $langue == "en") {
+        if($langue == "fr" || $langue == "en") {
 
             $em = $this->getDoctrine()->getManager();
 
-            $motAlea = $this->motAleatoire("en");
+            $motAlea = $this->motAleatoire($langue);
             $motAleaId = $motAlea->getId();
 
-            $question = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEn($motAleaId);
+            $obj_exerciceA1Id = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEnId($motAleaId);
+            $idRandom = rand(0, sizeof($obj_exerciceA1Id) - 1);
+            $obj_exerciceA1 = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->find($obj_exerciceA1Id[$idRandom]);
 
             //NE DOIS NORMALEMENT JAMAIS ARRIVER
             if(!$motAlea){
@@ -117,16 +59,13 @@ class ExerciceController extends Controller
             if($request->isXmlHttpRequest()){
                 $render =  $this->renderView('@Lacces/Exercices/Types/exerciceA1.html.twig', array(
                     'word' => $motAlea->getWord(),
-                    'question' => $question[0]->getQuestion(),
+                    'obj_exerciceA1' => $obj_exerciceA1,
                 ));
                 return new JsonResponse($render);
             }else{
                 return $this->redirectToRoute('lacces_homepage');
             }
-
-       // }
-
-
+        }
     }
 
     public function exerciceBAction() {

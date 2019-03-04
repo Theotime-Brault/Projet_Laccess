@@ -10,12 +10,4 @@ namespace Lacces\LaccesBundle\Repository\Exercise;
  */
 class signification_video_enRepository extends \Doctrine\ORM\EntityRepository
 {
-  public function findByWordEn ($wordEnId){
-    return $this->createQueryBuilder('c')
-      ->select('c.id')
-      ->where('c.wordEn=:word')
-      ->setParameter('word', $wordEnId)
-      ->getQuery()
-      ->getResult();
-  }
 }

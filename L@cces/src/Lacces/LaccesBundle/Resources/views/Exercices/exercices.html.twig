@@ -72,23 +72,23 @@
         });
 
         $("#exerciceA1Link").click(function () {
-            $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1__en') }}", "#exerciceA1"));
+            $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1') }}", "#exerciceA1"));
         });
 
         $("#exerciceA2Link").click(function () {
-            $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2__en') }}", "#exerciceA2"));
+            $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2') }}", "#exerciceA2"));
         });
 
         $("#exerciceBLink").click(function () {
-            $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB__en') }}", "#exerciceB"));
+            $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB') }}", "#exerciceB"));
         });
 
         $("#exerciceCLink").click(function () {
-            $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC__en') }}", "#exerciceC"));
+            $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC') }}", "#exerciceC"));
         });
 
         $("#exerciceDLink").click(function () {
-            $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD__en') }}", "#exerciceD"));
+            $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD') }}", "#exerciceD"));
         });
 
         function ajaxExercice (path, blockResponse){
@@ -97,14 +97,15 @@
                 type: "POST",
                 dataType: "JSON",
                 url: path,
+                data: {'langue':"en"},
                 beforeSend: function(){
-                    $(".preloader-background").show();
+                    //$(".preloader-background").show();
                     $(blockResponse).hide();
                 },
                 success: function(response)
                 {
                     $(blockResponse).html(response);
-                    $(".preloader-background").hide();
+                    //$(".preloader-background").hide();
                     $(blockResponse).show();
                 },
             });
