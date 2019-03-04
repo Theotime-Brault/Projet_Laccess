@@ -37,26 +37,26 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="container-exercice">
-                        <div class="preloader-background center ">
-                            <div class="preloader-wrapper medium active">
-                                <div class="spinner-layer spinner-yellow-only">
-                                    <div class="circle-clipper left">
-                                        <div class="circle"></div>
-                                    </div><div class="gap-patch">
-                                        <div class="circle"></div>
-                                    </div><div class="circle-clipper right">
-                                        <div class="circle"></div>
-                                    </div>
+                    <div class="preloader-background center ">
+                        <div class="preloader-wrapper medium active">
+                            <div class="spinner-layer spinner-yellow-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
                                 </div>
                             </div>
                         </div>
-                        <div id="exerciceA1">{#{% include('@Lacces/Exercices/Types/exerciceA1.html.twig') %}#}</div>
-                        <div id="exerciceA2">{#{% include('@Lacces/Exercices/Types/exerciceA2.html.twig') %}#}</div>
-                        <div id="exerciceB">{% include('@Lacces/Exercices/Types/exerciceB.html.twig') %}</div>
-                        <div id="exerciceC">{% include('@Lacces/Exercices/Types/exerciceC.html.twig') %}</div>
-                        <div id="exerciceD">{% include('@Lacces/Exercices/Types/exerciceD.html.twig') %}</div>
                     </div>
+                    <div id="exerciceA1">{#{% include('@Lacces/Exercices/Types/exerciceA1.html.twig') %}#}</div>
+                    <div id="exerciceA2">{#{% include('@Lacces/Exercices/Types/exerciceA2.html.twig') %}#}</div>
+                    <div id="exerciceB">{% include('@Lacces/Exercices/Types/exerciceB.html.twig') %}</div>
+                    <div id="exerciceC">{% include('@Lacces/Exercices/Types/exerciceC.html.twig') %}</div>
+                    <div id="exerciceD">{% include('@Lacces/Exercices/Types/exerciceD.html.twig') %}</div>
                 </div>
             </div>
         </main>
@@ -99,14 +99,15 @@
                 url: path,
                 data: {'langue':"en"},
                 beforeSend: function(){
-                    //$(".preloader-background").show();
                     $(blockResponse).hide();
+                    console.log(blockResponse);
+                    $(".preloader-background").show();
                 },
                 success: function(response)
                 {
                     $(blockResponse).html(response);
-                    //$(".preloader-background").hide();
-                    $(blockResponse).show();
+                    $(".preloader-background").hide();
+                    //$(blockResponse).show();
                 },
             });
         }
