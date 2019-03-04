@@ -40,7 +40,7 @@ class ExerciceController extends Controller
     return $this->redirectToRoute('lacces_homepage');
 */
       return $this->render('@Lacces/Exercices/exercices.html.twig', array(
-          'word' => $motAlea,
+          'word' => $motAlea->getWord(),
           'question' => $question[0]->getQuestion(),
       ));
   }
