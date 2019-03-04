@@ -86,7 +86,7 @@ administration:
         _controller: LaccesBundle:EditDataWord:admin
 
 lacces_exercices:
-    path:   /exercices/{langue}
+    path:   /exercices
     defaults:
         _controller: LaccesBundle:Exercice:exercices
 
@@ -99,3 +99,28 @@ lacces_ex__en_add:
     path: /administration/exerciceEn/add
     defaults:
         _controller: LaccesBundle:EditDataExercice:exerciceAddEn
+
+lacces_exerciceA1__en:
+    path: /exercice/en/A1
+    defaults:
+        _controller: LaccesBundle:Exercice:exerciceA1en
+
+lacces_exerciceA2__en:
+    path: /exercice/en/A2
+    defaults:
+        _controller: LaccesBundle:Exercice:exerciceA2en
+
+lacces_exerciceB__en:
+    path: /exercice/en/B
+    defaults:
+        _controller: LaccesBundle:Exercice:exerciceBen
+
+lacces_exerciceC__en:
+    path: /exercice/en/C
+    defaults:
+        _controller: LaccesBundle:Exercice:exerciceCen
+
+lacces_exerciceD__en:
+    path: /exercice/en/D
+    defaults:
+        _controller: LaccesBundle:Exercice:exerciceDen

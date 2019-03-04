@@ -16,19 +16,19 @@
         <div class = "row center">
             <ul class = "tabs z-depth-1">
                 <li class = "tab tooltipped" data-position="bottom" data-tooltip="Regardez la vidéo ASL et trouvez la phrase signée en anglais">
-                    <a href="#exerciceA1">Exercice A1</a>
+                    <a id="exerciceA1Link" href="#exerciceA1">Exercice A1</a>
                 </li>
                 <li class = "tab tooltipped" data-position="bottom" data-tooltip="Lisez chaque phrase en français et en anglais. Etudiez les correspondances et / ou les différences.">
-                    <a href="#exerciceA2">Exercice A2</a>
+                    <a id="exerciceA2Link" href="#exerciceA2">Exercice A2</a>
                 </li>
                 <li class = "tab tooltipped" data-position="bottom" data-tooltip="QCM. Cocher la bonne réponse">
-                    <a href = "#exerciceB">Exercice B</a>
+                    <a id="exerciceBLink" href = "#exerciceB">Exercice B</a>
                 </li>
                 <li class = "tab tooltipped" data-position="bottom" data-tooltip="Quelle phrase  est la plus proche de la phrase signée">
-                    <a href = "#exerciceC">Exercice C</a>
+                    <a id="exerciceCLink" href = "#exerciceC">Exercice C</a>
                 </li>
                 <li class = "tab tooltipped" data-position="bottom" data-tooltip="Recréez la phrase en mettant les mots dans l’ordre  pour recréer une phrase">
-                    <a href = "#exerciceD">Exercice D</a>
+                    <a id="exerciceDLink" href = "#exerciceD">Exercice D</a>
                 </li>
             </ul>
         </div>
@@ -37,8 +37,21 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div id="exerciceA1">{% include('@Lacces/Exercices/Types/exerciceA1.html.twig') %}</div>
-                    <div id="exerciceA2">{% include('@Lacces/Exercices/Types/exerciceA2.html.twig') %}</div>
+                    <div class="preloader-background center ">
+                        <div class="preloader-wrapper medium active">
+                            <div class="spinner-layer spinner-yellow-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="exerciceA1">{#{% include('@Lacces/Exercices/Types/exerciceA1.html.twig') %}#}</div>
+                    <div id="exerciceA2">{#{% include('@Lacces/Exercices/Types/exerciceA2.html.twig') %}#}</div>
                     <div id="exerciceB">Outbox (Disabled)</div>
                     <div id="exerciceC">Sent</div>
                     <div id="exerciceD">Sent</div>
@@ -53,6 +66,49 @@
         $(".tabs").tabs({
             swipeable: true,
         });
+
+        document.addEventListener("DOMContentLoaded", function(){
+            $(".preloader-background").hide();
+        });
+
+        $("#exerciceA1Link").click(function () {
+            $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1__en') }}", "#exerciceA1"));
+        });
+
+        $("#exerciceA2Link").click(function () {
+            $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2__en') }}", "#exerciceA2"));
+        });
+
+        $("#exerciceBLink").click(function () {
+            $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB__en') }}", "#exerciceB"));
+        });
+
+        $("#exerciceCLink").click(function () {
+            $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC__en') }}", "#exerciceC"));
+        });
+
+        $("#exerciceDLink").click(function () {
+            $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD__en') }}", "#exerciceD"));
+        });
+
+        function ajaxExercice (path, blockResponse){
+            $.ajax({
+                cache:false,
+                type: "POST",
+                dataType: "JSON",
+                url: path,
+                beforeSend: function(){
+                    $(".preloader-background").show();
+                    $(blockResponse).hide();
+                },
+                success: function(response)
+                {
+                    $(blockResponse).html(response);
+                    $(".preloader-background").hide();
+                    $(blockResponse).show();
+                },
+            });
+        }
     </script>
     <script src="{{ asset('js/js_for_views/exercice.js') }}"></script>
 {% endblock %}
