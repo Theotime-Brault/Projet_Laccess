@@ -58,7 +58,7 @@ class ContactController extends Controller
             $formulaire = $form->getData();
             $this->addFlash('info', "Le message a bien été envoyé !");
 
-            //L'adresse qui recevra les mails :
+            //L'adresse qui recevra les mails, doit être la même que celle inscrit dans "parameters.yaml" dans "app/config":
             $mail = 'testlacces@gmail.com';
 
 
