@@ -98,17 +98,29 @@ class ExerciceController extends Controller
 
         //ON RECUPERE L'OBJET EXERCICE PAR RAPPORT AU MOT ALEATOIRE (FR ou EN)
         if($langue == "en") {
+
+          //Recupération de ou des id des exercices correspondant au mot aléatoire
           $obj_exerciceBId = $em->getRepository('LaccesBundle:Exercise\qcmEn')->findByWordEnId($motAleaId);
+
+          //On en choisi un au hasard
           $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
+
+          //On récupère l'exercice
           $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmEn')->find($obj_exerciceBId[$idRandom]);
+
+          //On récupère les id des réponses correspondant à l'exercice
           $obj_reponseBTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmFrId($obj_exerciceBId);
 
+          //Puis on ajoute chaque réponses dans un tableau
           foreach ($obj_reponseBTableauId as $value) {
             $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->find($value);
             array_push($tableauReponses, $reponse->getEnonces());
           }
 
         } else {
+
+          //Meme opération pour les mots en français
+
           $obj_exerciceBId = $em->getRepository('LaccesBundle:Exercise\qcmFr')->findByWordFrId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
           $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmFr')->find($obj_exerciceBId[$idRandom]);
@@ -152,16 +164,32 @@ class ExerciceController extends Controller
           return $this->redirectToRoute('lacces_homepage');
         }
 
+        //Notre tableau qui contiendra nos réponse à l'exercice
+        $tableauReponses = array();
+
         if($langue == "en") {
           $obj_exerciceCId = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->findByWordEnId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceCId) - 1);
           $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->find($obj_exerciceCId[$idRandom]);
+          $obj_reponseCTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmFrId($obj_exerciceCId);
+
+          //Puis on ajoute chaque réponses dans un tableau
+          foreach ($obj_reponseCTableauId as $value) {
+            $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->find($value);
+            array_push($tableauReponses, $reponse->getEnonces());
+          }
+
         } else {
           $obj_exerciceCId = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->findByWordFrId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceCId) - 1);
           $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->find($obj_exerciceCId[$idRandom]);
-        }
+          $obj_reponseCTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findByQcmFrId($obj_exerciceCId);
 
+          foreach ($obj_reponseCTableauId as $value) {
+            $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->find($value);
+            array_push($tableauReponses, $reponse->getEnonces());
+          }
+        }
 
         if($request->isXmlHttpRequest()){
           $render =  $this->renderView('@Lacces/Exercices/Types/exerciceC.html.twig', array(
