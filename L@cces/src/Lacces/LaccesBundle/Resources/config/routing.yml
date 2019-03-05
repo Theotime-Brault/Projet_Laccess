@@ -101,7 +101,7 @@ lacces_ex__en_add:
         _controller: LaccesBundle:EditDataExercice:exerciceAddEn
 
 lacces_exerciceA1:
-    path: /exercice/A1
+    path: /exercice/{langue}/A1
     defaults:
         langue: en
         _controller: LaccesBundle:Exercice:exerciceA1
