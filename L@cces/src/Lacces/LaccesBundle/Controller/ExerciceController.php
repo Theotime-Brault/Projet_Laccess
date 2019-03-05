@@ -194,6 +194,7 @@ class ExerciceController extends Controller
           $render =  $this->renderView('@Lacces/Exercices/Types/exerciceC.html.twig', array(
             'word' => $motAlea->getWord(),
             'obj_exerciceC' => $obj_exerciceC,
+            'tableauReponses' => $tableauReponses
           ));
           return new JsonResponse($render);
         }else{
