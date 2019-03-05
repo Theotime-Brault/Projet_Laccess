@@ -10,30 +10,20 @@
     <div class="card">
         <div class="card-image">
             <div class="video-container">
-                <iframe title="{#{{ word }}#}" width="1100" height="619" src="{#{{ word.videoLink }}#}https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe title="{{ word }}" width="1100" height="619" src="{{ obj_exerciceC.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="card-content">
-            <form action="">
-                <p>
-                    <label>
-                        <input class="with-gap" name="groupEnonce" type="radio" />
-                        <span>Red</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input class="with-gap" name="groupEnonce" type="radio" />
-                        <span>Yellow</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input class="with-gap" name="groupEnonce" type="radio"  />
-                        <span>Green</span>
-                    </label>
-                </p>
-            </form>
+            {% for item in tableauReponses %}
+                <div class="row">
+                    <p>
+                        <label>
+                            <input name="group1" class="with-gap" type="radio" checked />
+                            <span>{{ item }}</span>
+                        </label>
+                    </p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>

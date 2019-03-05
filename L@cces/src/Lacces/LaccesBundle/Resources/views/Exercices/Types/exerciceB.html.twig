@@ -15,11 +15,17 @@
         </div>
         <div class="card-content">
             {% for item in tableauReponses %}
-                {{ item }}
+                <div class="row">
+                    <p>
+                        <label>
+                            <input name="group1" class="with-gap" type="radio" checked />
+                            <span>{{ item }}</span>
+                        </label>
+                    </p>
+                </div>
             {% endfor %}
         </div>
     </div>
 </div>
-
 <script>
 </script>

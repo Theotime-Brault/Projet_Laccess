@@ -48,3 +48,8 @@
     right: 16px;
     top: 30%;
 }
+
+.card-title p
+{
+    margin: 8px;
+}
