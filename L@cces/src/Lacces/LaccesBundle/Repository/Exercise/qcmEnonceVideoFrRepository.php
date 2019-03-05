@@ -12,7 +12,6 @@ class qcmEnonceVideoFrRepository extends \Doctrine\ORM\EntityRepository
 {
   public function findByQcmVideoFrId ($qcmVideoFrId){
     return $this->createQueryBuilder('c')
-      ->select('c.id')
       ->where('c.qcmVideoFr=:word')
       ->setParameter('word', $qcmVideoFrId)
       ->getQuery()

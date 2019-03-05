@@ -12,7 +12,6 @@ class qcmEnonceEnRepository extends \Doctrine\ORM\EntityRepository
 {
   public function findByQcmEnId ($qcmEnId){
     return $this->createQueryBuilder('c')
-      ->select('c.id')
       ->where('c.qcmEn=:word')
       ->setParameter('word', $qcmEnId)
       ->getQuery()

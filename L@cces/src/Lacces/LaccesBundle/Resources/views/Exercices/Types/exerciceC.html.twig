@@ -14,16 +14,38 @@
             </div>
         </div>
         <div class="card-content">
-            {% for item in tableauReponses %}
-                <div class="row">
-                    <p>
+            <form id="form-qcm">
+                {% for item in tableauReponses %}
+                    <div class="row">
                         <label>
-                            <input name="group1" class="with-gap" type="radio" checked />
-                            <span>{{ item }}</span>
+                            <input name="group-qcm" data-qcm-id="{{ item.id }}" class="with-gap" type="radio"/>
+                            <span>{{ item.enonces }}</span>
                         </label>
-                    </p>
-                </div>
-            {% endfor %}
+                        <div class="right"></div>
+                    </div>
+                {% endfor %}
+            </form>
         </div>
     </div>
 </div>
+<script>
+    $("input:radio[name=group-qcm]").on("click", function () {
+        check();
+    });
+    function check(){
+        $("input:radio[name=group-qcm]").each(function () {
+            if($(this).is(":checked")){
+                console.log($(this).attr("data-qcm-id"));
+                console.log("{{ obj_exerciceC.solution }}");
+                var valueIn = $(this).attr("data-qcm-id");
+                if(valueIn.toString() === "{{ obj_exerciceC.solution }}") {
+                    $(this).parent().next().html("<i id=\"result-done\" class=\"result material-icons small green-text\">done</i>");
+                    $("#form-qcm input").attr("disabled", "disabled");
+                } else {
+                    $(this).parent().next().html("<i id=\"result-done\" class=\"result material-icons small red-text\">clear</i>");
+                    $(this).attr("disabled", "disabled");
+                }
+            }
+        });
+    }
+</script>

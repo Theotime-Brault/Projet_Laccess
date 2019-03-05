@@ -53,3 +53,10 @@
 {
     margin: 8px;
 }
+
+.container-qcm
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

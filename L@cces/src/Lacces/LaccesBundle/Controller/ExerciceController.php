@@ -113,14 +113,13 @@ class ExerciceController extends Controller
           $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmEn')->find($obj_exerciceBId[$idRandom]);
 
           //On récupère les id des réponses correspondant à l'exercice
-          $obj_reponseBTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmFrId($obj_exerciceBId);
+          $obj_reponseB = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmFrId(/*$obj_exerciceBId*/$obj_exerciceB->getId());
 
           //Puis on ajoute chaque réponses dans un tableau
-          foreach ($obj_reponseBTableauId as $value) {
+          /*foreach ($obj_reponseB as $value) {
             $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->find($value);
             array_push($tableauReponses, $reponse->getEnonces());
-          }
-
+          }*/
         } else {
 
           //Meme opération pour les mots en français
@@ -128,19 +127,19 @@ class ExerciceController extends Controller
           $obj_exerciceBId = $em->getRepository('LaccesBundle:Exercise\qcmFr')->findByWordFrId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
           $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmFr')->find($obj_exerciceBId[$idRandom]);
-          $obj_reponseBTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findByQcmFrId($obj_exerciceBId);
+          $obj_reponseB = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findByQcmFrId(/*$obj_exerciceBId*/$obj_exerciceB->getId());
 
-          foreach ($obj_reponseBTableauId as $value) {
+          /*foreach ($obj_reponseB as $value) {
               $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->find($value);
               array_push($tableauReponses, $reponse->getEnonces());
-          }
+          }*/
         }
 
         if($request->isXmlHttpRequest()){
           $render =  $this->renderView('@Lacces/Exercices/Types/exerciceB.html.twig', array(
             'word' => $motAlea->getWord(),
             'obj_exerciceB' => $obj_exerciceB,
-            'tableauReponses' => $tableauReponses
+            'tableauReponses' => $obj_reponseB /*$tableauReponses*/
           ));
           return new JsonResponse($render);
         }else{
@@ -178,30 +177,31 @@ class ExerciceController extends Controller
           $obj_exerciceCId = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->findByWordEnId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceCId) - 1);
           $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->find($obj_exerciceCId[$idRandom]);
-          $obj_reponseCTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoEn')->findByQcmVideoEnId($obj_exerciceCId);
+          $obj_reponseC = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoEn')->findByQcmVideoEnId($obj_exerciceC->getId());
 
+          /*
           foreach ($obj_reponseCTableauId as $value) {
             $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoEn')->find($value);
             array_push($tableauReponses, $reponse->getEnonces());
-          }
+          }*/
 
         } else {
           $obj_exerciceCId = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->findByWordFrId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceCId) - 1);
           $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->find($obj_exerciceCId[$idRandom]);
-          $obj_reponseCTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoFr')->findByQcmVideoFrId($obj_exerciceCId);
-
+          $obj_reponseC = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoFr')->findByQcmVideoFrId($obj_exerciceC->getId());
+/*
           foreach ($obj_reponseCTableauId as $value) {
             $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoFr')->find($value);
             array_push($tableauReponses, $reponse->getEnonces());
-          }
+          }*/
         }
 
         if($request->isXmlHttpRequest()){
           $render =  $this->renderView('@Lacces/Exercices/Types/exerciceC.html.twig', array(
             'word' => $motAlea->getWord(),
             'obj_exerciceC' => $obj_exerciceC,
-            'tableauReponses' => $tableauReponses
+            'tableauReponses' => $obj_reponseC
           ));
           return new JsonResponse($render);
         }else{
