@@ -92,6 +92,8 @@ class ExerciceController extends Controller
           return $this->redirectToRoute('lacces_homepage');
         }
 
+        $tableauReponses = array();
+
         $motAleaId = $motAlea->getId();
 
         //ON RECUPERE L'OBJET EXERCICE PAR RAPPORT AU MOT ALEATOIRE (FR ou EN)
@@ -104,14 +106,19 @@ class ExerciceController extends Controller
           $obj_exerciceBId = $em->getRepository('LaccesBundle:Exercise\qcmFr')->findByWordFrId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
           $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmFr')->find($obj_exerciceBId[$idRandom]);
-          $obj_reponseB = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findByQcmFrId($obj_exerciceBId);
+          $obj_reponseBTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findByQcmFrId($obj_exerciceBId);
+
+          foreach ($obj_reponseBTableauId as $value) {
+              $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->find($value);
+              array_push($tableauReponses, $reponse->getEnonces());
+          }
         }
 
         if($request->isXmlHttpRequest()){
           $render =  $this->renderView('@Lacces/Exercices/Types/exerciceB.html.twig', array(
             'word' => $motAlea->getWord(),
             'obj_exerciceB' => $obj_exerciceB,
-            'obj_reponseB' => $obj_reponseB
+            'tableauReponses' => $tableauReponses
           ));
           return new JsonResponse($render);
         }else{
