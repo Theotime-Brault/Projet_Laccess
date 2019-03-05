@@ -276,6 +276,7 @@ insert into exerciseqcm_video_fr (solution, videoLink, word_fr_id) values(2, "ht
 insert into exerciseqcm_video_fr (solution, videoLink, word_fr_id) values(3, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", 12);
 insert into exerciseqcm_video_fr (solution, videoLink, word_fr_id) values(1, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", 13);
 insert into exerciseqcm_video_fr (solution, videoLink, word_fr_id) values(2, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", 14);
+insert into exerciseqcm_video_fr (solution, videoLink, word_fr_id) values(3, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", 15);
 insert into exerciseqcm_video_fr (solution, videoLink, word_fr_id) values(1, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", 16);
 insert into exerciseqcm_video_fr (solution, videoLink, word_fr_id) values(2, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", 17);
 insert into exerciseqcm_video_fr (solution, videoLink, word_fr_id) values(3, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", 18);
