@@ -197,26 +197,6 @@
         });
 
         $("#exercice-header").click(function () {
-            $("#exercice-body").load(
-                $.ajax({
-                    cache:false,
-                    type: "POST",
-                    dataType: "JSON",
-                    url: "lacces_exerciceA1",
-                    data: {'langue': "{{ langue }}"},
-                    beforeSend: function(){
-                        $(".preloader-background").show();
-                    },
-                    success: function(response)
-                    {
-                        $("#exercice-body").html(response);
-                        $(".preloader-background").hide();
-                    },
-                });
-            );
-        });
-        {#/*
-        $("#exercice-header").click(function () {
             $("#exercice-body").load(ajaxExercice("{{ path('lacces_exerciceA1') }}", "#exercice-body"));
         });
 
@@ -230,16 +210,14 @@
                 url: path,
                 data: {'langue': "{{ langue }}"},
                 beforeSend: function(){
-                    $(blockResponse).css("visibility", "hidden");
                     $(".preloader-background").show();
                 },
                 success: function(response)
                 {
                     $(blockResponse).html(response);
                     $(".preloader-background").hide();
-                    $(blockResponse).css("visibility", "visible");
                 },
             });
-        }*/#}
+        }
     </script>
 {% endblock %}
