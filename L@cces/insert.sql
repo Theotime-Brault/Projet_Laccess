@@ -390,3 +390,42 @@ insert into exerciseqcm_enonce_video_en (enonces, qcm_video_en_id) values("repon
 insert into exerciseqcm_enonce_video_en (enonces, qcm_video_en_id) values("reponse1", 18);
 insert into exerciseqcm_enonce_video_en (enonces, qcm_video_en_id) values("reponse2", 18);
 insert into exerciseqcm_enonce_video_en (enonces, qcm_video_en_id) values("reponse3", 18);
+
+
+insert into exercisereformulation_en (question, solution, word_en_id) values("has my car a father blue", "my father has a blue car", 1);
+insert into exercisereformulation_en (question, solution, word_en_id) values("is sentence words of a composed", "a sentence is composed of words", 2);
+insert into exercisereformulation_en (question, solution, word_en_id) values("yes me he said", "he said me yes", 3);
+insert into exercisereformulation_en (question, solution, word_en_id) values("chicken I tonight eat to want", "I want to eat chicken tonight", 4);
+insert into exercisereformulation_en (question, solution, word_en_id) values("my will books sell I", "I will sell my books", 5);
+insert into exercisereformulation_en (question, solution, word_en_id) values("Earth is this named planet", "this planet is named Earth", 6);
+insert into exercisereformulation_en (question, solution, word_en_id) values("mouse a little this is", "this is a little mouse", 7);
+insert into exercisereformulation_en (question, solution, word_en_id) values("yellow tiny a duck", "a tiny yellow duck", 8);
+insert into exercisereformulation_en (question, solution, word_en_id) values("you ? a send can me mail", "can you send me a mail ?", 9);
+insert into exercisereformulation_en (question, solution, word_en_id) values("shoot game this up a is them", "this game is a shoot them up", 10);
+insert into exercisereformulation_en (question, solution, word_en_id) values("I no not do", "no I do not", 11);
+insert into exercisereformulation_en (question, solution, word_en_id) values("morning how ? you everybody, good are", "good morning everybody, how are you ?", 12);
+insert into exercisereformulation_en (question, solution, word_en_id) values("afternoon Pickers good Mr", "good afternoon Mr Pickers", 13);
+insert into exercisereformulation_en (question, solution, word_en_id) values("draws you me your can show", "can you show me your draws ?", 14);
+insert into exercisereformulation_en (question, solution, word_en_id) values("please the open you ? door can", "can you open the door please ?", 15);
+insert into exercisereformulation_en (question, solution, word_en_id) values("door close you can ? please the", "can you close the door please ?", 16);
+insert into exercisereformulation_en (question, solution, word_en_id) values("my I draw to pencil take will", "I will take my pencil to draw", 17);
+insert into exercisereformulation_en (question, solution, word_en_id) values("rules there respect to are", "there are rules to respect", 18);
+
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("a mon voiture une père bleu", "mon père a une voiture bleu", 1);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("est phrase mots de une composée", "une phrase est composée de mots", 2);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("oui m'a il dit", "il m'a dit oui", 3);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("poulet je ce soir manger du veux", "je veux manger du poulet ce soir", 4);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("mes vais livres vendre je", "je vais vendre mes livres", 5);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("Terre cette s'appelle la planète", "cette planète s'appelle la Terre", 6);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("souris une petite c'est", "c'est une petite souris", 7);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("et jaune mignon un canard", "un canard jaune et mignon", 8);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("tu ? un m'envoyer peux- mail", "peux-tu m'envoyer un mail ?", 9);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("tirer les il monstres faut sur", "il faut tirer sur les monstres", 10);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("veux non je pas ne", "non je ne veux pas", 11);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("Bonjour comment ? vous tout le monde, allez-", "Bonjour tout le monde, comment allez-vous ?", 12);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("Pickers Bonsoir Mr", "Bonsoir Mr Pickers", 13);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("dessins tu me tes peux- montrer", "Peux-tu me montrer tes dessins ?", 14);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("s'il la te tu ouvrir tu plaît ? porte peux-", "Peux-tu ouvrir la porte s'il te plaît ?", 15);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("s'il la te tu fermer tu plaît ? porte peux-", "Peux-tu fermer la porte s'il te plaît ?", 16);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("mon je dessiner pour crayon prendre vais", "Je vais prendre mon crayon pour dessiner", 17);
+insert into exercisereformulation_fr (question, solution, word_fr_id) values("règles y il respecter a à des", "il y a des règles à respecter", 18);

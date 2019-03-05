@@ -10,4 +10,12 @@ namespace Lacces\LaccesBundle\Repository\Exercise;
  */
 class reformulationEnRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function findByWordEnId ($wordEnId){
+    return $this->createQueryBuilder('c')
+      ->select('c.id')
+      ->where('c.wordEn=:word')
+      ->setParameter('word', $wordEnId)
+      ->getQuery()
+      ->getResult();
+  }
 }

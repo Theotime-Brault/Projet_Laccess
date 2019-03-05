@@ -76,6 +76,10 @@ class ExerciceController extends Controller
         }
     }
 
+    public function exerciceA2Action(Request $request) {
+
+    }
+
     public function exerciceBAction(Request $request) {
 
       $langue = $request->get('langue');
@@ -198,6 +202,45 @@ class ExerciceController extends Controller
             'word' => $motAlea->getWord(),
             'obj_exerciceC' => $obj_exerciceC,
             'tableauReponses' => $tableauReponses
+          ));
+          return new JsonResponse($render);
+        }else{
+          return $this->redirectToRoute('lacces_homepage');
+        }
+      }
+      return $this->renderView('@Lacces/Exercices/Types/exerciceC.html.twig');
+    }
+
+    public function exerciceDAction(Request $request) {
+      $langue = $request->get('langue');
+
+      if($langue == "fr" || $langue == "en") {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $motAlea = $this->motAleatoire($langue);
+        $motAleaId = $motAlea->getId();
+
+        //NE DOIS NORMALEMENT JAMAIS ARRIVER
+        if (!$motAlea) {
+          $this->addFlash('info', "Le mot rechercher n'existe pas.");
+          return $this->redirectToRoute('lacces_homepage');
+        }
+
+        if($langue == "en") {
+          $obj_exerciceDId = $em->getRepository('LaccesBundle:Exercise\reformulationEn')->findByWordEnId($motAleaId);
+          $idRandom = rand(0, sizeof($obj_exerciceDId) - 1);
+          $obj_exerciceD = $em->getRepository('LaccesBundle:Exercise\reformulationEn')->find($obj_exerciceDId[$idRandom]);
+        } else {
+          $obj_exerciceDId = $em->getRepository('LaccesBundle:Exercise\reformulationFr')->findByWordFrId($motAleaId);
+          $idRandom = rand(0, sizeof($obj_exerciceDId) - 1);
+          $obj_exerciceD = $em->getRepository('LaccesBundle:Exercise\reformulationFr')->find($obj_exerciceDId[$idRandom]);
+        }
+
+        if($request->isXmlHttpRequest()){
+          $render =  $this->renderView('@Lacces/Exercices/Types/exerciceD.html.twig', array(
+            'word' => $motAlea->getWord(),
+            'obj_exerciceD' => $obj_exerciceD
           ));
           return new JsonResponse($render);
         }else{
