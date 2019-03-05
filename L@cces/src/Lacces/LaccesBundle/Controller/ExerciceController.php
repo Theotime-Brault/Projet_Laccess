@@ -173,7 +173,6 @@ class ExerciceController extends Controller
           $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->find($obj_exerciceCId[$idRandom]);
           $obj_reponseCTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmFrId($obj_exerciceCId);
 
-          //Puis on ajoute chaque réponses dans un tableau
           foreach ($obj_reponseCTableauId as $value) {
             $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->find($value);
             array_push($tableauReponses, $reponse->getEnonces());
