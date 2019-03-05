@@ -127,6 +127,7 @@ insert into exerciseqcm_fr (question, solution, word_fr_id) values("Je suis une 
 insert into exerciseqcm_fr (question, solution, word_fr_id) values("Je suis une question", 3, 12);
 insert into exerciseqcm_fr (question, solution, word_fr_id) values("Je suis une question", 1, 13);
 insert into exerciseqcm_fr (question, solution, word_fr_id) values("Je suis une question", 2, 14);
+insert into exerciseqcm_fr (question, solution, word_fr_id) values("Je suis une question", 3, 15);
 insert into exerciseqcm_fr (question, solution, word_fr_id) values("Je suis une question", 1, 16);
 insert into exerciseqcm_fr (question, solution, word_fr_id) values("Je suis une question", 2, 17);
 insert into exerciseqcm_fr (question, solution, word_fr_id) values("Je suis une question", 3, 18);
