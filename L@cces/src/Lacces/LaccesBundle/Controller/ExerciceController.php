@@ -44,6 +44,7 @@ class ExerciceController extends Controller
           $em = $this->getDoctrine()->getManager();
 
           $motAlea = $this->motAleatoire($langue);
+          $motAleaId = $motAlea->getId();
 
           //NE DOIS NORMALEMENT JAMAIS ARRIVER
           if(!$motAlea){
@@ -51,10 +52,9 @@ class ExerciceController extends Controller
             return $this->redirectToRoute('lacces_homepage');
           }
 
-          $motAleaId = $motAlea->getId();
-
           //ON RECUPERE L'OBJET EXERCICE PAR RAPPORT AU MOT ALEATOIRE (FR ou EN)
           if($langue == "en") {
+            //On récupère
             $obj_exerciceA1Id = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEnId($motAleaId);
             $idRandom = rand(0, sizeof($obj_exerciceA1Id) - 1);
             $obj_exerciceA1 = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->find($obj_exerciceA1Id[$idRandom]);
@@ -85,6 +85,7 @@ class ExerciceController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $motAlea = $this->motAleatoire($langue);
+        $motAleaId = $motAlea->getId();
 
         //NE DOIS NORMALEMENT JAMAIS ARRIVER
         if (!$motAlea) {
@@ -92,16 +93,21 @@ class ExerciceController extends Controller
           return $this->redirectToRoute('lacces_homepage');
         }
 
+        //Notre tableau qui contiendra nos réponse à l'exercice
         $tableauReponses = array();
-
-        $motAleaId = $motAlea->getId();
 
         //ON RECUPERE L'OBJET EXERCICE PAR RAPPORT AU MOT ALEATOIRE (FR ou EN)
         if($langue == "en") {
           $obj_exerciceBId = $em->getRepository('LaccesBundle:Exercise\qcmEn')->findByWordEnId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
           $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmEn')->find($obj_exerciceBId[$idRandom]);
-          $obj_reponseB = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmEnId($obj_exerciceBId);
+          $obj_reponseBTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmFrId($obj_exerciceBId);
+
+          foreach ($obj_reponseBTableauId as $value) {
+            $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->find($value);
+            array_push($tableauReponses, $reponse->getEnonces());
+          }
+
         } else {
           $obj_exerciceBId = $em->getRepository('LaccesBundle:Exercise\qcmFr')->findByWordFrId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
@@ -138,14 +144,13 @@ class ExerciceController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $motAlea = $this->motAleatoire($langue);
+        $motAleaId = $motAlea->getId();
 
         //NE DOIS NORMALEMENT JAMAIS ARRIVER
         if (!$motAlea) {
           $this->addFlash('info', "Le mot rechercher n'existe pas.");
           return $this->redirectToRoute('lacces_homepage');
         }
-
-        $motAleaId = $motAlea->getId();
 
         if($langue == "en") {
           $obj_exerciceCId = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->findByWordEnId($motAleaId);
