@@ -49,6 +49,22 @@ class qcmVideoFr
     private $qcmVideoEnoncesFr;
 
     /**
+     * qcmVideoFr constructor.
+     * @param int $id
+     * @param int $solution
+     * @param string $videoLink
+     * @param wordFr $wordFr
+     * @param PersistentCollection $qcmVideoEnoncesFr
+     */
+    public function __construct($solution, $videoLink, wordFr $wordFr, PersistentCollection $qcmVideoEnoncesFr)
+    {
+        $this->solution = $solution;
+        $this->videoLink = $videoLink;
+        $this->wordFr = $wordFr;
+        $this->qcmVideoEnoncesFr = $qcmVideoEnoncesFr;
+    }
+
+    /**
      * Get id.
      *
      * @return int

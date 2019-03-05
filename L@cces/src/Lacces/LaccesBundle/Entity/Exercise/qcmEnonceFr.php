@@ -35,6 +35,19 @@ class qcmEnonceFr
     private $qcmFr;
 
     /**
+     * qcmEnonceFr constructor.
+     * @param int $id
+     * @param string $enonces
+     * @param qcmFr $qcmFr
+     */
+    public function __construct($id, $enonces, qcmFr $qcmFr)
+    {
+        $this->id = $id;
+        $this->enonces = $enonces;
+        $this->qcmFr = $qcmFr;
+    }
+
+    /**
      * Get id
      *
      * @return int

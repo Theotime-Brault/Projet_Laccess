@@ -45,24 +45,70 @@ class EditDataExerciceController extends Controller
 
     public function validExercice(Request $request){
         if ($request -> isXmlHttpRequest()) {
+            $em = $this->getDoctrine()->getManager();
             $ex = $request->request->get('ex');//defini le type d'exercice
             $langue = $request->request->get('langue');
+            $solution = $request->request->get('solution');
+            $word = $request->request->get('word');
 
-            if($ex == 1){
+            switch ($ex){
+                case 1:
+                    $videoLink = $request->request->get('videoLink');
+                    if($langue == "en"){
+                        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
+                        $objEx = new significationVideoEn($solution, $videoLink, $wordEn);
+                        $em->persist($objEx);
+                        $em->flush();
+                    }else{
+                        $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
+                        $objEx = new significationVideoFr($solution, $videoLink, $wordFr);
+                        $em->persist($objEx);
+                        $em->flush();
+                    }
+                    break;
+                case 2:
+                    $enonce = $request->request->get('enonce');
+                    if($langue == "en"){
+                        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
 
-            }elseif ($ex == 2){
+                    }else{
+                        $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
 
-            }elseif ($ex == 3){
+                    }
+                    break;
+                case 3:
+                    $videoLink = $request->request->get('videoLink');
+                    if($langue == "en"){
+                        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
 
-            }elseif ($ex == 4){
+                    }else{
+                        $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
 
-            }else{
-                if($langue == "en"){
-                    return $this->redirectToRoute('lacces_ex__en_add');
-                }else{
-                    return $this->redirectToRoute('lacces_ex__fr_add');
-                }
+                    }
+                    break;
+                case 4:
+                    $enonce = $request->request->get('enonce');
+                    if($langue == "en"){
+                        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
+                        $objEx = new reformulationEn($enonce, $solution, $wordEn);
+                        $em->persist($objEx);
+                        $em->flush();
+                    }else{
+                        $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
+                        $objEx = new reformulationFr($enonce, $solution, $wordFr);
+                        $em->persist($objEx);
+                        $em->flush();
+                    }
+                    break;
+                default:
+                    if($langue == "en"){
+                        return $this->redirectToRoute('lacces_ex__en_add');
+                    }else{
+                        return $this->redirectToRoute('lacces_ex__fr_add');
+                    }
+                    break;
             }
+
             return new JsonResponse('ok');
         }
         return $this->redirectToRoute('administration');

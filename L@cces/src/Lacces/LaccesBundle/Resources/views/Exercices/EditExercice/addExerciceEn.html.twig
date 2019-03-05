@@ -11,7 +11,7 @@
         <h5>Ajout d'un exercice pour un mot anglais</h5>
         <form>
             <label>Mots</label>
-            <select required="required">
+            <select id="words" required="required">
                 <option value="" selected="selected">Selectionner un mot</option>
                 {% for w in words %}
                     <option value="{{ w.id }}">{{ w.word }}</option>
@@ -37,30 +37,70 @@
     <script>
         function submit(){
             var ex = $('#typeEx').val();
-            var enonce = $('#enonce').val();
+            var solution = $('#solution').val();;
+            var wordId = $('#words').val();
 
-            if(ex == 1){
+            switch (ex) {
+                case 1:
+                    var videoLink = $('#videoLink').val();
 
-            }else if(ex == 2){
+                    $.ajax({
+                        cache:false,
+                        type: 'POST',
+                        dataType: 'json',
+                        data:{'word':wordId, 'ex': ex, 'langue':"en", 'solution':solution, 'videoLink':videoLink},
+                        success:function () {
+                        },
+                        error:function () {
+                        }
+                    })
+                    break;
+                case 2:
+                    var enonce = $('#enonce').val();
+                    var otherRep = OtherRepString();
 
-            }else if(ex == 3){
+                    $.ajax({
+                        cache:false,
+                        type: 'POST',
+                        dataType: 'json',
+                        data:{'word':wordId, 'ex': ex, 'langue':"en", 'enonce':enonce, 'solution':solution, 'otherRep':otherRep},
+                        success:function () {
+                        },
+                        error:function () {
+                        }
+                    })
+                    break;
+                case 3:
+                    var videoLink = $('#videoLink').val();
+                    var otherRep = OtherRepString();
 
-            }else if(ex == 4){
-
-            }else{
-                return
+                    $.ajax({
+                        cache:false,
+                        type: 'POST',
+                        dataType: 'json',
+                        data:{'word':wordId, 'ex': ex, 'langue':"en", 'solution':solution, 'videoLink':videoLink, 'otherRep':otherRep},
+                        success:function () {
+                        },
+                        error:function () {
+                        }
+                    })
+                    break;
+                case 4:
+                    $.ajax({
+                        cache:false,
+                        type: 'POST',
+                        dataType: 'json',
+                        data:{'word':wordId, 'ex': ex, 'langue':"en", 'enonce':enonce, 'solution':solution},
+                        success:function () {
+                        },
+                        error:function () {
+                        }
+                    })
+                    break;
+                default:
+                    return;
+                break;
             }
-
-            $.ajax({
-                cache:false,
-                type: 'POST',
-                dataType: 'json',
-                data:{'ex': ex, 'langue':"en", 'enonce':enonce},
-                success:function () {
-                },
-                error:function () {
-                }
-            })
         }
     </script>
 {% endblock %}
