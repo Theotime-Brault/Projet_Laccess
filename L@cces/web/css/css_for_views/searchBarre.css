@@ -110,14 +110,6 @@ input::placeholder
     right: 4rem;
 }
 
-#background-search
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(256, 256, 256, 0.8);
-}
-
 
 
 
