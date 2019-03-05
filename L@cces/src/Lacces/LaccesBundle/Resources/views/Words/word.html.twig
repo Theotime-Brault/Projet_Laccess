@@ -139,10 +139,25 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header flow-text">
+                                <div id="exercice-header" class="collapsible-header flow-text">
                                     Exercice
                                 </div>
-                                <div class="collapsible-body">
+                                <div id="exercice-body" class="collapsible-body">
+                                    <div class="preloader-background center ">
+                                        <div class="preloader-wrapper medium active">
+                                            <div class="spinner-layer spinner-yellow-only">
+                                                <div class="circle-clipper left">
+                                                    <div class="circle"></div>
+                                                </div>
+                                                <div class="gap-patch">
+                                                    <div class="circle"></div>
+                                                </div>
+                                                <div class="circle-clipper right">
+                                                    <div class="circle"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
                             </li>
@@ -176,4 +191,55 @@
 {% block javascripts %}
     <script src="{{ asset('js/js_for_views/word.js') }}"></script>
     <script src="{{ asset('js/js_for_views/searchBarreFocus.js') }}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            $(".preloader-background").hide();
+        });
+
+        $("#exercice-header").click(function () {
+            $("#exercice-body").load(
+                $.ajax({
+                    cache:false,
+                    type: "POST",
+                    dataType: "JSON",
+                    url: "lacces_exerciceA1",
+                    data: {'langue': "{{ langue }}"},
+                    beforeSend: function(){
+                        $(".preloader-background").show();
+                    },
+                    success: function(response)
+                    {
+                        $("#exercice-body").html(response);
+                        $(".preloader-background").hide();
+                    },
+                });
+            );
+        });
+        {#/*
+        $("#exercice-header").click(function () {
+            $("#exercice-body").load(ajaxExercice("{{ path('lacces_exerciceA1') }}", "#exercice-body"));
+        });
+
+        console.log("{{ langue }}");
+
+        function ajaxExercice (path, blockResponse){
+            $.ajax({
+                cache:false,
+                type: "POST",
+                dataType: "JSON",
+                url: path,
+                data: {'langue': "{{ langue }}"},
+                beforeSend: function(){
+                    $(blockResponse).css("visibility", "hidden");
+                    $(".preloader-background").show();
+                },
+                success: function(response)
+                {
+                    $(blockResponse).html(response);
+                    $(".preloader-background").hide();
+                    $(blockResponse).css("visibility", "visible");
+                },
+            });
+        }*/#}
+    </script>
 {% endblock %}

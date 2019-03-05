@@ -41,3 +41,10 @@
 {
     font-size: inherit;
 }
+
+.check-result
+{
+    position: absolute;
+    right: 16px;
+    top: 30%;
+}

@@ -11,13 +11,13 @@ namespace Lacces\LaccesBundle\Repository\Exercise;
 class qcmEnRepository extends \Doctrine\ORM\EntityRepository
 {
 
-  public function findByWordEn ($wordEnId){
-    return $this->createQueryBuilder('c')
-      ->select('c.id')
-      ->where('c.wordEn=:word')
-      ->setParameter('word', $wordEnId)
-      ->getQuery()
-      ->getResult();
-  }
+  public function findByWordEnId ($wordEnId){
+  return $this->createQueryBuilder('c')
+    ->select('c.id')
+    ->where('c.wordEn=:word')
+    ->setParameter('word', $wordEnId)
+    ->getQuery()
+    ->getResult();
+}
 
 }

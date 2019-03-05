@@ -103,14 +103,14 @@ lacces_ex__en_add:
 lacces_exerciceA1:
     path: /exercice/{langue}/A1
     defaults:
-        langue: en
+        langue: fr
         _controller: LaccesBundle:Exercice:exerciceA1
 
 
 lacces_exerciceA2:
     path: /exercice/{langue}/A2
     defaults:
-        langue: en
+        langue: fr
         _controller: LaccesBundle:Exercice:exerciceA2
     requirements:
         langue: fr|en
@@ -118,7 +118,7 @@ lacces_exerciceA2:
 lacces_exerciceB:
     path: /exercice/{langue}/B
     defaults:
-        langue: en
+        langue: fr
         _controller: LaccesBundle:Exercice:exerciceB
     requirements:
         langue: fr|en

@@ -1,10 +1,25 @@
 <div class="col s12 m12 l8 offset-l2">
-    <h2></h2>
-    <ul>
-    </ul>
+    <div class="card">
+        <div class="card-content center black-text flow-text">
+            <p>
+                QCM. Cocher la bonne réponse
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">
+            <p class="flow-text black-text">
+                {{ obj_exerciceB.question }}
+            </p>
+        </div>
+        <div class="card-content">
+            {% for item in tableauReponses %}
+                {{ item }}
+            {% endfor %}
+        </div>
+    </div>
 </div>
-
-
 
 <script>
 </script>

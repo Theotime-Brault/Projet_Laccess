@@ -10,4 +10,12 @@ namespace Lacces\LaccesBundle\Repository\Exercise;
  */
 class qcmVideoFrRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function findByWordFrId ($wordFrId){
+    return $this->createQueryBuilder('c')
+      ->select('c.id')
+      ->where('c.wordFr=:word')
+      ->setParameter('word', $wordFrId)
+      ->getQuery()
+      ->getResult();
+  }
 }

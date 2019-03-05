@@ -10,4 +10,12 @@ namespace Lacces\LaccesBundle\Repository\Exercise;
  */
 class qcmEnonceFrRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function findByQcmFrId ($qcmFrId){
+    return $this->createQueryBuilder('c')
+      ->select('c.id')
+      ->where('c.qcmFr=:word')
+      ->setParameter('word', $qcmFrId)
+      ->getQuery()
+      ->getResult();
+  }
 }

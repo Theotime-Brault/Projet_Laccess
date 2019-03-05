@@ -2,14 +2,13 @@
     <div class="card">
         <div class="card-content center black-text flow-text">
             <p>
-                {{ obj_exerciceA1.question }}
+                Regardez la vidéo ASL et trouvez la phrase signée en anglais
             </p>
         </div>
     </div>
-
     <div class="card">
         <div class="card-title">
-            <p id="word" class="flow-text center black-text" data-word="{{ word }}">
+            <p id="word" class="flow-text center black-text">
                 {{ word }}
             </p>
         </div>
@@ -27,10 +26,16 @@
         <div class="card-action hide">
             <button id="revoir-video" class="btn waves-effect background-color-orange-lacces">Revoir la vidéo</button>
             <button id="envoyer" class="btn waves-effect background-color-orange-lacces">Envoyez</button>
+            <div class="check-result right">
+                <i id="result-done" class="result material-icons small green-text">done</i>
+                <i id="result-clear" class="result material-icons small red-text">clear</i>
+            </div>
         </div>
     </div>
 </div>
 <script>
+    $(".result").hide();
+
     $("#proposition").on("focus", function () {
         $(".card-image").slideUp(200);
         $(".card-action").removeClass("hide");
@@ -41,13 +46,24 @@
         $(".card-action").addClass("hide");
     });
 
-    $("#envoyer").on("click", function () {
-        var valueIn = $("#proposition").val();
-        var word = $("#word").attr("data-word");
-        if(word === valueIn) {
-            console.log("ça FONCTIONNE");
+    $("#proposition").keyup(function(e) {
+        if (e.keyCode == 13) {
+            check();
         }
     });
 
+    $("#envoyer").on("click", function () {
+        check();
+    });
 
+    function check(){
+        var valueIn = $("#proposition").val();
+        if(valueIn === "{{ obj_exerciceA1.solution }}") {
+            $("#result-clear").hide();
+            $("#result-done").show();
+        } else {
+            $("#result-done").hide();
+            $("#result-clear").show();
+        }
+    }
 </script>
