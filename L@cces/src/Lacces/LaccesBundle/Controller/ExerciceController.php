@@ -167,14 +167,17 @@ class ExerciceController extends Controller
         //Notre tableau qui contiendra nos réponse à l'exercice
         $tableauReponses = array();
 
+
+        //Même principe que l'exercice B
+
         if($langue == "en") {
           $obj_exerciceCId = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->findByWordEnId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceCId) - 1);
           $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->find($obj_exerciceCId[$idRandom]);
-          $obj_reponseCTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmFrId($obj_exerciceCId);
+          $obj_reponseCTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoEn')->findByQcmVideoEnId($obj_exerciceCId);
 
           foreach ($obj_reponseCTableauId as $value) {
-            $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->find($value);
+            $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoEn')->find($value);
             array_push($tableauReponses, $reponse->getEnonces());
           }
 
@@ -182,10 +185,10 @@ class ExerciceController extends Controller
           $obj_exerciceCId = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->findByWordFrId($motAleaId);
           $idRandom = rand(0, sizeof($obj_exerciceCId) - 1);
           $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->find($obj_exerciceCId[$idRandom]);
-          $obj_reponseCTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findByQcmFrId($obj_exerciceCId);
+          $obj_reponseCTableauId = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoFr')->findByQcmVideoFrId($obj_exerciceCId);
 
           foreach ($obj_reponseCTableauId as $value) {
-            $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->find($value);
+            $reponse = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoFr')->find($value);
             array_push($tableauReponses, $reponse->getEnonces());
           }
         }

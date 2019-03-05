@@ -10,4 +10,12 @@ namespace Lacces\LaccesBundle\Repository\Exercise;
  */
 class qcmEnonceVideoEnRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function findByQcmVideoEnId ($qcmVideoEnId){
+    return $this->createQueryBuilder('c')
+      ->select('c.id')
+      ->where('c.qcmVideoEn=:word')
+      ->setParameter('word', $qcmVideoEnId)
+      ->getQuery()
+      ->getResult();
+  }
 }
