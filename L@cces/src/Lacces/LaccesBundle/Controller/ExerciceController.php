@@ -37,43 +37,74 @@ class ExerciceController extends Controller
 
     public function exerciceA1Action(Request $request)
     {
-      $langue = $request->request->get('langue');
+      $langue = $request->get('langue');
 
         if($langue == "fr" || $langue == "en") {
 
-            $em = $this->getDoctrine()->getManager();
+          $em = $this->getDoctrine()->getManager();
 
-            $motAlea = $this->motAleatoire($langue);
-            $motAleaId = $motAlea->getId();
+          $motAlea = $this->motAleatoire($langue);
 
-            $obj_exerciceA1Id = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEnId($motAleaId);
-            $idRandom = rand(0, sizeof($obj_exerciceA1Id) - 1);
-            $obj_exerciceA1 = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->find($obj_exerciceA1Id[$idRandom]);
+          //NE DOIS NORMALEMENT JAMAIS ARRIVER
+          if(!$motAlea){
+            $this->addFlash('info', "Le mot rechercher n'existe pas.");
+            return $this->redirectToRoute('lacces_homepage');
+          }
 
-            //NE DOIS NORMALEMENT JAMAIS ARRIVER
-            if(!$motAlea){
-                $this->addFlash('info', "Le mot rechercher n'existe pas.");
-                return $this->redirectToRoute('lacces_homepage');
-            }
+          $motAleaId = $motAlea->getId();
 
-            if($request->isXmlHttpRequest()){
-                $render =  $this->renderView('@Lacces/Exercices/Types/exerciceA1.html.twig', array(
-                    'word' => $motAlea->getWord(),
-                    'obj_exerciceA1' => $obj_exerciceA1,
-                ));
-                return new JsonResponse($render);
-            }else{
-                return $this->redirectToRoute('lacces_homepage');
-            }
+          $obj_exerciceA1Id = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEnId($motAleaId);
+          $idRandom = rand(0, sizeof($obj_exerciceA1Id) - 1);
+          $obj_exerciceA1 = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->find($obj_exerciceA1Id[$idRandom]);
+
+          if($request->isXmlHttpRequest()){
+            $render =  $this->renderView('@Lacces/Exercices/Types/exerciceA1.html.twig', array(
+              'word' => $motAlea->getWord(),
+              'obj_exerciceA1' => $obj_exerciceA1,
+            ));
+            return new JsonResponse($render);
+          }else{
+            return $this->redirectToRoute('lacces_homepage');
+          }
         }
     }
 
-    public function exerciceBAction() {
+    public function exerciceBAction(Request $request) {
 
-      $em = $this->getDoctrine()->getManager();
+      $langue = $request->get('langue');
 
-      $exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmEn')->findByWordEn();
+      if($langue == "fr" || $langue == "en") {
 
-      return $this->renderView('@Lacces/Exercices/Types/exerciceA1.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $motAlea = $this->motAleatoire($langue);
+        //NE DOIS NORMALEMENT JAMAIS ARRIVER
+        if (!$motAlea) {
+          $this->addFlash('info', "Le mot rechercher n'existe pas.");
+          return $this->redirectToRoute('lacces_homepage');
+        }
+
+        $motAleaId = $motAlea->getId();
+
+        $obj_exerciceBId = $em->getRepository('LaccesBundle:Exercise\qcmEn')->findByWordEnId($motAleaId);
+        $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
+        $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmEn')->find($obj_exerciceBId[$idRandom]);
+
+        if($request->isXmlHttpRequest()){
+          $render =  $this->renderView('@Lacces/Exercices/Types/exerciceB.html.twig', array(
+            'word' => $motAlea->getWord(),
+            'obj_exerciceB' => $obj_exerciceB,
+          ));
+          return new JsonResponse($render);
+        }else{
+          return $this->redirectToRoute('lacces_homepage');
+        }
+      }
+
+      return $this->renderView('@Lacces/Exercices/Types/exerciceB.html.twig');
+    }
+
+    public function exerciceCAction(Request $request) {
+
     }
 }
