@@ -42,6 +42,20 @@ class reformulationFr
      */
     private $wordFr;
 
+    /**
+     * reformulationFr constructor.
+     * @param int $id
+     * @param string $question
+     * @param string $solution
+     * @param wordFr $wordFr
+     */
+    public function __construct($question, $solution, wordFr $wordFr)
+    {
+        $this->question = $question;
+        $this->solution = $solution;
+        $this->wordFr = $wordFr;
+    }
+
 
     /**
      * Get id.

@@ -50,6 +50,23 @@ class qcmEn
     private $qcmEnoncesEn;
 
     /**
+     * qcmEn constructor.
+     * @param int $id
+     * @param string $question
+     * @param int $solution
+     * @param wordEn $wordEn
+     * @param PersistentCollection $qcmEnoncesEn
+     */
+    public function __construct($id, $question, $solution, wordEn $wordEn, PersistentCollection $qcmEnoncesEn)
+    {
+        $this->id = $id;
+        $this->question = $question;
+        $this->solution = $solution;
+        $this->wordEn = $wordEn;
+        $this->qcmEnoncesEn = $qcmEnoncesEn;
+    }
+
+    /**
      * Get id
      *
      * @return int

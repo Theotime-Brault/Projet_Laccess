@@ -48,6 +48,23 @@ class qcmVideoEn
     private $qcmVideoEnoncesEn;
 
     /**
+     * qcmVideoEn constructor.
+     * @param int $id
+     * @param int $solution
+     * @param string $videoLink
+     * @param wordEn $wordEn
+     * @param PersistentCollection $qcmVideoEnoncesEn
+     */
+    public function __construct($id, $solution, $videoLink, wordEn $wordEn, PersistentCollection $qcmVideoEnoncesEn)
+    {
+        $this->id = $id;
+        $this->solution = $solution;
+        $this->videoLink = $videoLink;
+        $this->wordEn = $wordEn;
+        $this->qcmVideoEnoncesEn = $qcmVideoEnoncesEn;
+    }
+
+    /**
      * Get id.
      *
      * @return int

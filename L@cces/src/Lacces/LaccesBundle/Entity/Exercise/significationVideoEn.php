@@ -41,6 +41,20 @@ class significationVideoEn
      */
     private $wordEn;
 
+    /**
+     * significationVideoEn constructor.
+     * @param int $id
+     * @param string $solution
+     * @param string $videoLink
+     * @param wordEn $wordEn
+     */
+    public function __construct($solution, $videoLink, wordEn $wordEn)
+    {
+        $this->solution = $solution;
+        $this->videoLink = $videoLink;
+        $this->wordEn = $wordEn;
+    }
+
 
     /**
      * Get id.

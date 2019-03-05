@@ -42,6 +42,20 @@ class reformulationEn
     private $wordEn;
 
     /**
+     * reformulationEn constructor.
+     * @param int $id
+     * @param string $question
+     * @param string $solution
+     * @param wordEn $wordEn
+     */
+    public function __construct($question, $solution, wordEn $wordEn)
+    {
+        $this->question = $question;
+        $this->solution = $solution;
+        $this->wordEn = $wordEn;
+    }
+
+    /**
      * Get id.
      *
      * @return int

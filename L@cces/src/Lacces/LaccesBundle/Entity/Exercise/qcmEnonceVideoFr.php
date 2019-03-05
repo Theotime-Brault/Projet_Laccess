@@ -34,6 +34,36 @@ class qcmEnonceVideoFr
      */
     private $qcmVideoFr;
 
+    /**
+     * qcmEnonceVideoFr constructor.
+     * @param int $id
+     * @param string $enonces
+     * @param qcmVideoFr $qcmVideoFr
+     */
+    public function __construct($id, $enonces, qcmVideoFr $qcmVideoFr)
+    {
+        $this->id = $id;
+        $this->enonces = $enonces;
+        $this->qcmVideoFr = $qcmVideoFr;
+    }
+
+
+    /**
+     * @return qcmVideoFr
+     */
+    public function getQcmVideoFr()
+    {
+        return $this->qcmVideoFr;
+    }
+
+    /**
+     * @param qcmVideoFr $qcmVideoFr
+     */
+    public function setQcmVideoFr($qcmVideoFr)
+    {
+        $this->qcmVideoFr = $qcmVideoFr;
+    }
+
 
     /**
      * Get id.
