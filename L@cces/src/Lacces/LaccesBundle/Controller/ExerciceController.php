@@ -53,9 +53,16 @@ class ExerciceController extends Controller
 
           $motAleaId = $motAlea->getId();
 
-          $obj_exerciceA1Id = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEnId($motAleaId);
-          $idRandom = rand(0, sizeof($obj_exerciceA1Id) - 1);
-          $obj_exerciceA1 = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->find($obj_exerciceA1Id[$idRandom]);
+          //ON RECUPERE L'OBJET EXERCICE PAR RAPPORT AU MOT ALEATOIRE (FR ou EN)
+          if($langue == "en") {
+            $obj_exerciceA1Id = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEnId($motAleaId);
+            $idRandom = rand(0, sizeof($obj_exerciceA1Id) - 1);
+            $obj_exerciceA1 = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->find($obj_exerciceA1Id[$idRandom]);
+          } else {
+            $obj_exerciceA1Id = $em->getRepository('LaccesBundle:Exercise\significationVideoFr')->findByWordFrId($motAleaId);
+            $idRandom = rand(0, sizeof($obj_exerciceA1Id) - 1);
+            $obj_exerciceA1 = $em->getRepository('LaccesBundle:Exercise\significationVideoFr')->find($obj_exerciceA1Id[$idRandom]);
+          }
 
           if($request->isXmlHttpRequest()){
             $render =  $this->renderView('@Lacces/Exercices/Types/exerciceA1.html.twig', array(
@@ -78,6 +85,7 @@ class ExerciceController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $motAlea = $this->motAleatoire($langue);
+
         //NE DOIS NORMALEMENT JAMAIS ARRIVER
         if (!$motAlea) {
           $this->addFlash('info', "Le mot rechercher n'existe pas.");
@@ -86,9 +94,16 @@ class ExerciceController extends Controller
 
         $motAleaId = $motAlea->getId();
 
-        $obj_exerciceBId = $em->getRepository('LaccesBundle:Exercise\qcmEn')->findByWordEnId($motAleaId);
-        $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
-        $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmEn')->find($obj_exerciceBId[$idRandom]);
+        //ON RECUPERE L'OBJET EXERCICE PAR RAPPORT AU MOT ALEATOIRE (FR ou EN)
+        if($langue == "en") {
+          $obj_exerciceBId = $em->getRepository('LaccesBundle:Exercise\qcmEn')->findByWordEnId($motAleaId);
+          $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
+          $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmEn')->find($obj_exerciceBId[$idRandom]);
+        } else {
+          $obj_exerciceBId = $em->getRepository('LaccesBundle:Exercise\qcmFr')->findByWordFrId($motAleaId);
+          $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
+          $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmFr')->find($obj_exerciceBId[$idRandom]);
+        }
 
         if($request->isXmlHttpRequest()){
           $render =  $this->renderView('@Lacces/Exercices/Types/exerciceB.html.twig', array(
@@ -106,5 +121,43 @@ class ExerciceController extends Controller
 
     public function exerciceCAction(Request $request) {
 
+      $langue = $request->get('langue');
+
+      if($langue == "fr" || $langue == "en") {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $motAlea = $this->motAleatoire($langue);
+
+        //NE DOIS NORMALEMENT JAMAIS ARRIVER
+        if (!$motAlea) {
+          $this->addFlash('info', "Le mot rechercher n'existe pas.");
+          return $this->redirectToRoute('lacces_homepage');
+        }
+
+        $motAleaId = $motAlea->getId();
+
+        if($langue == "en") {
+          $obj_exerciceCId = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->findByWordEnId($motAleaId);
+          $idRandom = rand(0, sizeof($obj_exerciceCId) - 1);
+          $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->find($obj_exerciceCId[$idRandom]);
+        } else {
+          $obj_exerciceCId = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->findByWordFrId($motAleaId);
+          $idRandom = rand(0, sizeof($obj_exerciceCId) - 1);
+          $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->find($obj_exerciceCId[$idRandom]);
+        }
+
+
+        if($request->isXmlHttpRequest()){
+          $render =  $this->renderView('@Lacces/Exercices/Types/exerciceC.html.twig', array(
+            'word' => $motAlea->getWord(),
+            'obj_exerciceC' => $obj_exerciceC,
+          ));
+          return new JsonResponse($render);
+        }else{
+          return $this->redirectToRoute('lacces_homepage');
+        }
+      }
+      return $this->renderView('@Lacces/Exercices/Types/exerciceC.html.twig');
     }
 }
