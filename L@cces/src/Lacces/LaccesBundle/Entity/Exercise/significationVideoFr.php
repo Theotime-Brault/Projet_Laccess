@@ -25,13 +25,6 @@ class significationVideoFr
     /**
      * @var string
      *
-     * @ORM\Column(name="question", type="string", length=255)
-     */
-    private $question;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="solution", type="string", length=255)
      */
     private $solution;
@@ -58,30 +51,6 @@ class significationVideoFr
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set question.
-     *
-     * @param string $question
-     *
-     * @return significationVideoFr
-     */
-    public function setQuestion($question)
-    {
-        $this->question = $question;
-
-        return $this;
-    }
-
-    /**
-     * Get question.
-     *
-     * @return string
-     */
-    public function getQuestion()
-    {
-        return $this->question;
     }
 
     /**

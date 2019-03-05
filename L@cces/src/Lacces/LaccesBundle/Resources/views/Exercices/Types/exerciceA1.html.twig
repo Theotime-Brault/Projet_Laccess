@@ -36,6 +36,11 @@
         $(".card-action").removeClass("hide");
     });
 
+    $("#revoir-video").on("click", function () {
+        $(".card-image").slideDown(300);
+        $(".card-action").addClass("hide");
+    });
+
     $("#envoyer").on("click", function () {
         var valueIn = $("#proposition").val();
         var word = $("#word").attr("data-word");
@@ -44,8 +49,5 @@
         }
     });
 
-    $("#revoir-video").on("click", function () {
-        $(".card-image").slideDown(300);
-        $(".card-action").addClass("hide");
-    });
+
 </script>
