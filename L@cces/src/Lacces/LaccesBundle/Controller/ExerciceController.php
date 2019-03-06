@@ -78,6 +78,43 @@ class ExerciceController extends Controller
 
     public function exerciceA2Action(Request $request) {
 
+      $langue = $request->get('langue');
+
+      if($langue == "fr" || $langue == "en") {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $motAlea = $this->motAleatoire($langue);
+        $motAleaId = $motAlea->getId();
+
+        //NE DOIS NORMALEMENT JAMAIS ARRIVER
+        if(!$motAlea){
+          $this->addFlash('info', "Le mot rechercher n'existe pas.");
+          return $this->redirectToRoute('lacces_homepage');
+        }
+
+        //ON RECUPERE L'OBJET EXERCICE PAR RAPPORT AU MOT ALEATOIRE (FR ou EN)
+        if($langue == "en") {
+
+          $obj_exerciceA2Id = $em->getRepository('LaccesBundle:Exercise\comparaisonVideoEn')->findByWordEnId($motAleaId);
+          $idRandom = rand(0, sizeof($obj_exerciceA2Id) - 1);
+          $obj_exerciceA2 = $em->getRepository('LaccesBundle:Exercise\comparaisonVideoEn')->find($obj_exerciceA2Id[$idRandom]);
+        } else {
+          $obj_exerciceA2Id = $em->getRepository('LaccesBundle:Exercise\comparaisonVideoFr')->findByWordFrId($motAleaId);
+          $idRandom = rand(0, sizeof($obj_exerciceA2Id) - 1);
+          $obj_exerciceA2 = $em->getRepository('LaccesBundle:Exercise\comparaisonVideoFr')->find($obj_exerciceA2Id[$idRandom]);
+        }
+
+        if($request->isXmlHttpRequest()){
+          $render =  $this->renderView('@Lacces/Exercices/Types/exerciceA2.html.twig', array(
+            'word' => $motAlea->getWord(),
+            'obj_exerciceA1' => $obj_exerciceA2,
+          ));
+          return new JsonResponse($render);
+        }else{
+          return $this->redirectToRoute('lacces_homepage');
+        }
+      }
     }
 
     public function exerciceBAction(Request $request) {
