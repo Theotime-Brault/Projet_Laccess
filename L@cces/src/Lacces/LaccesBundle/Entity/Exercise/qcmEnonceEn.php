@@ -40,9 +40,8 @@ class qcmEnonceEn
      * @param string $enonces
      * @param qcmEn $qcmEn
      */
-    public function __construct($id, $enonces, qcmEn $qcmEn)
+    public function __construct($enonces, qcmEn $qcmEn)
     {
-        $this->id = $id;
         $this->enonces = $enonces;
         $this->qcmEn = $qcmEn;
     }

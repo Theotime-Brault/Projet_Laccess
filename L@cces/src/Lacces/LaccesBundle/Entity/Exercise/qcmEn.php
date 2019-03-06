@@ -51,19 +51,13 @@ class qcmEn
 
     /**
      * qcmEn constructor.
-     * @param int $id
      * @param string $question
-     * @param int $solution
      * @param wordEn $wordEn
-     * @param PersistentCollection $qcmEnoncesEn
      */
-    public function __construct($id, $question, $solution, wordEn $wordEn, PersistentCollection $qcmEnoncesEn)
+    public function __construct($question, wordEn $wordEn)
     {
-        $this->id = $id;
         $this->question = $question;
-        $this->solution = $solution;
         $this->wordEn = $wordEn;
-        $this->qcmEnoncesEn = $qcmEnoncesEn;
     }
 
     /**

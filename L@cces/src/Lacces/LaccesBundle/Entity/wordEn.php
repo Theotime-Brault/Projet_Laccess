@@ -81,6 +81,28 @@ class wordEn
     private $significationsVideoEn;
 
     /**
+     * @var PersistentCollection
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\comparaisonVideoEn", mappedBy="wordEn", cascade={"persist", "remove"})
+     */
+    private $comparaisonsVideoEn;
+
+    /**
+     * @return PersistentCollection
+     */
+    public function getComparaisonsVideoEn()
+    {
+        return $this->comparaisonsVideoEn;
+    }
+
+    /**
+     * @param PersistentCollection $comparaisonsVideoEn
+     */
+    public function setComparaisonsVideoEn($comparaisonsVideoEn)
+    {
+        $this->comparaisonsVideoEn = $comparaisonsVideoEn;
+    }
+
+    /**
      * Get id.
      *
      * @return int

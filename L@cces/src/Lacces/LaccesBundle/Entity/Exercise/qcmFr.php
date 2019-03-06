@@ -51,19 +51,14 @@ class qcmFr
 
     /**
      * qcmFr constructor.
-     * @param int $id
      * @param string $question
      * @param int $solution
      * @param wordFr $wordFr
-     * @param PersistentCollection $qcmEnoncesFr
      */
-    public function __construct($id, $question, $solution, wordFr $wordFr, PersistentCollection $qcmEnoncesFr)
+    public function __construct($question, wordFr $wordFr)
     {
-        $this->id = $id;
         $this->question = $question;
-        $this->solution = $solution;
         $this->wordFr = $wordFr;
-        $this->qcmEnoncesFr = $qcmEnoncesFr;
     }
 
 
