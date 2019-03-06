@@ -15,7 +15,7 @@ $('#typeEx').change(function () {
                 "<label>Bonne réponse</label>" +
                 "<input id='solution' required=\"required\" type=\"text\" placeholder='entrer la bonne réponse'></input>" +
                 "<label>Autre réponse</label>" +
-                "<input class='otherRep' required=\"required\" type=\"text\" placeholder='entrer une autre réponse'></input>"
+                "<div class='row'><input class='otherRep col s11' required=\"required\" type=\"text\" placeholder='entrer une autre réponse'></input><div id='ajouterChamp' class='col s1'></div></div>"
             )
             break;
         case '3':
@@ -25,7 +25,7 @@ $('#typeEx').change(function () {
                 "<label>Bonne réponse</label>" +
                 "<input id='solution' required=\"required\" type=\"text\" placeholder='entrer la bonne réponse'></input>" +
                 "<label>Autre réponse</label>" +
-                "<input class='otherRep' required=\"required\" type=\"text\" placeholder='entrer une autre réponse'></input>"
+                "<div class='row'><input class='otherRep col s11' required=\"required\" type=\"text\" placeholder='entrer une autre réponse'></input><div id='ajouterChamp' class='col s1'></div></div>"
             )
             break;
         case '4':
@@ -42,8 +42,7 @@ $('#typeEx').change(function () {
     }
 
     if($('#typeEx option:selected').val() == '2' || $('#typeEx option:selected').val() == '3'){
-        $('.add').remove();
-        $('form').after("<button class='background-color-orange-lacces add material-icons' onclick='ajouter()'><i>add</i></button>")
+        $('#ajouterChamp').html("<a class='btn background-color-orange-lacces' onclick='ajouter()'><i class='material-icons'>add</i></a>")
     }else{
         $('.add').remove();
     }
@@ -51,10 +50,10 @@ $('#typeEx').change(function () {
 
 function ajouter() {
     $('#valid').before(
-        "<span>" +
-        "<input required=\"required\" class='add otherRep' type=\"text\" placeholder='entrer une autre réponse'></input>" +
-        "</span>" +
-        "<a><i class='material-icons'>remove</i></a>"
+        "<div class='row add'>" +
+        "<input required=\"required\" class='otherRep col s11' type=\"text\" placeholder='entrer une autre réponse'></input>" +
+        "<a class='btn background-color-orange-lacces col s1'><i class='material-icons'>remove</i></a>" +
+        "</div>"
     )
 };
 
