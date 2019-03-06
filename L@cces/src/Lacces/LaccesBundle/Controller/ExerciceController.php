@@ -54,7 +54,7 @@ class ExerciceController extends Controller
 
           //ON RECUPERE L'OBJET EXERCICE PAR RAPPORT AU MOT ALEATOIRE (FR ou EN)
           if($langue == "en") {
-            //On récupère
+
             $obj_exerciceA1Id = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEnId($motAleaId);
             $idRandom = rand(0, sizeof($obj_exerciceA1Id) - 1);
             $obj_exerciceA1 = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->find($obj_exerciceA1Id[$idRandom]);

@@ -430,3 +430,63 @@ insert into exercisereformulation_fr (question, solution, word_fr_id) values("s'
 insert into exercisereformulation_fr (question, solution, word_fr_id) values("s'il la te tu fermer tu plaît ? porte peux-", "Peux-tu fermer la porte s'il te plaît ?", 16);
 insert into exercisereformulation_fr (question, solution, word_fr_id) values("mon je dessiner pour crayon prendre vais", "Je vais prendre mon crayon pour dessiner", 17);
 insert into exercisereformulation_fr (question, solution, word_fr_id) values("règles y il respecter a à des", "il y a des règles à respecter", 18);
+
+
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(1, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Mon père a une voiture bleu");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(2, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "j'adore apprendre des mots");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(3, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Oui je suis d'accord");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(4, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Ce soir je mange de la viande");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(5, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Mes jouets sont à vendre");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(6, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "La Terre est ronde");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(7, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Les souris ont peur des chats");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(8, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Un canard nage dans un lac");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(9, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Je vais t'envoyer un colis demain");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(10, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "tirer sur des cibles");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(11, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Non je ne suis pas d'accord");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(12, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Bonjour tout le monde");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(13, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Bonsoir tout le monde");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(14, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Montre-moi ton dessin");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(15, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Peux-tu ouvrir la porte ?");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(16, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Peux-tu fermer la porte ?");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(17, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "J'utilise un crayon pour dessiner");
+insert into exercisecomparaison_video_fr (word_fr_id, videoLink, contextSentence) values(18, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Il y a des règles à respecter");
+
+
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(1, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "My father have a blue car");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(2, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "I love to learn words");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(3, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Yes i'm agree");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(4, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Tonight I will eat meat");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(5, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "My toys are for sale");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(6, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Earth is round");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(7, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Mouses are afraid of cats");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(8, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "A duck swing in a lake");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(9, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "I will send you a package tomorrow");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(10, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "To shoot on target");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(11, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "No I'm not agree");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(12, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Good morning everybody");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(13, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Good afternoon everybody");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(14, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Show me your draws");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(15, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Can you open the door ?");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(16, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Can you close the door ?");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(17, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "I use a pencil to draw");
+insert into exercisecomparaison_video_en (word_en_id, videoLink, contextSentence) values(18, "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "There are rules to respect");
+
+
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(1, 1);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(2, 2);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(3, 3);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(4, 4);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(5, 5);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(6, 6);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(7, 7);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(8, 8);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(9, 9);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(10, 10);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(11, 11);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(12, 12);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(13, 13);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(14, 14);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(15, 15);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(16, 16);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(17, 17);
+insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(18, 18);
