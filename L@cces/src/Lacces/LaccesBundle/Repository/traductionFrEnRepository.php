@@ -17,4 +17,5 @@ class traductionFrEnRepository extends EntityRepository
     {
         parent::__construct($registry, traductionFrEn::class);
     }
+
 }
