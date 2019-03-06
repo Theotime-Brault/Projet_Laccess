@@ -46,7 +46,7 @@
 {
     position: absolute;
     right: 16px;
-    top: 30%;
+    top: 25%;
 }
 
 .card-title p
@@ -54,9 +54,13 @@
     margin: 8px;
 }
 
-.container-qcm
+.container-qcm, .action-btn
 {
     display: flex;
     align-items: center;
+}
+
+.container-qcm
+{
     justify-content: space-between;
 }

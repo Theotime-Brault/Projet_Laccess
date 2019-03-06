@@ -13,6 +13,8 @@
         {% block stylesheets %}
         {% endblock %}
         <script src="{{ asset('js/jquery_materialize/jquery.js') }}"></script>
+        <script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>
+        <script src="{{ asset('js/js_for_views/base.js') }}"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <meta name="theme-color" content="#f4a733">
@@ -109,7 +111,11 @@
                     </li>
                 </ul>
             </li>
-            <li class="bold">
+            {% if app.request.attributes.get('_route') == 'lacces_exercices' %}
+            <li class="bold active active-item-menu background-color-orange-lacces">
+            {% else %}
+            <li class="bold white">
+                {% endif %}
                 <a class="waves-effect exercices" href="{{ asset('exercices') }}">Exercices</a>
             </li>
                 {#
@@ -171,8 +177,7 @@
         {% endblock %}
     </body>
 
-    <script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>
-    <script src="{{ asset('js/js_for_views/base.js') }}"></script>
+
     {% block javascripts %}
     {% endblock %}
 </html>
