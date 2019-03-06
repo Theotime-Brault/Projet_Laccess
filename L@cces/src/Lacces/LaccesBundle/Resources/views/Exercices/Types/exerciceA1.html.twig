@@ -65,10 +65,6 @@
         check();
     });
 
-    $("#refresh").click(function () {
-        $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1') }}", "#exerciceA1"));
-    });
-
     function check(){
         var valueIn = $("#proposition").val();
         if(valueIn === "{{ obj_exerciceA1.solution }}") {
