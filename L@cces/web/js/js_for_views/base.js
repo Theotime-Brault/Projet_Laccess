@@ -14,6 +14,10 @@ $(document).ready(function () {
         coverTrigger: false,
     });
 
+    $('#material-icons-dropdown-flag').dropdown({
+        coverTrigger: false,
+    });
+
     $(".exercices").on("click", function(){
 
     });

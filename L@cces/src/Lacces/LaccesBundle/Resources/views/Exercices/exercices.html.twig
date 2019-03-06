@@ -65,6 +65,11 @@
 
 {% block javascripts %}
     <script>
+
+        $(document).ready(function(){
+            $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1') }}", "#exerciceA1"));
+        });
+
         $(".tabs").tabs();
 
         document.addEventListener("DOMContentLoaded", function(){
