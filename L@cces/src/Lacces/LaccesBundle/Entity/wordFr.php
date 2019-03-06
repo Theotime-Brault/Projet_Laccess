@@ -84,6 +84,28 @@ class wordFr
     private $significationsVideoFr;
 
     /**
+     * @var PersistentCollection
+     * @ORM\OneToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\comparaisonVideoFr", mappedBy="wordFr", cascade={"persist", "remove"})
+     */
+    private $comparaisonsVideoFr;
+
+    /**
+     * @return PersistentCollection
+     */
+    public function getComparaisonsVideoFr()
+    {
+        return $this->comparaisonsVideoFr;
+    }
+
+    /**
+     * @param PersistentCollection $comparaisonsVideoFr
+     */
+    public function setComparaisonsVideoFr($comparaisonsVideoFr)
+    {
+        $this->comparaisonsVideoFr = $comparaisonsVideoFr;
+    }
+
+    /**
      * Get id.
      *
      * @return int
@@ -111,7 +133,6 @@ class wordFr
      * Set word.
      *
      * @param string $word
-     *
      * @return wordFr
      */
     public function setWord($word)

@@ -3,6 +3,8 @@
 namespace Lacces\LaccesBundle\Entity\Exercise;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
+use Lacces\LaccesBundle\Entity\wordEn;
 
 /**
  * comparaisonVideoEn
@@ -35,6 +37,49 @@ class comparaisonVideoEn
      */
     private $contextSentence;
 
+    /**
+     * @var wordEn
+     * @ORM\ManyToOne(targetEntity="Lacces\LaccesBundle\Entity\wordEn", inversedBy="comparaisonsVideoEn")
+     */
+    private $wordEn;
+
+    /**
+     * @var PersistentCollection
+     * @ORM\ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\Exercise\comparaisonVideoFr", mappedBy="comparaisonsVideoEn", cascade={"persist", "remove"})
+     */
+    private $comparaisonsVideoFr;
+
+    /**
+     * @return PersistentCollection
+     */
+    public function getComparaisonsVideoFr()
+    {
+        return $this->comparaisonsVideoFr;
+    }
+
+    /**
+     * @param PersistentCollection $comparaisonsVideoFr
+     */
+    public function setComparaisonsVideoFr($comparaisonsVideoFr)
+    {
+        $this->comparaisonsVideoFr = $comparaisonsVideoFr;
+    }
+
+    /**
+     * @return wordEn
+     */
+    public function getWordEn()
+    {
+        return $this->wordEn;
+    }
+
+    /**
+     * @param wordEn $wordEn
+     */
+    public function setWordEn($wordEn)
+    {
+        $this->wordEn = $wordEn;
+    }
 
     /**
      * Get id.

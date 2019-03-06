@@ -9,6 +9,7 @@
 namespace Lacces\LaccesBundle\Controller;
 
 use Lacces\LaccesBundle\Entity\Exercise\qcmEn;
+use Lacces\LaccesBundle\Entity\Exercise\qcmEnonceEn;
 use Lacces\LaccesBundle\Entity\Exercise\qcmVideoEn;
 use Lacces\LaccesBundle\Entity\Exercise\reformulationEn;
 use Lacces\LaccesBundle\Entity\Exercise\significationVideoEn;
@@ -68,8 +69,18 @@ class EditDataExerciceController extends Controller
                     break;
                 case 2:
                     $enonce = $request->request->get('enonce');
+                    $reponses = $request->request->get('otherRep');
+                    $tabReponse = explode("_", $reponses);
                     if($langue == "en"){
                         $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
+                        $objEx = new qcmEn($enonce, $wordEn);
+                        $em->persist($objEx);
+                        $em->flush();
+                        foreach ($tabReponse as $r){
+                            $objRep = new qcmEnonceEn($r, $objEx);
+                            //apres avoir persist recupere l'id du premier enonceè
+                        }
+
 
                     }else{
                         $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
@@ -78,6 +89,8 @@ class EditDataExerciceController extends Controller
                     break;
                 case 3:
                     $videoLink = $request->request->get('videoLink');
+                    $reponses = $request->request->get('otherRep');
+                    $tabReponse = explode("_", $reponses);
                     if($langue == "en"){
                         $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
 
