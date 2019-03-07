@@ -36,7 +36,6 @@ class qcmEnonceVideoFr
 
     /**
      * qcmEnonceVideoFr constructor.
-     * @param int $id
      * @param string $enonces
      * @param qcmVideoFr $qcmVideoFr
      */

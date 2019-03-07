@@ -52,7 +52,6 @@ class qcmFr
     /**
      * qcmFr constructor.
      * @param string $question
-     * @param int $solution
      * @param wordFr $wordFr
      */
     public function __construct($question, wordFr $wordFr)

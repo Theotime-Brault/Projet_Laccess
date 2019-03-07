@@ -44,7 +44,6 @@ class reformulationFr
 
     /**
      * reformulationFr constructor.
-     * @param int $id
      * @param string $question
      * @param string $solution
      * @param wordFr $wordFr

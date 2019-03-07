@@ -36,7 +36,6 @@ class qcmEnonceEn
 
     /**
      * qcmEnonceEn constructor.
-     * @param int $id
      * @param string $enonces
      * @param qcmEn $qcmEn
      */

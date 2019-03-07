@@ -44,7 +44,6 @@ class significationVideoFr
 
     /**
      * significationVideoFr constructor.
-     * @param int $id
      * @param string $solution
      * @param string $videoLink
      * @param wordFr $wordFr

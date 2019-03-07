@@ -3,6 +3,7 @@
 namespace Lacces\LaccesBundle\Entity\Exercise;
 
 use Doctrine\ORM\Mapping as ORM;
+use Lacces\LaccesBundle\Entity\wordEn;
 
 /**
  * significationVideoEn
@@ -43,7 +44,6 @@ class significationVideoEn
 
     /**
      * significationVideoEn constructor.
-     * @param int $id
      * @param string $solution
      * @param string $videoLink
      * @param wordEn $wordEn

@@ -3,6 +3,7 @@
 namespace Lacces\LaccesBundle\Entity\Exercise;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
 
 /**
  * qcmVideoEn
@@ -49,11 +50,8 @@ class qcmVideoEn
 
     /**
      * qcmVideoEn constructor.
-     * @param int $id
-     * @param int $solution
      * @param string $videoLink
      * @param wordEn $wordEn
-     * @param PersistentCollection $qcmVideoEnoncesEn
      */
     public function __construct($videoLink, wordEn $wordEn)
     {

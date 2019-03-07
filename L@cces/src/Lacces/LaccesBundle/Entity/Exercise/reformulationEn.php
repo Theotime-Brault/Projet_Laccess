@@ -3,6 +3,7 @@
 namespace Lacces\LaccesBundle\Entity\Exercise;
 
 use Doctrine\ORM\Mapping as ORM;
+use Lacces\LaccesBundle\Entity\wordEn;
 
 /**
  * reformulationEn
@@ -43,7 +44,6 @@ class reformulationEn
 
     /**
      * reformulationEn constructor.
-     * @param int $id
      * @param string $question
      * @param string $solution
      * @param wordEn $wordEn
