@@ -44,7 +44,7 @@ class EditDataExerciceController extends Controller
         ));
     }
 
-    public function validExercice(Request $request){
+    public function validExerciceAction(Request $request){
         if ($request -> isXmlHttpRequest()) {
             $em = $this->getDoctrine()->getManager();
             $ex = $request->request->get('ex');//defini le type d'exercice
