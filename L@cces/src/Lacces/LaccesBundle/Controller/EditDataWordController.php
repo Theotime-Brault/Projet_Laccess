@@ -36,19 +36,25 @@ class EditDataWordController extends Controller
 
       $form = $this->createFormBuilder($formulaire)
 
-        ->add('word', TextType::class, array('attr' => array(
+        ->add('word', TextType::class, array(
+          'label' => "Le mot",
+          'attr' => array(
           'maxlength' => "50",
           'value' => $word->getWord(),
           'class' => "formValue",
           'data-length' => "50",
         )))
-        ->add('videoLink', TextType::class, array('attr' => array(
+        ->add('videoLink', TextType::class, array(
+          'label' => "Url de la vidéo",
+          'attr' => array(
           'maxlength' => "200",
           'value' => $word->getVideoLink(),
           'class' => "formValue",
           'data-length' => "200",
         )))
-        ->add('contextSentence', TextType::class, array('attr' => array(
+        ->add('contextSentence', TextType::class, array(
+          'label' => "Phrase de contextualisation",
+          'attr' => array(
           'maxlength' => "200",
           'value' => $word->getContextSentence(),
           'class' => "formValue",
@@ -100,17 +106,23 @@ class EditDataWordController extends Controller
 
         //MOT FRANCAIS
 
-        ->add('wordFr', TextType::class, array('attr' => array(
+        ->add('wordFr', TextType::class, array(
+          'label' => "Mot en français",
+          'attr' => array(
           'maxlength' => "50",
           'class' => "formValue",
           'data-length' => "50",
         )))
-        ->add('videoLinkFr', TextType::class, array('attr' => array(
+        ->add('videoLinkFr', TextType::class, array(
+          'label' => "Url de la vidéo française",
+          'attr' => array(
           'maxlength' => "200",
           'class' => "formValue",
           'data-length' => "200",
         )))
-        ->add('contextSentenceFr', TextType::class, array('attr' => array(
+        ->add('contextSentenceFr', TextType::class, array(
+          'label' => "Phrase de contextualisation française",
+          'attr' => array(
           'maxlength' => "200",
           'class' => "formValue",
           'data-length' => "200",
@@ -118,17 +130,23 @@ class EditDataWordController extends Controller
 
         //MOT ANGLAIS
 
-        ->add('wordEn', TextType::class, array('attr' => array(
+        ->add('wordEn', TextType::class, array(
+          'label' => "Mot en américain",
+          'attr' => array(
           'maxlength' => "50",
           'class' => "formValue",
           'data-length' => "50",
         )))
-        ->add('videoLinkEn', TextType::class, array('attr' => array(
+        ->add('videoLinkEn', TextType::class, array(
+          'label' => "Url de la vidéo américaine",
+          'attr' => array(
           'maxlength' => "200",
           'class' => "formValue",
           'data-length' => "200",
         )))
-        ->add('contextSentenceEn', TextType::class, array('attr' => array(
+        ->add('contextSentenceEn', TextType::class, array(
+          'label' => "Phrase de contextualisation américaine",
+          'attr' => array(
           'maxlength' => "200",
           'class' => "formValue",
           'data-length' => "200",
@@ -259,17 +277,23 @@ class EditDataWordController extends Controller
           //On créé le formulaire d'ajout de mot français
 
           $form = $this->createFormBuilder($formulaire)
-            ->add('wordFr', TextType::class, array('attr' => array(
+            ->add('wordFr', TextType::class, array(
+              'label' => "Mot en français",
+              'attr' => array(
               'maxlength' => "50",
               'class' => "formValue",
               'data-length' => "50",
             )))
-            ->add('videoLinkFr', TextType::class, array('attr' => array(
+            ->add('videoLinkFr', TextType::class, array(
+              'label' => "Url de la video française",
+              'attr' => array(
               'maxlength' => "200",
               'class' => "formValue",
               'data-length' => "200",
             )))
-            ->add('contextSentenceFr', TextType::class, array('attr' => array(
+            ->add('contextSentenceFr', TextType::class, array(
+              'label' => "Phrase de contextualisation française",
+              'attr' => array(
               'maxlength' => "200",
               'class' => "formValue",
               'data-length' => "200",
@@ -302,17 +326,23 @@ class EditDataWordController extends Controller
           //On créé le formulaire d'ajout de mot anglais
 
             $form = $this->createFormBuilder($formulaire)
-              ->add('wordEn', TextType::class, array('attr' => array(
+              ->add('wordEn', TextType::class, array(
+                'label' => "Mot en américain",
+                'attr' => array(
                 'maxlength' => "50",
                 'class' => "formValue",
                 'data-length' => "50",
                 )))
-              ->add('videoLinkEn', TextType::class, array('attr' => array(
+              ->add('videoLinkEn', TextType::class, array(
+                'label' => "Url de la video américaine",
+                'attr' => array(
                 'maxlength' => "200",
                 'class' => "formValue",
                 'data-length' => "200",
                 )))
-              ->add('contextSentenceEn', TextType::class, array('attr' => array(
+              ->add('contextSentenceEn', TextType::class, array(
+                'label' => "Phrase de contextualisation américaine",
+                'attr' => array(
                 'maxlength' => "200",
                 'class' => "formValue",
                 'data-length' => "200",
