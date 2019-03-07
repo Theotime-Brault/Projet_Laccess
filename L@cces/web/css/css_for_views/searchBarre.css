@@ -1,3 +1,36 @@
+#imgEn, #imgFr
+{
+    border-radius: 50%;
+    width: 50%;
+    border: solid white 3px;
+    padding: 1%;
+}
+
+@media (max-width: 993px)
+{
+    #imgEn, #imgFr
+    {
+        width: 70%;
+        height: 70%;
+    }
+}
+
+@media (max-width: 602px)
+{
+    #imgEn, #imgFr
+    {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+#radiobtn
+{
+    display: none;
+    visibility: hidden !important;
+    height: 0;
+}
+
 #search-on
 {
     background-color: #eeeeee;
@@ -31,13 +64,11 @@
     border: none;
 }
 
-/* label focus color */
 .input-field input:focus + label
 {
     color: transparent;
 }
 
-/* label underline focus color */
 #search-on .input-field input:focus
 {
     border-bottom: none;

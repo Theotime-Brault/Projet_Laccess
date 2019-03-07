@@ -31,13 +31,4 @@ $(document).ready(function(){
         ev.preventDefault();
         });
     */
-
-
-
-    var video = document.getElementById("video-word-1");
-    $('.play').click(function() {
-        $(".block-video").fadeOut("fast");
-        video.start = true;
-        //video.load();
-    });
 });

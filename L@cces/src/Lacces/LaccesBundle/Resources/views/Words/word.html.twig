@@ -1,14 +1,11 @@
 {% extends 'base.html.twig' %}
-
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/css_for_views/word.css') }}">
     <link rel="stylesheet" href="{{ asset('css/css_for_views/searchBarre.css') }}">
 {% endblock %}
-
 {% block title %}
     Mot {{ word.word|lower }}
 {% endblock %}
-
 {% block body %}
     <div class="container-body">
         <main>
@@ -41,7 +38,6 @@
                             </div>
                         </div>
                     </section>
-
                     <section class="container-video">
                         <ul class="collapsible popout">
                             <li class="active">
@@ -59,7 +55,6 @@
                                                 </div>
                                             </div>
                                         </article>
-
                                         <article id="article-card-2" class="col s12 m6 x6">
                                             <div class="card center">
                                                 <div class="card-image">
@@ -96,13 +91,12 @@
                                                     </div>
                                                 </div>
                                                 <div id="context-sentence-block-video-1" class="context-sentence card-content">
-                                                    <p class="flow-text">
+                                                    <p class="flow-text black-text">
                                                         {{ word.contextSentence }}
                                                     </p>
                                                 </div>
                                             </div>
                                         </article>
-
                                         <article id="article-card-sentence-2" class="col s12 m6 x6 offset-x3">
                                             <div class="card center">
                                                 <div id="card-video-2" class="card-image">
@@ -121,7 +115,7 @@
                                                     </div>
                                                 </div>
                                                 <div id="context-sentence-block-video-2" class="context-sentence card-content">
-                                                    <p class="flow-text">
+                                                    <p class="flow-text black-text">
                                                         {% if langue == "fr" %}
                                                             {% for w in word.wordEns %}
                                                                 {{ w.contextSentence }}
@@ -165,8 +159,6 @@
                     </section>
                 </div>
             </div>
-
-
             <div class="fixed-action-btn click-to-toggle direction-top">
                 <a class="btn-floating btn-large pulse background-color-orange-lacces">
                     <i class="large material-icons white-text">add</i>
@@ -187,7 +179,6 @@
         </main>
     </div>
 {% endblock %}
-
 {% block javascripts %}
     <script src="{{ asset('js/js_for_views/word.js') }}"></script>
     <script src="{{ asset('js/js_for_views/searchBarreFocus.js') }}"></script>
@@ -195,12 +186,9 @@
         document.addEventListener("DOMContentLoaded", function(){
             $(".preloader-background").hide();
         });
-
         $("#exercice-header").click(function () {
             $("#exercice-body").load(ajaxExercice("{{ path('lacces_exerciceA1') }}", "#exercice-body"));
         });
-
-        console.log("{{ langue }}");
 
         function ajaxExercice (path, blockResponse){
             $.ajax({

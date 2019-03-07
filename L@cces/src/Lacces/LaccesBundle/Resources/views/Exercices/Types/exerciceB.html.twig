@@ -34,12 +34,9 @@
     $("input:radio[name=group-qcm]").on("click", function () {
         check();
     });
-
     function check(){
         $("input:radio[name=group-qcm]").each(function () {
             if($(this).is(":checked")){
-                console.log($(this).attr("data-qcm-id"));
-                console.log("{{ obj_exerciceB.solution }}");
                 var valueIn = $(this).attr("data-qcm-id");
                 if(valueIn.toString() === "{{ obj_exerciceB.solution }}") {
                     $(this).parent().next().html("<i id=\"result-done\" class=\"result material-icons small green-text\">done</i>");
@@ -50,6 +47,5 @@
                 }
             }
         });
-
     }
 </script>

@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 
+
     $("#search-barre").on("focus", function(){
         $(".container-focus-footer").css("animation", "fadeOutDown 250ms");
         $(".container-focus-footer").css({

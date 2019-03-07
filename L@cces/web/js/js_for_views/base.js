@@ -36,4 +36,6 @@ $(document).ready(function () {
     $(function() {
         $('.message-flash').delay(2000).fadeOut();
     });
+
+    $('input.formValue, textarea.formValue').characterCounter();
 });

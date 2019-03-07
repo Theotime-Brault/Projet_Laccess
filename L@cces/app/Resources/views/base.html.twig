@@ -6,19 +6,13 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="{{ asset('css/jquery_materialize/materialize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css_for_views/base/base.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/css_for_views/base/baseMQ768.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/css_for_views/base/baseMQ602.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/css_for_views/searchBarre.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/css_for_views/radio.css') }}">
         {% block stylesheets %}
         {% endblock %}
         <script src="{{ asset('js/jquery_materialize/jquery.js') }}"></script>
         <script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>
         <script src="{{ asset('js/js_for_views/base.js') }}"></script>
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <meta name="theme-color" content="#f4a733">
-
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
@@ -31,7 +25,6 @@
                         </a>
                     </li>
                 </ul>
-
                 <div id="container_logo_lacces">
                     <a href="{{ asset('') }}" class="brand-logo center">
                         <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces_2.png') }}/>
@@ -65,7 +58,6 @@
             {% block navbarre %}
             {% endblock %}
         </div>
-
         <ul class="sidenav white" id="slide-out">
             <li class="sidenav-close">
                 <a class="sidenav-close waves-effect">
@@ -115,69 +107,66 @@
             <li class="bold active active-item-menu background-color-orange-lacces">
             {% else %}
             <li class="bold white">
-                {% endif %}
+             {% endif %}
                 <a class="waves-effect exercices" href="{{ asset('exercices') }}">Exercices</a>
             </li>
-                {#
-                {% if app.request.attributes.get('_route') != 'lacces_homepage' %}
-                    {% if app.request.attributes.get('_route') != 'lacces_contact' %}
-                        <li class="bold active active-item-menu background-color-orange-lacces">
-                    {% else %}
-                        <li class="bold">
-                    {% endif %}
-                            <a class="waves-effect" href="{{ asset('/contact') }}">Contact</a>
-                        </li>
-                    {% if app.request.attributes.get('_route') != 'lacces_faq' %}
-                        <li class="bold active active-item-menu background-color-orange-lacces">
-                    {% else %}
-                        <li class="bold">
-                    {% endif %}
-                            <a class="waves-effect" href="{{ asset('/faq') }}">FAQ</a>
-                        </li>
+            {% if app.request.attributes.get('_route') != 'lacces_homepage' %}
+                {% if app.request.attributes.get('_route') == 'lacces_contact' %}
+                <li class="bold active active-item-menu background-color-orange-lacces">
+                {% else %}
+                <li class="bold">
                 {% endif %}
-                #}
-            <li>
-                <div class="row">
-                    <div class="container-row-icons-menu">
-                        <a href="">
-                            <div class="container-icons">
-                                <img alt="Lien vers la page facebook" src="{{ asset('pictures/icons/facebook-f-white.svg') }}"/>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="container-icons">
-                                <img alt="Partager le l'application" src="{{ asset('pictures/icons/share-alt-white.svg') }}"/>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="container-icons">
-                                <img alt="Lien vers le site du consortium L@cces" src="{{ asset('pictures/icons/globe-white.svg') }}"/>
-                            </div>
-                        </a>
+                    <a class="waves-effect" href="{{ asset('/contact') }}">Contact</a>
+                </li>
+                {% if app.request.attributes.get('_route') == 'lacces_mentions_legales' %}
+                <li class="bold active active-item-menu background-color-orange-lacces">
+                {% else %}
+                <li class="bold">
+                {% endif %}
+                     <a class="waves-effect" href="{{ asset('/mentions_legales') }}">Mentions légales</a>
+                </li>
+                {% if app.request.attributes.get('_route') == 'lacces_faq' %}
+                <li class="bold active active-item-menu background-color-orange-lacces">
+                {% else %}
+                <li class="bold">
+                {% endif %}
+                    <a class="waves-effect" href="{{ asset('/faq') }}">FAQ</a>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="container-row-icons-menu">
+                            <a href="">
+                                <div class="container-icons">
+                                    <img alt="Lien vers la page facebook" src="{{ asset('pictures/icons/facebook-f-white.svg') }}"/>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="container-icons">
+                                    <img alt="Partager le l'application" src="{{ asset('pictures/icons/share-alt-white.svg') }}"/>
+                                </div>
+                            </a>
+                            <a href="http://consortium-lacces-lsf-pour-tous.fr/">
+                                <div class="container-icons">
+                                    <img alt="Lien vers le site du consortium L@cces" src="{{ asset('pictures/icons/globe-white.svg') }}"/>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
+            {% endif %}
         </ul>
-
-        <noscript class="background-color-orange-lacces white-text center flow-text">
+        <noscript class="red white-text center flow-text">
             <div class="container">
                 <div class="row">
-                    <div class="col s2 m2 x2">
-                        <i class="material-icons">warning</i>
-                    </div>
-                    <div class="col s10 m10 x10">
-                        <p>
-                            Javascript doit être activé pour une utilisation optimal de l'application !
-                        </p>
-                    </div>
+                    <p>
+                        JavaScript n'est pas activé dans votre navigateur. L'application nécéssite son activation pour une utilisation optimale. Activez-le, puis rechargez la page.
+                    </p>
                 </div>
             </div>
         </noscript>
         {% block body %}
         {% endblock %}
     </body>
-
-
     {% block javascripts %}
     {% endblock %}
 </html>

@@ -86,6 +86,37 @@ a
     width: 50%;
 }
 
+@media (max-width: 602px)
+{
+    .row-container, .index-text
+    {
+        width: 70%;
+    }
+
+    .container-body
+    {
+        height: calc(100vh - 56px - 1.5rem);
+    }
+}
+
+@media (max-width: 768px)
+{
+    .row-container, .index-text
+    {
+        width: 80%;
+    }
+
+    #container-search
+    {
+        width: 90%;
+    }
+
+    .container-img-flag > img
+    {
+        cursor: auto;
+    }
+}
+
 @-webkit-keyframes fadeInUp {
     from {
         opacity: 0;
