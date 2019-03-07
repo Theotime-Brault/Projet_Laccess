@@ -8,8 +8,10 @@
 
 {% block body %}
     <div class="container">
-        <a class="btn background-color-orange-lacces white-text btn-hover" href="{{ path('lacces_ex__fr_add') }}">Passer en français</a>
-        <h5>Ajout d'un exercice pour un mot anglais</h5>
+        <div class="row center">
+            <a class="btn background-color-orange-lacces white-text btn-hover" href="{{ path('lacces_ex__fr_add') }}">Passer en français</a>
+            <h5>Ajout d'un exercice pour un mot anglais</h5>
+        </div>
         <label>Mots</label>
         <select id="words" required="required">
             <option value="0" selected="selected">Selectionner un mot</option>
@@ -36,23 +38,16 @@
 {% block javascripts %}
     <script src="{{ asset('js/js_for_views/addExercice.js') }}"></script>
     <script>
-        function succes() {
-            alert("Exercice ajouté!");
-            $('#typeEx').val(0);
-            $('#words').val(0);
-            $('#ex').html("");
-        }
-        
         function submit(){
             var ex = $('#typeEx').val();
             var solution = $('#solution').val();;
             var wordId = $('#words').val();
 
-            if(ex != null && solution != null && wordId != null){
+            if(ex != "" && solution != "" && wordId != ""){
                 switch (ex) {
                     case '1':
                         var videoLink = $('#videoLink').val();
-                        if(videoLink != null){
+                        if(videoLink != ""){
                             $.ajax({
                                 cache:false,
                                 type: 'POST',
@@ -63,6 +58,7 @@
                                     succes();
                                 },
                                 error:function () {
+                                    alert("erreur");
                                 }
                             })
                         }
@@ -70,7 +66,7 @@
                     case '2':
                         var enonce = $('#enonce').val();
                         var otherRep = OtherRepString();
-                        if(enonce != null && otherRep != null){
+                        if(enonce != "" && otherRep != ""){
                             $.ajax({
                                 cache:false,
                                 type: 'POST',
@@ -81,6 +77,7 @@
                                     succes();
                                 },
                                 error:function () {
+                                    alert("erreur");
                                 }
                             })
                         }
@@ -88,7 +85,7 @@
                     case '3':
                         var videoLink = $('#videoLink').val();
                         var otherRep = OtherRepString();
-                        if(videoLink != null && otherRep != null){
+                        if(videoLink != "" && otherRep != ""){
                             $.ajax({
                                 cache:false,
                                 type: 'POST',
@@ -99,13 +96,14 @@
                                     succes();
                                 },
                                 error:function () {
+                                    alert("erreur");
                                 }
                             })
                         }
                         break;
                     case '4':
                         var enonce = $('#enonce').val();
-                        if(enonce != null){
+                        if(enonce != ""){
                             $.ajax({
                                 cache:false,
                                 type: 'POST',
@@ -116,6 +114,7 @@
                                     succes();
                                 },
                                 error:function () {
+                                    alert("erreur");
                                 }
                             })
                         }
