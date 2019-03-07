@@ -1,9 +1,7 @@
 {% extends '@Lacces/Administration/administration.html.twig' %}
 
 {% block stylesheets %}
-
     <link rel="stylesheet" href="{{ asset('css/css_for_views/signaire.css') }}">
-
 {% endblock %}
 
 {% block title %}Liste des mots{% endblock %}
@@ -33,12 +31,12 @@
 
                 <div class="collapsible collapsible-accordion">
                     {% for letter in 'a'..'z' %}
-                        <li class="bold">
-                            <a class="collapsible-header waves-effect collapsible-ASL">
+                        <li class="bold white">
+                            <a class="collapsible-header waves-effect color-orange-lacces collapsible-ASL">
                                 <div id="lettreMaj">
                                     {{ letter|upper }}
-                                    <i class="material-icons material-icons_arrow_drop_down" id="fleche">arrow_drop_down</i>
                                 </div>
+                                <i class="material-icons material-icons_arrow_drop_down left" id="fleche">arrow_drop_down</i>
                             </a>
                             <div class="collapsible-body">
                                 <table class="highlight">
@@ -49,14 +47,14 @@
                                                     {% if w.word|first|lower == letter %}
                                                         <tr>
                                                             <td>
-                                                                <a class="flow-text" id="word" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/fr') }}">{{ w.word }}</a>
-                                                                <a class="flow-text tooltipped right supprimer modal-trigger" id="supprimer" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Supprimer" href="#modal1">
+                                                                <a class="flow-text black-text" id="word" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/fr') }}">{{ w.word }}</a>
+                                                                <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" id="supprimer" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Supprimer" href="#modal1">
                                                                     <i class="material-icons color-violet-lacces">delete_forever</i>
                                                                 </a>
-                                                                <a class="flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Editer" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/fr') }}">
+                                                                <a class="btn-flat flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Editer" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/fr') }}">
                                                                     <i class="material-icons color-violet-lacces">edit</i>
                                                                 </a>
-                                                                <a class="flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Ajouter une traduction" href="{{ asset('administration/editData/addTranslation/' ~ w.id ~ '/en') }}">
+                                                                <a class="btn-flat flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Ajouter une traduction" href="{{ asset('administration/editData/addTranslation/' ~ w.id ~ '/en') }}">
                                                                     <i class="material-icons color-violet-lacces">add</i>
                                                                 </a>
                                                             </td>
@@ -70,15 +68,15 @@
                                                     {% if w.word|first|lower == letter %}
                                                         <tr>
                                                             <td>
-                                                                <a class="flow-text" id="word" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/en') }}">{{ w.word }}</a>
-                                                                <a class="flow-text tooltipped right supprimer modal-trigger" id="supprimer" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Supprimer" href="#modal1">
-                                                                    <i class="material-icons right color-violet-lacces">delete_forever</i>
+                                                                <a class="flow-text black-text" id="word" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/en') }}">{{ w.word }}</a>
+                                                                <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" id="supprimer" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Supprimer" href="#modal1">
+                                                                    <i class="material-icons color-violet-lacces">delete_forever</i>
                                                                 </a>
-                                                                <a class="flow-text" data-parent="{{ w.id }}" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/en') }}">
-                                                                    <i class="material-icons right color-violet-lacces">edit</i>
+                                                                <a class="btn-flat flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Editer" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/en') }}">
+                                                                    <i class="material-icons color-violet-lacces">edit</i>
                                                                 </a>
-                                                                <a class="flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Ajouter une traduction" href="{{ asset('administration/editData/addTranslation/' ~ w.id ~ '/fr') }}">
-                                                                    <i class="material-icons color-violet-lacces">add</i>
+                                                                <a class="btn-flat flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Ajouter une traduction" href="{{ asset('administration/editData/addTranslation/' ~ w.id ~ '/fr') }}">
+                                                                    <i class="material-icons  color-violet-lacces">add</i>
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -99,12 +97,19 @@
         </main>
         <div id="modal1" class="modal">
             <div class="modal-content">
-                <h4>Supprimer le mot </h4>
-                <p>Vous allez définitivement supprimer le mot {#"{{ w.word }}" et sa traduction "{{ w.wordEns[0].word }}#}."</p>
+                <p class="flow-text">Êtes-vous sûr de vouloir supprimer le mot ?</p>
             </div>
-            <div class="modal-footer">
-                <a id="confirmDelete" href="#!" class="modal-close waves-effect waves-green btn-flat">Confirmer</a>
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Non !</a>
+            <div class="modal-fixed-footer">
+                <div class="modal-footer">
+                    <a href="#" class="modal-close waves-effect btn-flat">
+                        Annuler
+                        <i class="material-icons right">cancel</i>
+                    </a>
+                    <a id="confirmDelete" href="" class="modal-close background-color-orange-lacces btn-hover waves-effect btn">
+                        Confirmer
+                        <i class="material-icons right">delete_forever</i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
