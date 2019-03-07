@@ -65,6 +65,14 @@ lacces_wordList:
     requirements:
         langue: fr|en
 
+lacces_addTranslation:
+    path: /administration/editData/addTranslation/{wordId}/{langue}
+    defaults:
+        _controller: LaccesBundle:EditDataWord:addTranslation
+    requirements:
+        langue: fr|en
+
+
 adminLogin:
     path: /adminLogin
     defaults:

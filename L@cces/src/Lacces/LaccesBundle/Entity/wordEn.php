@@ -52,7 +52,7 @@ class wordEn
 
     /**
      * @var PersistentCollection
-     * @ORM\ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordFr", mappedBy="wordEns", cascade={"persist", "remove"})
+     * @ORM\ManyToMany(targetEntity="Lacces\LaccesBundle\Entity\wordFr", mappedBy="wordEns")
      */
     private $wordFrs;
 

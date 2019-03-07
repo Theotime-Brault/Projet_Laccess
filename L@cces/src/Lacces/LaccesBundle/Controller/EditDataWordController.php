@@ -69,7 +69,7 @@ class EditDataWordController extends Controller
       if ($form->isSubmitted() && $form->isValid()) {
 
         $formulaire = $form->getData();
-        $this->addFlash('info', "Le mot à bien été modifié !");
+        $this->addFlash('info', "Le mot a bien été modifié !");
 
         $word->setWord($formulaire->getWord());
         $word->setVideoLink($formulaire->getVideoLink());
@@ -147,9 +147,9 @@ class EditDataWordController extends Controller
 
       if ($form->isSubmitted() && $form->isValid()) {
 
-          $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
         $formulaire = $form->getData();
-        $this->addFlash('info', "Le mot à bien été crée !");
+        $this->addFlash('info', "Le mot a bien été crée !");
 
         $monMotFr = new wordFr();
         $monMotEn = new wordEn();
@@ -163,17 +163,13 @@ class EditDataWordController extends Controller
         $monMotEn->setVideoLink($formulaire->getVideoLinkEn());
         $monMotEn->setContextSentence($formulaire->getContextSentenceEn());
         $monMotEn->setPopularity(0);
+
         $monMotEn->setWordFrs(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordEn'), new ArrayCollection([$monMotFr])));
         $monMotFr->setWordEns(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordFr'), new ArrayCollection([$monMotEn])));
 
         $em->persist($monMotFr);
         $em->persist($monMotEn);
-          $em->flush();
-
-
-        return $this->render('@Lacces/Administration/EditData/addData.html.twig', array(
-          'form' => $form->createView(),
-        ));
+        $em->flush();
       }
       return $this->render('@Lacces/Administration/EditData/addData.html.twig', array(
         'form' => $form->createView(),
@@ -188,8 +184,31 @@ class EditDataWordController extends Controller
 
         if($langue == "fr") {
           $word = $em->getRepository('LaccesBundle:wordFr')->find($id);
+
+          //On recupere le mot anglais et s'il n'a qu'une seule traduction on le supprime pas
+          $wordEn = $em->getRepository('LaccesBundle:wordEn')->findByWord($word->getWord());
+
+          if(!sizeof($wordEn->getWordFrs()) > 1) {
+            $em->remove($wordEn);
+          }
+
         } else if($langue == "en") {
           $word = $em->getRepository('LaccesBundle:wordEn')->find($id);
+
+          //On recupere les mot français correspondant au mot que l'on supprime
+          // et s'ils n'ont qu'une seule traduction on le supprime
+          foreach ($word->getWordFrs() as $wordFr) {
+            if($wordFr->getWordE)
+          }
+
+
+
+          var_dump($word->getWord());
+          var_dump($wordFr);
+          if(!sizeof($wordFr->getWordEns()) > 1) {
+            $em->remove($wordFr);
+          }
+
         }
 
         $em->remove($word);
@@ -211,5 +230,145 @@ class EditDataWordController extends Controller
         'wordEn' => $wordsEnObj,
         'langue' => $langue
       ]);
+    }
+
+    public function addTranslationAction(Request $request, $langue, $wordId) {
+
+      if($langue == "fr" || $langue == "en") {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $monMotFr = new wordFr();
+        $monMotEn = new wordEn();
+        $word = ""; //Sera la valeur du mot à traduire
+
+        $formulaire = new FormAddData();
+
+        if($langue == "fr") {
+
+          //On récupère l'objet du mot anglais
+          $monMotEn = $em->getRepository('LaccesBundle:wordEn')->find($wordId);
+
+          //en cas d'erreur
+          if(!$monMotFr) {
+            $this->addFlash('info', "Le mot de langue : ". $langue. ", à l'id : ". $wordId.", n'existe pas !");
+            return $this->render('@Lacces/Administration/EditData/wordList.html.twig');////////////////
+          }
+
+          //On attribut "word" à la valeur du mot anglais
+          $word = $monMotEn->getWord();
+          //Pour eviter des erreurs de formulaire nous remplissons les inputs non visible par les valeur du mot à traduire
+          $formulaire->setWordEn($monMotEn->getWord());
+          $formulaire->setVideoLinkEn($monMotEn->getVideoLink());
+          $formulaire->setContextSentenceEn($monMotEn->getContextSentence());
+
+          //On créé le formulaire d'ajout de mot français
+
+          $form = $this->createFormBuilder($formulaire)
+            ->add('wordFr', TextType::class, array('attr' => array(
+              'maxlength' => "50",
+              'class' => "formValue",
+              'data-length' => "50",
+            )))
+            ->add('videoLinkFr', TextType::class, array('attr' => array(
+              'maxlength' => "200",
+              'class' => "formValue",
+              'data-length' => "200",
+            )))
+            ->add('contextSentenceFr', TextType::class, array('attr' => array(
+              'maxlength' => "200",
+              'class' => "formValue",
+              'data-length' => "200",
+              )))
+            ->add('submit', SubmitType::class, array(
+              'label' => 'Envoyer',
+              'attr' => array(
+                'class' => "btn btn-hover background-color-orange-lacces waves-effect",
+              )))
+            ->getForm();
+
+        } else {
+
+          //On récupère l'objet du mot français
+          $monMotFr = $em->getRepository('LaccesBundle:wordFr')->find($wordId);
+
+          //en cas d'erreur
+          if(!$monMotFr) {
+            $this->addFlash('info', "Le mot de langue : ". $langue. ", à l'id : ". $wordId.", n'existe pas !");
+            return $this->render('@Lacces/Administration/EditData/wordList.html.twig');////////////////
+          }
+
+          //On attribut "word" à la valeur du mot français
+          $word = $monMotFr->getWord();
+          //Pour eviter des erreurs de formulaire nous remplissons les inputs non visible par les valeur du mot à traduire
+          $formulaire->setWordFr($monMotFr->getWord());
+          $formulaire->setVideoLinkFr($monMotFr->getVideoLink());
+          $formulaire->setContextSentenceFr($monMotFr->getContextSentence());
+
+          //On créé le formulaire d'ajout de mot anglais
+
+            $form = $this->createFormBuilder($formulaire)
+              ->add('wordEn', TextType::class, array('attr' => array(
+                'maxlength' => "50",
+                'class' => "formValue",
+                'data-length' => "50",
+                )))
+              ->add('videoLinkEn', TextType::class, array('attr' => array(
+                'maxlength' => "200",
+                'class' => "formValue",
+                'data-length' => "200",
+                )))
+              ->add('contextSentenceEn', TextType::class, array('attr' => array(
+                'maxlength' => "200",
+                'class' => "formValue",
+                'data-length' => "200",
+                )))
+              ->add('submit', SubmitType::class, array(
+                'label' => 'Envoyer',
+                'attr' => array(
+                  'class' => "btn btn-hover background-color-orange-lacces waves-effect",
+                )))
+              ->getForm();
+        }
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+          $formulaire = $form->getData();
+          $this->addFlash('info', "La traduction a bien été ajouté !");
+
+          if ($langue == "fr") {
+            $monMotFr->setWord($formulaire->getWordFr());
+            $monMotFr->setVideoLink($formulaire->getVideoLinkFr());
+            $monMotFr->setContextSentence($formulaire->getContextSentenceFr());
+            $monMotFr->setPopularity(0);
+            $monMotFr->setWordEns(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordFr'), new ArrayCollection([$monMotEn])));
+
+            //On ajoute le mot français créé dans les possible traductions du mot anglais
+            $monMotEn->getWordFrs()->add($monMotFr);
+          }
+          else {
+            $monMotEn->setWord($formulaire->getWordEn());
+            $monMotEn->setVideoLink($formulaire->getVideoLinkEn());
+            $monMotEn->setContextSentence($formulaire->getContextSentenceEn());
+            $monMotEn->setPopularity(0);
+            $monMotEn->setWordFrs(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordEn'), new ArrayCollection([$monMotFr])));
+
+            //On ajoute le mot anglais créé dans les possible traductions du mot français
+            $monMotFr->getWordEns()->add($monMotEn);
+          }
+
+
+          $em->persist($monMotEn);
+          $em->persist($monMotFr);
+          $em->flush();
+        }
+      }
+      return $this->render('@Lacces/Administration/EditData/addTranslation.html.twig', array(
+        'form' => $form->createView(),
+        'langue' => $langue,
+        'word' => $word
+      ));
     }
 }

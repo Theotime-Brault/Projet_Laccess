@@ -56,6 +56,9 @@
                                                                 <a class="flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Editer" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/fr') }}">
                                                                     <i class="material-icons color-violet-lacces">edit</i>
                                                                 </a>
+                                                                <a class="flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Ajouter une traduction" href="{{ asset('administration/editData/addTranslation/' ~ w.id ~ '/en') }}">
+                                                                    <i class="material-icons color-violet-lacces">add</i>
+                                                                </a>
                                                             </td>
                                                         </tr>
                                                     {% endif %}
@@ -73,6 +76,9 @@
                                                                 </a>
                                                                 <a class="flow-text" data-parent="{{ w.id }}" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/en') }}">
                                                                     <i class="material-icons right color-violet-lacces">edit</i>
+                                                                </a>
+                                                                <a class="flow-text tooltipped right" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Ajouter une traduction" href="{{ asset('administration/editData/addTranslation/' ~ w.id ~ '/fr') }}">
+                                                                    <i class="material-icons color-violet-lacces">add</i>
                                                                 </a>
                                                             </td>
                                                         </tr>
