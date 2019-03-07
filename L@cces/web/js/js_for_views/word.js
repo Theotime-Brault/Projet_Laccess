@@ -4,14 +4,18 @@ $(document).ready(function(){
     //Appartition de la barre de recherche au clickAction
     $("#search-box-click").on("click", function(){
         $("#search-box").css("display", "block").css("animation", "slideInDown 400ms");
-        $("input").focus();
+        $("#search-barre").focus();
         setTimeout(function () {
             $("#close-barre").fadeIn(10);
             $("#material-icons-dropdown-flag").fadeIn(10);
+            $("#background-search").css("display", "block");
         }, 200);
+        $("html").css("overflow", "hidden");
     });
 
     $("#close-barre").click(function(){
+        $("#background-search").css("display", "none");
+        $("html").css("overflow", "auto");
         $("#search-box").css("animation", "slideOutUp 200ms");
         setTimeout(function () {
             $("#search-box").css("display", "none");
