@@ -63,14 +63,9 @@ $('.suppr').click(function () {
 
 function OtherRepString() {
     var res = "";
-    var n = true;
     $('.otherRep').each(function () {
-        if($(this).val() == ""){
-            return null;
-        }
         res += "_"
         res += $(this).val();
-
     });
     res = res.substring(1);
 }
