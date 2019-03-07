@@ -185,30 +185,25 @@ class EditDataWordController extends Controller
         if($langue == "fr") {
           $word = $em->getRepository('LaccesBundle:wordFr')->find($id);
 
-          //On recupere le mot anglais et s'il n'a qu'une seule traduction on le supprime pas
-          $wordEn = $em->getRepository('LaccesBundle:wordEn')->findByWord($word->getWord());
-
-          if(!sizeof($wordEn->getWordFrs()) > 1) {
-            $em->remove($wordEn);
+          //On recupere les mot anglais correspondant au mot que l'on supprime
+          //et s'ils n'ont qu'une seule traduction on les supprime
+          foreach ($word->getWordFrs() as $wordEn) {
+            if(!sizeof($wordEn->getWordEns()) > 1) {
+              $em->remove($wordEn);
+            }
           }
 
         } else if($langue == "en") {
           $word = $em->getRepository('LaccesBundle:wordEn')->find($id);
 
           //On recupere les mot français correspondant au mot que l'on supprime
-          // et s'ils n'ont qu'une seule traduction on le supprime
+          //et s'ils n'ont qu'une seule traduction on les supprime
           foreach ($word->getWordFrs() as $wordFr) {
-            if($wordFr->getWordE)
+            if(!sizeof($wordFr->getWordEns()) > 1) {
+              $em->remove($wordFr);
+              var_dump($wordFr->getWord());
+            }
           }
-
-
-
-          var_dump($word->getWord());
-          var_dump($wordFr);
-          if(!sizeof($wordFr->getWordEns()) > 1) {
-            $em->remove($wordFr);
-          }
-
         }
 
         $em->remove($word);
