@@ -17,4 +17,13 @@ class qcmEnonceEnRepository extends \Doctrine\ORM\EntityRepository
       ->getQuery()
       ->getResult();
   }
+
+  public function findQcmenonceByQcmAndEnonce($enonce){
+      return $this->createQueryBuilder('c')
+          ->where('c.enonces=:enonce')
+          ->setParameter('enonce', $enonce)
+          ->setMaxResults(1)
+          ->getQuery()
+          ->getOneOrNullResult();
+  }
 }

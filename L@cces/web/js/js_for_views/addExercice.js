@@ -52,14 +52,17 @@ function ajouter() {
     $('#valid').before(
         "<div class='row add'>" +
         "<input required=\"required\" class='otherRep col s11' type=\"text\" placeholder='entrer une autre réponse'></input>" +
-        "<a class='btn background-color-orange-lacces col s1'><i class='material-icons'>remove</i></a>" +
+        "<a class='btn background-color-orange-lacces col s1''><i class='material-icons suppr'>remove</i></a>" +
         "</div>"
     )
 };
 
+$('.suppr').click(function () {
+    $(this).parent().remove();
+});
 function enlever() {
-    
-}
+    $(this).parent().remove();
+};
 
 function OtherRepString() {
     var res = "";

@@ -17,4 +17,15 @@ class qcmEnonceFrRepository extends \Doctrine\ORM\EntityRepository
       ->getQuery()
       ->getResult();
   }
+
+    public function findQcmenonceByQcmAndEnonce($idQcm, $enonce){
+        return $this->createQueryBuilder('c')
+            ->where('c.enonces=:enonce')
+            ->leftJoin('c.qcmFr', 'b')
+            ->andWhere('b.id=:idQcm')
+            ->setParameter('enonce', $enonce)
+            ->setParameter('idQcm', $idQcm)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 }
