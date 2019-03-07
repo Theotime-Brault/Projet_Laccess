@@ -33,7 +33,7 @@ class qcmEn
     /**
      * @var int
      *
-     * @ORM\Column(name="solution", type="integer")
+     * @ORM\Column(name="solution", type="integer", nullable=true)
      */
     private $solution;
 

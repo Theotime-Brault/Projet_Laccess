@@ -24,7 +24,7 @@ class qcmVideoEn
     /**
      * @var int
      *
-     * @ORM\Column(name="solution", type="integer", length=255)
+     * @ORM\Column(name="solution", type="integer", length=255, nullable=true)
      */
     private $solution;
 
