@@ -14,7 +14,9 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-
+/**
+ * @IsGranted("ROLE_ADMIN")
+ */
 class EditDataWordController extends Controller
 {
     public function adminAction()
