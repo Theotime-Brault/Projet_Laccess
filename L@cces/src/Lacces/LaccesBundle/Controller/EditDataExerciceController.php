@@ -56,122 +56,181 @@ class EditDataExerciceController extends Controller
             $solution = $request->request->get('solution');
             $word = $request->request->get('word');
 
-            switch ($ex){
-                case '1':
-                    $videoLink = $request->request->get('videoLink');
-                    if($langue == "en"){
-                        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
-                        $objEx = new significationVideoEn($solution, $videoLink, $wordEn);
-                        $em->persist($objEx);
-                        $em->flush();
-                    }else{
-                        $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
-                        $objEx = new significationVideoFr($solution, $videoLink, $wordFr);
-                        $em->persist($objEx);
-                        $em->flush();
-                    }
-                    break;
-                case '2':
-                    $enonce = $request->request->get('enonce');
-                    $reponses = $request->request->get('otherRep');
-                    $tabReponse = explode("_", $reponses);
-                    if($langue == "en"){
-                        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find(intval($word));
-                        $objEx = new qcmEn($enonce, $wordEn);
-                        $em->persist($objEx);
-                        $em->flush();
-                        $objSolu = new qcmEnonceEn($solution, $objEx);
-                        $em->persist($objSolu);
-                        $em->flush();
-                        foreach ($tabReponse as $r){
-                            $objRep = new qcmEnonceEn($r, $objEx);
-                            $em->persist($objRep);
+            if($ex != null && $langue != null && $solution != null && $word != null){
+                switch ($ex){
+
+                    case '1':
+                        $videoLink = $request->request->get('videoLink');
+
+                        if($videoLink == null) {
+                            return $this->redirectToRoute('administration');
+                        }
+
+                        if($langue == "en"){
+                            $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
+                            $objEx = new significationVideoEn($solution, $videoLink, $wordEn);
+                            $em->persist($objEx);
+                            $em->flush();
+                        }else{
+                            $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
+                            $objEx = new significationVideoFr($solution, $videoLink, $wordFr);
+                            $em->persist($objEx);
                             $em->flush();
                         }
-                        $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findQcmenonceByQcmAndEnonce($solution);
-                        $objEx->setSolution($objSolu->getId());
-                        $em->persist($objEx);
-                        $em->flush();
-                    }else{
-                        $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
-                        $objEx = new qcmFr($enonce, $wordFr);
-                        $em->persist($objEx);
-                        $em->flush();
-                        $objSolu = new qcmEnonceFr($solution, $objEx);
-                        $em->persist($objSolu);
-                        $em->flush();
-                        foreach ($tabReponse as $r){
-                            $objRep = new qcmEnonceFr($r, $objEx);
-                            $em->persist($objRep);
+                        break;
+
+                    case '2':
+                        $enonce = $request->request->get('enonce');
+                        $reponses = $request->request->get('otherRep');
+                        $tabReponse = explode("_", $reponses);
+
+                        if($enonce == null || $tabReponse == null) {
+                            return $this->redirectToRoute('administration');
+                        }
+
+                        if($langue == "en"){
+                            foreach ($tabReponse as $e){
+                                if($e == "" || $e == null){
+                                    return $this->redirectToRoute('lacces_ex__en_add');
+                                }
+                            }
+
+                            $wordEn = $em->getRepository('LaccesBundle:wordEn')->find(intval($word));
+                            $objEx = new qcmEn($enonce, $wordEn);
+                            $em->persist($objEx);
+                            $em->flush();
+                            $objSolu = new qcmEnonceEn($solution, $objEx);
+                            $em->persist($objSolu);
+                            $em->flush();
+
+                            foreach ($tabReponse as $r){
+                                $objRep = new qcmEnonceEn($r, $objEx);
+                                $em->persist($objRep);
+                                $em->flush();
+                            }
+
+                            $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findQcmenonceByQcmAndEnonce($solution);
+                            $objEx->setSolution($objSolu->getId());
+                            $em->persist($objEx);
+                            $em->flush();
+                        }else{
+                            foreach ($tabReponse as $e){
+                                if($e == "" || $e == null){
+                                    return $this->redirectToRoute('lacces_ex__fr_add');
+                                }
+                            }
+
+                            $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
+                            $objEx = new qcmFr($enonce, $wordFr);
+                            $em->persist($objEx);
+                            $em->flush();
+                            $objSolu = new qcmEnonceFr($solution, $objEx);
+                            $em->persist($objSolu);
+                            $em->flush();
+
+                            foreach ($tabReponse as $r){
+                                $objRep = new qcmEnonceFr($r, $objEx);
+                                $em->persist($objRep);
+                                $em->flush();
+                            }
+
+                            $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findQcmenonceByQcmAndEnonce($solution);
+                            $objEx->setSolution($objSolu->getId());
+                            $em->persist($objEx);
                             $em->flush();
                         }
-                        $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findQcmenonceByQcmAndEnonce($solution);
-                        $objEx->setSolution($objSolu->getId());
-                        $em->persist($objEx);
-                        $em->flush();
-                    }
-                    break;
-                case '3':
-                    $videoLink = $request->request->get('videoLink');
-                    $reponses = $request->request->get('otherRep');
-                    $tabReponse = explode("_", $reponses);
-                    if($langue == "en"){
-                        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
-                        $objEx = new qcmVideoEn($videoLink, $wordEn);
-                        $em->persist($objEx);
-                        $em->flush();
-                        $objSolu = new qcmEnonceVideoEn($solution, $objEx);
-                        $em->persist($objSolu);
-                        $em->flush();
-                        foreach ($tabReponse as $r){
-                            $objRep = new qcmEnonceVideoEn($r, $objEx);
-                            $em->persist($objRep);
+                        break;
+
+                    case '3':
+                        $videoLink = $request->request->get('videoLink');
+                        $reponses = $request->request->get('otherRep');
+                        $tabReponse = explode("_", $reponses);
+
+                        if($videoLink == null || $tabReponse == null) {
+                            return $this->redirectToRoute('administration');
+                        }
+
+                        if($langue == "en"){
+                            foreach ($tabReponse as $e){
+                                if($e == "" || $e == null){
+                                    return $this->redirectToRoute('lacces_ex__en_add');
+                                }
+                            }
+
+                            $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
+                            $objEx = new qcmVideoEn($videoLink, $wordEn);
+                            $em->persist($objEx);
+                            $em->flush();
+                            $objSolu = new qcmEnonceVideoEn($solution, $objEx);
+                            $em->persist($objSolu);
+                            $em->flush();
+
+                            foreach ($tabReponse as $r){
+                                $objRep = new qcmEnonceVideoEn($r, $objEx);
+                                $em->persist($objRep);
+                                $em->flush();
+                            }
+
+                            $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoEn')->findQcmenonceByQcmAndEnonce($solution);
+                            $objEx->setSolution($objSolu->getId());
+                            $em->persist($objEx);
+                            $em->flush();
+                        }else{
+                            foreach ($tabReponse as $e){
+                                if($e == "" || $e == null){
+                                    return $this->redirectToRoute('lacces_ex__fr_add');
+                                }
+                            }
+
+                            $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
+                            $objEx = new qcmVideoEn($videoLink, $wordFr);
+                            $em->persist($objEx);
+                            $em->flush();
+                            $objSolu = new qcmEnonceVideoFr($solution, $objEx);
+                            $em->persist($objSolu);
+                            $em->flush();
+
+                            foreach ($tabReponse as $r){
+                                $objRep = new qcmEnonceVideoFr($r, $objEx);
+                                $em->persist($objRep);
+                                $em->flush();
+                            }
+
+                            $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoFr')->findQcmenonceByQcmAndEnonce($solution);
+                            $objEx->setSolution($objSolu->getId());
+                            $em->persist($objEx);
                             $em->flush();
                         }
-                        $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoEn')->findQcmenonceByQcmAndEnonce($solution);
-                        $objEx->setSolution($objSolu->getId());
-                        $em->persist($objEx);
-                        $em->flush();
-                    }else{
-                        $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
-                        $objEx = new qcmVideoEn($videoLink, $wordFr);
-                        $em->persist($objEx);
-                        $em->flush();
-                        $objSolu = new qcmEnonceVideoFr($solution, $objEx);
-                        $em->persist($objSolu);
-                        $em->flush();
-                        foreach ($tabReponse as $r){
-                            $objRep = new qcmEnonceVideoFr($r, $objEx);
-                            $em->persist($objRep);
+                        break;
+
+                    case '4':
+                        $enonce = $request->request->get('enonce');
+
+                        if($enonce == null) {
+                            return $this->redirectToRoute('administration');
+                        }
+
+                        if($langue == "en"){
+                            $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
+                            $objEx = new reformulationEn($enonce, $solution, $wordEn);
+                            $em->persist($objEx);
+                            $em->flush();
+                        }else{
+                            $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
+                            $objEx = new reformulationFr($enonce, $solution, $wordFr);
+                            $em->persist($objEx);
                             $em->flush();
                         }
-                        $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoFr')->findQcmenonceByQcmAndEnonce($solution);
-                        $objEx->setSolution($objSolu->getId());
-                        $em->persist($objEx);
-                        $em->flush();
-                    }
-                    break;
-                case '4':
-                    $enonce = $request->request->get('enonce');
-                    if($langue == "en"){
-                        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
-                        $objEx = new reformulationEn($enonce, $solution, $wordEn);
-                        $em->persist($objEx);
-                        $em->flush();
-                    }else{
-                        $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
-                        $objEx = new reformulationFr($enonce, $solution, $wordFr);
-                        $em->persist($objEx);
-                        $em->flush();
-                    }
-                    break;
-                default:
-                    if($langue == "en"){
-                        return $this->redirectToRoute('lacces_ex__en_add');
-                    }else{
-                        return $this->redirectToRoute('lacces_ex__fr_add');
-                    }
-                    break;
+                        break;
+
+                    default:
+                        if($langue == "en"){
+                            return $this->redirectToRoute('lacces_ex__en_add');
+                        }else{
+                            return $this->redirectToRoute('lacces_ex__fr_add');
+                        }
+                        break;
+                }
             }
 
             return new JsonResponse('ok');

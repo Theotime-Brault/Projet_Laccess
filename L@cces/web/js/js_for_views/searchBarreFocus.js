@@ -24,6 +24,7 @@ $(document).ready(function () {
             setTimeout(function () {
                 $("#close-barre").fadeIn();
                 $("#material-icons-dropdown-flag").fadeIn();
+                $("#background-search").css("display", "block");
             }, 100);
         });
     });
@@ -31,6 +32,7 @@ $(document).ready(function () {
 
 
     $("#close-barre").click(function(){
+        $("#background-search").css("display", "none");
         $(".container-main-active").toggleClass("container-main");
         $(".container-main").removeClass("container-main-active");
         $(".container-search-active").toggleClass("container-search");

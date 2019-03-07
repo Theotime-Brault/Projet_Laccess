@@ -49,7 +49,7 @@ $('#typeEx').change(function () {
 });
 
 function ajouter() {
-    $('#valid').before(
+    $('#ex').append(
         "<div class='row add'>" +
         "<input required=\"required\" class='otherRep col s11' type=\"text\" placeholder='entrer une autre réponse'></input>" +
         "<a class='btn background-color-orange-lacces col s1''><i class='material-icons suppr'>remove</i></a>" +
@@ -60,18 +60,24 @@ function ajouter() {
 $('.suppr').click(function () {
     $(this).parent().remove();
 });
-function enlever() {
-    $(this).parent().remove();
-};
 
 function OtherRepString() {
     var res = "";
+    var n = true;
     $('.otherRep').each(function () {
+        if($(this).val() == ""){
+            return null;
+        }
         res += "_"
         res += $(this).val();
 
     });
     res = res.substring(1);
+}
 
-    return res;
+function succes() {
+    alert("Exercice ajouté!");
+    $('#typeEx').val(0);
+    $('#words').val(0);
+    $('#ex').html("");
 }

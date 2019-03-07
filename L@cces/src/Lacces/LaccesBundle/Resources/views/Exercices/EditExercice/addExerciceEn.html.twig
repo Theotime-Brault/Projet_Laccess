@@ -8,26 +8,27 @@
 
 {% block body %}
     <div class="container">
-        <h5>Ajout d'un exercice pour un mot anglais</h5>
-        <form>
-            <label>Mots</label>
-            <select id="words" required="required">
-                <option value="" selected="selected">Selectionner un mot</option>
-                {% for w in words %}
-                    <option value="{{ w.id }}">{{ w.word }}</option>
-                {% endfor %}
-            </select>
-            <label for="typeEx">Type d'éxercice</label>
-            <select name="typeEx" id="typeEx" required="required">
-                <option value="0" selected="selected">Selectionner le type d'exercice</option>
-                <option value="1">Signification video</option>
-                <option value="2">QCM</option>
-                <option value="3">QCM video</option>
-                <option value="4">Reformulation</option>
-            </select>
-            <div id="ex">
-            </div>
-        </form>
+        <div class="row center">
+            <a class="btn background-color-orange-lacces white-text btn-hover" href="{{ path('lacces_ex__fr_add') }}">Passer en français</a>
+            <h5>Ajout d'un exercice pour un mot anglais</h5>
+        </div>
+        <label>Mots</label>
+        <select id="words" required="required">
+            <option value="0" selected="selected">Selectionner un mot</option>
+            {% for w in words %}
+                <option value="{{ w.id }}">{{ w.word }}</option>
+            {% endfor %}
+        </select>
+        <label for="typeEx">Type d'éxercice</label>
+        <select name="typeEx" id="typeEx" required="required">
+            <option value="0" selected="selected">Selectionner le type d'exercice</option>
+            <option value="1">Signification video</option>
+            <option value="2">QCM</option>
+            <option value="3">QCM video</option>
+            <option value="4">Reformulation</option>
+        </select>
+        <div id="ex">
+        </div>
         <div class="row center">
             <button id="valid" type="button" class="btn btn-hover background-color-orange-lacces" onclick="submit()">Ajouter</button>
         </div>
@@ -37,86 +38,91 @@
 {% block javascripts %}
     <script src="{{ asset('js/js_for_views/addExercice.js') }}"></script>
     <script>
-        function succes() {
-            alert("Exercice ajouté!");
-            $('#typeEx').val(0);
-            $('#words').val(0);
-        }
-        
         function submit(){
             var ex = $('#typeEx').val();
             var solution = $('#solution').val();;
             var wordId = $('#words').val();
 
-            switch (ex) {
-                case '1':
-                    var videoLink = $('#videoLink').val();
-
-                    $.ajax({
-                        cache:false,
-                        type: 'POST',
-                        dataType: 'json',
-                        url: "{{ path('validAddExercice') }}",
-                        data:{'word':wordId, 'ex': ex, 'langue':"en", 'solution':solution, 'videoLink':videoLink},
-                        success:function () {
-                            succes();
-                        },
-                        error:function () {
+            if(ex != "" && solution != "" && wordId != ""){
+                switch (ex) {
+                    case '1':
+                        var videoLink = $('#videoLink').val();
+                        if(videoLink != ""){
+                            $.ajax({
+                                cache:false,
+                                type: 'POST',
+                                dataType: 'json',
+                                url: "{{ path('validAddExercice') }}",
+                                data:{'word':wordId, 'ex': ex, 'langue':"en", 'solution':solution, 'videoLink':videoLink},
+                                success:function () {
+                                    succes();
+                                },
+                                error:function () {
+                                    alert("erreur");
+                                }
+                            })
                         }
-                    })
-                    break;
-                case '2':
-                    var enonce = $('#enonce').val();
-                    var otherRep = OtherRepString();
-
-                    $.ajax({
-                        cache:false,
-                        type: 'POST',
-                        dataType: 'json',
-                        url: "{{ path('validAddExercice') }}",
-                        data:{'word':wordId, 'ex': ex, 'langue':"en", 'enonce':enonce, 'solution':solution, 'otherRep':otherRep},
-                        success:function () {
-                            succes();
-                        },
-                        error:function () {
+                        break;
+                    case '2':
+                        var enonce = $('#enonce').val();
+                        var otherRep = OtherRepString();
+                        if(enonce != "" && otherRep != ""){
+                            $.ajax({
+                                cache:false,
+                                type: 'POST',
+                                dataType: 'json',
+                                url: "{{ path('validAddExercice') }}",
+                                data:{'word':wordId, 'ex': ex, 'langue':"en", 'enonce':enonce, 'solution':solution, 'otherRep':otherRep},
+                                success:function () {
+                                    succes();
+                                },
+                                error:function () {
+                                    alert("erreur");
+                                }
+                            })
                         }
-                    })
-                    break;
-                case '3':
-                    var videoLink = $('#videoLink').val();
-                    var otherRep = OtherRepString();
-
-                    $.ajax({
-                        cache:false,
-                        type: 'POST',
-                        dataType: 'json',
-                        url: "{{ path('validAddExercice') }}",
-                        data:{'word':wordId, 'ex': ex, 'langue':"en", 'solution':solution, 'videoLink':videoLink, 'otherRep':otherRep},
-                        success:function () {
-                            succes();
-                        },
-                        error:function () {
+                        break;
+                    case '3':
+                        var videoLink = $('#videoLink').val();
+                        var otherRep = OtherRepString();
+                        if(videoLink != "" && otherRep != ""){
+                            $.ajax({
+                                cache:false,
+                                type: 'POST',
+                                dataType: 'json',
+                                url: "{{ path('validAddExercice') }}",
+                                data:{'word':wordId, 'ex': ex, 'langue':"en", 'solution':solution, 'videoLink':videoLink, 'otherRep':otherRep},
+                                success:function () {
+                                    succes();
+                                },
+                                error:function () {
+                                    alert("erreur");
+                                }
+                            })
                         }
-                    })
-                    break;
-                case '4':
-                    var enonce = $('#enonce').val();
-                    $.ajax({
-                        cache:false,
-                        type: 'POST',
-                        dataType: 'json',
-                        url: "{{ path('validAddExercice') }}",
-                        data:{'word':wordId, 'ex': ex, 'langue':"en", 'enonce':enonce, 'solution':solution},
-                        success:function () {
-                            succes();
-                        },
-                        error:function () {
+                        break;
+                    case '4':
+                        var enonce = $('#enonce').val();
+                        if(enonce != ""){
+                            $.ajax({
+                                cache:false,
+                                type: 'POST',
+                                dataType: 'json',
+                                url: "{{ path('validAddExercice') }}",
+                                data:{'word':wordId, 'ex': ex, 'langue':"en", 'enonce':enonce, 'solution':solution},
+                                success:function () {
+                                    succes();
+                                },
+                                error:function () {
+                                    alert("erreur");
+                                }
+                            })
                         }
-                    })
-                    break;
-                default:
-                    return;
-                break;
+                        break;
+                    default:
+                        return;
+                        break;
+                }
             }
         }
     </script>
