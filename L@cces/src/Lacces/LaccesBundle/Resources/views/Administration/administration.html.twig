@@ -77,16 +77,16 @@
                             <ul>
                                 {% if app.request.attributes.get('_route') == 'lacces_editData_add' %}
                                 <li class="active active-item-menu background-color-violet-lacces">
-                            {% else %}
+                                {% else %}
                                 <li class="grey darken-4">
-                                    {% endif %}
+                                {% endif %}
                                     <a class="waves-effect" href="{{ asset('administration/editData/add') }}">Ajouter un mot</a>
                                 </li>
                                 {% if app.request.attributes.get('_route') == 'lacces_wordList' %}
                                 <li class="active active-item-menu background-color-violet-lacces" id="liImg">
-                            {% else %}
+                                {% else %}
                                 <li class="grey darken-4" id="liImg">
-                                    {% endif %}
+                                {% endif %}
                                     <a class="waves-effect" href="{{ asset('administration/editData/wordList/fr') }}">Editer les mots</a>
                                 </li>
                                 <li>
@@ -97,7 +97,11 @@
                     </li>
                 </ul>
             </li>
-            <li>
+            {% if app.request.attributes.get('_route') == 'lacces_ex__en_add' %}
+            <li class="active active-item-menu background-color-violet-lacces">
+            {% else %}
+            <li class="grey darken-4">
+            {% endif %}
                 <a href="{{ path('lacces_ex__en_add') }}">Ajouter un exercice</a>
             </li>
         </ul>
