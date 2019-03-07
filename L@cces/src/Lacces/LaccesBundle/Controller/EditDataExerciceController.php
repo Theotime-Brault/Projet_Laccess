@@ -53,7 +53,7 @@ class EditDataExerciceController extends Controller
             $word = $request->request->get('word');
 
             switch ($ex){
-                case 1:
+                case '1':
                     $videoLink = $request->request->get('videoLink');
                     if($langue == "en"){
                         $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
@@ -67,7 +67,7 @@ class EditDataExerciceController extends Controller
                         $em->flush();
                     }
                     break;
-                case 2:
+                case '2':
                     $enonce = $request->request->get('enonce');
                     $reponses = $request->request->get('otherRep');
                     $tabReponse = explode("_", $reponses);
@@ -78,16 +78,19 @@ class EditDataExerciceController extends Controller
                         $em->flush();
                         foreach ($tabReponse as $r){
                             $objRep = new qcmEnonceEn($r, $objEx);
-                            //apres avoir persist recupere l'id du premier enonceè
+                            $em->persist($objRep);
+                            $em->flush();
                         }
-
-
+                        $objSolu = $em->getRepository('LaccesBundle:qcmEnonceEn')->findQcmenonceByQcmAndEnonce($tabReponse[0]);
+                        $objEx->setSolution($objSolu);
+                        $em->persist($objEx);
+                        $em->flush();
                     }else{
                         $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
 
                     }
                     break;
-                case 3:
+                case '3':
                     $videoLink = $request->request->get('videoLink');
                     $reponses = $request->request->get('otherRep');
                     $tabReponse = explode("_", $reponses);
@@ -99,7 +102,7 @@ class EditDataExerciceController extends Controller
 
                     }
                     break;
-                case 4:
+                case '4':
                     $enonce = $request->request->get('enonce');
                     if($langue == "en"){
                         $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);

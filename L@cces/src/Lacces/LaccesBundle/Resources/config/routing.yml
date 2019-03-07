@@ -148,6 +148,6 @@ lacces_exerciceD:
         langue: fr|en
 
 validAddExercice:
-    path: /administration/exercice/add/valid
+    path: /administration/exercice/add/validExercice
     defaults:
         _controller: LaccesBundle:EditDataExercice:validExercice

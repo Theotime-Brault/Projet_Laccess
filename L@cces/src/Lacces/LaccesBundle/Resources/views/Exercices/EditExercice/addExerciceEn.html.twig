@@ -29,7 +29,7 @@
             </div>
         </form>
         <div class="row center">
-            <button id="valid" type="submit" class="btn btn-hover background-color-orange-lacces">Ajouter</button>
+            <button id="valid" type="button" class="btn btn-hover background-color-orange-lacces" onclick="submit()">Ajouter</button>
         </div>
     </div>
 {% endblock %}
@@ -37,13 +37,17 @@
 {% block javascripts %}
     <script src="{{ asset('js/js_for_views/addExercice.js') }}"></script>
     <script>
+        function succes() {
+            alert("dsfsd");
+        }
+        
         function submit(){
             var ex = $('#typeEx').val();
             var solution = $('#solution').val();;
             var wordId = $('#words').val();
 
             switch (ex) {
-                case 1:
+                case '1':
                     var videoLink = $('#videoLink').val();
 
                     $.ajax({
@@ -57,7 +61,7 @@
                         }
                     })
                     break;
-                case 2:
+                case '2':
                     var enonce = $('#enonce').val();
                     var otherRep = OtherRepString();
 
@@ -65,14 +69,16 @@
                         cache:false,
                         type: 'POST',
                         dataType: 'json',
+                        url: "{{ path('validAddExercice') }}",
                         data:{'word':wordId, 'ex': ex, 'langue':"en", 'enonce':enonce, 'solution':solution, 'otherRep':otherRep},
                         success:function () {
+                            succes();
                         },
                         error:function () {
                         }
                     })
                     break;
-                case 3:
+                case '3':
                     var videoLink = $('#videoLink').val();
                     var otherRep = OtherRepString();
 
@@ -87,7 +93,7 @@
                         }
                     })
                     break;
-                case 4:
+                case '4':
                     $.ajax({
                         cache:false,
                         type: 'POST',
