@@ -187,7 +187,20 @@
             $(".preloader-background").hide();
         });
         $("#exercice-header").click(function () {
-            $("#exercice-body").load(ajaxExercice("{{ path('lacces_exerciceA1') }}", "#exercice-body"));
+
+            var nbAlea = Math.floor(Math.random() * 4.99);
+            switch(nbAlea) {
+                case 0:
+                    $("#exercice-body").load(ajaxExercice("{{ path('lacces_exerciceA1') }}", "#exercice-body"));
+                case 1:
+                    $("#exercice-body").load(ajaxExercice("{{ path('lacces_exerciceA2') }}", "#exercice-body"));
+                case 2:
+                    $("#exercice-body").load(ajaxExercice("{{ path('lacces_exerciceB') }}", "#exercice-body"));
+                case 3:
+                    $("#exercice-body").load(ajaxExercice("{{ path('lacces_exerciceC') }}", "#exercice-body"));
+                case 4:
+                    $("#exercice-body").load(ajaxExercice("{{ path('lacces_exerciceD') }}", "#exercice-body"));
+            }
         });
 
         function ajaxExercice (path, blockResponse){

@@ -61,9 +61,7 @@ class ContactController extends Controller
             //L'adresse qui recevra les mails, doit être la même que celle inscrit dans "parameters.yaml" dans "app/config":
             $mail = 'testlacces@gmail.com';
 
-
             $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')->setUsername($mail)->setPassword('TestL@cces1--');
-
 
             $mailer = \Swift_Mailer::newInstance($transport);
             $message = \Swift_Message::newInstance('Formulaire de Contact')
