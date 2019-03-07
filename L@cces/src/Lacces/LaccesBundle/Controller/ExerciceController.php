@@ -13,9 +13,12 @@ class ExerciceController extends Controller
    * @return \Symfony\Component\HttpFoundation\Response
    */
 
-  public function exercicesAction()
+  public function exercicesAction($langue)
   {
-      return $this->render('@Lacces/Exercices/exercices.html.twig');
+
+      return $this->render('@Lacces/Exercices/exercices.html.twig', array(
+        'langue' => $langue
+      ));
   }
 
 
@@ -67,7 +70,7 @@ class ExerciceController extends Controller
               $obj_exerciceA1Id = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findByWordEnId($motAleaId);
 
               //Si il y a plusieurs exercices
-              if(sizeof($obj_exerciceA1Id != 0)) {
+              if(sizeof($obj_exerciceA1Id) != 0) {
 
                 //On randomise le tableau qu'on obtient (on peut avoir plusieurs exercices)
                 $idRandom = rand(0, sizeof($obj_exerciceA1Id) - 1);
@@ -185,7 +188,7 @@ class ExerciceController extends Controller
               $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmEn')->find($obj_exerciceBId[$idRandom]);
 
               //On récupère les id des réponses correspondant à l'exercice
-              $obj_reponseB = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmFrId($obj_exerciceB->getId());
+              $obj_reponseB = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmEnId($obj_exerciceB->getId());
             }
           } else {
 

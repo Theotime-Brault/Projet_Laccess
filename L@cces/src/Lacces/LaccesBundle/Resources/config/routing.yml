@@ -94,9 +94,13 @@ administration:
         _controller: LaccesBundle:EditDataWord:admin
 
 lacces_exercices:
-    path:   /exercices
+    path:   /exercices/{langue}
     defaults:
+        langue: en
         _controller: LaccesBundle:Exercice:exercices
+    requirements:
+        langue: fr|en
+
 
 lacces_ex__fr_add:
     path: /administration/exerciceFr/add
@@ -111,7 +115,6 @@ lacces_ex__en_add:
 lacces_exerciceA1:
     path: /exercice/{langue}/A1
     defaults:
-        langue: fr
         _controller: LaccesBundle:Exercice:exerciceA1
 
 
