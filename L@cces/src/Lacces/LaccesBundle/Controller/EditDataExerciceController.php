@@ -89,11 +89,6 @@ class EditDataExerciceController extends Controller
                         }
 
                         if($langue == "en"){
-                            foreach ($tabReponse as $e){
-                                if($e == "" || $e == null){
-                                    return $this->redirectToRoute('lacces_ex__en_add');
-                                }
-                            }
 
                             $wordEn = $em->getRepository('LaccesBundle:wordEn')->find(intval($word));
                             $objEx = new qcmEn($enonce, $wordEn);
@@ -114,11 +109,6 @@ class EditDataExerciceController extends Controller
                             $em->persist($objEx);
                             $em->flush();
                         }else{
-                            foreach ($tabReponse as $e){
-                                if($e == "" || $e == null){
-                                    return $this->redirectToRoute('lacces_ex__fr_add');
-                                }
-                            }
 
                             $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
                             $objEx = new qcmFr($enonce, $wordFr);
@@ -151,11 +141,6 @@ class EditDataExerciceController extends Controller
                         }
 
                         if($langue == "en"){
-                            foreach ($tabReponse as $e){
-                                if($e == "" || $e == null){
-                                    return $this->redirectToRoute('lacces_ex__en_add');
-                                }
-                            }
 
                             $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
                             $objEx = new qcmVideoEn($videoLink, $wordEn);
@@ -176,11 +161,6 @@ class EditDataExerciceController extends Controller
                             $em->persist($objEx);
                             $em->flush();
                         }else{
-                            foreach ($tabReponse as $e){
-                                if($e == "" || $e == null){
-                                    return $this->redirectToRoute('lacces_ex__fr_add');
-                                }
-                            }
 
                             $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
                             $objEx = new qcmVideoEn($videoLink, $wordFr);

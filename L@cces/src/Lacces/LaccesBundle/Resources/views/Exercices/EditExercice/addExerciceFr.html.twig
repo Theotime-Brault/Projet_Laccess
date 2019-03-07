@@ -7,32 +7,46 @@
 {% block title %}Ajouter un exercice{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row center">
-            <a class="btn background-color-orange-lacces btn-hover white-text" href="{{ path('lacces_ex__en_add') }}">Passer en anglais</a>
-            <h5>Ajout d'un exercice pour un mot français</h5>
+<div class="container-body">
+    <main>
+        <div class="container">
+            <div class="container-main-flex">
+                <div class="row center">
+                    <a class="btn background-color-orange-lacces btn-hover white-text" href="{{ path('lacces_ex__en_add') }}">Passer en anglais</a>
+                    <h5>Ajout d'un exercice pour un mot français</h5>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <label>Mots</label>
+                        <select id="words" required="required">
+                            <option value="0" selected="selected">Selectionner un mot</option>
+                            {% for w in words %}
+                                <option value="{{ w.id }}">{{ w.word }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col s12 m6">
+                        <label for="typeEx">Type d'éxercice</label>
+                        <select name="typeEx" id="typeEx" required="required">
+                            <option value="0" selected="selected">Selectionner le type d'exercice</option>
+                            <option value="1">Signification video</option>
+                            <option value="2">QCM</option>
+                            <option value="3">QCM video</option>
+                            <option value="4">Reformulation</option>
+                        </select>
+                    </div>
+                    <div class="col s12">
+                        <div id="ex">
+                        </div>
+                    </div>
+                </div>
+                <div class="row center">
+                    <button id="valid" type="button" class="btn btn-hover background-color-orange-lacces" onclick="submit()">Ajouter</button>
+                </div>
+            </div>
         </div>
-        <label>Mots</label>
-        <select id="words" required="required">
-            <option value="0" selected="selected">Selectionner un mot</option>
-            {% for w in words %}
-                <option value="{{ w.id }}">{{ w.word }}</option>
-            {% endfor %}
-        </select>
-        <label for="typeEx">Type d'éxercice</label>
-        <select name="typeEx" id="typeEx" required="required">
-            <option value="0" selected="selected">Selectionner le type d'exercice</option>
-            <option value="1">Signification video</option>
-            <option value="2">QCM</option>
-            <option value="3">QCM video</option>
-            <option value="4">Reformulation</option>
-        </select>
-        <div id="ex">
-        </div>
-        <div class="row center">
-            <button id="valid" type="button" class="btn btn-hover background-color-orange-lacces" onclick="submit()">Ajouter</button>
-        </div>
-    </div>
+    </main>
+</div>
 {% endblock %}
 
 {% block javascripts %}
