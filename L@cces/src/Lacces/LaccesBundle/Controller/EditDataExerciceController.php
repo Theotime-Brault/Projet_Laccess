@@ -10,6 +10,10 @@ namespace Lacces\LaccesBundle\Controller;
 
 use Lacces\LaccesBundle\Entity\Exercise\qcmEn;
 use Lacces\LaccesBundle\Entity\Exercise\qcmEnonceEn;
+use Lacces\LaccesBundle\Entity\Exercise\qcmEnonceFr;
+use Lacces\LaccesBundle\Entity\Exercise\qcmEnonceVideoEn;
+use Lacces\LaccesBundle\Entity\Exercise\qcmEnonceVideoFr;
+use Lacces\LaccesBundle\Entity\Exercise\qcmFr;
 use Lacces\LaccesBundle\Entity\Exercise\qcmVideoEn;
 use Lacces\LaccesBundle\Entity\Exercise\reformulationEn;
 use Lacces\LaccesBundle\Entity\Exercise\significationVideoEn;
@@ -72,22 +76,39 @@ class EditDataExerciceController extends Controller
                     $reponses = $request->request->get('otherRep');
                     $tabReponse = explode("_", $reponses);
                     if($langue == "en"){
-                        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
+                        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find(intval($word));
                         $objEx = new qcmEn($enonce, $wordEn);
                         $em->persist($objEx);
+                        $em->flush();
+                        $objSolu = new qcmEnonceEn($solution, $objEx);
+                        $em->persist($objSolu);
                         $em->flush();
                         foreach ($tabReponse as $r){
                             $objRep = new qcmEnonceEn($r, $objEx);
                             $em->persist($objRep);
                             $em->flush();
                         }
-                        $objSolu = $em->getRepository('LaccesBundle:qcmEnonceEn')->findQcmenonceByQcmAndEnonce($tabReponse[0]);
-                        $objEx->setSolution($objSolu);
+                        $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findQcmenonceByQcmAndEnonce($solution);
+                        $objEx->setSolution($objSolu->getId());
                         $em->persist($objEx);
                         $em->flush();
                     }else{
                         $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
-
+                        $objEx = new qcmFr($enonce, $wordFr);
+                        $em->persist($objEx);
+                        $em->flush();
+                        $objSolu = new qcmEnonceFr($solution, $objEx);
+                        $em->persist($objSolu);
+                        $em->flush();
+                        foreach ($tabReponse as $r){
+                            $objRep = new qcmEnonceFr($r, $objEx);
+                            $em->persist($objRep);
+                            $em->flush();
+                        }
+                        $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findQcmenonceByQcmAndEnonce($solution);
+                        $objEx->setSolution($objSolu->getId());
+                        $em->persist($objEx);
+                        $em->flush();
                     }
                     break;
                 case '3':
@@ -96,10 +117,38 @@ class EditDataExerciceController extends Controller
                     $tabReponse = explode("_", $reponses);
                     if($langue == "en"){
                         $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($word);
-
+                        $objEx = new qcmVideoEn($videoLink, $wordEn);
+                        $em->persist($objEx);
+                        $em->flush();
+                        $objSolu = new qcmEnonceVideoEn($solution, $objEx);
+                        $em->persist($objSolu);
+                        $em->flush();
+                        foreach ($tabReponse as $r){
+                            $objRep = new qcmEnonceVideoEn($r, $objEx);
+                            $em->persist($objRep);
+                            $em->flush();
+                        }
+                        $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoEn')->findQcmenonceByQcmAndEnonce($solution);
+                        $objEx->setSolution($objSolu->getId());
+                        $em->persist($objEx);
+                        $em->flush();
                     }else{
                         $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
-
+                        $objEx = new qcmVideoEn($videoLink, $wordFr);
+                        $em->persist($objEx);
+                        $em->flush();
+                        $objSolu = new qcmEnonceVideoFr($solution, $objEx);
+                        $em->persist($objSolu);
+                        $em->flush();
+                        foreach ($tabReponse as $r){
+                            $objRep = new qcmEnonceVideoFr($r, $objEx);
+                            $em->persist($objRep);
+                            $em->flush();
+                        }
+                        $objSolu = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoFr')->findQcmenonceByQcmAndEnonce($solution);
+                        $objEx->setSolution($objSolu->getId());
+                        $em->persist($objEx);
+                        $em->flush();
                     }
                     break;
                 case '4':

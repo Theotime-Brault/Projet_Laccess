@@ -56,12 +56,10 @@ class qcmVideoFr
      * @param wordFr $wordFr
      * @param PersistentCollection $qcmVideoEnoncesFr
      */
-    public function __construct($solution, $videoLink, wordFr $wordFr, PersistentCollection $qcmVideoEnoncesFr)
+    public function __construct($videoLink, wordFr $wordFr)
     {
-        $this->solution = $solution;
         $this->videoLink = $videoLink;
         $this->wordFr = $wordFr;
-        $this->qcmVideoEnoncesFr = $qcmVideoEnoncesFr;
     }
 
     /**

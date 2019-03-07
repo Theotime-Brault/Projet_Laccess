@@ -67,9 +67,11 @@ function enlever() {
 function OtherRepString() {
     var res = "";
     $('.otherRep').each(function () {
-        res += $(this).val();
         res += "_"
-    })
+        res += $(this).val();
+
+    });
+    res = res.substring(1);
 
     return res;
 }

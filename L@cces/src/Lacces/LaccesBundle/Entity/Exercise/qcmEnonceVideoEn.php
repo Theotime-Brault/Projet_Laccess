@@ -40,9 +40,8 @@ class qcmEnonceVideoEn
      * @param string $enonces
      * @param qcmVideoEn $qcmVideoEn
      */
-    public function __construct($id, $enonces, qcmVideoEn $qcmVideoEn)
+    public function __construct($enonces, qcmVideoEn $qcmVideoEn)
     {
-        $this->id = $id;
         $this->enonces = $enonces;
         $this->qcmVideoEn = $qcmVideoEn;
     }

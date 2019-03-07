@@ -18,13 +18,11 @@ class qcmEnonceVideoFrRepository extends \Doctrine\ORM\EntityRepository
       ->getResult();
   }
 
-    public function findQcmenonceByQcmAndEnonce($idQcm, $enonce){
+    public function findQcmenonceByQcmAndEnonce($enonce){
         return $this->createQueryBuilder('c')
             ->where('c.enonces=:enonce')
-            ->leftJoin('c.qcmVideoFr', 'b')
-            ->andWhere('b.id=:idQcm')
             ->setParameter('enonce', $enonce)
-            ->setParameter('idQcm', $idQcm)
+            ->setMaxResults(1)
             ->getQuery()
             ->getOneOrNullResult();
     }
