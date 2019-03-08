@@ -15,7 +15,7 @@ $('#typeEx').change(function () {
                 "<label>Bonne réponse</label>" +
                 "<input id='solution' required=\"required\" type=\"text\" placeholder='entrer la bonne réponse'></input>" +
                 "<label>Autre réponse</label>" +
-                "<div class='row'><input class='otherRep col s11' required=\"required\" type=\"text\" placeholder='entrer une autre réponse'></input><div id='ajouterChamp' class='col s1'></div></div>"
+                "<div class='row'><input class='otherRep col s10' required=\"required\" type=\"text\" placeholder='entrer une autre réponse'></input><div id='ajouterChamp' class='col s2'></div></div>"
             )
             break;
         case '3':
@@ -25,7 +25,7 @@ $('#typeEx').change(function () {
                 "<label>Bonne réponse</label>" +
                 "<input id='solution' required=\"required\" type=\"text\" placeholder='entrer la bonne réponse'></input>" +
                 "<label>Autre réponse</label>" +
-                "<div class='row'><input class='otherRep col s11' required=\"required\" type=\"text\" placeholder='entrer une autre réponse'></input><div id='ajouterChamp' class='col s1'></div></div>"
+                "<div class='row'><input class='otherRep col s10' required=\"required\" type=\"text\" placeholder='entrer une autre réponse'></input><div id='ajouterChamp' class='col s2'></div></div>"
             )
             break;
         case '4':
@@ -51,15 +51,15 @@ $('#typeEx').change(function () {
 function ajouter() {
     $('#ex').append(
         "<div class='row add'>" +
-        "<input required=\"required\" class='otherRep col s11' type=\"text\" placeholder='entrer une autre réponse'></input>" +
-        "<a class='btn background-color-orange-lacces col s1''><i class='material-icons suppr'>remove</i></a>" +
+        "<input required=\"required\" class='otherRep col s10' type=\"text\" placeholder='entrer une autre réponse'></input>" +
+        "<a class='btn background-color-orange-lacces col s2' onclick='enlever(this)'><i class='material-icons'>remove</i></a>" +
         "</div>"
     )
 };
 
-$('.suppr').click(function () {
-    $(this).parent().remove();
-});
+function enlever(a){
+    $(a).parent().remove();
+}
 
 function OtherRepString() {
     var res = "";
