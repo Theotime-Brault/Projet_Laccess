@@ -14,6 +14,20 @@ $(document).ready(function(){
     });
 
     $("#close-barre").click(function(){
+        hiddenSearch();
+    });
+
+    $("#background-search").click(function(){
+        hiddenSearch();
+    });
+
+    $("#search-barre").keyup(function(e) {
+        if (e.keyCode == 27) {
+            hiddenSearch();
+        }
+    });
+
+    function hiddenSearch() {
         $("#background-search").css("display", "none");
         $("html").css("overflow", "auto");
         $("#search-box").css("animation", "slideOutUp 200ms");
@@ -22,7 +36,7 @@ $(document).ready(function(){
         }, 150);
         $("#close-barre").fadeOut(10);
         $("#material-icons-dropdown-flag").fadeOut(10);
-    });
+    }
 
     //Lancement des 2 vidéos simultanément au clickAction (non mobile)
 

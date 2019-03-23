@@ -32,6 +32,20 @@ $(document).ready(function () {
 
 
     $("#close-barre").click(function(){
+        hiddenSearchBase();
+    });
+
+    $("#background-search").click(function(){
+        hiddenSearchBase();
+    });
+
+    $("#search-barre").keyup(function(e) {
+        if (e.keyCode == 27) {
+            hiddenSearchBase();
+        }
+    });
+
+    function hiddenSearchBase() {
         $("#background-search").css("display", "none");
         $(".container-main-active").toggleClass("container-main");
         $(".container-main").removeClass("container-main-active");
@@ -56,7 +70,7 @@ $(document).ready(function () {
             "transition-duration": "100ms",
             right: "0",
         });
-    });
+    }
 
     /*
     $("#imgFlagFr").click(function () {
