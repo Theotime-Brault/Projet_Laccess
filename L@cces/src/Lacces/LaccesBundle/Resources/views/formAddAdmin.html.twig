@@ -6,8 +6,8 @@
     <div class="input-field col s12 m6 offset-m3">
         <i class="material-icons color-orange-lacces prefix">account_circle</i>
         {{ form_label(form.username)}}
-        {{ form_errors(form.username)}}
         {{ form_widget(form.username)}}
+        <span class="red-text">{{ form_errors(form.username)}}</span>
     </div>
 </div>
 
@@ -15,17 +15,22 @@
     <div class="input-field col s12 m6 offset-m3">
         <i class="material-icons color-orange-lacces prefix">account_circle</i>
         {{ form_label(form.email)}}
-        {{ form_errors(form.email)}}
         {{ form_widget(form.email)}}
+        <span class="red-text">{{ form_errors(form.email)}}</span>
     </div>
 </div>
 
 <div class="row center">
     <div class="input-field col s12 m6 offset-m3">
         <i class="material-icons color-orange-lacces prefix">account_circle</i>
-        {{ form_label(form.password)}}
-        {{ form_errors(form.password)}}
-        {{ form_widget(form.password)}}
+        {{ form_label(form.password.first)}}
+        {{ form_widget(form.password.first)}}
+    </div>
+    <div class="input-field col s12 m6 offset-m3">
+        <i class="material-icons color-orange-lacces prefix">account_circle</i>
+        {{ form_label(form.password.second)}}
+        {{ form_widget(form.password.second)}}
+        <span class="red-text">{{ form_errors(form.password.first)}}</span>
     </div>
 </div>
 
