@@ -69,7 +69,7 @@ $('#typeEx').change(function () {
 function ajouter() {
     $('#ex').append(
         "<div class='row add'>" +
-        "<input required=\"required\" class='otherRep col s10' type=\"text\" placeholder='entrer une autre réponse'></input>" +
+        "<input required=\"required\" class='otherRep col s10' type=\"text\" placeholder='entrer une autre réponse' autocomplete=\"off\"></input>" +
         "<a class='btn background-color-orange-lacces col s2' onclick='enlever(this)'><i class='material-icons'>remove</i></a>" +
         "</div>"
     )
