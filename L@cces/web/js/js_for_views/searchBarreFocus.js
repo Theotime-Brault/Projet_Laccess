@@ -14,7 +14,7 @@ $(document).ready(function () {
         $(".container-search-active").removeClass("container-search");
         $("#btnSearch").css({
             "transition-duration": "100ms",
-            right: "2rem",
+            right: "1.2rem",
         });
         $('#search-on').css({
             height: "40px",

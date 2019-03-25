@@ -14,7 +14,37 @@
 {% block body %}
     <div class="nav-content">
         <div class = "row center">
-            <ul class = "tabs z-depth-1">
+            <ul class = "tabs z-depth-1 tabs-fixed-width">
+                <li id="exerciceLangage" class="tooltipped" data-position="bottom" data-tooltip="Changez de langue">
+                    <a id="material-icons-dropdown-flag" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-flag'>
+                        <i class="material-icons">language</i>
+                        <i class="material-icons">arrow_drop_down</i>
+                    </a>
+                    <ul id="dropdown-flag" class="dropdown-content dropdown-flag-exercice">
+                        <li>
+                            <a href="{{ path('lacces_exercices', {'langue': "en"}) }}">
+                                <img id="imgFlagEn" class="image-flag-drowpdown" src="{{ asset('pictures/flags/FlagEN_SearchBar.jpg') }} "/>
+                            </a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a href="{{ path('lacces_exercices', {'langue': "fr"}) }}">
+                                <img id="imgFlagFr" class="image-flag-drowpdown" src="{{ asset('pictures/flags/FlagFR_SearchBar.jpg') }}"/>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                {#
+                <li class="">
+                    {% if langue == "fr" %}
+                        <a class="btn-flat waves-effect exercices" href="{{ path('lacces_exercices', {'langue': "en"}) }}">Passer en anglais</a>
+                    {% else %}
+                        <a class="btn-flat waves-effect exercices" href="{{ path('lacces_exercices', {'langue': "fr"}) }}">Passer en français</a>
+                    {% endif %}
+                </li>
+
+                #}
                 <li class = "tab tooltipped" data-position="bottom" data-tooltip="Regardez la vidéo ASL et trouvez la phrase signée en anglais">
                     <a id="exerciceA1Link" href="#exerciceA1">Exercice A1</a>
                 </li>
@@ -27,7 +57,7 @@
                 <li class = "tab tooltipped" data-position="bottom" data-tooltip="Quelle phrase  est la plus proche de la phrase signée">
                     <a id="exerciceCLink" href = "#exerciceC">Exercice C</a>
                 </li>
-                <li class = "tab tooltipped" data-position="bottom" data-tooltip="Recréez la phrase en mettant les mots dans l’ordre  pour recréer une phrase">
+                <li class = "tab tooltipped disabled" data-position="bottom" data-tooltip="Recréez la phrase en mettant les mots dans l’ordre  pour recréer une phrase">
                     <a id="exerciceDLink" href = "#exerciceD">Exercice D</a>
                 </li>
             </ul>
@@ -60,14 +90,6 @@
                 </div>
             </div>
         </main>
-    </div>
-
-    <div>
-        {% if langue == "fr" %}
-            <a class="btn waves-effect exercices" href="{{ path('lacces_exercices', {'langue': "en"}) }}">Passer en anglais</a>
-        {% else %}
-            <a class="btn waves-effect exercices" href="{{ path('lacces_exercices', {'langue': "fr"}) }}">Passer en français</a>
-        {% endif %}
     </div>
 {% endblock %}
 
@@ -117,12 +139,14 @@
                 $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "fr"}) }}", "#exerciceC"));
         });
 
+        {#
         $("#exerciceDLink").click(function () {
             if(langue == "en")
                 $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "en"}) }}", "#exerciceD"));
             else
                 $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "fr"}) }}", "#exerciceD"));
         });
+        #}
 
         function ajaxExercice (path, blockResponse){
             $.ajax({

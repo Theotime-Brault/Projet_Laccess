@@ -18,6 +18,10 @@ $(document).ready(function () {
         coverTrigger: false,
     });
 
+    $('#dropdown-flag-exercice').dropdown({
+        coverTrigger: false,
+    });
+
     $(".exercices").on("click", function(){
 
     });
@@ -28,9 +32,13 @@ $(document).ready(function () {
         $('.material-icons').toggleClass('rotate')
     });
 
-    $('.tooltipped').tooltip({
-        enterDelay: 700,
-    });
+    //display tooltipped only on desktop
+    if(!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ))
+    {
+        $('.tooltipped').tooltip({
+            enterDelay: 500,
+        });
+    }
 
     //chrono message flash
     $(function() {
