@@ -89,6 +89,11 @@
                     <div id="exerciceD"></div>
                 </div>
             </div>
+            <div class="fixed-action-btn">
+                <a id="refresh" class="btn-floating btn-large waves-effect background-color-orange-lacces">
+                    <i class="large material-icons white-text">refresh</i>
+                </a>
+            </div>
         </main>
     </div>
 {% endblock %}
@@ -147,6 +152,13 @@
                 $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "fr"}) }}", "#exerciceD"));
         });
         #}
+
+        $("#refresh").click(function () {
+            if(langue == "en") {
+
+            }
+
+        });
 
         function ajaxExercice (path, blockResponse){
             $.ajax({
