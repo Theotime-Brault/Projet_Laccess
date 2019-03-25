@@ -60,18 +60,21 @@ class ContactController extends Controller
 
             //L'adresse qui recevra les mails, doit être la même que celle inscrit dans "parameters.yaml" dans "app/config":
             $mail = 'testlacces@gmail.com';
+            $userMail = $formulaire->getEmail();
 
             $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')->setUsername($mail)->setPassword('TestL@cces1--');
 
             $mailer = \Swift_Mailer::newInstance($transport);
             $message = \Swift_Message::newInstance('Formulaire de Contact')
-                ->setFrom($formulaire->getEmail())
-                ->setTo($mail)
+                ->setSubject("Formulaire de contact")                         //Sujet du mail
+                ->setFrom(['testlacces@gmail.com' => $userMail])        //Adresse de l'expéditeur
+                ->setReplyTo($userMail)                                 //Permet de répondre au mail envoyé par l'utilisateur
+                ->setTo($mail)                                                        //Envoie le mail à cette adresse
                 ->setCharset('UTF-8')
                 ->setContentType('text/html')
                 ->setBody('Nom : '.$formulaire->getNom()
                     .'<br />Prénom : '.$formulaire->getPrenom()
-                    .'<br />Email : '.$formulaire->getEmail()
+                    .'<br />Email : '.$userMail
                     .'<br />Message : '.$formulaire->getMessage()
                     );
             $this->get('mailer')->send($message);
