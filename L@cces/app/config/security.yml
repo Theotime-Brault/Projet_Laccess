@@ -2,14 +2,21 @@
 # https://symfony.com/doc/current/security.html
 security:
 
+    encoders:
+        Lacces\LaccesBundle\Entity\user:
+            algorithm: bcrypt
+
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
-        in_memory:
-            memory:
-                users:
-                    admin:
-                        password: $2y$10$IboBK/yxOFRK/5tUv6hqQuxswXmJkskloyQWrPnPiHuSw2vb7nhsK #admin
-                        roles: ROLE_ADMIN
+        #in_memory:
+        #    memory:
+        #        users:
+        #            admin:
+        #                password: $2y$10$IboBK/yxOFRK/5tUv6hqQuxswXmJkskloyQWrPnPiHuSw2vb7nhsK #admin
+        #                roles: ROLE_ADMIN
+        symfony:
+            entity:
+                class: LaccesBundle:user
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -34,8 +41,9 @@ security:
                 path: logout
                 target: lacces_homepage
 
+            pattern:    ^/
+            http_basic: ~
+            provider: symfony
+
     access_control:
         - { path: ^/administration, roles: ROLE_ADMIN }
-
-    encoders:
-        Symfony\Component\Security\Core\User\User: bcrypt

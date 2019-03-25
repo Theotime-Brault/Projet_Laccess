@@ -7,7 +7,7 @@ use Lacces\LaccesBundle\Entity\user;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
 class AdministrationController extends Controller
@@ -17,7 +17,7 @@ class AdministrationController extends Controller
     return $this->render("@Lacces/Administration/administration.html.twig");
   }
 
-  public function addAdminAction(Request $request) {
+  public function addAdminAction(Request $request, UserPasswordEncoderInterface $encoder) {
 
     $em = $this->getDoctrine()->getManager();
 
@@ -38,8 +38,8 @@ class AdministrationController extends Controller
       $this->addFlash('info', "L'administrateur a bien été créé !");
 
       $newAdmin->setUsername($formulaire->getUsername());
-      $newAdmin->setPassword($formulaire->getPassword());
-      $newAdmin->setRoles("Admin");
+      $newAdmin->setPassword($encoder->encodePassword($newAdmin, $formulaire->getPassword()));
+      $newAdmin->setRoles("ROLE_ADMIN");
 
       $em->persist($newAdmin);
       $em->flush();

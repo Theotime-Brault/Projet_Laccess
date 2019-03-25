@@ -19,10 +19,12 @@ class FormExRefomSign extends AbstractType
     {
         $builder
             ->add('question', TextType::class, [
-                'label'=> 'Question'
+                'label'=> 'Question',
+                'autocomplete' => "off"
             ])
             ->add('solution', TextType::class, [
-                'label'=> 'Solution'
+                'label'=> 'Solution',
+                'autocomplete' => "off"
             ]);
     }
 

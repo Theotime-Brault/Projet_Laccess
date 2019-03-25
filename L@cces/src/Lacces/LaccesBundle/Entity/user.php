@@ -2,6 +2,7 @@
 
 namespace Lacces\LaccesBundle\Entity;
 
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="Lacces\LaccesBundle\Repository\userRepository")
  */
-class user
+class user implements AdvancedUserInterface, \Serializable
 {
     /**
      * @var int
@@ -38,12 +39,33 @@ class user
     /**
      * @var string
      *
+     * @ORM\Column(type="string", length=60, unique=true)
+     */
+      private $email;
+
+
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_active", type="boolean")
+     */
+      private $isActive;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="roles", type="string", length=64)
      */
     private $roles;
 
 
-    /**
+    public function __construct()
+    {
+      $this->isActive = true;
+    }
+
+  /**
      * Get id
      *
      * @return int
@@ -75,6 +97,11 @@ class user
     public function getUsername()
     {
         return $this->username;
+    }
+
+    public function getSalt()
+    {
+      return null;
     }
 
     /**
@@ -115,14 +142,85 @@ class user
         return $this;
     }
 
-    /**
-     * Get roles
-     *
-     * @return string
-     */
     public function getRoles()
     {
-        return $this->roles;
+        return array($this->roles);
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    public function serialize()
+    {
+      return serialize(array(
+        $this->id,
+        $this->username,
+        $this->password,
+        $this->isActive
+      ));
+    }
+
+    public function unserialize($serialized)
+    {
+      list (
+        $this->id,
+        $this->username,
+        $this->password,
+        $this->isActive
+        ) = unserialize($serialized);
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+      return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+      $this->email = $email;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isActive()
+    {
+      return $this->isActive;
+    }
+
+    /**
+     * @param bool $isActive
+     */
+    public function setIsActive($isActive)
+    {
+      $this->isActive = $isActive;
+    }
+
+    public function isAccountNonExpired()
+    {
+      return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+      return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+      return true;
+    }
+
+    public function isEnabled()
+    {
+      return $this->isActive;
     }
 }
 

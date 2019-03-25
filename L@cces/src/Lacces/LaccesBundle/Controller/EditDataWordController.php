@@ -13,7 +13,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @IsGranted("ROLE_ADMIN")
@@ -41,6 +40,7 @@ class EditDataWordController extends Controller
           'value' => $word->getWord(),
           'class' => "formValue",
           'data-length' => "50",
+            'autocomplete' => "off"
         )))
         ->add('videoLink', TextType::class, array(
           'label' => "Url de la vidéo",
@@ -49,6 +49,7 @@ class EditDataWordController extends Controller
           'value' => $word->getVideoLink(),
           'class' => "formValue",
           'data-length' => "200",
+            'autocomplete' => "off"
         )))
         ->add('contextSentence', TextType::class, array(
           'label' => "Phrase de contextualisation",
@@ -57,6 +58,7 @@ class EditDataWordController extends Controller
           'value' => $word->getContextSentence(),
           'class' => "formValue",
           'data-length' => "200",
+            'autocomplete' => "off"
         )))
 
         //VALIDATION
@@ -110,6 +112,7 @@ class EditDataWordController extends Controller
           'maxlength' => "50",
           'class' => "formValue",
           'data-length' => "50",
+            'autocomplete' => "off"
         )))
         ->add('videoLinkFr', TextType::class, array(
           'label' => "Url de la vidéo française",
@@ -117,6 +120,7 @@ class EditDataWordController extends Controller
           'maxlength' => "200",
           'class' => "formValue",
           'data-length' => "200",
+            'autocomplete' => "off"
         )))
         ->add('contextSentenceFr', TextType::class, array(
           'label' => "Phrase de contextualisation française",
@@ -124,6 +128,7 @@ class EditDataWordController extends Controller
           'maxlength' => "200",
           'class' => "formValue",
           'data-length' => "200",
+            'autocomplete' => "off"
         )))
 
         //MOT ANGLAIS
@@ -134,6 +139,7 @@ class EditDataWordController extends Controller
           'maxlength' => "50",
           'class' => "formValue",
           'data-length' => "50",
+            'autocomplete' => "off"
         )))
         ->add('videoLinkEn', TextType::class, array(
           'label' => "Url de la vidéo américaine",
@@ -141,6 +147,7 @@ class EditDataWordController extends Controller
           'maxlength' => "200",
           'class' => "formValue",
           'data-length' => "200",
+            'autocomplete' => "off"
         )))
         ->add('contextSentenceEn', TextType::class, array(
           'label' => "Phrase de contextualisation américaine",
@@ -148,6 +155,7 @@ class EditDataWordController extends Controller
           'maxlength' => "200",
           'class' => "formValue",
           'data-length' => "200",
+            'autocomplete' => "off"
         )))
 
         //VALIDATION
@@ -281,6 +289,7 @@ class EditDataWordController extends Controller
               'maxlength' => "50",
               'class' => "formValue",
               'data-length' => "50",
+                'autocomplete' => "off"
             )))
             ->add('videoLinkFr', TextType::class, array(
               'label' => "Url de la video française",
@@ -288,6 +297,7 @@ class EditDataWordController extends Controller
               'maxlength' => "200",
               'class' => "formValue",
               'data-length' => "200",
+                'autocomplete' => "off"
             )))
             ->add('contextSentenceFr', TextType::class, array(
               'label' => "Phrase de contextualisation française",
@@ -295,6 +305,7 @@ class EditDataWordController extends Controller
               'maxlength' => "200",
               'class' => "formValue",
               'data-length' => "200",
+                'autocomplete' => "off"
               )))
             ->add('submit', SubmitType::class, array(
               'label' => 'Envoyer',
@@ -330,6 +341,7 @@ class EditDataWordController extends Controller
                 'maxlength' => "50",
                 'class' => "formValue",
                 'data-length' => "50",
+                  'autocomplete' => "off"
                 )))
               ->add('videoLinkEn', TextType::class, array(
                 'label' => "Url de la video américaine",
@@ -337,6 +349,7 @@ class EditDataWordController extends Controller
                 'maxlength' => "200",
                 'class' => "formValue",
                 'data-length' => "200",
+                  'autocomplete' => "off"
                 )))
               ->add('contextSentenceEn', TextType::class, array(
                 'label' => "Phrase de contextualisation américaine",
@@ -344,6 +357,7 @@ class EditDataWordController extends Controller
                 'maxlength' => "200",
                 'class' => "formValue",
                 'data-length' => "200",
+                  'autocomplete' => "off"
                 )))
               ->add('submit', SubmitType::class, array(
                 'label' => 'Envoyer',
