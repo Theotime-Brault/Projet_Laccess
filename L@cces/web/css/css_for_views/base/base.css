@@ -466,6 +466,11 @@ footer .divider
     background-color: #69085a !important;
 }
 
+.btn-flat-hover:hover
+{
+    background-color: #eeeeee !important;
+}
+
 .formValue:focus, .validate:focus
 {
     border-bottom: 1px solid #69085a !important;

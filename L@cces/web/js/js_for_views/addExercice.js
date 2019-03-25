@@ -4,11 +4,11 @@ $('#typeEx').change(function () {
             $('#ex').html("" +
                 "<div class='input-field'>" +
                 "<label>Lien vidéo</label>" +
-                "<input id='videoLink' required=\"required\" type=\"text\" autocomplete=\"off\"></input>" +
+                "<input id='videoLink' class='formValue' required=\"required\" type=\"text\" autocomplete=\"off\"/>" +
                 "</div>" +
                 "<div class='input-field'>" +
                 "<label>Solution</label>" +
-                "<input id='solution' required=\"required\" type=\"text\" autocomplete=\"off\"></input>" +
+                "<input id='solution' class='formValue' required=\"required\" type=\"text\" autocomplete=\"off\"/>" +
                 "</div>"
             );
             break;
@@ -16,41 +16,41 @@ $('#typeEx').change(function () {
             $('#ex').html("" +
                 "<div class='input-field'>" +
                 "<label>Enoncé</label>" +
-                "<input id='enonce' required=\"required\" type=\"text\" autocomplete=\"off\"></input>" +
+                "<input id='enonce' class='formValue' required=\"required\" type=\"text\" autocomplete=\"off\"/>" +
                 "</div>" +
                 "<div class='input-field'>" +
                 "<label>Bonne réponse</label>" +
-                "<input id='solution' required=\"required\" type=\"text\" autocomplete=\"off\"></input>" +
+                "<input id='solution' class='formValue' required=\"required\" type=\"text\" autocomplete=\"off\"/>" +
                 "</div>" +
                 "<div class='input-field'>" +
                 "<label>Autre réponse</label>" +
-                "<input class='otherRep col s10' required=\"required\" type=\"text\" autocomplete=\"off\"></input></div><div id='ajouterChamp' class='col s2'></div>"
+                "<input class='otherRep col s11 formValue' required=\"required\" type=\"text\" autocomplete=\"off\"/></div><div id='ajouterChamp' class='col s1'></div>"
             );
             break;
         case '3':
             $('#ex').html("" +
                 "<div class='input-field'>" +
                 "<label>Lien vidéo</label>" +
-                "<input id='videoLink' required=\"required\" type=\"text\" autocomplete=\"off\"></input>" +
+                "<input id='videoLink' class='formValue' required=\"required\" type=\"text\" autocomplete=\"off\"/>" +
                 "</div>" +
                 "<div class='input-field'>" +
                 "<label>Bonne réponse</label>" +
-                "<input id='solution' required=\"required\" type=\"text\" autocomplete=\"off\"></input>" +
+                "<input id='solution' class='formValue' required=\"required\" type=\"text\" autocomplete=\"off\"/>" +
                 "</div>" +
                 "<div class='input-field'>" +
                 "<label>Autre réponse</label>" +
-                "<input class='otherRep col s10' required=\"required\" type=\"text\" autocomplete=\"off\"></input></div><div id='ajouterChamp' class='col s2'></div>"
+                "<input class='otherRep col s11 formValue' required=\"required\" type=\"text\" autocomplete=\"off\"/></div><div id='ajouterChamp' class='col s1'></div>"
             );
             break;
         case '4':
             $('#ex').html("" +
                 "<div class='input-field'>" +
                 "<label>Enoncé</label>" +
-                "<input id='enonce' required=\"required\" type=\"text\" autocomplete=\"off\"></input>" +
+                "<input id='enonce' class='formValue' required=\"required\" type=\"text\" autocomplete=\"off\"/>" +
                 "</div>" +
                 "<div class='input-field'>" +
                 "<label>Solution</label>" +
-                "<input id='solution' required=\"required\" type=\"text\" autocomplete=\"off\"></input>" +
+                "<input id='solution' class='formValue' required=\"required\" type=\"text\" autocomplete=\"off\"/>" +
                 "</div>"
             );
             break;
@@ -60,7 +60,7 @@ $('#typeEx').change(function () {
     }
 
     if($('#typeEx option:selected').val() == '2' || $('#typeEx option:selected').val() == '3'){
-        $('#ajouterChamp').html("<a class='btn background-color-orange-lacces' onclick='ajouter()'><i class='material-icons'>add</i></a>")
+        $('#ajouterChamp').html("<a class='btn-flat btn-flat-hover' onclick='ajouter()'><i class='material-icons'>add</i></a>")
     }else{
         $('.add').remove();
     }
@@ -68,9 +68,10 @@ $('#typeEx').change(function () {
 
 function ajouter() {
     $('#ex').append(
-        "<div class='row add'>" +
-        "<input required=\"required\" class='otherRep col s10' type=\"text\" placeholder='entrer une autre réponse'></input>" +
-        "<a class='btn background-color-orange-lacces col s2' onclick='enlever(this)'><i class='material-icons'>remove</i></a>" +
+        "<div class=\"input-field\">" +
+        "<label for=\"otherRep\">Autre réponse</label>"+
+        "<input required=\"required\" class='otherRep col s11' id=\"otherRep\" type=\"text\"/>" +
+        "<a class='btn-flat btn-flat-hover col s1' onclick='enlever(this)'><i class='material-icons'>remove</i></a>" +
         "</div>"
     )
 };

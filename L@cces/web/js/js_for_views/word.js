@@ -40,13 +40,23 @@ $(document).ready(function(){
 
     //Lancement des 2 vidéos simultanément au clickAction (non mobile)
 
-
-    /*$(".play").on("click", function(ev) {
-        $(".block-video").fadeOut("fast");
-        $("#video-word-1")[0].src += "&autoplay=1";
-        ev.preventDefault();
-        $("#video-word-2")[0].src += "&autoplay=1";
-        ev.preventDefault();
+    $("#word").hasClass("active", function () {
+        $("#play-videos").on("click", function(ev) {
+            $("#video-word-1")[0].src += "&autoplay=1";
+            ev.preventDefault();
+            $("#video-word-2")[0].src += "&autoplay=1";
+            ev.preventDefault();
         });
-    */
+    });
+
+    $("#word").hasClass("active", function () {
+        $("#play-videos").on("click", function(ev) {
+            $("#video-sentence-1")[0].src += "&autoplay=1";
+            ev.preventDefault();
+            $("#video-sentence-2")[0].src += "&autoplay=1";
+            ev.preventDefault();
+        });
+    });
+
+
 });
