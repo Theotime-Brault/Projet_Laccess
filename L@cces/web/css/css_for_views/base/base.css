@@ -517,6 +517,11 @@ footer .divider
     height: 50px;
 }
 
+.ml-form
+{
+    text-align: justify;
+}
+
 
 @-webkit-keyframes slideInDown {
     from {
