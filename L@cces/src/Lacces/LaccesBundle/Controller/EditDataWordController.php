@@ -20,11 +20,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
  */
 class EditDataWordController extends Controller
 {
-    public function adminAction()
-    {
-        return $this->render("@Lacces/Administration/administration.html.twig");
-    }
-
     public function editAction(Request $request, $wordId, $langue) {
 
       $em = $this->getDoctrine()->getManager();

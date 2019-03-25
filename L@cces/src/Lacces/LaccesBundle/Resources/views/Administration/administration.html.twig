@@ -122,6 +122,21 @@
         </noscript>
 
         {% block body %}
+
+            {% block message_flash %}
+                {% for msg in app.session.flashBag.get('info') %}
+                    <div class="message-flash background-color-orange-lacces">
+                        <p>{{ msg }}</p>
+                    </div>
+                {% endfor %}
+            {% endblock %}
+
+
+            <a href="{{ path("add_admin") }}">
+                <button id="btn-ajout-admin" class="btn btn-hover" type="button">
+                    Ajouter un admin
+                </button>
+            </a>
         {% endblock %}
     </body>
     <script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>

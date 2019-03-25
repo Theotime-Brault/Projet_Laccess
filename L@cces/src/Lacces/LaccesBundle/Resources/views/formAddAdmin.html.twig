@@ -1,0 +1,33 @@
+
+
+{{ form_start(form)}}
+
+<div class="row center">
+    <div class="input-field col s12 m6 offset-m3">
+        <i class="material-icons color-orange-lacces prefix">account_circle</i>
+        {{ form_label(form.username)}}
+        {{ form_errors(form.username)}}
+        {{ form_widget(form.username)}}
+    </div>
+</div>
+
+<div class="row center">
+    <div class="input-field col s12 m6 offset-m3">
+        <i class="material-icons color-orange-lacces prefix">account_circle</i>
+        {{ form_label(form.password)}}
+        {{ form_errors(form.password)}}
+        {{ form_widget(form.password)}}
+    </div>
+</div>
+
+<div class="row center">
+    {{ form_widget(form.submit) }}
+</div>
+
+{{ form_end(form)}}
+
+
+
+
+
+
