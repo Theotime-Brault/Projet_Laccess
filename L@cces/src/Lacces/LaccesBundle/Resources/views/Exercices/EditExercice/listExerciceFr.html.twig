@@ -28,7 +28,9 @@
                             <tbody>
                                 {% for e in significationVideo %}
                                     <tr>
-                                        <td></td>
+                                        <td class="flow-text black-text">
+                                            {{ e.wordFr.word }}
+                                        </td>
                                         <td class="flow-text black-text">{{ e.solution }}</td>
                                     </tr>
                                 {% endfor %}
@@ -46,15 +48,17 @@
                     <div class="collapsible-body">
                         <table class="striped">
                             <thead>
-                            <tr>
-                                <th>Mot correspondant</th>
-                                <th>Enoncé</th>
-                            </tr>
+                                <tr>
+                                    <th>Mot correspondant</th>
+                                    <th>Enoncé</th>
+                                </tr>
                             </thead>
                             <tbody>
                             {% for e in comparaisonVideo %}
                                 <tr>
-                                    <td></td>
+                                    <td class="flow-text black-text">
+                                        {{ e.wordFr.word }}
+                                    </td>
                                     <td class="flow-text black-text">{{ e.contextSentence }}</td>
                                 </tr>
                             {% endfor %}
@@ -80,7 +84,9 @@
                             <tbody>
                                 {% for e in qcm %}
                                     <tr>
-                                        <td></td>
+                                        <td class="flow-text black-text">
+                                            {{ e.wordFr.word }}
+                                        </td>
                                         <td class="flow-text black-text">{{ e.question }}</td>
                                     </tr>
                                 {% endfor %}
@@ -106,7 +112,9 @@
                             <tbody>
                                 {% for e in qcmVideo %}
                                     <tr>
-                                        <td></td>
+                                        <td class="flow-text black-text">
+                                            {{ e.wordFr.word }}
+                                        </td>
                                         <td class="flow-text black-text">{{ e.solution }}</td>
                                     </tr>
                                 {% endfor %}
@@ -132,7 +140,9 @@
                             <tbody>
                             {% for e in reformulation %}
                                 <tr>
-                                    <td></td>
+                                    <td class="flow-text black-text">
+                                        {{ e.wordFr.word }}
+                                    </td>
                                     <td class="flow-text black-text">{{ e.question }}</td>
                                 </tr>
                             {% endfor %}
