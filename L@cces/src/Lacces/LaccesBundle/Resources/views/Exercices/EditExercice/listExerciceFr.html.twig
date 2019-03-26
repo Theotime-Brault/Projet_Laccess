@@ -1,0 +1,87 @@
+{% extends '@Lacces/Administration/administration.html.twig' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block title %}Exercices Fr{% endblock %}
+
+{% block body %}
+<div class="container-body">
+    <main>
+        <div class="container">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                    <a class="collapsible-header waves-effect collapsible-ASL">
+                        <div class="lettreMaj">
+                            Exercice A1
+                            <i class="material-icons material-icons_arrow_drop_down">arrow_drop_down</i>
+                        </div>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            {% for e in significationVideo %}
+                                <li class="white">
+                                    <span class="flow-text black-text">{{ e.solution }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="bold">
+                    <a class="collapsible-header waves-effect collapsible-ASL">
+                        <div class="lettreMaj">
+                            Exercice B
+                            <i class="material-icons material-icons_arrow_drop_down">arrow_drop_down</i>
+                        </div>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            {% for e in qcm %}
+                                <li class="white">
+                                    <span class="flow-text black-text">{{ e.question }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="bold">
+                    <a class="collapsible-header waves-effect collapsible-ASL">
+                        <div class="lettreMaj">
+                            Exercice C
+                            <i class="material-icons material-icons_arrow_drop_down">arrow_drop_down</i>
+                        </div>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            {% for e in qcmVideo %}
+                                <li class="white">
+                                    <span class="flow-text black-text">{{ e.solution }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="bold">
+                    <a class="collapsible-header waves-effect collapsible-ASL">
+                        <div class="lettreMaj">
+                            Exercice A2
+                            <i class="material-icons material-icons_arrow_drop_down">arrow_drop_down</i>
+                        </div>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            {% for e in reformulation %}
+                                <li class="white">
+                                    <span class="flow-text black-text">{{ e.solution }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

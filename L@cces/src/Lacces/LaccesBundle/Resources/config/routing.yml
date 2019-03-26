@@ -162,3 +162,13 @@ validAddExercice:
     path: /administration/exercice/add/validExercice
     defaults:
         _controller: LaccesBundle:EditDataExercice:validExercice
+
+listExerciceFr:
+    path: /administration/exercice/listExerciceFr
+    defaults:
+        _controller: LaccesBundle:EditDataExercice:listExerciceFr
+
+listExerciceEn:
+    path: /administration/exercice/listExerciceEn
+    defaults:
+        _controller: LaccesBundle:EditDataExercice:listExerciceEn
