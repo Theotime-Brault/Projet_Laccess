@@ -167,37 +167,41 @@
         {% endfor %}
     {% endblock %}
 
-    <div class="container-body">
-        <main>
-            <div class="container">
-                <div class="container-main-flex">
-                    <div class="row center">
-                        <div class="col s12">
-
-                            {# AJOUT D'UN ADMIN #}
-
-                            <a href="{{ path("add_admin") }}">
-                                <button id="btn-ajout-admin"
-                                        class="btn btn-hover background-color-orange-lacces waves-effect"
-                                        type="button">
-                                    Ajouter un admin
-                                </button>
-                            </a>
-
-                            <hr/>
-
-                            {# FORMULAIRE DE MODIFICATION DU LOGO#}
-
-                            <p>Modifier le logo :</p>
-                            {{ include('@Lacces/formAddImageLogo.html.twig') }}
-
-                        </div>
-                    </div>
+    <div class="row">
+        <div class="col s12 m6">
+            <section class="card">
+                <span class="card-title center">Administrateur</span>
+                <div class="card-content">
+                    <table class="responsive-table striped">
+                        <thead>
+                        <tr>
+                            <th>Administrateur</th>
+                            <th>Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in users %}
+                            <tr>
+                                <td>
+                                    {{ user.username }}
+                                </td>
+                                <td>
+                                    {{ user.email }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-        </main>
+                <div class="card-action">
+                    <a id="btn-ajout-admin" class="btn btn-hover background-color-orange-lacces waves-effect" href="{{ path("add_admin") }}">Ajouter un administrateur</a>
+                </div>
+            </section>
+        </div>
+        <div class="col s12 m6">
+            {{ include('@Lacces/formAddImageLogo.html.twig') }}
+        </div>
     </div>
-
 {% endblock %}
 </body>
 <script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>

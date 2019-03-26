@@ -18,6 +18,7 @@ class AdministrationController extends Controller
   {
     $em = $this->getDoctrine()->getManager();
 
+    $users = $em->getRepository('LaccesBundle:user')->findAll();
     $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
     $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
     $form = $this->createForm(LogoType::class, $logo);
@@ -41,8 +42,9 @@ class AdministrationController extends Controller
     }
 
     return $this->render("@Lacces/Administration/administration.html.twig", [
-      'form' => $form->createView(),
-      'logo' => $logoBlanc
+        'form' => $form->createView(),
+        'logo' => $logoBlanc,
+        'users' => $users
     ]);
   }
 
