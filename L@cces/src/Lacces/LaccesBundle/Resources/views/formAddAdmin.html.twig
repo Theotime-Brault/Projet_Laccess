@@ -7,6 +7,7 @@
         <i class="material-icons color-orange-lacces prefix">account_circle</i>
         {{ form_label(form.username)}}
         {{ form_widget(form.username)}}
+        <div id="error_name"></div>
         <span class="red-text">{{ form_errors(form.username)}}</span>
     </div>
 </div>
@@ -16,6 +17,7 @@
         <i class="material-icons color-orange-lacces prefix">account_circle</i>
         {{ form_label(form.email)}}
         {{ form_widget(form.email)}}
+        <div id="error_mail"></div>
         <span class="red-text">{{ form_errors(form.email)}}</span>
     </div>
 </div>
@@ -30,6 +32,7 @@
         <i class="material-icons color-orange-lacces prefix">account_circle</i>
         {{ form_label(form.password.second)}}
         {{ form_widget(form.password.second)}}
+        <div id="error_pw"></div>
         <span class="red-text">{{ form_errors(form.password.first)}}</span>
     </div>
 </div>
