@@ -20,9 +20,13 @@ class SecurityController extends Controller
 
         $lastUserName = $authenticationUtils->getLastUsername();
 
+        $em = $this->getDoctrine()->getManager();
+        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
+
         return $this->render('@Lacces/Security/adminLogin.html.twig', array(
             'last_username' => $lastUserName,
             'error' => $error,
+            'logo' => $logo
         ));
     }
 

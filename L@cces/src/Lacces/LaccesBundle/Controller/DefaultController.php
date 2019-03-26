@@ -72,7 +72,6 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-        dump($logo);
 
 
         if($langue == "fr"){
