@@ -40,23 +40,17 @@ $(document).ready(function(){
 
     //Lancement des 2 vidéos simultanément au clickAction (non mobile)
 
-    $("#word").hasClass("active", function () {
-        $("#play-videos").on("click", function(ev) {
-            $("#video-word-1")[0].src += "&autoplay=1";
-            ev.preventDefault();
-            $("#video-word-2")[0].src += "&autoplay=1";
-            ev.preventDefault();
-        });
+    $("#play-videos").on("click", function(ev) {
+       if($("#word").hasClass("active")){
+           $("#video-word-1")[0].src += "&autoplay=1";
+           ev.preventDefault();
+           $("#video-word-2")[0].src += "&autoplay=1";
+           ev.preventDefault();
+       } else if ($("#sentences").hasClass("active")) {
+           $("#video-sentence-1")[0].src += "&autoplay=1";
+           ev.preventDefault();
+           $("#video-sentence-2")[0].src += "&autoplay=1";
+           ev.preventDefault();
+       }
     });
-
-    $("#word").hasClass("active", function () {
-        $("#play-videos").on("click", function(ev) {
-            $("#video-sentence-1")[0].src += "&autoplay=1";
-            ev.preventDefault();
-            $("#video-sentence-2")[0].src += "&autoplay=1";
-            ev.preventDefault();
-        });
-    });
-
-
 });
