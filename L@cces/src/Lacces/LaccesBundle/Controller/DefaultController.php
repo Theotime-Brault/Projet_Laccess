@@ -72,7 +72,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-
+        dump($logo);
 
         if($langue == "fr"){
           $objWord = $em->getRepository('LaccesBundle:wordFr')->findByWord($word);
@@ -93,8 +93,8 @@ class DefaultController extends Controller
 
         return $this->render('@Lacces/Words/word.html.twig', array(
             'word' => $objWord,
+            'logo' => $logo,
             'langue' => $langue,
-            'logo' => $logo
           ));
     }
 
