@@ -23,7 +23,7 @@ class EditDataWordController extends Controller
     public function editAction(Request $request, $wordId, $langue) {
 
       $em = $this->getDoctrine()->getManager();
-      $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
+      $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
 
       if($langue == 'fr') {
         $word = $em->getRepository('LaccesBundle:wordFr')->find($wordId);
@@ -96,7 +96,7 @@ class EditDataWordController extends Controller
         'langue' => $langue,
         'form' => $form->createView(),
         'word' => $word->getWord(),
-        'logo' => $logo
+        'logo' => $logoBlanc
       ));
     }
 
@@ -108,7 +108,7 @@ class EditDataWordController extends Controller
 
       $formulaire = new FormAddData();
       $em = $this->getDoctrine()->getManager();
-      $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
+      $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
 
       $form = $this->createFormBuilder($formulaire)
 
@@ -204,7 +204,7 @@ class EditDataWordController extends Controller
       }
       return $this->render('@Lacces/Administration/EditData/addData.html.twig', array(
         'form' => $form->createView(),
-        'logo' => $logo
+        'logo' => $logoBlanc
       ));
     }
     public function removeAction(Request $request) {
@@ -212,7 +212,7 @@ class EditDataWordController extends Controller
         $id = $request->get('id');
         $langue = $request->get('langue');
         $em = $this->getDoctrine()->getManager();
-        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
+        $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(1);
 
 
         if($langue == "fr") {
@@ -241,7 +241,7 @@ class EditDataWordController extends Controller
         $em->remove($word);
         $em->flush();
 
-      return new JsonResponse(array('id' => $id, 'logo' => $logo));
+      return new JsonResponse(array('id' => $id, 'logo' => $logoBlanc));
 
     }
 
@@ -250,14 +250,14 @@ class EditDataWordController extends Controller
       $em = $this->getDoctrine()->getManager();
       $wordsFrObj = $em->getRepository('LaccesBundle:wordFr')->findAll();
       $wordsEnObj = $em->getRepository('LaccesBundle:wordEn')->findAll();
-      $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
+      $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
 
 
       return $this->render('@Lacces/Administration/EditData/wordList.html.twig', [
         'wordFr' => $wordsFrObj,
         'wordEn' => $wordsEnObj,
         'langue' => $langue,
-        'logo' => $logo
+        'logo' => $logoBlanc
       ]);
     }
 
@@ -266,7 +266,7 @@ class EditDataWordController extends Controller
       if($langue == "fr" || $langue == "en") {
 
         $em = $this->getDoctrine()->getManager();
-        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
+        $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
 
         $monMotFr = new wordFr();
         $monMotEn = new wordEn();
@@ -417,7 +417,7 @@ class EditDataWordController extends Controller
         'form' => $form->createView(),
         'langue' => $langue,
         'word' => $word,
-        'logo' => $logo
+        'logo' => $logoBlanc
       ));
     }
 }

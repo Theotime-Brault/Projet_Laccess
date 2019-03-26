@@ -19,7 +19,7 @@ class AdministrationController extends Controller
     $em = $this->getDoctrine()->getManager();
 
     $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-    dump($logo);
+    $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
     $form = $this->createForm(LogoType::class, $logo);
     $form->handleRequest($request);
 
@@ -31,8 +31,9 @@ class AdministrationController extends Controller
       $file = $logo->getImage();
       $fileName = $fileUploader->upload($file);
       $logo->setImage($fileName);
+      $this->addFlash('info', "Le logo a bien été modifié !");
 
-      $logo->setNomImage($logo->getImage()->getFilename());
+      $logo->setNomImage($logo->getImage());
       $em->persist($logo);
       $em->flush();
 
@@ -41,15 +42,14 @@ class AdministrationController extends Controller
 
     return $this->render("@Lacces/Administration/administration.html.twig", [
       'form' => $form->createView(),
-      'logo' => $logo
+      'logo' => $logoBlanc
     ]);
   }
 
   public function addAdminAction(Request $request, UserPasswordEncoderInterface $encoder) {
 
     $em = $this->getDoctrine()->getManager();
-
-    $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
+    $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
 
     $newAdmin = new user();
 
@@ -79,7 +79,7 @@ class AdministrationController extends Controller
     }
     return $this->render("@Lacces/Administration/ajoutAdmin.html.twig", array(
       'form' => $form->createView(),
-      'logo' => $logo
+      'logo' => $logoBlanc
     ));
   }
 }
