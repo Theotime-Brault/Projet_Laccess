@@ -17,3 +17,13 @@ services:
     Lacces\LaccesBundle\Controller\:
         resource: '../../src/Lacces/LaccesBundle/Controller'
         tags: ['controller.service_arguments']
+
+    Lacces\LaccesBundle\Service\FileUploader:
+        arguments:
+            $targetDirectory: '%images_directory%'
+
+    Lacces\LaccesBundle\EventListener\BrochureUploadListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
+            - { name: doctrine.event_listener, event: postLoad }

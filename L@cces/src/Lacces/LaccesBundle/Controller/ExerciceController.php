@@ -15,9 +15,12 @@ class ExerciceController extends Controller
 
   public function exercicesAction($langue)
   {
+      $em = $this->getDoctrine()->getManager();
+      $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
 
       return $this->render('@Lacces/Exercices/exercices.html.twig', array(
-        'langue' => $langue
+        'langue' => $langue,
+        'logo' => $logo
       ));
   }
 

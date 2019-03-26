@@ -29,22 +29,24 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class EditDataExerciceController extends Controller
 {
     public function exerciceAddEnAction(){
-        //https://symfony.com/doc/current/form/dynamic_form_modification.html#form-events-submitted-data
-
         $em = $this->getDoctrine()->getManager();
+        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
         $words = $em->getRepository('LaccesBundle:wordEn')->findAll();
 
         return $this->render('@Lacces/Exercices/EditExercice/addExerciceEn.html.twig', array(
-            'words' =>$words
+            'words' =>$words,
+            'logo' => $logo
         ));
     }
 
     public function exerciceAddFrAction(){
         $em = $this->getDoctrine()->getManager();
+        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
         $words = $em->getRepository('LaccesBundle:wordFr')->findAll();
 
         return $this->render('@Lacces/Exercices/EditExercice/addExerciceFr.html.twig', array(
-            'words' =>$words
+            'words' => $words,
+            'logo' => $logo
         ));
     }
 
@@ -216,5 +218,43 @@ class EditDataExerciceController extends Controller
             return new JsonResponse('ok');
         }
         return $this->redirectToRoute('administration');
+    }
+
+    public function listExerciceFrAction(){
+        $em = $this->getDoctrine()->getManager();
+        $comparaisonVideo = $em->getRepository('LaccesBundle:Exercise\comparaisonVideoFr')->findAll();
+        $qcm = $em->getRepository('LaccesBundle:Exercise\qcmFr')->findAll();
+        $qcmVideo = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->findAll();
+        $reformulation = $em->getRepository('LaccesBundle:Exercise\reformulationFr')->findAll();
+        $significationVideo = $em->getRepository('LaccesBundle:Exercise\significationVideoFr')->findAll();
+        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
+
+        return $this->render('@Lacces/Exercices/EditExercice/listExerciceFr.html.twig', array(
+            'comparaisonVideo' => $comparaisonVideo,
+            'qcm' => $qcm,
+            'qcmVideo' => $qcmVideo,
+            'reformulation' => $reformulation,
+            'significationVideo' =>$significationVideo,
+            'logo' => $logo
+        ));
+    }
+
+    public function listExerciceEnAction(){
+        $em = $this->getDoctrine()->getManager();
+        $comparaisonVideo = $em->getRepository('LaccesBundle:Exercise\comparaisonVideoEn')->findAll();
+        $qcm = $em->getRepository('LaccesBundle:Exercise\qcmEn')->findAll();
+        $qcmVideo = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->findAll();
+        $reformulation = $em->getRepository('LaccesBundle:Exercise\reformulationEn')->findAll();
+        $significationVideo = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findAll();
+        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
+
+        return $this->render('@Lacces/Exercices/EditExercice/listExerciceEn.html.twig', array(
+            'comparaisonVideo' => $comparaisonVideo,
+            'qcm' => $qcm,
+            'qcmVideo' => $qcmVideo,
+            'reformulation' => $reformulation,
+            'significationVideo' =>$significationVideo,
+            'logo' => $logo
+        ));
     }
 }

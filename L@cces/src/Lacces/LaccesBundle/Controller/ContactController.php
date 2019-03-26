@@ -21,6 +21,8 @@ class ContactController extends Controller
      */
     public function contactAction(Request $request, \Swift_Mailer $mailer)
     {
+        $em = $this->getDoctrine()->getManager();
+        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
 
         $formulaire = new Form();
 
@@ -83,6 +85,7 @@ class ContactController extends Controller
 
         return $this->render('@Lacces/Contact/contact.html.twig', array(
             'form' => $form->createView(),
+            'logo' => $logo
         ));
     }
 }
