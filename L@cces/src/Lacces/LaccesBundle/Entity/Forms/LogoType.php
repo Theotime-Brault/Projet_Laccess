@@ -16,8 +16,11 @@ class LogoType extends AbstractType
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     $builder
-      ->add('image', FileType::class, ['label' => false])
-      ;
+      ->add('image', FileType::class, array(
+          'label' => false,
+          'attr' => array(
+              'class' => 'formValue file-path validate',
+          )));
   }
 
   public function configureOptions(OptionsResolver $resolver)

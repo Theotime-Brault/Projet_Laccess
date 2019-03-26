@@ -1,6 +1,14 @@
-{{ form_start(form) }}
+<section class="card">
+    <span class="card-title">Modifcation du logo de l'application</span>
+    <div class="card-content">
+        {{ form_start(form) }}
+        <div class="file-path-wrapper">
+            {{ form_widget(form) }}
+        </div>
+    </div>
+            <div class="card-action">
+                <input class="btn btn-hover background-color-orange-lacces waves-effect" type="submit" value="Modifier" />
+            </div>
+        {{ form_end(form) }}
 
-    {{ form_widget(form) }}
-    <input class="btn btn-hover background-color-orange-lacces waves-effect" type="submit" value="Modifier" />
-
-{{ form_end(form) }}
+</section>
