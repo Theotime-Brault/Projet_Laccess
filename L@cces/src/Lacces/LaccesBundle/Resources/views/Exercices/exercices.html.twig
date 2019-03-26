@@ -155,7 +155,29 @@
 
         $("#refresh").click(function () {
             if(langue == "en") {
-
+                if($("#exerciceA1Link").hasClass("active")){
+                    $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "en"}) }}", "#exerciceA1"));
+                } else if ($("#exerciceA2Link").hasClass("active")) {
+                    $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2', {'langue': "en"}) }}", "#exerciceA2"));
+                } else if ($("#exerciceBLink").hasClass("active")) {
+                    $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB', {'langue': "en"}) }}", "#exerciceB"));
+                } else if ($("#exerciceCLink").hasClass("active")) {
+                    $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "en"}) }}", "#exerciceC"));
+                } {#else if ($("#exerciceDLink").hasClass("active")) {
+                    $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "en"}) }}", "#exerciceD"));
+                }#}
+            } else if (langue == "fr") {
+                if($("#exerciceA1Link").hasClass("active")){
+                    $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "fr"}) }}", "#exerciceA1"));
+                } else if ($("#exerciceA2Link").hasClass("active")) {
+                    $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2', {'langue': "fr"}) }}", "#exerciceA2"));
+                } else if ($("#exerciceBLink").hasClass("active")) {
+                    $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB', {'langue': "fr"}) }}", "#exerciceB"));
+                } else if ($("#exerciceCLink").hasClass("active")) {
+                    $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "fr"}) }}", "#exerciceC"));
+                } {#else if ($("#exerciceDLink").hasClass("active")) {
+                    $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "fr"}) }}", "#exerciceD"));
+                } #}
             }
 
         });
