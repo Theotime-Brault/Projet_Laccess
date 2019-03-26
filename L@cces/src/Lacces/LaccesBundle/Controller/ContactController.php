@@ -19,7 +19,7 @@ class ContactController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function contactAction(Request $request)
+    public function contactAction(Request $request, \Swift_Mailer $mailer)
     {
 
         $formulaire = new Form();
@@ -61,20 +61,21 @@ class ContactController extends Controller
             //L'adresse qui recevra les mails, doit être la même que celle inscrit dans "parameters.yaml" dans "app/config":
             $mail = 'testlacces@gmail.com';
 
-            $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')->setUsername($mail)->setPassword('TestL@cces1--');
+            //Adresse de l'utilisateur
+            $userMail = $formulaire->getEmail();
 
-            $mailer = \Swift_Mailer::newInstance($transport);
             $message = \Swift_Message::newInstance('Formulaire de Contact')
-                ->setFrom($formulaire->getEmail())
-                ->setTo($mail)
+                ->setFrom($mail,$formulaire->getNom().' '.$formulaire->getPrenom())  //Adresse de l'expéditeur
+                ->setReplyTo($userMail)                                                    //Permet de répondre au mail envoyé par l'utilisateur
+                ->setTo($mail)                                                             //Envoie le mail à cette adresse
                 ->setCharset('UTF-8')
                 ->setContentType('text/html')
                 ->setBody('Nom : '.$formulaire->getNom()
                     .'<br />Prénom : '.$formulaire->getPrenom()
-                    .'<br />Email : '.$formulaire->getEmail()
+                    .'<br />Email : '.$userMail
                     .'<br />Message : '.$formulaire->getMessage()
                     );
-            $this->get('mailer')->send($message);
+            $mailer->send($message);
 
             return $this->redirectToRoute('lacces_homepage');
 
