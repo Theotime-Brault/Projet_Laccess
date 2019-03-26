@@ -32,6 +32,7 @@ class AdministrationController extends Controller
       $fileName = $fileUploader->upload($file);
       $logo->setImage($fileName);
 
+      $logo->setNomImage($logo->getImage()->getFilename());
       $em->persist($logo);
       $em->flush();
 

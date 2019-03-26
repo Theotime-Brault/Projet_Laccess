@@ -32,6 +32,11 @@ class Logo
   */
   private $image;
 
+  /**
+   * @ORM\Column(type="string")
+   */
+  private $nomImage;
+
   public function getImage()
   {
     return $this->image;
@@ -58,5 +63,21 @@ class Logo
   public function setId($id)
   {
     $this->id = $id;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getNomImage()
+  {
+    return $this->nomImage;
+  }
+
+  /**
+   * @param mixed $nomImage
+   */
+  public function setNomImage($nomImage)
+  {
+    $this->nomImage = $nomImage;
   }
 }

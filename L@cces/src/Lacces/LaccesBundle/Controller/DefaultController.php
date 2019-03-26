@@ -36,29 +36,10 @@ class DefaultController extends Controller
     {
 
       $em = $this->getDoctrine()->getManager();
-
       $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-      dump($logo);
-      $form = $this->createForm(LogoType::class, $logo);
-      $form->handleRequest($request);
 
-      if ($form->isSubmitted() && $form->isValid()) {
-
-        // $file récupère le jpeg telechargé
-
-        /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
-        $file = $logo->getImage();
-        $fileName = $fileUploader->upload($file);
-        $logo->setImage($fileName);
-
-        $em->persist($logo);
-        $em->flush();
-
-        return $this->redirect($this->generateUrl('lacces_homepage'));
-      }
       return $this->render('@Lacces/Default/index.html.twig', [
         'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        'form' => $form->createView(),
         'logo' => $logo
       ]);
     }
@@ -72,7 +53,6 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-        dump($logo);
 
         if($langue == "fr"){
           $objWord = $em->getRepository('LaccesBundle:wordFr')->findByWord($word);
