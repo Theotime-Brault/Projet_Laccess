@@ -28,8 +28,9 @@
                 </ul>
                 <div id="container_logo_lacces">
                     <a href="{{ asset('') }}" class="brand-logo center">
-                        <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces_2.png') }}/>
+                        <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/' ~ logo.image.filename) }}/>
                     </a>
+                    <img alt="Logo L@cces" src="{{ asset('web/pictures/logo/' ~ logo.image) }}" height="100px" width="250px">
                 </div>
                 {% if is_granted("ROLE_ADMIN") %}
                     <ul class="right">

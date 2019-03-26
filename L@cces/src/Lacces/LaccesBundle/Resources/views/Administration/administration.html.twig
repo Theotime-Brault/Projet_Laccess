@@ -30,7 +30,11 @@
                 </ul>
                 <div id="container_logo_lacces">
                     <a href="{{ asset('administration') }}" class="brand-logo center">
-                        <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/logo_lacces_white_2.png') }}/>
+                        <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/' ~ logo.image.filename) }}/>
+
+                        {# FORMULAIRE DE MODIFICATION DU LOGO #}
+
+                        {{ include('@Lacces/formAddImageLogo.html.twig') }}
                     </a>
                 </div>
                 <ul class="right">
