@@ -209,6 +209,18 @@
             </a>
         </div>
     </div>
+
+    <div id="modalError" class="modal">
+        <div class="modal-content">
+            <h5>Erreur</h5>
+            <p>L'exercice n'à pas été supprimé.</p>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-close waves-effect btn-flat btn-flat-hover">
+                Fermer
+            </a>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
@@ -235,7 +247,7 @@
                         element.parent().parent().remove();
                     },
                     error:function () {
-
+                        $('#modalError').modal('open');
                     }
                 })
             })

@@ -46,12 +46,40 @@
                 </div>
             </div>
         </main>
+
+        <div id="modalError" class="modal">
+            <div class="modal-content">
+                <h5>Erreur</h5>
+                <p>L'exercice n'à pas été ajouté.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect btn-flat btn-flat-hover">
+                    Fermer
+                </a>
+            </div>
+        </div>
+
+        <div id="modalSucces" class="modal">
+            <div class="modal-content">
+                <h5>Succes</h5>
+                <p>L'exercice à bien été ajouté.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect btn-flat btn-flat-hover">
+                    Fermer
+                    <i class="material-icons right">beenhere</i>
+                </a>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
 {% block javascripts %}
     <script src="{{ asset('js/js_for_views/addExercice.js') }}"></script>
     <script>
+        $('#modalSucces').modal();
+        $('#modalError').modal();
+
         function submit(){
             var ex = $('#typeEx').val();
             var solution = $('#solution').val();;
@@ -72,7 +100,7 @@
                                     succes();
                                 },
                                 error:function () {
-                                    alert("erreur");
+                                    $('#modalError').modal('open');
                                 }
                             })
                         }
@@ -91,7 +119,7 @@
                                     succes();
                                 },
                                 error:function () {
-                                    alert("erreur");
+                                    $('#modalError').modal('open');
                                 }
                             })
                         }
@@ -110,7 +138,7 @@
                                     succes();
                                 },
                                 error:function () {
-                                    alert("erreur");
+                                    $('#modalError').modal('open');
                                 }
                             })
                         }
@@ -128,7 +156,7 @@
                                     succes();
                                 },
                                 error:function () {
-                                    alert("erreur");
+                                    $('#modalError').modal('open');
                                 }
                             })
                         }
