@@ -4,6 +4,7 @@ namespace Lacces\LaccesBundle\Entity\Exercise;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\PersistentCollection;
+use Lacces\LaccesBundle\Entity\wordEn;
 
 /**
  * qcmVideoEn
