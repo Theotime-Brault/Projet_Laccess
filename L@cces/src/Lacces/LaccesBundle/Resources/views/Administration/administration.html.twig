@@ -74,9 +74,11 @@
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
             <li>
-                <a class="collapsible-header waves-effect" id="collapsible-header-click">Gestion des mots<i
-                            class="material-icons white-text right"
-                            id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
+                <a class="collapsible-header waves-effect" id="collapsible-header-click">
+                    Gestion des mots
+                    <i class="material-icons white-text right"
+                            id="material-icons_arrow_drop_down">arrow_drop_down</i>
+                </a>
                 <div class="collapsible-body">
                     <ul>
                         {% if app.request.attributes.get('_route') == 'lacces_editData_add' %}
@@ -91,8 +93,9 @@
                             {% else %}
                         <li class="grey darken-4" id="liImg">
                             {% endif %}
-                            <a class="waves-effect" href="{{ asset('administration/editData/wordList/fr') }}">Editer les
-                                mots</a>
+                            <a class="waves-effect" href="{{ asset('administration/editData/wordList/fr') }}">
+                                Editer les mots
+                            </a>
                         </li>
                         <li>
                             <div class="divider"></div>
@@ -102,35 +105,31 @@
             </li>
         </ul>
     </li>
-    {% if app.request.attributes.get('_route') == 'lacces_ex__en_add' %}
-    <li class="active active-item-menu background-color-violet-lacces">
-        {% else %}
-    <li class="grey darken-4">
-        {% endif %}
-        <a href="{{ path('lacces_ex__en_add') }}">Ajouter un exercice</a>
-    </li>
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
             <li>
-                <a class="collapsible-header waves-effect" id="collapsible-header-click">Liste des exercices<i
-                            class="material-icons white-text right"
-                            id="material-icons_arrow_drop_down">arrow_drop_down</i></a>
+                <a class="collapsible-header waves-effect" id="collapsible-header-click">
+                    Gestion des exercices
+                    <i class="material-icons white-text right"
+                            id="material-icons_arrow_drop_down">arrow_drop_down</i>
+                </a>
                 <div class="collapsible-body">
                     <ul>
-                        {% if app.request.attributes.get('_route') == 'listExerciceEn' %}
+                        {% if app.request.attributes.get('_route') == 'lacces_ex__fr_add' %}
                         <li class="active active-item-menu background-color-violet-lacces">
                     {% else %}
                         <li class="grey darken-4">
                             {% endif %}
-                            <a class="waves-effect" href="{{ asset('/administration/exercice/listExerciceEn') }}">ExercicesEn</a>
+                            <a class="waves-effect" href="{{ path('lacces_ex__fr_add') }}">Ajouter un exercice</a>
                         </li>
                         {% if app.request.attributes.get('_route') == 'listExerciceFr' %}
                         <li class="active active-item-menu background-color-violet-lacces" id="liImg">
                             {% else %}
                         <li class="grey darken-4" id="liImg">
                             {% endif %}
-                            <a class="waves-effect" href="{{ asset('/administration/exercice/listExerciceFr') }}">Exercices
-                                Fr</a>
+                            <a class="waves-effect" href="{{ asset('/administration/exercice/listExerciceFr') }}">
+                                Editer les exercices
+                            </a>
                         </li>
                         <li>
                             <div class="divider"></div>
