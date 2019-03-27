@@ -15,6 +15,7 @@ use Lacces\LaccesBundle\Entity\Exercise\qcmEnonceVideoEn;
 use Lacces\LaccesBundle\Entity\Exercise\qcmEnonceVideoFr;
 use Lacces\LaccesBundle\Entity\Exercise\qcmFr;
 use Lacces\LaccesBundle\Entity\Exercise\qcmVideoEn;
+use Lacces\LaccesBundle\Entity\Exercise\qcmVideoFr;
 use Lacces\LaccesBundle\Entity\Exercise\reformulationEn;
 use Lacces\LaccesBundle\Entity\Exercise\significationVideoEn;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -165,7 +166,7 @@ class EditDataExerciceController extends Controller
                         }else{
 
                             $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($word);
-                            $objEx = new qcmVideoEn($videoLink, $wordFr);
+                            $objEx = new qcmVideoFr($videoLink, $wordFr);
                             $em->persist($objEx);
                             $em->flush();
                             $objSolu = new qcmEnonceVideoFr($solution, $objEx);
