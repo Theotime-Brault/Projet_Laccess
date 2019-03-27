@@ -17,3 +17,7 @@
 .waves-effect input {
     color: white;
 }
+
+#logo > .character-counter {
+    display: none;
+}
