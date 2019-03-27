@@ -11,6 +11,8 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class userType extends AbstractType
 {
@@ -38,6 +40,17 @@ class userType extends AbstractType
             'type' => PasswordType::class,
             'invalid_message' => 'Les mots de passe ne correspondent pas',
             'required' => true,
+            'constraints' => array(
+              new NotBlank(array(
+                'message' => 'Veuillez entrer un mot de passe.'
+              )),
+              new Length(array(
+                'min' => 8,
+                'minMessage' => 'Votre mot de passe doit être compris entre 8 et 32 caractères',
+                'maxMessage' => 'Votre mot de passe doit être compris entre 8 et 32 caractères',
+                'max' => 32
+              ))
+            ),
             'first_options'  => array(
                 'label' => 'Mot de passe',
                 'attr' => array(
