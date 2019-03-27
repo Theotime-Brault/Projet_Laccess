@@ -178,3 +178,8 @@ listExerciceEn:
     path: /administration/exercice/listExerciceEn
     defaults:
         _controller: LaccesBundle:EditDataExercice:listExerciceEn
+
+removeExercice:
+    path: /administration/exercice/remove
+    defaults:
+        _controller: LaccesBundle:EditDataExercice:removeExercice

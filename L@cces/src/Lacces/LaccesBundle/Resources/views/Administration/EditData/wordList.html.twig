@@ -103,11 +103,11 @@
             </div>
             <div class="modal-fixed-footer">
                 <div class="modal-footer">
-                    <a href="#" class="modal-close waves-effect btn-flat btn-flat-hover">
+                    <a class="modal-close waves-effect btn-flat btn-flat-hover">
                         Annuler
                         <i class="material-icons right">cancel</i>
                     </a>
-                    <a id="confirmDelete" href="" class="modal-close background-color-orange-lacces btn-hover waves-effect btn">
+                    <a id="confirmDelete" class="modal-close background-color-orange-lacces btn-hover waves-effect btn">
                         Confirmer
                         <i class="material-icons right">delete_forever</i>
                     </a>
@@ -131,7 +131,7 @@
             $('.supprimer').click(function(e)
             {
                 id = this.getAttribute("data-parent");
-                wordRemove = $(this).parent("td");
+                wordRemove = $(this).parent().parent("tr");
             });
 
             $('#confirmDelete').click(function(e)
@@ -144,8 +144,8 @@
                         data: {'id':id, 'langue':langue },
                         success: function(msg)
                         {
-                            $(this).delay(1200,function(){
-                                wordRemove.slideUp(500,function() {
+                            $(this).delay(600,function(){
+                                wordRemove.slideUp(300,function() {
                                 });
                             });
                         }
