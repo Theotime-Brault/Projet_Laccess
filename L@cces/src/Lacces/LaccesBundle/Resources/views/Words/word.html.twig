@@ -165,9 +165,21 @@
                 </a>
                 <ul>
                     <li>
-                        <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Accéder aux exercices du mot {{ word.word }}" href="{{ path('lacces_exercices', {'wordId': word.id }) }}">
-                            <i class="material-icons white-text">school</i>
-                        </a>
+
+                        {% if langue == "fr" %}
+
+                            <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Accéder aux exercices du mot {{ word.word }}" href="{{ path('lacces_exercices',{'langue': "fr", 'wordId': word.id }) }}">
+                                <i class="material-icons white-text">school</i>
+                            </a>
+
+                        {% else %}
+
+                            <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Accéder aux exercices du mot {{ word.word }}" href="{{ path('lacces_exercices',{'langue': "en", 'wordId': word.id }) }}">
+                                <i class="material-icons white-text">school</i>
+                            </a>
+
+                        {% endif %}
+
                     </li>
                     <li>
                         <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Lire les vidéos" id="play-videos">

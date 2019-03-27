@@ -169,7 +169,7 @@ class EditDataWordController extends Controller
         //VALIDATION
 
         ->add('submit', SubmitType::class, array(
-          'label' => 'Envoyer',
+          'label' => 'Ajouter',
           'attr' => array(
             'class' => "btn btn-hover background-color-orange-lacces waves-effect",
           )))

@@ -3,6 +3,8 @@
 namespace Lacces\LaccesBundle\Controller;
 
 use Lacces\LaccesBundle\Entity\Exercise\significationVideoEn;
+use Lacces\LaccesBundle\Entity\wordEn;
+use Lacces\LaccesBundle\Entity\wordFr;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,10 +20,49 @@ class ExerciceController extends Controller
       $em = $this->getDoctrine()->getManager();
       $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
 
+
+      //ON RECUPERE L'ID DU MOTS "FR" ET "EN" RECHERCHÉ AFIN DE POUVOIR PLUS TARD SWITCHER LA LANGUE EN GARDANT L'ID QUI CORRESPOND
+      //EXEMPLE:  MotFr = "Canard" (id = 5)    MotEn = "Duck" (id = 12)
+      //JE SUIS EN FRANCAIS ET DONC wordID = 5
+      //SI JE CHANGE LA LANGUE wordId DEVIENDRA "12"
+
+
+    $wordFr = new wordFr();
+    $wordEn = new wordEn();
+
+    // On vérifie si l'utilisateur cherche un exercice avec un mot aléatoire ou non
+    if($wordId != 0) {
+
+      if($langue == "fr") {
+        $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($wordId);
+        if(!$wordFr) {
+          $this->addFlash('info', "Le mot rechercher n'existe pas.");
+          return $this->redirectToRoute('lacces_homepage');
+        }
+        $wordEnTab = $wordFr->getWordEns();
+        $wordEn = $wordEnTab[0];
+      }
+
+      else {
+        $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($wordId);
+        if(!$wordEn) {
+          $this->addFlash('info', "Le mot rechercher n'existe pas.");
+          return $this->redirectToRoute('lacces_homepage');
+        }
+        $wordFrTab = $wordEn->getWordFrs();
+        $wordFr = $wordFrTab[0];
+      }
+    }
+
+    $wordFrId = $wordFr->getId();
+    $wordEnId = $wordEn->getId();
+
       return $this->render('@Lacces/Exercices/exercices.html.twig', array(
         'langue' => $langue,
         'logo' => $logo,
-        'wordId' => $wordId
+        'wordId' => $wordId,
+        'wordFrId' => $wordFrId,
+        'wordEnId' => $wordEnId
       ));
   }
 
