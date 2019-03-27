@@ -1,11 +1,12 @@
 <div class="col s12 m12 l8 offset-l2">
-
     {% if not obj_exerciceB %}
-
-    <p>{{ messageErreur }}</p>
-
+        <div class="card">
+            <div class="card-content center black-text flow-text">
+                <i class="material-icons black-text">warning</i>
+                <p>{{ messageErreur }}</p>
+            </div>
+        </div>
     {% else %}
-
     <div class="card">
         <div class="card-content center black-text flow-text">
             <p>
@@ -13,7 +14,6 @@
             </p>
         </div>
     </div>
-
     <div class="card">
         <div class="card-title">
             <p class="flow-text black-text">
@@ -36,9 +36,7 @@
             </form>
         </div>
     </div>
-
     {% endif %}
-
 </div>
 <script>
     $("input:radio[name=group-qcm]").on("click", function () {

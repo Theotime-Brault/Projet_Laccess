@@ -1,11 +1,12 @@
 <div class="test col s12">
-
     {% if not obj_exerciceFrA2 and not obj_exerciceEnA2 %}
-
-    <p>{{ messageErreur }}</p>
-
+        <div class="card">
+            <div class="card-content center black-text flow-text">
+                <i class="material-icons black-text">warning</i>
+                <p>{{ messageErreur }}</p>
+            </div>
+        </div>
     {% else %}
-
     <div class="card">
         <div class="card-content center black-text flow-text">
             <p>
@@ -13,7 +14,6 @@
             </p>
         </div>
     </div>
-
     <section>
         <div class="row">
             <article>
@@ -60,7 +60,5 @@
             </article>
         </div>
     </section>
-
     {% endif %}
-
 </div>

@@ -165,23 +165,22 @@
                 </a>
                 <ul>
                     <li>
+                        <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Accéder aux exercices du mot {{ word.word }}" href="{{ path('lacces_exercices', {'wordId': word.id }) }}">
+                            <i class="material-icons white-text">school</i>
+                        </a>
+                    </li>
+                    <li>
                         <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Lire les vidéos" id="play-videos">
                             <i class="material-icons white-text">play_circle_filled</i>
                         </a>
                     </li>
                     <li>
-                        <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Effectuez une recherche" id="search-box-click" data-target="search-box">
+                        <a class="btn-floating tooltipped background-color-violet-lacces" data-position="left" data-tooltip="Effectuer une recherche" id="search-box-click" data-target="search-box">
                             <i class="material-icons white-text">search</i>
                         </a>
                     </li>
                 </ul>
             </div>
-
-            {# BOUTON D'ACCES A LA PAGE EXERCICE DU MOT CHOISI #}
-            <a class="btn btn-hover background-color-orange-lacces waves-effect" href="{{ path('lacces_exercices', {'wordId': word.id }) }}">
-                Exercices du mot {{ word.word }}
-            </a>
-
         </main>
     </div>
 {% endblock %}
