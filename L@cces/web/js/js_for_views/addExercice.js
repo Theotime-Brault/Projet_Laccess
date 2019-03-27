@@ -90,7 +90,7 @@ function OtherRepString() {
 }
 
 function succes() {
-    alert("Exercice ajouté!");
+    $('#modalSucces').modal('open');
     $('#typeEx').val(0);
     $('#words').val(0);
     $('#ex').html("");
