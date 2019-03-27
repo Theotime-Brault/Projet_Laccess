@@ -9,6 +9,10 @@
 <div class="container-body">
     <main>
         <div class="container">
+            <div class="row center">
+                <a class="btn background-color-orange-lacces btn-hover white-text" href="{{ path('listExerciceEn') }}">Passer en anglais</a>
+                <h5>Exercices pour les mots français</h5>
+            </div>
             <ul class="collapsible collapsible-accordion">
                 <li class="bold">
                     <a class="collapsible-header waves-effect collapsible-ASL">
@@ -36,7 +40,7 @@
                                             <a class="flow-text black-text" href="{{ e.videoLink }}" onclick="window.open(this.href); return false;">Lien de la video</a>
                                         </td>
                                         <td>
-                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" href="#modal1">
+                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" exId="{{ e.id }}" exType="A1" href="#delete">
                                                 <i class="material-icons color-violet-lacces">delete_forever</i>
                                             </a>
                                         </td>
@@ -70,7 +74,7 @@
                                     </td>
                                     <td class="flow-text black-text">{{ e.contextSentence }}</td>
                                     <td>
-                                        <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" href="#modal1">
+                                        <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" exId="{{ e.id }}" exType="A2" href="#delete">
                                             <i class="material-icons color-violet-lacces">delete_forever</i>
                                         </a>
                                     </td>
@@ -104,7 +108,7 @@
                                         </td>
                                         <td class="flow-text black-text">{{ e.question }}</td>
                                         <td>
-                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" href="#modal1">
+                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" exId="{{ e.id }}" exType="B" href="#delete">
                                                 <i class="material-icons color-violet-lacces">delete_forever</i>
                                             </a>
                                         </td>
@@ -140,7 +144,7 @@
                                             <a class="flow-text black-text" href="{{ e.videoLink }}" onclick="window.open(this.href); return false;">Lien de la video</a>
                                         </td>
                                         <td>
-                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" href="#modal1">
+                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" exId="{{ e.id }}" exType="C" href="#delete">
                                                 <i class="material-icons color-violet-lacces">delete_forever</i>
                                             </a>
                                         </td>
@@ -174,7 +178,7 @@
                                     </td>
                                     <td class="flow-text black-text">{{ e.question }}</td>
                                     <td>
-                                        <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" href="#modal1">
+                                        <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" exId="{{ e.id }}" exType="D" href="#delete">
                                             <i class="material-icons color-violet-lacces">delete_forever</i>
                                         </a>
                                     </td>
@@ -187,7 +191,54 @@
             </ul>
         </div>
     </main>
+
+    <div id="delete" class="modal">
+        <div class="modal-content">
+            <h5>Confimation</h5>
+            <p>Voulez-vous vraiment supprimer cet exercice?</p>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-close waves-effect btn-flat btn-flat-hover">
+                Annuler
+                <i class="material-icons right">cancel</i>
+            </a>
+            <a id="confirmDelete" class="modal-close background-color-orange-lacces btn-hover waves-effect btn">
+                Confirmer
+                <i class="material-icons right">delete_forever</i>
+            </a>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            var s;
+            $('.supprimer').click(function()
+            {
+                s = $(this);
+            });
+
+            $('.modal').modal();
+
+            $('#confirmDelete').click(function (){
+                var element = s;
+                $.ajax({
+                    cache: false,
+                    type: 'POST',
+                    dataType: 'json',
+                    url: "{{ path('removeExercice') }}",
+                    data:{'langue': "fr", 'type': element.attr("exType"), 'id': element.attr("exId")},
+                    success:function () {
+                        element.parent().parent().remove();
+                    },
+                    error:function () {
+
+                    }
+                })
+            })
+
+        });
+    </script>
+{% endblock %}

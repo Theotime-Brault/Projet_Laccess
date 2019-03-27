@@ -248,7 +248,6 @@ class EditDataExerciceController extends Controller
         $significationVideo = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findAll();
         $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
 
-        dump($qcm);
         return $this->render('@Lacces/Exercices/EditExercice/listExerciceEn.html.twig', array(
             'comparaisonVideo' => $comparaisonVideo,
             'qcm' => $qcm,
@@ -261,5 +260,65 @@ class EditDataExerciceController extends Controller
 
     public function removeExerciceAction(Request $request){
         $em = $this->getDoctrine()->getManager();
+
+        $id = $request->request->get('id');
+        $type = $request->request->get('type');
+        $langue = $request->request->get('langue');
+
+        if($langue == "fr"){
+            switch ($type){
+                case "A1":
+                    $ex = $em->getRepository('LaccesBundle:Exercise\significationVideoFr')->find($id);
+                    break;
+                case "A2":
+                    $ex = $em->getRepository('LaccesBundle:Exercise\comparaisonVideoFr')->find($id);
+                    break;
+                case "B":
+                    $ex = $em->getRepository('LaccesBundle:Exercise\qcmFr')->find($id);
+                    break;
+                case "C":
+                    $ex = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->find($id);
+                    break;
+                case "D":
+                    $ex = $em->getRepository('LaccesBundle:Exercise\reformulationFr')->find($id);
+                    break;
+            }
+
+            if($ex){
+                $em->remove($ex);
+                $em->flush();
+            }else{
+                return $this->redirectToRoute("administration");
+            }
+        }else if($langue == "en"){
+            switch ($type){
+                case "A1":
+                    $ex = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->find($id);
+                    break;
+                case "A2":
+                    $ex = $em->getRepository('LaccesBundle:Exercise\comparaisonVideoEn')->find($id);
+                    break;
+                case "B":
+                    $ex = $em->getRepository('LaccesBundle:Exercise\qcmEn')->find($id);
+                    break;
+                case "C":
+                    $ex = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->find($id);
+                    break;
+                case "D":
+                    $ex = $em->getRepository('LaccesBundle:Exercise\reformulationEn')->find($id);
+                    break;
+            }
+
+            if($ex){
+                $em->remove($ex);
+                $em->flush();
+            }else{
+                return $this->redirectToRoute("administration");
+            }
+        }else{
+            return $this->redirectToRoute("administration");
+        }
+
+        return new JsonResponse('ok');
     }
 }
