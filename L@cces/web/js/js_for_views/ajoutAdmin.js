@@ -13,7 +13,11 @@ $(document).ready(function () {
         validEmail();
     })
 
-})
+    $('#user_password_first').keyup(function () {
+        validPassword();
+    })
+
+});
 
 function valid(){
     if($('#user_username').val() == "" || $('#user_password_first').val() == "" || $('#user_password_second').val() == ""
@@ -25,28 +29,33 @@ function valid(){
 }
 
 function validUsername() {
-    var re = new RegExp("^[a-zA-Z0-9\-\_]{1,30}$")
-    res = false;
+    var re = new RegExp("^[a-zA-Z0-9\-\_]{1,30}$");
     if(re.test($('#user_username').val())){
-        res = true;
         $('#error_name').html("");
     }else{
-        $('#error_name').html("Le nom d'utilisateur doit contenir des caractere alphanumeric");
+        $('#error_name').html("Le nom d'utilisateur doit contenir des caracteres alphanumerique");
     }
-
-    return res
 }
 
-function validEmail() {
-    var re = new RegExp("^[a-zA-Z0-9\-\_]*[\@]{1}[a-zA-Z0-9-_]*[\.]{1}[a-z]*$")
 
+function validEmail() {
+    var re = new RegExp("^[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z]{2,6}$");
     if(re.test($('#user_email').val())){
-        $('#error_name').html("");
+        $('#error_mail').html("");
     }else{
-        $('#error_mail').html("L'email ne convient pas");
+        $('#error_mail').html("Entrez un email valide");
     }
 }
 
 function validPassword() {
-    
+    var re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\\W).{8,32}$");
+    if(re.test($('#user_password_first').val())){
+        $('#error_pw').html("");
+    }else{
+        $('#error_pw').html("Le mot de passe doit contenir au moins un caractère minuscule\n" +
+                              "Le mot de passe doit contenir au moins un caractère majuscule\n" +
+                              "Le mot de passe doit contenir au moins un chiffre\n" +
+                              "Le mot de passe doit contenir au moins un caractère spécial\n" +
+                              "Le mot de passe doit contenir de 8 à 32 caractères");
+    }
 }
