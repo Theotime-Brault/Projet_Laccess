@@ -1,4 +1,11 @@
 <div class="col s12 m12 l8 offset-l2">
+
+    {% if not obj_exerciceC %}
+
+        <p>{{ messageErreur }}</p>
+
+    {% else %}
+
     <div class="card">
         <div class="card-content center black-text flow-text">
             <p>
@@ -26,6 +33,9 @@
             </form>
         </div>
     </div>
+
+    {% endif %}
+
 </div>
 <script>
     $("input:radio[name=group-qcm]").on("click", function () {
@@ -35,7 +45,7 @@
         $("input:radio[name=group-qcm]").each(function () {
             if($(this).is(":checked")){
                 var valueIn = $(this).attr("data-qcm-id");
-                if(valueIn.toString() === "{{ obj_exerciceC.solution }}") {
+                if(valueIn.toString() === "{{ solution }}") {
                     $(this).parent().next().html("<i id=\"result-done\" class=\"result material-icons small green-text\">done</i>");
                     $("#form-qcm input").attr("disabled", "disabled");
                 } else {

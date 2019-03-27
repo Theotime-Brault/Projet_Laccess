@@ -88,7 +88,7 @@ class EditDataWordController extends Controller
 
         return $this->redirectToRoute('lacces_wordList', array(
           'langue' => $langue,
-          'logo' => $logo
+          'logo' => $logoBlanc
         ));
 
       }

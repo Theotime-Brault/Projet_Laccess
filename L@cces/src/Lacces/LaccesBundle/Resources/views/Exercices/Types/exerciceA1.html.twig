@@ -1,47 +1,60 @@
 <div class="col s12 m12 l8 offset-l2">
-    <div class="card">
-        <div class="card-content center black-text flow-text">
-            <p>
-                Regardez la vidéo ASL et trouvez la phrase signée en anglais
-            </p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-title">
-            <p id="word" class="flow-text center black-text">
-                {{ word }}
-            </p>
-        </div>
-        <div class="card-image">
-            <div class="video-container">
-                <iframe title="{{ word }}" width="1100" height="619" src="{{ obj_exerciceA1.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    {% if not obj_exerciceA1 %}
+
+        <p>{{ messageErreur }}</p>
+
+    {% else %}
+
+        <div class="card">
+            <div class="card-content center black-text flow-text">
+                <p>
+                    Regardez la vidéo ASL et trouvez la phrase signée en anglais
+                </p>
             </div>
         </div>
-        <div class="card-content">
-            <div class="input-field">
-                <label for="proposition">Trouvez la phrase</label>
-                <input id="proposition" name="proposition" type="text" class="formValue" autocomplete="off">
+        <div class="card">
+            <div class="card-title">
+                <p id="word" class="flow-text center black-text">
+                    {{ word }}
+                </p>
             </div>
-        </div>
-        <div id="card-action-exerciceA1" class="card-action hide">
-            <div class="row">
-                <div class="col s11">
-                    <button id="envoyer" class="btn waves-effect btn-hover background-color-orange-lacces">
-                        Envoyez
-                        <i class="material-icons right">send</i>
-                    </button>
-                    <button id="revoir-video" class="btn-flat waves-effect btn-flat-hover">Revoir la vidéo</button>
+            <div class="card-image">
+                <div class="video-container">
+                    <iframe title="{{ word }}" width="1100" height="619" src="{{ obj_exerciceA1.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="col s1">
-                    <div class="check-result right">
-                        <i id="result-done" class="result material-icons small green-text">done</i>
-                        <i id="result-clear" class="result material-icons small red-text">clear</i>
+            </div>
+            <div class="card-content">
+                <div class="input-field">
+                    <label for="proposition">Trouvez la phrase</label>
+                    <input id="proposition" name="proposition" type="text" class="formValue" autocomplete="off">
+                </div>
+            </div>
+            <div id="card-action-exerciceA1" class="card-action hide">
+                <div class="row">
+                    <div class="col s11">
+                        <button id="envoyer" class="btn waves-effect btn-hover background-color-orange-lacces">
+                            Envoyez
+                            <i class="material-icons right">send</i>
+                        </button>
+                        <button id="revoir-video" class="btn-flat waves-effect btn-flat-hover">Revoir la vidéo</button>
+                    </div>
+                    <div class="col s1">
+                        <div class="check-result right">
+                            <i id="result-done" class="result material-icons small green-text">done</i>
+                            <i id="result-clear" class="result material-icons small red-text">clear</i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+    {% endif %}
+
 </div>
+
+
+
 <script>
     $(".result").hide();
 
@@ -67,7 +80,8 @@
 
     function check(){
         var valueIn = $("#proposition").val();
-        if(valueIn === "{{ obj_exerciceA1.solution }}") {
+
+        if(valueIn === "{{ solution }}") {
             $("#result-clear").hide();
             $("#result-done").show();
         } else {
