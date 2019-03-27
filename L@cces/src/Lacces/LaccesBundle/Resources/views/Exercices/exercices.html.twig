@@ -22,13 +22,13 @@
                     </a>
                     <ul id="dropdown-flag" class="dropdown-content dropdown-flag-exercice">
                         <li>
-                            <a href="{{ path('lacces_exercices', {'langue': "en"}) }}">
+                            <a href="{{ path('lacces_exercices', {'langue': "en", 'wordId': wordId}) }}">         //
                                 <img id="imgFlagEn" class="image-flag-drowpdown" src="{{ asset('pictures/flags/FlagEN_SearchBar.jpg') }} "/>
                             </a>
                         </li>
                         <li class="divider" tabindex="-1"></li>
                         <li>
-                            <a href="{{ path('lacces_exercices', {'langue': "fr"}) }}">
+                            <a href="{{ path('lacces_exercices', {'langue': "fr", 'wordId': wordId}) }}">         //
                                 <img id="imgFlagFr" class="image-flag-drowpdown" src="{{ asset('pictures/flags/FlagFR_SearchBar.jpg') }}"/>
                             </a>
                         </li>
@@ -38,9 +38,9 @@
                 {#
                 <li class="">
                     {% if langue == "fr" %}
-                        <a class="btn-flat waves-effect exercices" href="{{ path('lacces_exercices', {'langue': "en"}) }}">Passer en anglais</a>
+                        <a class="btn-flat waves-effect exercices" href="{{ path('lacces_exercices', {'langue': "en", 'wordId': wordId}) }}">Passer en anglais</a>
                     {% else %}
-                        <a class="btn-flat waves-effect exercices" href="{{ path('lacces_exercices', {'langue': "fr"}) }}">Passer en français</a>
+                        <a class="btn-flat waves-effect exercices" href="{{ path('lacces_exercices', {'langue': "fr", 'wordId': wordId}) }}">Passer en français</a>
                     {% endif %}
                 </li>
 
@@ -105,9 +105,9 @@
 
         $(document).ready(function(){
             if(langue == "en")
-                $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "en" }) }}", "#exerciceA1"));
+                $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "en", 'wordId': wordId}) }}", "#exerciceA1"));
             else
-                $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "fr" }) }}", "#exerciceA1"));
+                $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceA1"));
         });
 
         $(".tabs").tabs();
@@ -118,65 +118,65 @@
 
         $("#exerciceA1Link").click(function () {
             if(langue == "en")
-                $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "en"}) }}", "#exerciceA1"));
+                $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "en", 'wordId': wordId}) }}", "#exerciceA1"));
             else
-                $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "fr"}) }}", "#exerciceA1"));
+                $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceA1"));
         });
 
         $("#exerciceA2Link").click(function () {
             if(langue == "en")
-                $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2', {'langue': "en"}) }}", "#exerciceA2"));
+                $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2', {'langue': "en", 'wordId': wordId}) }}", "#exerciceA2"));
             else
-                $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2', {'langue': "fr"}) }}", "#exerciceA2"));
+                $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceA2"));
         });
 
         $("#exerciceBLink").click(function () {
             if(langue == "en")
-                $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB', {'langue': "en"}) }}", "#exerciceB"));
+                $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB', {'langue': "en", 'wordId': wordId}) }}", "#exerciceB"));
             else
-                $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB', {'langue': "fr"}) }}", "#exerciceB"));
+                $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceB"));
         });
 
         $("#exerciceCLink").click(function () {
             if(langue == "en")
-                $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "en"}) }}", "#exerciceC"));
+                $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "en", 'wordId': wordId}) }}", "#exerciceC"));
             else
-                $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "fr"}) }}", "#exerciceC"));
+                $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceC"));
         });
 
         {#
         $("#exerciceDLink").click(function () {
             if(langue == "en")
-                $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "en"}) }}", "#exerciceD"));
+                $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "en", 'wordId': wordId}) }}", "#exerciceD"));
             else
-                $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "fr"}) }}", "#exerciceD"));
+                $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceD"));
         });
         #}
 
         $("#refresh").click(function () {
             if(langue == "en") {
                 if($("#exerciceA1Link").hasClass("active")){
-                    $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "en"}) }}", "#exerciceA1"));
+                    $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "en", 'wordId': wordId}) }}", "#exerciceA1"));
                 } else if ($("#exerciceA2Link").hasClass("active")) {
-                    $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2', {'langue': "en"}) }}", "#exerciceA2"));
+                    $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2', {'langue': "en", 'wordId': wordId}) }}", "#exerciceA2"));
                 } else if ($("#exerciceBLink").hasClass("active")) {
-                    $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB', {'langue': "en"}) }}", "#exerciceB"));
+                    $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB', {'langue': "en", 'wordId': wordId}) }}", "#exerciceB"));
                 } else if ($("#exerciceCLink").hasClass("active")) {
-                    $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "en"}) }}", "#exerciceC"));
+                    $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "en", 'wordId': wordId}) }}", "#exerciceC"));
                 } {#else if ($("#exerciceDLink").hasClass("active")) {
-                    $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "en"}) }}", "#exerciceD"));
+                    $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "en", 'wordId': wordId}) }}", "#exerciceD"));
                 }#}
             } else if (langue == "fr") {
                 if($("#exerciceA1Link").hasClass("active")){
-                    $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "fr"}) }}", "#exerciceA1"));
+                    $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceA1"));
                 } else if ($("#exerciceA2Link").hasClass("active")) {
-                    $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2', {'langue': "fr"}) }}", "#exerciceA2"));
+                    $("#exerciceA2").load(ajaxExercice("{{ path('lacces_exerciceA2', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceA2"));
                 } else if ($("#exerciceBLink").hasClass("active")) {
-                    $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB', {'langue': "fr"}) }}", "#exerciceB"));
+                    $("#exerciceB").load(ajaxExercice("{{ path('lacces_exerciceB', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceB"));
                 } else if ($("#exerciceCLink").hasClass("active")) {
-                    $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "fr"}) }}", "#exerciceC"));
+                    $("#exerciceC").load(ajaxExercice("{{ path('lacces_exerciceC', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceC"));
                 } {#else if ($("#exerciceDLink").hasClass("active")) {
-                    $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "fr"}) }}", "#exerciceD"));
+                    $("#exerciceD").load(ajaxExercice("{{ path('lacces_exerciceD', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceD"));
                 } #}
             }
 

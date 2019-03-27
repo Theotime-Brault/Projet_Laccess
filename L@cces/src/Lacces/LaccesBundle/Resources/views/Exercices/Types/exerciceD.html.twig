@@ -1,4 +1,11 @@
 <div class="col s12 m12 l8 offset-l2">
+
+    {% if not obj_exerciceD %}
+
+    <p>{{ messageErreur }}</p>
+
+    {% else %}
+
     <div class="card">
         <div class="card-content center black-text flow-text">
             <p>
@@ -19,6 +26,9 @@
             </p>
         </div>
     </div>
+
+    {% endif %}
+
 </div>
 
 <script>

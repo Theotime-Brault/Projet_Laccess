@@ -99,10 +99,11 @@ add_admin:
         _controller: LaccesBundle:Administration:addAdmin
 
 lacces_exercices:
-    path:   /exercices/{langue}
+    path:   /exercices/{langue}/{wordId}
     defaults:
         langue: en
         _controller: LaccesBundle:Exercice:exercices
+        wordId: 0
     requirements:
         langue: fr|en
 

@@ -1,4 +1,11 @@
 <div class="test col s12">
+
+    {% if not obj_exerciceFrA2 and not obj_exerciceEnA2 %}
+
+    <p>{{ messageErreur }}</p>
+
+    {% else %}
+
     <div class="card">
         <div class="card-content center black-text flow-text">
             <p>
@@ -53,4 +60,7 @@
             </article>
         </div>
     </section>
+
+    {% endif %}
+
 </div>

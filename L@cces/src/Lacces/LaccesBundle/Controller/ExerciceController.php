@@ -13,14 +13,15 @@ class ExerciceController extends Controller
    * @return \Symfony\Component\HttpFoundation\Response
    */
 
-  public function exercicesAction($langue)
+  public function exercicesAction($langue, $wordId)
   {
       $em = $this->getDoctrine()->getManager();
       $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
 
       return $this->render('@Lacces/Exercices/exercices.html.twig', array(
         'langue' => $langue,
-        'logo' => $logo
+        'logo' => $logo,
+        'wordId' => $wordId
       ));
   }
 
@@ -45,6 +46,7 @@ class ExerciceController extends Controller
     public function exerciceA1Action(Request $request, $wordId)
     {
       $langue = $request->get('langue');
+      $messageErreur = "L'exercice recherché n'existe pas";
 
         if($langue == "fr" || $langue == "en") {
 
@@ -98,17 +100,25 @@ class ExerciceController extends Controller
               //On fait la même chose pour les mots en français
               $obj_exerciceA1Id = $em->getRepository('LaccesBundle:Exercise\significationVideoFr')->findByWordFrId($motId);
 
-              if(sizeof($obj_exerciceA1Id) != 0) {
+              if (sizeof($obj_exerciceA1Id) != 0) {
                 $idRandom = rand(0, sizeof($obj_exerciceA1Id) - 1);
                 $obj_exerciceA1 = $em->getRepository('LaccesBundle:Exercise\significationVideoFr')->find($obj_exerciceA1Id[$idRandom]);
               }
             }
-          } while($obj_exerciceA1 == null);
+          } while($obj_exerciceA1 == null && $wordId == 0);
+
+          if(!$obj_exerciceA1) {
+            $solution = null;
+          } else {
+            $solution = $obj_exerciceA1->getSolution();
+          }
 
           if($request->isXmlHttpRequest()){
             $render =  $this->renderView('@Lacces/Exercices/Types/exerciceA1.html.twig', array(
               'word' => $mot->getWord(),
               'obj_exerciceA1' => $obj_exerciceA1,
+              'messageErreur' => $messageErreur,
+              'solution' => $solution
             ));
             return new JsonResponse($render);
           }else{
@@ -120,6 +130,7 @@ class ExerciceController extends Controller
     public function exerciceA2Action(Request $request, $wordId) {
 
       $em = $this->getDoctrine()->getManager();
+      $messageErreur = "L'exercice recherché n'existe pas";
 
       $obj_exerciceFrA2 = null;
       $obj_exerciceEnA2 = null;
@@ -162,7 +173,7 @@ class ExerciceController extends Controller
           $idRandom = rand(0, sizeof($obj_exerciceFrA2Id) - 1);
           $obj_exerciceFrA2 = $em->getRepository('LaccesBundle:Exercise\comparaisonVideoFr')->find($obj_exerciceFrA2Id[$idRandom]);
         }
-      } while ($obj_exerciceEnA2 == null && $obj_exerciceFrA2 == null);
+      } while (($obj_exerciceEnA2 == null && $wordId == 0) && ($obj_exerciceFrA2 == null && $wordId == 0));
 
       if($request->isXmlHttpRequest()){
         $render =  $this->renderView('@Lacces/Exercices/Types/exerciceA2.html.twig', array(
@@ -170,6 +181,7 @@ class ExerciceController extends Controller
           'wordEn' => $motEn->getWord(),
           'obj_exerciceFrA2' => $obj_exerciceFrA2,
           'obj_exerciceEnA2' => $obj_exerciceEnA2,
+          'messageErreur' => $messageErreur,
         ));
         return new JsonResponse($render);
       }else {
@@ -180,6 +192,7 @@ class ExerciceController extends Controller
     public function exerciceBAction(Request $request, $wordId) {
 
       $langue = $request->get('langue');
+      $messageErreur = "L'exercice recherché n'existe pas";
 
       if($langue == "fr" || $langue == "en") {
 
@@ -238,13 +251,22 @@ class ExerciceController extends Controller
               $obj_reponseB = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findByQcmFrId(/*$obj_exerciceBId*/$obj_exerciceB->getId());
             }
           }
-        } while($obj_exerciceB == null);
+        } while($obj_exerciceB == null && $wordId == 0);
+
+        if(!$obj_exerciceB) {
+          $solution = null;
+          $obj_reponseB = null;
+        } else {
+          $solution = $obj_exerciceB->getSolution();
+        }
 
         if($request->isXmlHttpRequest()){
           $render =  $this->renderView('@Lacces/Exercices/Types/exerciceB.html.twig', array(
             'word' => $mot->getWord(),
             'obj_exerciceB' => $obj_exerciceB,
-            'tableauReponses' => $obj_reponseB
+            'tableauReponses' => $obj_reponseB,
+            'messageErreur' => $messageErreur,
+            'solution' => $solution
           ));
           return new JsonResponse($render);
         }else{
@@ -258,6 +280,7 @@ class ExerciceController extends Controller
     public function exerciceCAction(Request $request, $wordId) {
 
       $langue = $request->get('langue');
+      $messageErreur = "L'exercice recherché n'existe pas";
 
       if($langue == "fr" || $langue == "en") {
 
@@ -307,13 +330,22 @@ class ExerciceController extends Controller
               $obj_reponseC = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoFr')->findByQcmVideoFrId($obj_exerciceC->getId());
             }
           }
-        } while ($obj_exerciceC == null);
+        } while ($obj_exerciceC == null && $wordId == 0);
+
+        if(!$obj_exerciceC) {
+          $solution = null;
+          $obj_reponseC = null;
+        } else {
+          $solution = $obj_exerciceC->getSolution();
+        }
 
         if($request->isXmlHttpRequest()){
           $render =  $this->renderView('@Lacces/Exercices/Types/exerciceC.html.twig', array(
             'word' => $mot->getWord(),
             'obj_exerciceC' => $obj_exerciceC,
-            'tableauReponses' => $obj_reponseC
+            'tableauReponses' => $obj_reponseC,
+            'messageErreur' => $messageErreur,
+            'solution' => $solution
           ));
           return new JsonResponse($render);
         }else{
@@ -325,6 +357,7 @@ class ExerciceController extends Controller
 
     public function exerciceDAction(Request $request, $wordId) {
       $langue = $request->get('langue');
+      $messageErreur = "L'exercice recherché n'existe pas";
 
       if($langue == "fr" || $langue == "en") {
 
@@ -371,14 +404,22 @@ class ExerciceController extends Controller
               $obj_exerciceD = $em->getRepository('LaccesBundle:Exercise\reformulationFr')->find($obj_exerciceDId[$idRandom]);
             }
           }
-        } while ($obj_exerciceD == null);
+        } while ($obj_exerciceD == null && $wordId == 0);
+
+        if(!$obj_exerciceD) {
+          $solution = null;
+        } else {
+          $solution = $obj_exerciceD->getSolution();
+        };
 
 
 
         if($request->isXmlHttpRequest()){
           $render =  $this->renderView('@Lacces/Exercices/Types/exerciceD.html.twig', array(
             'word' => $mot->getWord(),
-            'obj_exerciceD' => $obj_exerciceD
+            'obj_exerciceD' => $obj_exerciceD,
+            'messageErreur' => $messageErreur,
+            'solution' => $solution
           ));
           return new JsonResponse($render);
         }else{

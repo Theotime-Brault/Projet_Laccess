@@ -176,6 +176,12 @@
                     </li>
                 </ul>
             </div>
+
+            {# BOUTON D'ACCES A LA PAGE EXERCICE DU MOT CHOISI #}
+            <a class="btn btn-hover background-color-orange-lacces waves-effect" href="{{ path('lacces_exercices', {'wordId': word.id }) }}">
+                Exercices du mot {{ word.word }}
+            </a>
+
         </main>
     </div>
 {% endblock %}
