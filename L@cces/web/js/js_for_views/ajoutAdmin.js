@@ -52,10 +52,10 @@ function validPassword() {
     if(re.test($('#user_password_first').val())){
         $('#error_pw').html("");
     }else{
-        $('#error_pw').html("Le mot de passe doit contenir au moins un caractère minuscule\n" +
-                              "Le mot de passe doit contenir au moins un caractère majuscule\n" +
-                              "Le mot de passe doit contenir au moins un chiffre\n" +
-                              "Le mot de passe doit contenir au moins un caractère spécial\n" +
+        $('#error_pw').html("Le mot de passe doit contenir au moins un caractère minuscule<br/>" +
+                              "Le mot de passe doit contenir au moins un caractère majuscule<br/>" +
+                              "Le mot de passe doit contenir au moins un chiffre<br/>" +
+                              "Le mot de passe doit contenir au moins un caractère spécial<br/>" +
                               "Le mot de passe doit contenir de 8 à 32 caractères");
     }
 }
