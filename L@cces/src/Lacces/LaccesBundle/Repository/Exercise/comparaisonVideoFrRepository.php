@@ -18,4 +18,12 @@ class comparaisonVideoFrRepository extends \Doctrine\ORM\EntityRepository
       ->getQuery()
       ->getResult();
   }
+
+    public function findByWord()
+    {
+        return $this->createQueryBuilder('c')
+            ->leftJoin('c.wordFr', 'w')
+            ->getQuery()
+            ->getResult();
+    }
 }

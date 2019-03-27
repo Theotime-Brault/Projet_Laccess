@@ -248,6 +248,7 @@ class EditDataExerciceController extends Controller
         $significationVideo = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findAll();
         $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
 
+        dump($qcm);
         return $this->render('@Lacces/Exercices/EditExercice/listExerciceEn.html.twig', array(
             'comparaisonVideo' => $comparaisonVideo,
             'qcm' => $qcm,

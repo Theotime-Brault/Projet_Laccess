@@ -12,12 +12,20 @@ class qcmEnRepository extends \Doctrine\ORM\EntityRepository
 {
 
   public function findByWordEnId ($wordEnId){
-  return $this->createQueryBuilder('c')
-    ->select('c.id')
-    ->where('c.wordEn=:word')
-    ->setParameter('word', $wordEnId)
-    ->getQuery()
-    ->getResult();
-}
+      return $this->createQueryBuilder('c')
+        ->select('c.id')
+        ->where('c.wordEn=:word')
+        ->setParameter('word', $wordEnId)
+        ->getQuery()
+        ->getResult();
+  }
 
+  public function findAll()
+  {
+      return $this->createQueryBuilder('c')
+          ->join('c.wordEn', 'w')
+          ->addSelect('w')
+          ->getQuery()
+          ->getResult();
+  }
 }

@@ -113,4 +113,20 @@ class significationVideoFr
     {
         return $this->videoLink;
     }
+
+    /**
+     * @return wordFr
+     */
+    public function getWordFr()
+    {
+        return $this->wordFr;
+    }
+
+    /**
+     * @param wordFr $wordFr
+     */
+    public function setWordFr($wordFr)
+    {
+        $this->wordFr = $wordFr;
+    }
 }
