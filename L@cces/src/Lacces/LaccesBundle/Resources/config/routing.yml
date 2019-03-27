@@ -118,43 +118,48 @@ lacces_ex__en_add:
         _controller: LaccesBundle:EditDataExercice:exerciceAddEn
 
 lacces_exerciceA1:
-    path: /exercice/{langue}/A1
+    path: /exercice/{langue}/A1/{wordId}
     defaults:
         langue: fr
         _controller: LaccesBundle:Exercice:exerciceA1
+        wordId: 0
     requirements:
         langue: fr|en
 
 
 lacces_exerciceA2:
-    path: /exercice/{langue}/A2
+    path: /exercice/{langue}/A2/{wordId}
     defaults:
         langue: en
         _controller: LaccesBundle:Exercice:exerciceA2
+        wordId: 0
     requirements:
         langue: fr|en
 
 lacces_exerciceB:
-    path: /exercice/{langue}/B
+    path: /exercice/{langue}/B/{wordId}
     defaults:
         langue: en
         _controller: LaccesBundle:Exercice:exerciceB
+        wordId: 0
     requirements:
         langue: fr|en
 
 lacces_exerciceC:
-    path: /exercice/{langue}/C
+    path: /exercice/{langue}/C/{wordId}
     defaults:
         langue: en
         _controller: LaccesBundle:Exercice:exerciceC
+        wordId: 0
     requirements:
         langue: fr|en
 
 lacces_exerciceD:
-    path: /exercice/{langue}/D
+    path: /exercice/{langue}/D/{wordId}
     defaults:
         langue: en
         _controller: LaccesBundle:Exercice:exerciceD
+        wordId: 0
     requirements:
         langue: fr|en
 
