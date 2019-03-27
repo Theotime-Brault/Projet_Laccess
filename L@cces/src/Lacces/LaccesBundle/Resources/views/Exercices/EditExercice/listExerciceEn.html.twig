@@ -22,7 +22,8 @@
                                 <thead>
                                 <tr>
                                     <th>Mot correspondant</th>
-                                    <th>Solution</th>
+                                    <th>Video de l'exercice</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -31,7 +32,14 @@
                                         <td class="flow-text black-text">
                                             {{ e.wordEn.word }}
                                         </td>
-                                        <td class="flow-text black-text">{{ e.solution }}</td>
+                                        <td>
+                                            <a class="flow-text black-text" href="{{ e.videoLink }}" onclick="window.open(this.href); return false;">Lien de la video</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" exId="{{ e.id }}" onclick="remove(this)" exType="A1" href="">
+                                                <i class="material-icons color-violet-lacces">delete_forever</i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -51,6 +59,7 @@
                                 <tr>
                                     <th>Mot correspondant</th>
                                     <th>Enoncé</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -60,6 +69,11 @@
                                             {{ e.wordEn.word }}
                                         </td>
                                         <td class="flow-text black-text">{{ e.contextSentence }}</td>
+                                        <td>
+                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" exId="{{ e.id }}" onclick="remove(this)" exType="A2" href="">
+                                                <i class="material-icons color-violet-lacces">delete_forever</i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -79,6 +93,7 @@
                                 <tr>
                                     <th>Mot correspondant</th>
                                     <th>Enoncé</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -88,6 +103,11 @@
                                             {{ e.wordEn.word }}
                                         </td>
                                         <td class="flow-text black-text">{{ e.question }}</td>
+                                        <td>
+                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" exId="{{ e.id }}" onclick="remove(this)" exType="B" href="">
+                                                <i class="material-icons color-violet-lacces">delete_forever</i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -106,7 +126,8 @@
                                 <thead>
                                 <tr>
                                     <th>Mot correspondant</th>
-                                    <th>Solution</th>
+                                    <th>Video de l'exercice</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -115,7 +136,14 @@
                                         <td class="flow-text black-text">
                                             {{ e.wordEn.word }}
                                         </td>
-                                        <td class="flow-text black-text">{{ e.solution }}</td>
+                                        <td>
+                                            <a class="flow-text black-text" href="{{ e.videoLink }}" onclick="window.open(this.href); return false;">Lien de la video</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" exId="{{ e.id }}" onclick="remove(this)" exType="C" href="">
+                                                <i class="material-icons color-violet-lacces">delete_forever</i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -135,6 +163,7 @@
                                 <tr>
                                     <th>Mot correspondant</th>
                                     <th>Enoncé</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -144,6 +173,11 @@
                                             {{ e.wordEn.word }}
                                         </td>
                                         <td class="flow-text black-text">{{ e.question }}</td>
+                                        <td>
+                                            <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" data-position="bottom" data-tooltip="Supprimer" exId="{{ e.id }}" onclick="remove(this)" exType="D" href="">
+                                                <i class="material-icons color-violet-lacces">delete_forever</i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -156,4 +190,20 @@
     </div>
 {% endblock %}
 
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+<script>
+    function remove(element){
+        $.ajax({
+            cache: false,
+            type: 'POST',
+            dataType: 'json',
+            url: "{{ path('removeExercice') }}",
+            data:{'langue': "en", 'type': element.attr("exType"), 'id': element.attr("exId")},
+            success:function () {
+            },
+            error:function () {
+            }
+        })
+    }
+</script>
+{% endblock %}

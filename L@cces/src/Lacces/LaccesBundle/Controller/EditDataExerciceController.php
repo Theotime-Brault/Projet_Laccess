@@ -258,4 +258,8 @@ class EditDataExerciceController extends Controller
             'logo' => $logoBlanc
         ));
     }
+
+    public function removeExerciceAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+    }
 }
