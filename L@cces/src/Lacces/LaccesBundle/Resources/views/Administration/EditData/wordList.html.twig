@@ -29,7 +29,7 @@
                     <a class="btn btn-hover background-color-orange-lacces" href="{{ asset('administration/editData/add') }}">Ajouter un mot</a>
                 </div>
 
-                <div class="collapsible collapsible-accordion">
+                <ul class="collapsible collapsible-accordion">
                     {% for letter in 'a'..'z' %}
                         <li class="bold white">
                             <a class="collapsible-header waves-effect color-orange-lacces collapsible-ASL">
@@ -39,7 +39,7 @@
                                 <i class="material-icons material-icons_arrow_drop_down left" id="fleche">arrow_drop_down</i>
                             </a>
                             <div class="collapsible-body">
-                                <table class="highlight">
+                                <table class="striped">
                                     <tbody>
                                         {% if langue == 'fr' %}
                                             <div id="motFr">
@@ -48,6 +48,8 @@
                                                         <tr>
                                                             <td>
                                                                 <a class="flow-text black-text" id="word" href="{{ asset('administration/editData/edit/' ~ w.id ~ '/fr') }}">{{ w.word }}</a>
+                                                            </td>
+                                                            <td>
                                                                 <a class="btn-flat flow-text tooltipped right supprimer modal-trigger" id="supprimer" data-parent="{{ w.id }}" data-position="bottom" data-tooltip="Supprimer" href="#modal1">
                                                                     <i class="material-icons color-violet-lacces">delete_forever</i>
                                                                 </a>
@@ -89,7 +91,7 @@
                             </div>
                         </li>
                     {% endfor %}
-                </div>
+                </ul>
                 <div class="row center">
                     <a class="btn btn-hover background-color-orange-lacces" href="{{ asset('administration') }}">Retour</a>
                 </div>

@@ -1,3 +1,13 @@
+::-webkit-scrollbar-thumb
+{
+    background: rgba(105,8,90,0.7);
+}
+
+::-webkit-scrollbar-thumb:window-inactive
+{
+    background: rgba(105,8,90,0.4);
+}
+
 .sidenav .divider
 {
     background-color: #212121;
