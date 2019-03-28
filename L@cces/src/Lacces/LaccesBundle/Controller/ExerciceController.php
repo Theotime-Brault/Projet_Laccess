@@ -36,7 +36,7 @@ class ExerciceController extends Controller
       if($langue == "fr") {
         $wordFr = $em->getRepository('LaccesBundle:wordFr')->find($wordId);
         if(!$wordFr) {
-          $this->addFlash('info', "Le mot rechercher n'existe pas.");
+          $this->addFlash('info', "Le mot recherché n'existe pas.");
           return $this->redirectToRoute('lacces_homepage');
         }
         $wordEnTab = $wordFr->getWordEns();
@@ -46,7 +46,7 @@ class ExerciceController extends Controller
       else {
         $wordEn = $em->getRepository('LaccesBundle:wordEn')->find($wordId);
         if(!$wordEn) {
-          $this->addFlash('info', "Le mot rechercher n'existe pas.");
+          $this->addFlash('info', "Le mot recherché n'existe pas.");
           return $this->redirectToRoute('lacces_homepage');
         }
         $wordFrTab = $wordEn->getWordFrs();
@@ -197,7 +197,7 @@ class ExerciceController extends Controller
 
         //NE DOIS NORMALEMENT JAMAIS ARRIVER
         if(!$motFr || !$motEn){
-          $this->addFlash('info', "Le mot rechercher n'existe pas.");
+          $this->addFlash('info', "Le mot recherché n'existe pas.");
           return $this->redirectToRoute('lacces_homepage');
         }
 
@@ -260,7 +260,7 @@ class ExerciceController extends Controller
 
           //NE DOIS NORMALEMENT JAMAIS ARRIVER
           if (!$mot) {
-            $this->addFlash('info', "Le mot rechercher n'existe pas.");
+            $this->addFlash('info', "Le mot recherché n'existe pas.");
             return $this->redirectToRoute('lacces_homepage');
           }
 
@@ -353,7 +353,7 @@ class ExerciceController extends Controller
 
           //NE DOIS NORMALEMENT JAMAIS ARRIVER
           if (!$mot) {
-            $this->addFlash('info', "Le mot rechercher n'existe pas.");
+            $this->addFlash('info', "Le mot recherché n'existe pas.");
             return $this->redirectToRoute('lacces_homepage');
           }
 
@@ -432,7 +432,7 @@ class ExerciceController extends Controller
 
           //NE DOIS NORMALEMENT JAMAIS ARRIVER
           if (!$mot) {
-            $this->addFlash('info', "Le mot rechercher n'existe pas.");
+            $this->addFlash('info', "Le mot recherché n'existe pas.");
             return $this->redirectToRoute('lacces_homepage');
           }
 
