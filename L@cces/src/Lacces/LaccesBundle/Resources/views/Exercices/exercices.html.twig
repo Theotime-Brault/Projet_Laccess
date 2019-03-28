@@ -34,17 +34,6 @@
                         </li>
                     </ul>
                 </li>
-
-                {#
-                <li class="">
-                    {% if langue == "fr" %}
-                        <a class="btn-flat waves-effect exercices" href="{{ path('lacces_exercices', {'langue': "en", 'wordId': wordId}) }}">Passer en anglais</a>
-                    {% else %}
-                        <a class="btn-flat waves-effect exercices" href="{{ path('lacces_exercices', {'langue': "fr", 'wordId': wordId}) }}">Passer en français</a>
-                    {% endif %}
-                </li>
-
-                #}
                 <li class = "tab tooltipped" data-position="bottom" data-tooltip="Regardez la vidéo ASL et trouvez la phrase signée en anglais">
                     <a id="exerciceA1Link" href="#exerciceA1">Exercice A1</a>
                 </li>
@@ -100,15 +89,24 @@
 
 {% block javascripts %}
     <script>
-
         var langue = "{{ langue }}";
-
         $(document).ready(function(){
-            if(langue == "en")
+            if(langue == "en") {
                 $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "en", 'wordId': wordId}) }}", "#exerciceA1"));
-            else
+            } else {
                 $("#exerciceA1").load(ajaxExercice("{{ path('lacces_exerciceA1', {'langue': "fr", 'wordId': wordId}) }}", "#exerciceA1"));
+            }
         });
+
+        if(langue == "en") {
+            $("#imgFlagEn").parent().css("background-color", "#f4a733");
+            $("#imgFlagFr").parent().css("background-color", "white");
+            console.log("yoho");
+        } else {
+            $("#imgFlagFr").parent().css("background-color", "#f4a733");
+            $("#imgFlagEn").parent().css("background-color", "white");
+            console.log("nfslkjgkds");
+        }
 
         $(".tabs").tabs();
 
