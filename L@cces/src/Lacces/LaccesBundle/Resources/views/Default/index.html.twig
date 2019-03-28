@@ -21,10 +21,10 @@
                             <div class="row center row-container">
                                 <div class="center row-flag">
                                     <div class="container-img-flag">
-                                        <img class="z-depth-2" id="imgFr" alt="Choisir langue française" src="{{ asset('pictures/flags/flagLSF.png') }}"/>
+                                        <img class="z-depth-2 clickFlag" id="imgFr" alt="Choisir langue française" src="{{ asset('pictures/flags/flagLSF.png') }}"/>
                                     </div>
                                     <div class="container-img-flag">
-                                        <img class="z-depth-2" id="imgEn" alt="Choose american language" src="{{ asset('pictures/flags/flagASL.png') }}"/>
+                                        <img class="z-depth-2 clickFlag" id="imgEn" alt="Choose american language" src="{{ asset('pictures/flags/flagASL.png') }}"/>
                                     </div>
                                 </div>
                             </div>
@@ -103,4 +103,9 @@
 {% block javascripts %}
     <script src="{{ asset('js/js_for_views/radio.js') }}"></script>
     <script src="{{ asset('js/js_for_views/searchBarreFocus.js') }}"></script>
+    <script>
+
+
+
+    </script>
 {% endblock %}
