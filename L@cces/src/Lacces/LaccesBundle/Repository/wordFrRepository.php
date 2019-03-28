@@ -26,15 +26,12 @@ class wordFrRepository extends EntityRepository
     }
   }
 
-  public function findByPopularity ($motif){
+  public function findByPopularity (){
     return $this->createQueryBuilder('c')
         ->select('c.word')
-        ->where('c.word LIKE :word')
-        ->setParameter('word', $motif)
         ->orderBy('c.popularity', 'DESC')
         ->addOrderBy('c.word', 'ASC')
         ->getQuery()
-        ->setMaxResults(12)
         ->getResult();
   }
 

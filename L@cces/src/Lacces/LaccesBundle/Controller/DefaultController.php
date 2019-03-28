@@ -39,8 +39,7 @@ class DefaultController extends Controller
       $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
 
       return $this->render('@Lacces/Default/index.html.twig', [
-        'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        'logo' => $logo
+          'logo' => $logo
       ]);
     }
 
@@ -83,56 +82,7 @@ class DefaultController extends Controller
      */
     public function searchBarreAction(Request $request)
     {
-        /*
-        $em = $this->getDoctrine()->getManager();
-        $form = array('searchForm' => 'form');
-        $tabLangues = ["fr", "en"];
-        $formSearch = $this->createFormBuilder($form)
-            ->add('search', TextType::class, array(
-                'label'=>false,
-                'name'=>'search-barre',
-                'class'=>'search',
-                'id'=>'search-barre',
-                'autocomplete'=>'off',
-                'placeholder'=>'Rechercher un mot'
-            ))
-            ->add('langue',RadioType::class, array(
-                'choices' => $tabLangues,
-                'choice_attr' => function($l, $key, $index) {
-                    return [
-                        'name' => 'langue',
-                        'label'=>false
-                    ];
-                },
-            ))
-            ->add('<i class=\"material-icons orange-text\">search</i>', SubmitType::class, array(
-                'label'=>false,
-                'id'=>'tnSearch',
-                'class'=>'btn'
-            ))
-            ->getForm();
-
-        $formSearch->handleRequest($request);
-
-        if ($formSearch->isSubmitted() && $formSearch->isValid()) {
-            $wordSearch = $formSearch['search']->getData();
-            $langue = $formSearch['langue']->getData();
-            if($wordSearch && $langue){
-                if($langue == 'fr'){
-                    $word = $em->getRepository('LaccesBundle:wordFr')->findByWord($wordSearch);
-                }else if($langue == 'en'){
-                    $word = $em->getRepository('LaccesBundle:wordEn')->findByWord($wordSearch);
-                }
-
-                if($word){
-                    $link = "/word/".$langue."/".$word->getWord();
-                    return $this->redirectToRoute($link);
-                }
-            }
-        }*/
-        return $this->render('@Lacces/SearchBarre/searchBarre.html.twig', [
-            //'form' => $formSearch->createView(),
-        ]);
+        return $this->render('@Lacces/SearchBarre/searchBarre.html.twig');
     }
 
     /**
@@ -145,7 +95,6 @@ class DefaultController extends Controller
         $wordsFrObj = $em->getRepository('LaccesBundle:wordFr')->findAll();
 
         return $this->render('@Lacces/Signaires/signaireFr.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'wordFr' => $wordsFrObj,
             'logo' => $logo
         ]);
@@ -188,12 +137,21 @@ class DefaultController extends Controller
         ));
     }
 
-    /**
-     * @return JsonResponse
-     */
+
     public function autoCompleteAction(Request $request){
         if ($request -> isXmlHttpRequest()) {
+            $l = $request->request->get('l');
+            $em = $this->getDoctrine()->getManager();
 
+            if($l == "fr"){
+                $word = $em->getRepository('LaccesBundle:wordFr')->findByPopularity();
+            }else {
+                $word = $em->getRepository('LaccesBundle:wordEn')->findByPopularity();
+            }
+
+            return new JsonResponse($word);
+        }
+/*
             $em = $this->getDoctrine()->getManager();
             $l = $request->request->get('l');
             $word = $request->request->get('word');
@@ -205,7 +163,7 @@ class DefaultController extends Controller
                 $words = null;
             }
 
-            /*
+
                     if($word && $l == "fr"){
                         $wordsFr = $em->getRepository('LaccesBundle:wordFr')->findByPopularity($word."%");
                         dump($wordsFr);
@@ -221,11 +179,11 @@ class DefaultController extends Controller
                         $wordsFr = null;
                         $wordsEn = null;
                     }
-            */
+
             return new JsonResponse(array('words' => $words));
             //return new JsonResponse(array('wordsFr'=>$wordsFr, 'wordsEn'=>$wordsEn));
 
         }
-        return $this->redirectToRoute('lacces_homepage');
+        return $this->redirectToRoute('lacces_homepage');*/
     }
 }
