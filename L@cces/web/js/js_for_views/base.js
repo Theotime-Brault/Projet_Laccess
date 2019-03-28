@@ -42,4 +42,5 @@ $(document).ready(function () {
     });
 
     $('input.formValue, textarea.formValue').characterCounter();
+
 });

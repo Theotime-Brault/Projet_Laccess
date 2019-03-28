@@ -12,7 +12,7 @@ class DefaultController extends Controller
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction(Request $request, FileUploader $fileUploader)
+    public function indexAction(Request $request)
     {
 
       $em = $this->getDoctrine()->getManager();

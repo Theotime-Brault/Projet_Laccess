@@ -28,8 +28,9 @@ class AdministrationController extends Controller
 
       // $file récupère le jpeg telechargé
 
-      /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+      /** @var \Symfony\Component\HttpFoundation\File\UploadedFile $file */
       $file = $logo->getImage();
+
       $fileName = $fileUploader->upload($file);
       $logo->setImage($fileName);
       $this->addFlash('info', "Le logo a bien été modifié !");

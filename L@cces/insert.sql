@@ -490,3 +490,12 @@ insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) v
 insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(16, 16);
 insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(17, 17);
 insert into comparaisonfren (comparaison_video_fr_id, comparaison_video_en_id) values(18, 18);
+
+
+insert into user (username, password, roles, email, is_active) values("admin", "$2y$10$Y2RtgK9A.3fMoWt20Y7aWuaKTnODJ1LVLVeQHlB9MuU5Kzt70UKNC", "ROLE_ADMIN", "monemail@gmail.com", 1);
+insert into user (username, password, roles, email, is_active) values("test", "$2y$10$3bU/Ue.3mYyX.F5E.5kWiuaCNjXwjEJVqpXEO08CmF6SVDNFlS77a", "ROLE_ADMIN", "test@gmail.com", 1);
+insert into user (username, password, roles, email, is_active) values("Jean", "$2y$10$Driv0zWKhOpuJhLKefoUouhiBk5wuPYdDd7GC6zA9VaKKBAzR9/bq", "ROLE_ADMIN", "jean.jean@gmail.com", 1);
+
+
+insert into logos (image, nom_image) values("logo_lacces_2.png", "logo_lacces_2.png");
+insert into logos (image, nom_image) values("logo_lacces_white_2.png", "logo_lacces_white_2.png");
