@@ -14,7 +14,7 @@
 
 <div class="row center">
     <div class="input-field col s12 m6 offset-m3">
-        <i class="material-icons color-orange-lacces prefix">account_circle</i>
+        <i class="material-icons color-orange-lacces prefix">email</i>
         {{ form_label(form.email)}}
         {{ form_widget(form.email)}}
         <div id="error_mail"></div>
@@ -24,13 +24,13 @@
 
 <div class="row center">
     <div class="input-field col s12 m6 offset-m3">
-        <i class="material-icons color-orange-lacces prefix">account_circle</i>
+        <i class="material-icons color-orange-lacces prefix">vpn_key</i>
         {{ form_label(form.password.first)}}
         {{ form_widget(form.password.first)}}
         <div id="error_pw"></div>
     </div>
     <div class="input-field col s12 m6 offset-m3">
-        <i class="material-icons color-orange-lacces prefix">account_circle</i>
+        <i class="material-icons color-orange-lacces prefix">vpn_key</i>
         {{ form_label(form.password.second)}}
         {{ form_widget(form.password.second)}}
         <span class="red-text">{{ form_errors(form.password.first)}}</span>

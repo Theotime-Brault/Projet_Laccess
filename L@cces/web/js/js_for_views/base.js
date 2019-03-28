@@ -28,10 +28,6 @@ $(document).ready(function () {
 
     $('.collapsible').collapsible();
 
-    $('#collapsible-header-click').on('click', function () {
-        $('.material-icons').toggleClass('rotate')
-    });
-
     //display tooltipped only on desktop
     if(!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ))
     {

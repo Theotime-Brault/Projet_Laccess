@@ -2,30 +2,10 @@
 
 namespace Lacces\LaccesBundle\Controller;
 
-
-use Lacces\LaccesBundle\Entity\Forms\LogoType;
-use Lacces\LaccesBundle\Entity\Logo;
 use Lacces\LaccesBundle\Service\FileUploader;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\Routing\Annotation\Route;
-use Lacces\LaccesBundle\Entity\wordFr;
-use Lacces\LaccesBundle\Entity\wordEn;
-use Lacces\LaccesBundle\Repository\wordFrRepository;
-use Lacces\LaccesBundle\Repository\wordEnRepository;
-use Lacces\LaccesBundle\Entity\Forms\Form;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\Validator\Constraints\Email;
-
-
 
 class DefaultController extends Controller
 {

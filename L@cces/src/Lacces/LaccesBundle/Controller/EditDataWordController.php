@@ -123,7 +123,7 @@ class EditDataWordController extends Controller
             'autocomplete' => "off"
         )))
         ->add('videoLinkFr', TextType::class, array(
-          'label' => "Url de la vidéo française",
+          'label' => "Url de la vidéo en français",
           'attr' => array(
           'maxlength' => "200",
           'class' => "formValue",
@@ -142,7 +142,7 @@ class EditDataWordController extends Controller
         //MOT ANGLAIS
 
         ->add('wordEn', TextType::class, array(
-          'label' => "Mot en américain",
+          'label' => "Mot en anglais",
           'attr' => array(
           'maxlength' => "50",
           'class' => "formValue",
@@ -150,7 +150,7 @@ class EditDataWordController extends Controller
             'autocomplete' => "off"
         )))
         ->add('videoLinkEn', TextType::class, array(
-          'label' => "Url de la vidéo américaine",
+          'label' => "Url de la vidéo en anglais",
           'attr' => array(
           'maxlength' => "200",
           'class' => "formValue",
@@ -158,7 +158,7 @@ class EditDataWordController extends Controller
             'autocomplete' => "off"
         )))
         ->add('contextSentenceEn', TextType::class, array(
-          'label' => "Phrase de contextualisation américaine",
+          'label' => "Phrase de contextualisation anglaise",
           'attr' => array(
           'maxlength' => "200",
           'class' => "formValue",
@@ -304,7 +304,7 @@ class EditDataWordController extends Controller
                 'autocomplete' => "off"
             )))
             ->add('videoLinkFr', TextType::class, array(
-              'label' => "Url de la video française",
+              'label' => "Url de la video en français",
               'attr' => array(
               'maxlength' => "200",
               'class' => "formValue",
@@ -348,7 +348,7 @@ class EditDataWordController extends Controller
 
             $form = $this->createFormBuilder($formulaire)
               ->add('wordEn', TextType::class, array(
-                'label' => "Mot en américain",
+                'label' => "Mot en anglais",
                 'attr' => array(
                 'maxlength' => "50",
                 'class' => "formValue",
@@ -356,7 +356,7 @@ class EditDataWordController extends Controller
                   'autocomplete' => "off"
                 )))
               ->add('videoLinkEn', TextType::class, array(
-                'label' => "Url de la video américaine",
+                'label' => "Url de la video en anglais",
                 'attr' => array(
                 'maxlength' => "200",
                 'class' => "formValue",
@@ -364,7 +364,7 @@ class EditDataWordController extends Controller
                   'autocomplete' => "off"
                 )))
               ->add('contextSentenceEn', TextType::class, array(
-                'label' => "Phrase de contextualisation américaine",
+                'label' => "Phrase de contextualisation anglais",
                 'attr' => array(
                 'maxlength' => "200",
                 'class' => "formValue",

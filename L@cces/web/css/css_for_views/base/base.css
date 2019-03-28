@@ -229,12 +229,6 @@ nav
     margin-right: 0;
 }
 
-#material-icons_arrow_drop_down.rotate
-{
-    transform: rotate(180deg);
-    transition: 0.5s ease-out;
-}
-
 nav .brand-logo
 {
     display: flex;
