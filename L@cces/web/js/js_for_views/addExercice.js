@@ -69,7 +69,6 @@ $('#typeEx').change(function () {
 function ajouter() {
     $('#ex').append(
         "<div class=\"input-field\">" +
-        "<label for=\"otherRep\">Autre réponse</label>"+
         "<input required=\"required\" class='otherRep col s11' id=\"otherRep\" type=\"text\"/>" +
         "<a class='btn-flat btn-flat-hover col s1' onclick='enlever(this)'><i class='material-icons'>remove</i></a>" +
         "</div>"
@@ -87,6 +86,7 @@ function OtherRepString() {
         res += $(this).val();
     });
     res = res.substring(1);
+    return res;
 }
 
 function succes() {

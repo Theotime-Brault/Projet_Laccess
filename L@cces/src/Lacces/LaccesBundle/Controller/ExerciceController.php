@@ -279,6 +279,10 @@ class ExerciceController extends Controller
 
               //On récupère les id des réponses correspondant à l'exercice
               $obj_reponseB = $em->getRepository('LaccesBundle:Exercise\qcmEnonceEn')->findByQcmEnId($obj_exerciceB->getId());
+
+              //On randomise le tableau de réponse pour ne pas avoir la réponse toujours en première position
+              shuffle($obj_reponseB);
+
             }
           } else {
 
@@ -289,7 +293,8 @@ class ExerciceController extends Controller
             if(sizeof($obj_exerciceBId) != 0) {
               $idRandom = rand(0, sizeof($obj_exerciceBId) - 1);
               $obj_exerciceB = $em->getRepository('LaccesBundle:Exercise\qcmFr')->find($obj_exerciceBId[$idRandom]);
-              $obj_reponseB = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findByQcmFrId(/*$obj_exerciceBId*/$obj_exerciceB->getId());
+              $obj_reponseB = $em->getRepository('LaccesBundle:Exercise\qcmEnonceFr')->findByQcmFrId($obj_exerciceB->getId());
+              shuffle($obj_reponseB);
             }
           }
         } while($obj_exerciceB == null && $wordId == 0);
@@ -361,6 +366,7 @@ class ExerciceController extends Controller
               $idRandom = rand(0, sizeof($obj_exerciceCId) - 1);
               $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->find($obj_exerciceCId[$idRandom]);
               $obj_reponseC = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoEn')->findByQcmVideoEnId($obj_exerciceC->getId());
+              shuffle($obj_reponseC);
             }
           } else {
             $obj_exerciceCId = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->findByWordFrId($motId);
@@ -369,6 +375,7 @@ class ExerciceController extends Controller
               $idRandom = rand(0, sizeof($obj_exerciceCId) - 1);
               $obj_exerciceC = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->find($obj_exerciceCId[$idRandom]);
               $obj_reponseC = $em->getRepository('LaccesBundle:Exercise\qcmEnonceVideoFr')->findByQcmVideoFrId($obj_exerciceC->getId());
+              shuffle($obj_reponseC);
             }
           }
         } while ($obj_exerciceC == null && $wordId == 0);
