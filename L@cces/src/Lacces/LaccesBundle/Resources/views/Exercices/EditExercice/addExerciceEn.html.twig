@@ -127,6 +127,7 @@
                     case '3':
                         var videoLink = $('#videoLink').val();
                         var otherRep = OtherRepString();
+                        console.log(otherRep);
                         if(videoLink != "" && otherRep != ""){
                             $.ajax({
                                 cache:false,

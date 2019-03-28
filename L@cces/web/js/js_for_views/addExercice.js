@@ -87,6 +87,7 @@ function OtherRepString() {
         res += $(this).val();
     });
     res = res.substring(1);
+    return res;
 }
 
 function succes() {
