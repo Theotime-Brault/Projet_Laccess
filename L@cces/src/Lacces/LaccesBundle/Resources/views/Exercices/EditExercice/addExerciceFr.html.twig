@@ -19,7 +19,7 @@
                     <div class="col s12 m6">
                         <label>Mots</label>
                         <select id="words" required="required">
-                            <option value="0" selected="selected">Selectionner un mot</option>
+                            <option value="0" selected="selected">Sélectionnez un mot</option>
                             {% for w in words %}
                                 <option value="{{ w.id }}">{{ w.word }}</option>
                             {% endfor %}
@@ -28,12 +28,12 @@
                     <div class="col s12 m6">
                         <label for="typeEx">Type d'éxercice</label>
                         <select name="typeEx" id="typeEx" required="required">
-                            <option value="0" selected="selected">Selectionner le type d'exercice</option>
-                            <option value="1">Signification video</option>
+                            <option value="0" selected="selected">Sélectionnez le type d'exercice</option>
+                            <option value="1">Signification vidéo</option>
                             <option value="2">QCM</option>
                             <option value="3">QCM video</option>
-                            <option value="4">Reformulation</option>
-                            <option value="5">Comparaison video</option>
+                            <option value="4">Reformulation d'une phrase</option>
+                            <option value="5">Comparaison vidéo</option>
                         </select>
                     </div>
                     <div class="col s12">
@@ -51,7 +51,7 @@
     <div id="modalError" class="modal">
         <div class="modal-content">
             <h5>Erreur</h5>
-            <p>L'exercice n'à pas été ajouté.</p>
+            <p>L'exercice n'a pas été ajouté.</p>
         </div>
         <div class="modal-footer">
             <a class="modal-close waves-effect btn-flat btn-flat-hover">
