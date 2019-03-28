@@ -18,6 +18,7 @@ use Lacces\LaccesBundle\Entity\Exercise\qcmVideoEn;
 use Lacces\LaccesBundle\Entity\Exercise\qcmVideoFr;
 use Lacces\LaccesBundle\Entity\Exercise\reformulationEn;
 use Lacces\LaccesBundle\Entity\Exercise\significationVideoEn;
+use Lacces\LaccesBundle\Entity\Exercise\significationVideoFr;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
