@@ -197,8 +197,10 @@
     </div>
 {% endblock %}
 {% block javascripts %}
+    <script src="{{ asset('js/js_for_views/searchBarre.js') }}"></script>
     <script src="{{ asset('js/js_for_views/word.js') }}"></script>
     <script src="{{ asset('js/js_for_views/searchBarreFocus.js') }}"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function(){
             $(".preloader-background").hide();

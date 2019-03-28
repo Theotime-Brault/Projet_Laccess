@@ -42,23 +42,22 @@
         </label>
     </div>
 </div>
-<script src="{{ asset('js/jquery_materialize/jquery.js') }}"></script>
-<script src="{{ asset('js/jquery_materialize/materialize.min.js') }}"></script>
+<script src="{{ asset('js/js_for_views/searchBarre.js') }}"></script>
 <script>
-    
+
 $('document').ready(function () {
     actualiserTableau("fr");
-    $("input[type=radio][name='langue']:checked").change(function () {
-        if ($("#btnFr:checked")) {
-            actualiserTableau("fr");
-        } else if ($("#btnEn:checked")) {
-            actualiserTableau("en");
-        }
-    });
 
-    $('#btnSearch').click(function () {
-        submitSearch();
-    })
+    $('.clickFlag').click(function() {
+        setTimeout(function () {
+            if ($("#btnFr").is(':checked')) {
+                actualiserTableau("fr");
+            } else if ($("#btnEn").is(':checked')) {
+                actualiserTableau("en");
+            }
+        }, 20)
+
+    });
 
     function actualiserTableau(langue) {
         $.ajax({
@@ -67,7 +66,6 @@ $('document').ready(function () {
             cache: false,
             data: {'l':langue},
             success: function (response) {
-                console.log(response[1].word);
                 var mots = new Object();
                 if(response){
                     for(i = 0; i<response.length; i++){
@@ -84,31 +82,6 @@ $('document').ready(function () {
             }
         });
     };
-
-    function submitSearch(){
-        var  word = $('#search-barre').val();
-        var langue;
-        if($("#btnFr").is(":checked")) {
-            langue = "fr";
-        }else if($("#btnEn").is(":checked")) {
-            langue = "en";
-        }else{
-            langue = "";
-        }
-
-        if(word && langue){
-            $('form').attr('action', "/word/"+langue+"/"+word);
-            $('form').submit();
-        }else{
-            $('form').removeAttr('action');
-        }
-    }
-
-    $('#search-barre').keyup(function(e) {
-        if (e.keyCode == 13) {
-            submitSearch();
-        }
-    });
 
     $('.image-flag-drowpdown').click(function () {
         if ($("#btnEn").is(":checked")) {
