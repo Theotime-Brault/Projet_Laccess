@@ -80,7 +80,7 @@ class EditDataWordController extends Controller
         $this->addFlash('info', "Le mot a bien été modifié !");
 
         $word->setWord($formulaire->getWord());
-        $word->setVideoLink($formulaire->getVideoLink());
+        $word->setVideoLink($formulaire->getVideoLink()."?rel=0");
         $word->setContextSentence($formulaire->getContextSentence());
 
         $em->persist($word);
@@ -186,12 +186,12 @@ class EditDataWordController extends Controller
         $monMotEn = new wordEn();
 
         $monMotFr->setWord($formulaire->getWordFr());
-        $monMotFr->setVideoLink($formulaire->getVideoLinkFr());
+        $monMotFr->setVideoLink($formulaire->getVideoLinkFr()."?rel=0");
         $monMotFr->setContextSentence($formulaire->getContextSentenceFr());
         $monMotFr->setPopularity(0);
 
         $monMotEn->setWord($formulaire->getWordEn());
-        $monMotEn->setVideoLink($formulaire->getVideoLinkEn());
+        $monMotEn->setVideoLink($formulaire->getVideoLinkEn()."?rel=0");
         $monMotEn->setContextSentence($formulaire->getContextSentenceEn());
         $monMotEn->setPopularity(0);
 
@@ -289,7 +289,7 @@ class EditDataWordController extends Controller
           $word = $monMotEn->getWord();
           //Pour eviter des erreurs de formulaire nous remplissons les inputs non visible par les valeur du mot à traduire
           $formulaire->setWordEn($monMotEn->getWord());
-          $formulaire->setVideoLinkEn($monMotEn->getVideoLink());
+          $formulaire->setVideoLinkEn($monMotEn->getVideoLink()."?rel=0");
           $formulaire->setContextSentenceEn($monMotEn->getContextSentence());
 
           //On créé le formulaire d'ajout de mot français
@@ -341,7 +341,7 @@ class EditDataWordController extends Controller
           $word = $monMotFr->getWord();
           //Pour eviter des erreurs de formulaire nous remplissons les inputs non visible par les valeur du mot à traduire
           $formulaire->setWordFr($monMotFr->getWord());
-          $formulaire->setVideoLinkFr($monMotFr->getVideoLink());
+          $formulaire->setVideoLinkFr($monMotFr->getVideoLink()."?rel=0");
           $formulaire->setContextSentenceFr($monMotFr->getContextSentence());
 
           //On créé le formulaire d'ajout de mot anglais
@@ -388,7 +388,7 @@ class EditDataWordController extends Controller
 
           if ($langue == "fr") {
             $monMotFr->setWord($formulaire->getWordFr());
-            $monMotFr->setVideoLink($formulaire->getVideoLinkFr());
+            $monMotFr->setVideoLink($formulaire->getVideoLinkFr()."?rel=0");
             $monMotFr->setContextSentence($formulaire->getContextSentenceFr());
             $monMotFr->setPopularity(0);
             $monMotFr->setWordEns(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordFr'), new ArrayCollection([$monMotEn])));
@@ -398,7 +398,7 @@ class EditDataWordController extends Controller
           }
           else {
             $monMotEn->setWord($formulaire->getWordEn());
-            $monMotEn->setVideoLink($formulaire->getVideoLinkEn());
+            $monMotEn->setVideoLink($formulaire->getVideoLinkEn()."?rel=0");
             $monMotEn->setContextSentence($formulaire->getContextSentenceEn());
             $monMotEn->setPopularity(0);
             $monMotEn->setWordFrs(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordEn'), new ArrayCollection([$monMotFr])));

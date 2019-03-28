@@ -1,5 +1,5 @@
-insert into word_fr (word, videoLink, contextSentence, popularity) values("père", "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "C'est mon père !", 9);
-insert into word_fr (word, videoLink, contextSentence, popularity) values("mot", "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Une phrase est construite avec des mots", 8);
+insert into word_fr (word, videoLink, contextSentence, popularity) values("père", "https://www.youtube.com/embed/tSHuhgXpiuQ", "C'est mon père !", 9);
+insert into word_fr (word, videoLink, contextSentence, popularity) values("mot", "https://www.youtube.com/embed/tSHuhgXpiuQ", "Une phrase est construite avec des mots", 8);
 insert into word_fr (word, videoLink, contextSentence, popularity) values("oui", "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "je vous repond oui !", 42);
 insert into word_fr (word, videoLink, contextSentence, popularity) values("manger", "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "j'adore manger", 823);
 insert into word_fr (word, videoLink, contextSentence, popularity) values("vendre", "https://www.youtube.com/embed/tSHuhgXpiuQ?rel=0", "Je vend ma maison", 12);

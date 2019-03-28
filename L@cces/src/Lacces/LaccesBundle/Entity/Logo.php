@@ -27,8 +27,10 @@ class Logo
   /**
   * @ORM\Column(type="string")
   *
-  * @Assert\NotBlank(message="Ajouter une image jpg")
-  * @Assert\File(mimeTypes={ "image/png" })
+  * @Assert\NotBlank(message="Ajouter une image jpg ou png")
+  * @Assert\File(
+   *   mimeTypes={"image/jpeg", "image/png", "image/gif"},
+   *   mimeTypesMessage = "Veuillez insérer une image valide (png, jpeg, gif)")
   */
   private $image;
 
