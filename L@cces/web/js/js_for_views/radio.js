@@ -23,16 +23,12 @@ $(document).ready(function(){
   function checked(){
     if($("#btnEn").is(":checked")){
       $("#imgEn").css("border-color", "#f4a733");
-      $("#imgFlagEn").parent().css("background-color", "#f4a733");
       $("#imgFr").css("border-color", "white");
-      $("#imgFlagFr").parent().css("background-color", "white");
     };
 
     if($("#btnFr").is(":checked")){
       $("#imgFr").css("border-color", "#f4a733");
-      $("#imgFlagFr").parent().css("background-color", "#f4a733");
       $("#imgEn").css("border-color", "white");
-      $("#imgFlagEn").parent().css("background-color", "white");
     };
   }
 });

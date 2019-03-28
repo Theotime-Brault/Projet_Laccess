@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-
-
     $("#search-barre").on("focus", function(){
         $(".container-focus-footer").css("animation", "fadeOutDown 250ms");
         $(".container-focus-footer").css({
@@ -28,8 +26,6 @@ $(document).ready(function () {
             }, 100);
         });
     });
-
-
 
     $("#close-barre").click(function(){
         hiddenSearchBase();
@@ -71,27 +67,4 @@ $(document).ready(function () {
             right: "0",
         });
     }
-
-    /*
-    $("#imgFlagFr").click(function () {
-        flagFr();
-    });
-
-    $("#imgFlagEn").click(function () {
-        flagEn();
-    });
-
-    function flagFr(){
-        $("#imgFlagEn").css("display , block");
-        $("#imgFlagFr").css("display, none");
-        $("#imgFlagEn").fadeIn(10);
-        $("#imgFlagFr").fadeOut(10);
-    }
-
-    function flagEn(){
-        $("#imgFlagFr").css("display, block");
-        $("#imgFlagEn").css("display, none");
-        $("#imgFlagFr").fadeIn(10);
-        $("#imgFlagEn").fadeOut(10);
-    }*/
 });
