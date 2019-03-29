@@ -44,6 +44,13 @@ class wordEn
     private $contextSentence;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="videoLinkSentence", type="string", length=255)
+     */
+    private $videoLinkSentence;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="popularity", type="integer")
@@ -286,4 +293,20 @@ class wordEn
     {
         $this->significationsVideoEn = $significationsVideoEn;
     }
+
+  /**
+   * @return string
+   */
+  public function getVideoLinkSentence()
+  {
+    return $this->videoLinkSentence;
+  }
+
+  /**
+   * @param string $videoLinkSentence
+   */
+  public function setVideoLinkSentence($videoLinkSentence)
+  {
+    $this->videoLinkSentence = $videoLinkSentence;
+  }
 }
