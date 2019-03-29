@@ -348,6 +348,14 @@ class EditDataWordController extends Controller
               'data-length' => "200",
                 'autocomplete' => "off"
               )))
+            ->add('videoLinkSentenceFr', TextType::class, array(
+              'label' => "Url de la video en français de la phrase de contextualisation",
+              'attr' => array(
+                'maxlength' => "200",
+                'class' => "formValue",
+                'data-length' => "200",
+                'autocomplete' => "off"
+              )))
             ->add('submit', SubmitType::class, array(
               'label' => 'Envoyer',
               'attr' => array(
@@ -400,6 +408,14 @@ class EditDataWordController extends Controller
                 'data-length' => "200",
                   'autocomplete' => "off"
                 )))
+              ->add('videoLinkSentenceEn', TextType::class, array(
+                'label' => "Url de la video en anglais de la phrase de contextualisation",
+                'attr' => array(
+                  'maxlength' => "200",
+                  'class' => "formValue",
+                  'data-length' => "200",
+                  'autocomplete' => "off"
+                )))
               ->add('submit', SubmitType::class, array(
                 'label' => 'Envoyer',
                 'attr' => array(
@@ -419,6 +435,7 @@ class EditDataWordController extends Controller
             $monMotFr->setWord($formulaire->getWordFr());
             $monMotFr->setVideoLink($formulaire->getVideoLinkFr()."?rel=0");
             $monMotFr->setContextSentence($formulaire->getContextSentenceFr());
+            $monMotFr->setVideoLinkSetence($formulaire->getVideoLinkSentenceFr()."?rel=0");
             $monMotFr->setPopularity(0);
             $monMotFr->setWordEns(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordFr'), new ArrayCollection([$monMotEn])));
 
@@ -429,6 +446,7 @@ class EditDataWordController extends Controller
             $monMotEn->setWord($formulaire->getWordEn());
             $monMotEn->setVideoLink($formulaire->getVideoLinkEn()."?rel=0");
             $monMotEn->setContextSentence($formulaire->getContextSentenceEn());
+            $monMotFr->setVideoLinkSetence($formulaire->getVideoLinkSentenceEn()."?rel=0");
             $monMotEn->setPopularity(0);
             $monMotEn->setWordFrs(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordEn'), new ArrayCollection([$monMotFr])));
 
