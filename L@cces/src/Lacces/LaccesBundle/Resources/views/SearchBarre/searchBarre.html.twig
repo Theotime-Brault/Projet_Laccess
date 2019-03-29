@@ -71,7 +71,6 @@ $('document').ready(function () {
                     for(i = 0; i<response.length; i++){
                         mots[response[i].word] = null;
                     }
-                    console.log(mots);
                     $('#search-barre').autocomplete({
                         data: mots,
                         limit: 10

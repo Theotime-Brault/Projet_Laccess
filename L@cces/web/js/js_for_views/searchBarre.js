@@ -1,7 +1,7 @@
 $('document').ready(function () {
     $('#btnSearch').click(function () {
         submitSearch();
-    })
+    });
 
     if($("#btnFr").is(":checked")) {
         $("#imgFlagFr").parent().css("background-color", "#f4a733");
