@@ -85,6 +85,14 @@ class AdministrationController extends Controller
       'logo' => $logoBlanc
     ));
   }
+
+    public function helpAdminAction (){
+        $em = $this->getDoctrine()->getManager();
+        $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
+        return $this->render("@Lacces/Administration/Help/helpAdmin.html.twig", array(
+            'logo' => $logoBlanc
+        ));
+    }
 }
 
 

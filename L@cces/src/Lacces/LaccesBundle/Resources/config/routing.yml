@@ -183,3 +183,8 @@ removeExercice:
     path: /administration/exercice/remove
     defaults:
         _controller: LaccesBundle:EditDataExercice:removeExercice
+
+lacces_helpAdmin:
+    path: /administration/help
+    defaults:
+        _controller: LaccesBundle:Administration:helpAdmin
