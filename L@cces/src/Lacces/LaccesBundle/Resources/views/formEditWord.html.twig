@@ -1,5 +1,10 @@
 {{ form_start(form)}}
-
+<div class="row center">
+    <a href="#modalHelp" class="btn-flat btn-flat-hover waves-effect modal-trigger">
+        Ajout d'un lien vidéo
+        <i class="material-icons right">help</i>
+    </a>
+</div>
 
 <div class="row">
     <div class="input-field col s12 m6 offset-m3">
@@ -41,5 +46,28 @@
 </div>
 {{ form_end(form)}}
 
+<div id="modalHelp" class="modal">
+    <div class="modal-content">
+        <div class="card-image">
+            <div class="video-container">
+                <video class="responsive-video" width="1100" height="619" controls>
+                    <source src="{{ asset('videos/Ajout_lien_video.mp4') }}" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise video
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect btn-flat btn-flat-hover">
+            Fermer
+            <i class="material-icons right">close</i>
+        </a>
+    </div>
+</div>
 
+<script>
+    $(document).ready(function() {
+        $('.modal').modal();
+    });
+</script>
 

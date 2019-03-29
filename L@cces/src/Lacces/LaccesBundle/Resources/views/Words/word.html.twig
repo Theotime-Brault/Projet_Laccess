@@ -87,7 +87,7 @@
                                             <div class="card center">
                                                 <div id="card-video-1" class="card-image">
                                                     <div class="video-container">
-                                                        <iframe id="video-sentence-1" width="1100" height="619" src="{{ word.videoLink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                        <iframe id="video-sentence-1" width="1100" height="619" src="{{ word.videoLinkSentence }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                     </div>
                                                 </div>
                                                 <div id="context-sentence-block-video-1" class="context-sentence card-content">
@@ -104,11 +104,11 @@
                                                         <iframe id="video-sentence-2" width="1100" height="619" src="
                                                         {% if langue == "fr" %}
                                                             {% for w in word.wordEns %}
-                                                                {{ w.videoLink }}
+                                                                {{ w.videoLinkSentence }}
                                                             {% endfor %}
                                                         {% else %}
                                                             {% for w in word.wordFrs %}
-                                                                {{ w.videoLink }}
+                                                                {{ w.videoLinkSentence }}
                                                             {% endfor %}
                                                         {% endif %}"
                                                         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

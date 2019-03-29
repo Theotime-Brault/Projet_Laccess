@@ -27,3 +27,8 @@
 .waves-effect input {
     color: white;
 }
+
+.sidenav .collapsible-header:hover, .sidenav.fixed .collapsible-header:hover, .sidenav li>a:hover
+{
+    background-color: rgba(0, 0, 0, 0.5);
+}
