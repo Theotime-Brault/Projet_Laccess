@@ -19,6 +19,11 @@ class FormEditData
   /**
    * @Assert\NotBlank
    */
+  protected $videoLinkSentence;
+
+  /**
+   * @Assert\NotBlank
+   */
   protected $contextSentence;
 
   /**
@@ -67,5 +72,21 @@ class FormEditData
   public function setContextSentence($contextSentence)
   {
     $this->contextSentence = $contextSentence;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getVideoLinkSentence()
+  {
+    return $this->videoLinkSentence;
+  }
+
+  /**
+   * @param mixed $videoLinkSentence
+   */
+  public function setVideoLinkSentence($videoLinkSentence)
+  {
+    $this->videoLinkSentence = $videoLinkSentence;
   }
 }

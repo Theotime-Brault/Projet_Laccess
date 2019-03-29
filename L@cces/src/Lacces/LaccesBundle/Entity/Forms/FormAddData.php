@@ -24,6 +24,11 @@ class FormAddData
   /**
    * @Assert\NotBlank
    */
+  protected $videoLinkSentenceFr;
+
+  /**
+   * @Assert\NotBlank
+   */
   protected $wordEn;
 
   /**
@@ -35,6 +40,11 @@ class FormAddData
    * @Assert\NotBlank
    */
   protected $contextSentenceEn;
+
+  /**
+   * @Assert\NotBlank
+   */
+  protected $videoLinkSentenceEn;
 
   /**
    * @return mixed
@@ -130,5 +140,37 @@ class FormAddData
   public function setContextSentenceEn($contextSentenceEn)
   {
     $this->contextSentenceEn = $contextSentenceEn;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getVideoLinkSentenceFr()
+  {
+    return $this->videoLinkSentenceFr;
+  }
+
+  /**
+   * @param mixed $videoLinkSentenceFr
+   */
+  public function setVideoLinkSentenceFr($videoLinkSentenceFr)
+  {
+    $this->videoLinkSentenceFr = $videoLinkSentenceFr;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getVideoLinkSentenceEn()
+  {
+    return $this->videoLinkSentenceEn;
+  }
+
+  /**
+   * @param mixed $videoLinkSentenceEn
+   */
+  public function setVideoLinkSentenceEn($videoLinkSentenceEn)
+  {
+    $this->videoLinkSentenceEn = $videoLinkSentenceEn;
   }
 }

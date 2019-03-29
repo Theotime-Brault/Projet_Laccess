@@ -62,6 +62,15 @@ class EditDataWordController extends Controller
           'data-length' => "200",
             'autocomplete' => "off"
         )))
+        ->add('videoLinkSentence', TextType::class, array(
+          'label' => "Url de la vidéo de la phrase de contextualisation",
+          'attr' => array(
+            'maxlength' => "200",
+            'value' => $word->getVideoLinkSentence(),
+            'class' => "formValue",
+            'data-length' => "200",
+            'autocomplete' => "off"
+          )))
 
         //VALIDATION
 
@@ -82,6 +91,7 @@ class EditDataWordController extends Controller
         $word->setWord($formulaire->getWord());
         $word->setVideoLink($formulaire->getVideoLink()."?rel=0");
         $word->setContextSentence($formulaire->getContextSentence());
+        $word->setVideoLinkSentence($formulaire->getVideoLinkSentence());
 
         $em->persist($word);
         $em->flush();
@@ -138,6 +148,14 @@ class EditDataWordController extends Controller
           'data-length' => "200",
             'autocomplete' => "off"
         )))
+        ->add('videoLinkSentenceFr', TextType::class, array(
+          'label' => "Url de la vidéo en français de la phrase de contextualisation",
+          'attr' => array(
+            'maxlength' => "200",
+            'class' => "formValue",
+            'data-length' => "200",
+            'autocomplete' => "off"
+          )))
 
         //MOT ANGLAIS
 
@@ -165,6 +183,15 @@ class EditDataWordController extends Controller
           'data-length' => "200",
             'autocomplete' => "off"
         )))
+        ->add('videoLinkSentenceEn', TextType::class, array(
+          'label' => "Url de la vidéo en anglais de la phrase de contextualisation",
+          'attr' => array(
+            'maxlength' => "200",
+            'class' => "formValue",
+            'data-length' => "200",
+            'autocomplete' => "off"
+          )))
+
 
         //VALIDATION
 
@@ -188,11 +215,13 @@ class EditDataWordController extends Controller
         $monMotFr->setWord($formulaire->getWordFr());
         $monMotFr->setVideoLink($formulaire->getVideoLinkFr()."?rel=0");
         $monMotFr->setContextSentence($formulaire->getContextSentenceFr());
+        $monMotFr->setVideoLink($formulaire->getVideoLinkSentenceFr()."?rel=0");
         $monMotFr->setPopularity(0);
 
         $monMotEn->setWord($formulaire->getWordEn());
         $monMotEn->setVideoLink($formulaire->getVideoLinkEn()."?rel=0");
         $monMotEn->setContextSentence($formulaire->getContextSentenceEn());
+        $monMotFr->setVideoLink($formulaire->getVideoLinkSentenceEn()."?rel=0");
         $monMotEn->setPopularity(0);
 
         $monMotEn->setWordFrs(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordEn'), new ArrayCollection([$monMotFr])));

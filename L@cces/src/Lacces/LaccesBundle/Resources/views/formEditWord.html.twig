@@ -27,6 +27,14 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="input-field col s12 m6 offset-m3">
+        {{ form_label(form.videoLinkSentence)}}
+        {{ form_errors(form.videoLinkSentence)}}
+        {{ form_widget(form.videoLinkSentence)}}
+    </div>
+</div>
+
 <div class="row center">
     <a class="btn-flat btn-flat-hover" href="{{ asset('administration/editData/wordList/' ~ langue) }}">Retour</a>
     {{ form_widget(form.submit) }}
