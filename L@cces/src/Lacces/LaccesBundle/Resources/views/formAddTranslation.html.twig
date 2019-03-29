@@ -26,6 +26,14 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="input-field col s12 m6 offset-m3">
+            {{ form_label(form.videoLinkSentenceFr)}}
+            {{ form_errors(form.videoLinkSentenceFr)}}
+            {{ form_widget(form.videoLinkSentenceFr)}}
+        </div>
+    </div>
+
 {% elseif langue == "en" %}
 
     <div class="row">
@@ -49,6 +57,14 @@
             {{ form_label(form.contextSentenceEn)}}
             {{ form_errors(form.contextSentenceEn)}}
             {{ form_widget(form.contextSentenceEn)}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12 m6 offset-m3">
+            {{ form_label(form.videoLinkSentenceEn)}}
+            {{ form_errors(form.videoLinkSentenceEn)}}
+            {{ form_widget(form.videoLinkSentenceEn)}}
         </div>
     </div>
 
