@@ -215,13 +215,13 @@ class EditDataWordController extends Controller
         $monMotFr->setWord($formulaire->getWordFr());
         $monMotFr->setVideoLink($formulaire->getVideoLinkFr()."?rel=0");
         $monMotFr->setContextSentence($formulaire->getContextSentenceFr());
-        $monMotFr->setVideoLink($formulaire->getVideoLinkSentenceFr()."?rel=0");
+        $monMotFr->setVideoLinkSentence($formulaire->getVideoLinkSentenceFr()."?rel=0");
         $monMotFr->setPopularity(0);
 
         $monMotEn->setWord($formulaire->getWordEn());
         $monMotEn->setVideoLink($formulaire->getVideoLinkEn()."?rel=0");
         $monMotEn->setContextSentence($formulaire->getContextSentenceEn());
-        $monMotFr->setVideoLink($formulaire->getVideoLinkSentenceEn()."?rel=0");
+        $monMotEn->setVideoLinkSentence($formulaire->getVideoLinkSentenceEn()."?rel=0");
         $monMotEn->setPopularity(0);
 
         $monMotEn->setWordFrs(new PersistentCollection($em, $em->getClassMetadata('LaccesBundle:wordEn'), new ArrayCollection([$monMotFr])));
