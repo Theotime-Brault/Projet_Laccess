@@ -58,7 +58,7 @@ class AdministrationController extends Controller
 
     $form = $this->createForm(userType::class, $newAdmin);
     $form->add('submit', SubmitType::class, array(
-      'label' => 'Créer l\'administrateur',
+      'label' => 'Ajouter',
       'attr' => array(
         'class' => "btn btn-hover background-color-orange-lacces waves-effect",
       )));

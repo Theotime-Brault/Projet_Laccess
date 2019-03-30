@@ -15,6 +15,12 @@
                         <a class="btn background-color-orange-lacces white-text btn-hover" href="{{ path('lacces_ex__fr_add') }}">Passer en français</a>
                         <p class="flow-text">Ajout d'un exercice pour un mot anglais</p>
                     </div>
+                    <div class="row center">
+                        <a href="#modalHelp" class="btn-flat btn-flat-hover waves-effect modal-trigger">
+                            Ajout d'un lien vidéo
+                            <i class="material-icons right">help</i>
+                        </a>
+                    </div>
                     <div class="row">
                         <div class="col s12 m6">
                             <label>Mots</label>
@@ -47,10 +53,26 @@
             </div>
         </main>
 
+        <div id="modalHelp" class="modal">
+            <div class="modal-content">
+                <div class="video-container">
+                    <video class="responsive-video" width="1100" height="619" controls>
+                        <source src="{{ asset('videos/Ajout_lien_video.mp4') }}" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise video
+                    </video>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect btn-flat btn-flat-hover">
+                    Fermer
+                    <i class="material-icons right">close</i>
+                </a>
+            </div>
+        </div>
+
         <div id="modalError" class="modal">
             <div class="modal-content">
-                <h5>Erreur</h5>
-                <p>L'exercice n'a pas été ajouté.</p>
+                <p class="flow-text"><i class="material-icons left">warning</i> L'exercice n'a pas été ajouté.</p>
             </div>
             <div class="modal-footer">
                 <a class="modal-close waves-effect btn-flat btn-flat-hover">
@@ -61,8 +83,7 @@
 
         <div id="modalSucces" class="modal">
             <div class="modal-content">
-                <h5>Succès</h5>
-                <p>L'exercice a bien été ajouté.</p>
+                <p class="flow-text">L'exercice a bien été ajouté.</p>
             </div>
             <div class="modal-footer">
                 <a class="modal-close waves-effect btn-flat btn-flat-hover">
@@ -76,9 +97,10 @@
 
 {% block javascripts %}
     <script src="{{ asset('js/js_for_views/addExercice.js') }}"></script>
-    <script>
+    <script>/*
         $('#modalSucces').modal();
-        $('#modalError').modal();
+        $('#modalError').modal();*/
+        $('.modal').modal();
 
         function submit(){
             var ex = $('#typeEx').val();

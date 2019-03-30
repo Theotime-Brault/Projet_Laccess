@@ -1,7 +1,6 @@
 {{ form_start(form)}}
 
 {% if langue == "fr" %}
-
     <div class="row">
         <div class="input-field col s12 m6 offset-m3">
             {{ form_label(form.wordFr)}}
@@ -35,7 +34,6 @@
     </div>
 
 {% elseif langue == "en" %}
-
     <div class="row">
         <div class="input-field col s12 m6 offset-m3">
             {{ form_label(form.wordEn)}}
@@ -71,10 +69,12 @@
 {% endif %}
 
 <div class="row center">
-    <a class="btn-flat btn-flat-hover" href="{{ asset('administration/editData/wordList/fr') }}">Retour</a>
+    <a class="btn-flat btn-flat-hover waves-effect" href="{{ asset('administration/editData/wordList/fr') }}">Retour</a>
     {{ form_widget(form.submit) }}
 </div>
 {{ form_end(form)}}
+
+
 
 
 

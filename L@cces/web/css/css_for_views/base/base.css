@@ -161,11 +161,6 @@ noscript
     z-index: 10000;
 }
 
-.sidenav-trigger .material-icons, .dropdown-trigger .material-icons
-{
-    color: #757575;
-}
-
 .no-padding .material-icons
 {
     color: #757575;

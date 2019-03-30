@@ -41,20 +41,18 @@
 </div>
 
 <div class="row center">
-    <a class="btn-flat btn-flat-hover" href="{{ asset('administration/editData/wordList/' ~ langue) }}">Retour</a>
+    <a class="btn-flat btn-flat-hover waves-effect" href="{{ asset('administration/editData/wordList/' ~ langue) }}">Retour</a>
     {{ form_widget(form.submit) }}
 </div>
 {{ form_end(form)}}
 
 <div id="modalHelp" class="modal">
     <div class="modal-content">
-        <div class="card-image">
-            <div class="video-container">
-                <video class="responsive-video" width="1100" height="619" controls>
-                    <source src="{{ asset('videos/Ajout_lien_video.mp4') }}" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise video
-                </video>
-            </div>
+        <div class="video-container">
+            <video class="responsive-video" width="1100" height="619" controls>
+                <source src="{{ asset('videos/Ajout_lien_video.mp4') }}" type="video/mp4">
+                Votre navigateur ne supporte pas la balise video
+            </video>
         </div>
     </div>
     <div class="modal-footer">
