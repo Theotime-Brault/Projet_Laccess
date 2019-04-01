@@ -3,25 +3,19 @@
 namespace Lacces\LaccesBundle\Controller;
 
 use Lacces\LaccesBundle\Service\FileUploader;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
+//--------------A supprimé pour activation du site-------------
+/**
+ * @IsGranted("ROLE_ADMIN")
+ */
+//-------------------------------------------------------------
+
 class DefaultController extends Controller
 {
-    public function constructAction(){
-        return $this->redirectToRoute('lacces_homepage_temp');
-    }
-
-    public function tempAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-        return $this->render('@Lacces/temp.html.twig', [
-            'logo' => $logo
-        ]);
-    }
-
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      */

@@ -3,6 +3,7 @@
 namespace Lacces\LaccesBundle\Controller;
 
 use Lacces\LaccesBundle\Entity\Forms\Form;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,7 +11,11 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
-
+//--------------A supprimé pour activation du site-------------
+/**
+ * @IsGranted("ROLE_ADMIN")
+ */
+//-------------------------------------------------------------
 
 class ContactController extends Controller
 {

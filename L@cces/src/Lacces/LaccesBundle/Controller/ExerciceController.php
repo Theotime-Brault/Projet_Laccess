@@ -5,9 +5,16 @@ namespace Lacces\LaccesBundle\Controller;
 use Lacces\LaccesBundle\Entity\Exercise\significationVideoEn;
 use Lacces\LaccesBundle\Entity\wordEn;
 use Lacces\LaccesBundle\Entity\wordFr;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+
+//--------------A supprimé pour activation du site-------------
+/**
+ * @IsGranted("ROLE_ADMIN")
+ */
+//-------------------------------------------------------------
 
 class ExerciceController extends Controller
 {

@@ -6,12 +6,15 @@ use Lacces\LaccesBundle\Entity\Forms\LogoType;
 use Lacces\LaccesBundle\Entity\Forms\userType;
 use Lacces\LaccesBundle\Entity\user;
 use Lacces\LaccesBundle\Service\FileUploader;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-
+/**
+ * @IsGranted("ROLE_ADMIN")
+ */
 class AdministrationController extends Controller
 {
   public function adminAction(Request $request, FileUploader $fileUploader)
