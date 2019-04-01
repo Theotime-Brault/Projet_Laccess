@@ -120,19 +120,19 @@
     <script>
         $(document).ready(function(){
 
-            var langue = "{{ langue }}";
-            var id;
-            var wordRemove;
+            let langue = "{{ langue }}";
+            let id;
+            let wordRemove;
 
             $('.modal').modal();
 
-            $('.supprimer').click(function(e)
+            $('.supprimer').click(function()
             {
                 id = this.getAttribute("data-parent");
                 wordRemove = $(this).parent().parent("tr");
             });
 
-            $('#confirmDelete').click(function(e)
+            $('#confirmDelete').click(function()
             {
                 $.ajax
                 (
@@ -140,7 +140,7 @@
                         type: "POST",
                         url: "{{ path('lacces_editData_remove') }}",
                         data: {'id':id, 'langue':langue },
-                        success: function(msg)
+                        success: function()
                         {
                             $(this).delay(600,function(){
                                 wordRemove.slideUp(300,function() {
