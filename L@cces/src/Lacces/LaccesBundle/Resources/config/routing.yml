@@ -1,3 +1,8 @@
+lacces_homepage_temp:
+    path:     /home_temp
+    defaults:
+        _controller: LaccesBundle:Default:temp
+
 lacces_homepage:
     path:     /
     defaults:
