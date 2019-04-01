@@ -16,6 +16,15 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
+    public function tempAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
+        return $this->render('@Lacces/temp.html.twig', [
+            'logo' => $logo
+        ]);
+    }
+
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
