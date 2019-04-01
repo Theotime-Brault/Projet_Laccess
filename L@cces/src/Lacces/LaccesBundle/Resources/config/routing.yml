@@ -1,10 +1,15 @@
+lacces_construct:
+    path: /{url}
+    defaults:
+        _controller: LaccesBundle:Default:construct
+
 lacces_homepage_temp:
-    path:     /home_temp
+    path:     /
     defaults:
         _controller: LaccesBundle:Default:temp
 
 lacces_homepage:
-    path:     /
+    path:     /home
     defaults:
         _controller: LaccesBundle:Default:index
 
