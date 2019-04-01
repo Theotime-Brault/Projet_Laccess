@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     public function constructAction(){
+
         return $this->redirectToRoute('lacces_homepage_temp');
     }
 
