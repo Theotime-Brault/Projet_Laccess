@@ -22,31 +22,8 @@ class AdministrationController extends Controller
     $em = $this->getDoctrine()->getManager();
 
     $users = $em->getRepository('LaccesBundle:user')->findAll();
-    $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-    $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
-    $form = $this->createForm(LogoType::class, $logo);
-    $form->handleRequest($request);
-
-    if ($form->isSubmitted() && $form->isValid()) {
-
-      // $file récupère le jpeg telechargé
-
-      /** @var \Symfony\Component\HttpFoundation\File\UploadedFile $file */
-      $file = $logo->getImage();
-
-      $fileName = $fileUploader->upload($file);
-      $logo->setImage($fileName);
-      $this->addFlash('info', "Le logo a bien été modifié !");
-
-      $logo->setNomImage($logo->getImage());
-      $em->persist($logo);
-      $em->flush();
-
-      return $this->redirect($this->generateUrl('administration'));
-    }
 
     return $this->render("@Lacces/Administration/administration.html.twig", [
-        'form' => $form->createView(),
         'users' => $users
     ]);
   }
@@ -54,7 +31,6 @@ class AdministrationController extends Controller
   public function addAdminAction(Request $request, UserPasswordEncoderInterface $encoder) {
 
     $em = $this->getDoctrine()->getManager();
-    $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
 
     $newAdmin = new user();
 
@@ -84,16 +60,12 @@ class AdministrationController extends Controller
     }
     return $this->render("@Lacces/Administration/ajoutAdmin.html.twig", array(
       'form' => $form->createView(),
-      'logo' => $logoBlanc
     ));
   }
 
     public function helpAdminAction (){
         $em = $this->getDoctrine()->getManager();
-        $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
-        return $this->render("@Lacces/Administration/Help/helpAdmin.html.twig", array(
-            'logo' => $logoBlanc
-        ));
+        return $this->render("@Lacces/Administration/Help/helpAdmin.html.twig");
     }
 }
 

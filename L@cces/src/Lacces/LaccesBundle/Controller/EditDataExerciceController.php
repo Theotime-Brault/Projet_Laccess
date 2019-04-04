@@ -229,15 +229,13 @@ class EditDataExerciceController extends Controller
         $qcmVideo = $em->getRepository('LaccesBundle:Exercise\qcmVideoFr')->findAll();
         $reformulation = $em->getRepository('LaccesBundle:Exercise\reformulationFr')->findAll();
         $significationVideo = $em->getRepository('LaccesBundle:Exercise\significationVideoFr')->findAll();
-        $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
 
         return $this->render('@Lacces/Exercices/EditExercice/listExerciceFr.html.twig', array(
             'comparaisonVideo' => $comparaisonVideo,
             'qcm' => $qcm,
             'qcmVideo' => $qcmVideo,
             'reformulation' => $reformulation,
-            'significationVideo' =>$significationVideo,
-            'logo' => $logoBlanc
+            'significationVideo' =>$significationVideo
         ));
     }
 
@@ -248,15 +246,13 @@ class EditDataExerciceController extends Controller
         $qcmVideo = $em->getRepository('LaccesBundle:Exercise\qcmVideoEn')->findAll();
         $reformulation = $em->getRepository('LaccesBundle:Exercise\reformulationEn')->findAll();
         $significationVideo = $em->getRepository('LaccesBundle:Exercise\significationVideoEn')->findAll();
-        $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
 
         return $this->render('@Lacces/Exercices/EditExercice/listExerciceEn.html.twig', array(
             'comparaisonVideo' => $comparaisonVideo,
             'qcm' => $qcm,
             'qcmVideo' => $qcmVideo,
             'reformulation' => $reformulation,
-            'significationVideo' =>$significationVideo,
-            'logo' => $logoBlanc
+            'significationVideo' =>$significationVideo
         ));
     }
 

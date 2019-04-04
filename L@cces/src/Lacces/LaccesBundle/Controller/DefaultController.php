@@ -18,11 +18,7 @@ class DefaultController extends Controller
 {
     public function tempAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-        return $this->render('@Lacces/temp.html.twig', [
-            'logo' => $logo
-        ]);
+        return $this->render('@Lacces/temp.html.twig');
     }
 
     /**
@@ -30,13 +26,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-
-      $em = $this->getDoctrine()->getManager();
-      $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-
-      return $this->render('@Lacces/Default/index.html.twig', [
-          'logo' => $logo
-      ]);
+      return $this->render('@Lacces/Default/index.html.twig');
     }
 
     /**
@@ -47,7 +37,6 @@ class DefaultController extends Controller
     public function wordAction($word, $langue)
     {
         $em = $this->getDoctrine()->getManager();
-        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
 
         if($langue == "fr"){
           $objWord = $em->getRepository('LaccesBundle:wordFr')->findByWord($word);
@@ -68,7 +57,6 @@ class DefaultController extends Controller
 
         return $this->render('@Lacces/Words/word.html.twig', array(
             'word' => $objWord,
-            'logo' => $logo,
             'langue' => $langue,
           ));
     }
@@ -87,12 +75,10 @@ class DefaultController extends Controller
     public function signaireFrAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
         $wordsFrObj = $em->getRepository('LaccesBundle:wordFr')->findAll();
 
         return $this->render('@Lacces/Signaires/signaireFr.html.twig', [
             'wordFr' => $wordsFrObj,
-            'logo' => $logo
         ]);
     }
 
@@ -103,12 +89,10 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $wordsEnObj = $em->getRepository('LaccesBundle:wordEn')->findAll();
-        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
 
         return $this->render('@Lacces/Signaires/signaireEn.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'wordEn' => $wordsEnObj,
-            'logo' => $logo
+            'wordEn' => $wordsEnObj
         ]);
     }
 
@@ -117,20 +101,13 @@ class DefaultController extends Controller
      */
     public function mentionsAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-        return $this->render('@Lacces/Mentions_legales/mentions.html.twig', array(
-          'logo' => $logo
-        ));
+        return $this->render('@Lacces/Mentions_legales/mentions.html.twig');
     }
 
     public function faqAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
-        return $this->render('@Lacces/FAQ/faq.html.twig', array(
-          'logo' => $logo
-        ));
+        return $this->render('@Lacces/FAQ/faq.html.twig');
     }
 
 

@@ -25,7 +25,6 @@ class ExerciceController extends Controller
   public function exercicesAction($langue, $wordId)
   {
       $em = $this->getDoctrine()->getManager();
-      $logo = $em->getRepository('LaccesBundle:Logo')->find(1);
 
 
       //ON RECUPERE L'ID DU MOTS "FR" ET "EN" RECHERCHÉ AFIN DE POUVOIR PLUS TARD SWITCHER LA LANGUE EN GARDANT L'ID QUI CORRESPOND
@@ -66,7 +65,6 @@ class ExerciceController extends Controller
 
       return $this->render('@Lacces/Exercices/exercices.html.twig', array(
         'langue' => $langue,
-        'logo' => $logo,
         'wordId' => $wordId,
         'wordFrId' => $wordFrId,
         'wordEnId' => $wordEnId
