@@ -47,7 +47,6 @@ class AdministrationController extends Controller
 
     return $this->render("@Lacces/Administration/administration.html.twig", [
         'form' => $form->createView(),
-        'logo' => $logoBlanc,
         'users' => $users
     ]);
   }

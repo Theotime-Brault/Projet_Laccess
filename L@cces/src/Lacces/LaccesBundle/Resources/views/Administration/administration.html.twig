@@ -30,7 +30,7 @@
         </ul>
         <div id="container_logo_lacces">
             <a href="{{ asset('administration') }}" class="brand-logo center">
-                <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo/' ~ logo.nomImage) }}/>
+                <img id="logo_lacces" alt="Logo L@cces" src={{ asset('pictures/logo_lacces_white_2.png') }}/>
             </a>
         </div>
         <ul class="right">
@@ -212,9 +212,6 @@
                     <a id="btn-ajout-admin" class="btn btn-hover background-color-orange-lacces waves-effect" href="{{ path("add_admin") }}">Ajouter un administrateur</a>
                 </div>
             </section>
-        </div>
-        <div class="col s12 m6">
-            {{ include('@Lacces/formAddImageLogo.html.twig') }}
         </div>
     </div>
 {% endblock %}
