@@ -32,23 +32,19 @@ class EditDataExerciceController extends Controller
 {
     public function exerciceAddEnAction(){
         $em = $this->getDoctrine()->getManager();
-        $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
         $words = $em->getRepository('LaccesBundle:wordEn')->findAll();
 
         return $this->render('@Lacces/Exercices/EditExercice/addExerciceEn.html.twig', array(
-            'words' =>$words,
-            'logo' => $logoBlanc
+            'words' =>$words
         ));
     }
 
     public function exerciceAddFrAction(){
         $em = $this->getDoctrine()->getManager();
-        $logoBlanc = $em->getRepository('LaccesBundle:Logo')->find(2);
         $words = $em->getRepository('LaccesBundle:wordFr')->findAll();
 
         return $this->render('@Lacces/Exercices/EditExercice/addExerciceFr.html.twig', array(
-            'words' => $words,
-            'logo' => $logoBlanc
+            'words' => $words
         ));
     }
 
