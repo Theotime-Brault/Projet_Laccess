@@ -2,10 +2,10 @@
 {
     color: #f4a733;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.4rem;
     display:flex;
     align-items: center;
-    margin-left: 1%;
+    margin-left: 1.2rem;
 }
 
 #word
@@ -34,4 +34,11 @@
 .collapsible-ASL:hover
 {
     background-color: #eeeeee;
+}
+
+.alphabet-pictures
+{
+    height: 4rem;
+    position: absolute !important;
+    right: 1.2rem;
 }
